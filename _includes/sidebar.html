@@ -1,0 +1,7 @@
+<aside class="sidebar">
+  <h3>Navigation</h3>
+    {% for item in site.data.navigation %}
+      <li><a href="{{ item.url | relative_url }}">{{ item.title }}</a></li>
+    {% endfor %}
+  </ul>
+</aside>
