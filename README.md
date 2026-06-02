@@ -1,3 +1,3 @@
 # DoctorHaitch.github.io
 
-I'm a readme.
+The personal website of Dr. Kris.
