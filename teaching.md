@@ -1,7 +1,6 @@
 ---
 layout: default
 title: Teaching
-permalink: /teaching.md
 ---
 
 # Recently Taught Courses and Sample Teaching Materials
