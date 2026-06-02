@@ -12,4 +12,4 @@ Welcome to my website! I've just gotten it setup. I'll be updating it soon.
 
 ##### In the meantime, this is my dog Gemma!
 
-![Gemma, a dog with a happy and friendly expression, sits indoors in a comfortable home setting, looking directly at the camera with a warm and joyful demeanor.](/DoctorHaitch.github.io/imgs/cutePictureOfMyDog.jpg)
+![Gemma, a dog with a happy and friendly expression, sits indoors in a comfortable home setting, looking directly at the camera with a warm and joyful demeanor.](/imgs/cutePictureOfMyDog.jpg)
