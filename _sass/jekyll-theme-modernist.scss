@@ -344,28 +344,37 @@ footer {
   }
 }
 
-/* === NEW LAYOUT: CONTENT + SIDEBAR === */
+/* =========================================
+   FLOATING LEFT SIDEBAR (SELF-CONTAINED)
+   ========================================= */
+
+/* Anchor for positioning */
 .content-area {
-  display: flex;
-  gap: 20px;
+  position: relative;
 }
 
-/* Make wrapper accommodate flex children properly */
-.wrapper {
-  display: block; /* keep original stacking for header */
-}
-
-/* Sidebar */
+/* Sidebar floats outside the main wrapper */
 .sidebar {
+  position: sticky;
+  top: 20px;                /* controls stick position */
+
   width: 200px;
-  flex-shrink: 0;
+  float: left;
+  margin-left: -240px;      /* pulls sidebar OUTSIDE main card */
+
   padding: 15px;
   background: linear-gradient(#fafafa, #DEDEDE);
   border: 1px solid #ccc;
   border-radius: 6px;
-  box-shadow: inset rgba(#fff, 0.7) 0 1px 0;
+
+  box-shadow:
+    inset rgba(#fff, 0.7) 0 1px 0,
+    rgba(#000, 0.15) 0 3px 8px;
+
+  z-index: 10;
 }
 
+/* Sidebar typography */
 .sidebar h3 {
   margin: 0 0 10px;
   font-size: 16px;
@@ -384,22 +393,26 @@ footer {
   margin: 0;
 }
 
+/* Links */
 .sidebar a {
   display: block;
   padding: 6px 8px;
   margin-bottom: 4px;
   border-radius: 4px;
   color: #069;
+  font-weight: 400;
   text-shadow: rgba(#fff, 0.8) 0 1px 0;
   transition: all 0.15s ease-in-out;
 }
 
+/* Hover state (matches theme feel) */
 .sidebar a:hover {
   background: linear-gradient(#DDFBFC, #C6EAFA);
   color: #036;
   box-shadow: inset rgba(#fff, 0.5) 0 1px 0;
 }
 
+/* Active link */
 .sidebar a.active {
   background: linear-gradient(#77B9FB, #3782CD);
   color: #fff;
@@ -409,25 +422,26 @@ footer {
     inset rgba(#000, 0.2) 0 -1px 0;
 }
 
-/* Main content */
+/* Prevent layout conflicts */
 .main-content {
-  flex: 1;
-  min-width: 0;
+  position: relative;
+  z-index: 1;
 }
 
-/* Keep section from fighting flex layout */
-.content-area > section {
-  flex: 1;
+/* Give room so sidebar doesn't collide visually */
+.wrapper {
+  position: relative;
+  padding-left: 40px;
 }
 
 
-/* === RESPONSIVE === */
-@media print, screen and (max-width: 740px) {
-  .content-area {
-    flex-direction: column;
-  }
-
+/* =========================================
+   RESPONSIVE FALLBACK
+   ========================================= */
+@media print, screen and (max-width: 980px) {
   .sidebar {
+    position: static;
+    float: none;
     width: auto;
     margin: 0 20px 15px;
   }
