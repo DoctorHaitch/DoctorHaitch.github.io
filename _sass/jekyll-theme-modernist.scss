@@ -163,10 +163,14 @@ section {
   padding:15px 20px;
   font-size:15px;
   border-top:1px solid #fff;
-  background: linear-gradient(#fafafa, #DEDEDE 700px);
+
+  /* Sidebar-safe gradient */
+  background: linear-gradient(#fafafa, #f2f2f2 700px);
+
   border-radius: 0 0 8px 8px;
   position:relative;
 }
+
 
 h1, h2, h3, h4, h5, h6 {
   color:#222;
@@ -351,7 +355,6 @@ footer {
 /* Anchor for positioning */
 .content-area {
   position: relative;
-  overflow: hidden;
   border-radius: 0 0 8px 8px;
 }
 
