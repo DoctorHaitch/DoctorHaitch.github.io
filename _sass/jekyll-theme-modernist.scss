@@ -343,3 +343,92 @@ footer {
     content:'at https://github.com/';
   }
 }
+
+/* === NEW LAYOUT: CONTENT + SIDEBAR === */
+.content-area {
+  display: flex;
+  gap: 20px;
+}
+
+/* Make wrapper accommodate flex children properly */
+.wrapper {
+  display: block; /* keep original stacking for header */
+}
+
+/* Sidebar */
+.sidebar {
+  width: 200px;
+  flex-shrink: 0;
+  padding: 15px;
+  background: linear-gradient(#fafafa, #DEDEDE);
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-shadow: inset rgba(#fff, 0.7) 0 1px 0;
+}
+
+.sidebar h3 {
+  margin: 0 0 10px;
+  font-size: 16px;
+  color: #393939;
+  border-bottom: 1px solid #B2D2E1;
+  padding-bottom: 6px;
+}
+
+.sidebar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar li {
+  margin: 0;
+}
+
+.sidebar a {
+  display: block;
+  padding: 6px 8px;
+  margin-bottom: 4px;
+  border-radius: 4px;
+  color: #069;
+  text-shadow: rgba(#fff, 0.8) 0 1px 0;
+  transition: all 0.15s ease-in-out;
+}
+
+.sidebar a:hover {
+  background: linear-gradient(#DDFBFC, #C6EAFA);
+  color: #036;
+  box-shadow: inset rgba(#fff, 0.5) 0 1px 0;
+}
+
+.sidebar a.active {
+  background: linear-gradient(#77B9FB, #3782CD);
+  color: #fff;
+  text-shadow: rgba(#000, 0.4) 0 -1px 0;
+  box-shadow:
+    inset rgba(#fff, 0.3) 0 1px 0,
+    inset rgba(#000, 0.2) 0 -1px 0;
+}
+
+/* Main content */
+.main-content {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Keep section from fighting flex layout */
+.content-area > section {
+  flex: 1;
+}
+
+
+/* === RESPONSIVE === */
+@media print, screen and (max-width: 740px) {
+  .content-area {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: auto;
+    margin: 0 20px 15px;
+  }
+}
