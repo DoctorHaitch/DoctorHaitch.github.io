@@ -147,3 +147,8 @@ section {
     margin: 0 20px 15px;
   }
 }
+
+.content-area {
+  display: flex;
+  gap: 20px;
+}
