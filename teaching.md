@@ -5,11 +5,29 @@ title: Teaching
 
 # Teaching Record
 
-## Recently Taught Courses and Sample Teaching Materials
+## Selected Sample Teaching Materials
+
+### Minnesota State University, Mankato
+
+`Coming Soon.`
+
+### University of Minnesota
+- Math 2473: Integral Vector Calculus (~80 students)
+  - Sample Lecture Notes [Week 10: Surface Integrals PDF](/assets/sample-teaching/UMN-C3-W10-SurfaceIntegrals-Lecture.pdf)
+- Math 5248: Mathematical Cryptology and Number Theory (~30 students)
+  - Syllabus [PDF](/assets/sample-teaching/UMN-5248-03-Syllabus.pdf)
+  - Sample Project Assignments
+    - Prove the Euclidean Algorithm [PDF](/assets/sample-teaching/UMN-5248-04-EuclideanAlgorithm.pdf)
+    - Brute Force Attacks on Hashing Algorithms [PDF](/assets/sample-teaching/UMN-5248-02-SHA512-DictionaryAttack.pdf)
+    - Euler's Theorem vs. Euclid's Algorithm [PDF](/assets/sample-teaching/UMN-5248-12-ModularInverses.pdf)
 
 
 ## Detailed Teaching Record
 ### Instructor of Record
+
+#### Minnesota State University, Mankato (Fall 2022-Present)
+
+`Coming Soon.`
 
 #### University of Minnesota (Fall 2020-Spring 2022)
 I primarily taught and coordinated courses for the [University of Minnesota's Talented Youth Mathematics Program](https://cse.umn.edu/mathcep/university-minnesota-talented-youth-mathematics-program-umtymp) (UMTYMP) (Um-tee-ump).
