@@ -5,27 +5,53 @@ title: Scholarship
 
 # Scholarly Activity
 
-## Graduate Students
-- Brendan Schlader (Summer, 2025)
+## Contribution to scholarly growth of students
+### Present Students
+#### Graduate Students
+- **Brian Larson** (Expected: Summer 2026)
+    - Alternate Plan Paper, Working Title
+        > Tiling Systems for High Dimensional Data (In Progress)
+
+### Past Students
+#### Graduate Students (*University of Minnesota, Mankato*)
+- **Brendan Schlader** (Summer, 2025)
     - Master's Thesis
         > [Spectral Theory and the Gelfand Transform](/assets/student-projects/2025-brendan-schlader-thesis.pdf)
-- Hunter Wilmes (Spring, 2024)
+- **Hunter Wilmes** (Spring, 2024)
     - Alternate Plan Paper
         > [Topics in Frame Theory: Frames of Translates](/assets/student-projects/2024-hunter-wilmes-app.pdf)
     - Defense Presentation
         > [Topics in Frame Theory: Frames of Translates](/assets/student-projects/2024-hunter-wilmes-presentation.pdf)
 
-## Undergraduate Students
-- Isaac Wicklund (Spring, 2026)
+#### Undergraduate Students (*University of Minnesota, Mankato*)
+- **Isaac Wicklund** (Spring, 2026)
     - Independent Study
     - Capstone Project
         > [Graph-Theoretic and Linear Optimization Approaches to Boolean Logic Minimization](/assets/student-projects/2026-isaac-wicklund-capstone.pdf)
 
-## OER Contributions
+#### Undergraduate Students (*University of Delaware*)
+
+### Open Educational Resource Development
 - `Coming Soon`
 
-## Selected Papers
+## Written Scholarship
+
+### Published Works
 - `Coming Soon`
 
-## PhD Thesis
+### Works in Progress
+- `Coming Soon`
+
+### PhD Thesis
+- `Coming Soon`
+
+## Presentations
+
+### At Professional Meetings
+- `Coming Soon`
+
+### Invited Lectures, Presentations, Symposia Presentations, etc.
+- `Coming Soon`
+
+### Presentations to Students
 - `Coming Soon`
