@@ -4,7 +4,9 @@ title: Home
 permalink: /
 ---
 
-Welcome to my website! I've just gotten it setup. I'll be updating it soon.
+# Welcome!
+
+I've just finally set this up transitioning from a very old Google sites page. It will take me a bit of time to migrate over all the old materials, and then start updating it with everything that has happened since then! But I look forward to getting this setup, and getting caught up with some folks in the process!
 
 ### Mission
 * Share resources for creating accessible mathematics content.
