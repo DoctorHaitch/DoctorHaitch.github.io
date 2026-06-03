@@ -52,9 +52,9 @@
               <div class="profile-section">
                 <h4>Contact</h4>
                 <ul>
-                  {% for item in p.contact %}
-                    <li>{{ item }}</li>
-                  {% endfor %}
+                  <li>Email: {{ p.contact[0].email }}</li>
+                  <li>Office: {{ p.contact[0].office }}</li>
+                  <li>Office: {{ p.contact[0].office }}</li>
                 </ul>
               </div>
             {% endif %}

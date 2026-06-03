@@ -1,12 +1,12 @@
 name: "Prof. Kris Hollingsworth"
 title: "Assistant Professor"
 
-image: /assets/images/kgh-w-gemma.jpg
+image: /imgs/kgh-w-gemma.jpg
 
 contact:
-  - Email: "kristopher.hollingsworth@mnsu.edu"
-  - Office: "Wissink Hall 253"
-  - Phone: "(507) 389-6506"
+  - email: "kristopher.hollingsworth@mnsu.edu"
+  - office: "Wissink Hall 253"
+  - phone: "(507) 389-6506"
 
 schedule:
   semester: "Fall 2026"
@@ -21,4 +21,5 @@ schedule:
       details: "MTRF 8:00-8:50"
 
 seminars:
-  - "TBD"
+  - name: "TBD"
+    details: "TBD"
