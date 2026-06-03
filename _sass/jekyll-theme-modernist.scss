@@ -27,8 +27,8 @@
 ========================================= */
 
 html {
+  background: #f5f7fb; /* soft uniform field */
   height: 100%;
-  background: radial-gradient(circle at top, #eef1f7, #dde3ee);
 }
 
 body {
@@ -46,15 +46,15 @@ body {
 ========================================= */
 
 .wrapper {
-  width: 740px;
-  margin: auto;
+  width: 720px;         /* slightly narrower = more note-like */
+  margin: 0 auto;
 
   background: var(--card-bg);
-  border-radius: 12px;
+  border-radius: 14px;
 
   box-shadow:
-    0 8px 30px rgba(0,0,0,0.12),
-    0 2px 6px rgba(0,0,0,0.08);
+    0 10px 30px rgba(0,0,0,0.10),
+    0 2px 6px rgba(0,0,0,0.06);
 }
 
 /* =========================================
@@ -157,10 +157,14 @@ h1, h2, h3, h4 {
 
 h2 {
   color: rgb(var(--color-info));
+  margin-top: 1.2em;
+  margin-bottom: 0.5em;
 }
 
 h3 {
   color: rgb(var(--color-resolution));
+  margin-top: 1em;
+  margin-bottom: 0.4em;
 }
 
 /* =========================================
@@ -181,13 +185,15 @@ a:hover {
 ========================================= */
 
 blockquote {
-  margin: 1em 0;
-  padding: 0.8em 1em;
+  margin: 0.8em 0;
+  padding: 0.5em 0.8em;
 
-  border-left: 4px solid rgb(var(--color-info));
+  border-left: 3px solid rgb(var(--color-info));
   border-radius: 6px;
 
   background: rgba(var(--color-info), 0.08);
+
+  font-style: normal; /* more note-like, less essay-like */
 }
 
 /* =========================================
@@ -213,7 +219,7 @@ pre {
   top: 20px;
 
   float: left;
-  margin-left: -260px;
+  margin-left: -250px;
   width: 220px;
 
   padding: 14px;
@@ -221,7 +227,7 @@ pre {
   border-radius: 12px;
 
   background: rgba(255,255,255,0.7);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(8px);
 
   border: 1px solid rgba(0,0,0,0.08);
 
@@ -313,4 +319,24 @@ footer {
   section {
     padding: 1rem;
   }
+}
+
+
+section > h1:first-child {
+  margin: -1.4rem -1.4rem 1.2rem -1.4rem; /* bleed into edges */
+
+  padding: 0.55em 0.8em;
+
+  font-family: 'Roboto Serif', serif;
+  font-weight: 600;
+
+  background: rgba(var(--color-info), 0.16);
+  border-left: 5px solid rgb(var(--color-info));
+
+  border-top: 1px solid rgba(0,0,0,0.06);
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
+p, ul, ol {
+  margin: 0 0 0.9em;
 }
