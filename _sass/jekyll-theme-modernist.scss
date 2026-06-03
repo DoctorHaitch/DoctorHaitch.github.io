@@ -54,8 +54,6 @@ body {
   background: var(--card-bg);
   border-radius: 14px;
 
-  overflow: hidden; /* ensures borders line up cleanly */
-
   box-shadow:
     0 10px 30px rgba(0,0,0,0.10),
     0 2px 6px rgba(0,0,0,0.06);
@@ -334,9 +332,4 @@ section > h1:first-child {
 
 p, ul, ol {
   margin: 0 0 0.9em;
-}
-
-header,
-section {
-  padding-left: 1.6rem; /* accounts for border visually */
 }
