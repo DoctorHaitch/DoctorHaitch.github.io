@@ -8,7 +8,9 @@ permalink: /
 
 I've just finally set this up transitioning from a very old Google sites page. It will take me a bit of time to migrate over all the old materials, and then start updating it with everything that has happened since then! But I look forward to getting this setup, and getting caught up with some folks in the process!
 
-### Mission
+![Kris Hollingsworth with his dog, Gemma.](/imgs/kgh-w-gemma.jpg)
+
+## Mission
 * Share resources for creating accessible mathematics content.
 * Share some neat math content as well.
 
