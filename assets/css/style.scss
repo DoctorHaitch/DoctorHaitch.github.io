@@ -351,3 +351,28 @@ section > h1:first-child {
 p, ul, ol {
   margin: 0 0 0.9em;
 }
+
+
+/* New profile for main page. */
+
+.profile-panel {
+  float: right;
+  width: 280px;
+  margin: 0 0 1.5rem 2rem;
+  padding: 1rem;
+
+  background: #f8f8f8;
+  border-radius: 10px;
+}
+
+.profile-image {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.main-content::after {
+  content: "";
+  display: block;
+  clear: both;
+}

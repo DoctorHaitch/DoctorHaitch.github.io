@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="{{ site.lang | default: "en-US" }}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+{% seo %}
+
+
+    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+    <script src="{{ '/assets/js/scale.fix.js' | relative_url }}"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    {% include head-custom.html %}
+  </head>
+  <body>
+    <div class="wrapper">
+      <header {% unless site.description or site.github.project_tagline %} class="without-description" {% endunless %}>
+        <h1>{{ site.title | default: site.github.repository_name }}</h1>
+        {% if site.description or site.github.project_tagline %}
+          <p>{{ site.description | default: site.github.project_tagline }}</p>
+        {% endif %}
+      </header>
+
+
+      <div class="content-area">
+
+        <!-- LEFT: main text -->
+        <section class="main-content">
+          {{ content }}
+        </section>
+
+        <!-- RIGHT: profile panel -->
+        {% if page.profile or site.data.profile %}
+        {% assign p = page.profile | default: site.data.profile %}
+        <aside class="profile-panel">
+          
+          {% if p.image %}
+            <img src="{{ p.image | relative_url }}" alt="Portrait" class="profile-image">
+          {% endif %}
+
+          {% if p.name %}
+            <h3>{{ p.name }}</h3>
+          {% endif %}
+
+          {% if p.title %}
+            <p class="profile-title">{{ p.title }}</p>
+          {% endif %}
+
+          {% if p.contact %}
+            <div class="profile-section">
+              <h4>Contact</h4>
+              <ul>
+                {% for item in p.contact %}
+                  <li>{{ item }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+          {% endif %}
+
+          {% if p.schedule %}
+            <div class="profile-section">
+              <h4>Schedule ({{ p.schedule.semester }})</h4>
+
+              <ul>
+                {% for item in p.schedule.items %}
+                  <li>
+                    <strong>{{ item.name }}</strong><br>
+                    <span class="details">{{ item.details }}</span>
+                  </li>
+                {% endfor %}
+              </ul>
+            </div>
+          {% endif %}
+
+          {% if p.seminars %}
+            <div class="profile-section">
+              <h4>Seminars and Discussions</h4>
+              <ul>
+                {% for item in p.seminars %}
+                  <li>{{ item }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+          {% endif %}
+
+        </aside>
+        {% endif %}
+
+      </div>
+
+    </div>
+    <footer>
+      <p>Hosted on GitHub Pages &mdash; Original Theme by Me.</p>
+    </footer>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+  </body>
+</html>
