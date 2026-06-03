@@ -21,6 +21,6 @@ schedule:
       details: "MTRF 8:00-8:50"
 
 seminars:
-  -items:
+  items:
     - name: "TBD"
       details: "TBD"
