@@ -1,25 +1,24 @@
-name: Prof. Kristopher Hollingsworth
-title: Assistant Professor
+name: "Prof. Kris Hollingsworth"
+title: "Assistant Professor"
 
 image: /assets/images/kgh-w-gemma.jpg
 
 contact:
-  - Email: kristopher.hollingsworth@mnsu.edu
-  - Office: Wissink Hall 253
-  - Phone: (507) 389-6506
+  - Email: "kristopher.hollingsworth@mnsu.edu"
+  - Office: "Wissink Hall 253"
+  - Phone: "(507) 389-6506"
 
 schedule:
-  semester: Fall 2026
+  semester: "Fall 2026"
   items:
-    - name: Office Hours
-      details: TBD
+    - name: "Office Hours"
+      details: "TBD"
 
-    - name: Math122-01: Calculus II
-      details: MTRF 8:00–8:50
-
-    - name: Math122-01: Calculus II
-      details: MTRF 8:00–8:50
+    - name: "Math122-01: Calculus II"
+      details: "MTRF 8:00-8:50"
+  
+    - name: "Math122-01: Calculus II"
+      details: "MTRF 8:00-8:50"
 
 seminars:
-  - "Fall 2026: Machine Learning Seminar"
-  - "Spring 2027: Data Ethics Workshop"
+  - "TBD"
