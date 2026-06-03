@@ -28,71 +28,68 @@
 
 
       <div class="content-area">
+        
+        {% include sidebar.html %}
 
-        <!-- LEFT: main text -->
         <section class="main-content">
+          {% if page.profile or site.data.profile %}
+          {% assign p = page.profile | default: site.data.profile %}
+          
+          <aside class="profile-panel">
+            {% if p.image %}
+              <img src="{{ p.image | relative_url }}" class="profile-image">
+            {% endif %}
+
+            {% if p.name %}
+              <h3>{{ p.name }}</h3>
+            {% endif %}
+
+            {% if p.title %}
+              <p class="profile-title">{{ p.title }}</p>
+            {% endif %}
+
+            {% if p.contact %}
+              <div class="profile-section">
+                <h4>Contact</h4>
+                <ul>
+                  {% for item in p.contact %}
+                    <li>{{ item }}</li>
+                  {% endfor %}
+                </ul>
+              </div>
+            {% endif %}
+
+            {% if p.schedule %}
+              <div class="profile-section">
+                <h4>Schedule ({{ p.schedule.semester }})</h4>
+                <ul>
+                  {% for item in p.schedule.items %}
+                    <li>
+                      <strong>{{ item.name }}</strong><br>
+                      <span class="details">{{ item.details }}</span>
+                    </li>
+                  {% endfor %}
+                </ul>
+              </div>
+            {% endif %}
+
+            {% if p.seminars %}
+              <div class="profile-section">
+                <h4>Seminars and Discussions</h4>
+                <ul>
+                  {% for item in p.seminars %}
+                    <li>{{ item }}</li>
+                  {% endfor %}
+                </ul>
+              </div>
+            {% endif %}
+          </aside>
+          {% endif %}
           {{ content }}
         </section>
 
-        <!-- RIGHT: profile panel -->
-        {% if page.profile or site.data.profile %}
-        {% assign p = page.profile | default: site.data.profile %}
-        <aside class="profile-panel">
-          
-          {% if p.image %}
-            <img src="{{ p.image | relative_url }}" alt="Portrait" class="profile-image">
-          {% endif %}
-
-          {% if p.name %}
-            <h3>{{ p.name }}</h3>
-          {% endif %}
-
-          {% if p.title %}
-            <p class="profile-title">{{ p.title }}</p>
-          {% endif %}
-
-          {% if p.contact %}
-            <div class="profile-section">
-              <h4>Contact</h4>
-              <ul>
-                {% for item in p.contact %}
-                  <li>{{ item }}</li>
-                {% endfor %}
-              </ul>
-            </div>
-          {% endif %}
-
-          {% if p.schedule %}
-            <div class="profile-section">
-              <h4>Schedule ({{ p.schedule.semester }})</h4>
-
-              <ul>
-                {% for item in p.schedule.items %}
-                  <li>
-                    <strong>{{ item.name }}</strong><br>
-                    <span class="details">{{ item.details }}</span>
-                  </li>
-                {% endfor %}
-              </ul>
-            </div>
-          {% endif %}
-
-          {% if p.seminars %}
-            <div class="profile-section">
-              <h4>Seminars and Discussions</h4>
-              <ul>
-                {% for item in p.seminars %}
-                  <li>{{ item }}</li>
-                {% endfor %}
-              </ul>
-            </div>
-          {% endif %}
-
-        </aside>
-        {% endif %}
 
       </div>
-
     </div>
     <footer>
       <p>Hosted on GitHub Pages &mdash; Original Theme by Me.</p>
