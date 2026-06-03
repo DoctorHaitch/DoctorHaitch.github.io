@@ -17,17 +17,21 @@ title: Scholarship
 - **Brendan Schlader** (Summer, 2025)
     - Master's Thesis
         > [Spectral Theory and the Gelfand Transform](/assets/student-projects/2025-brendan-schlader-thesis.pdf)
+        {: data-type="article"}
 - **Hunter Wilmes** (Spring, 2024)
     - Alternate Plan Paper
         > [Topics in Frame Theory: Frames of Translates](/assets/student-projects/2024-hunter-wilmes-app.pdf)
+        {: data-type="article"}
     - Defense Presentation
         > [Topics in Frame Theory: Frames of Translates](/assets/student-projects/2024-hunter-wilmes-presentation.pdf)
+        {: data-type="presentation"}
 
 #### Undergraduate Students (*University of Minnesota, Mankato*)
 - **Isaac Wicklund** (Spring, 2026)
     - Independent Study
     - Capstone Project
         > [Graph-Theoretic and Linear Optimization Approaches to Boolean Logic Minimization](/assets/student-projects/2026-isaac-wicklund-capstone.pdf)
+        {: data-type="article"}
 
 #### Undergraduate Students (*University of Delaware*)
 
