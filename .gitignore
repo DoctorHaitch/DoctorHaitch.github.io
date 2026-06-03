@@ -1,3 +1,6 @@
 # MacOS
 .DS_Store
 .vscode
+
+# Static test page for testing CSS changes quickly and locally.
+test.html

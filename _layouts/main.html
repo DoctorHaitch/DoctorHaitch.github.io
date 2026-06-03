@@ -77,7 +77,7 @@
               <div class="profile-section">
                 <h4>Seminars and Discussions</h4>
                 <ul>
-                  {% for item in p.seminars %}
+                  {% for item in p.seminars.items %}
                     <li>
                       <strong>{{ item.name }}</strong><br>
                       <span class="details">{{ item.details }}</span>
