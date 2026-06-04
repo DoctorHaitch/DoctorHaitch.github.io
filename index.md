@@ -4,13 +4,15 @@ title: Home
 permalink: /
 ---
 
-# Welcome!
+# About me
 
-Currently under construction as I organize content and write the theme. In the meantime, visit my [GitHub profile](https://github.com/DoctorHaitch) to see some of the things I'm currently working on:
+Kris Hollingsworth is a mathematician, assistant professor, and coffee enthusiast based out of Minnesota State University, Mankato. Their scholarship includes abstract harmonic analysis and frame theory for representations of high-dimensional data. In the classroom, Dr. Hollingsworth encourages students to discover ideas themselves through interactive course-notes with digital manipulatives and real-time feedback they design using DoenetML. They have also taught and organized outreach through programs like MathPath and MathHappens, as well as hosting hands-on interactive mathematics at local K-12 schools' family nights.
+
+This site is currently under construction as I organize more materials and information, and continue to develop the Jekyll theme it runs from. In the meantime, visit my [GitHub profile](https://github.com/DoctorHaitch) to see some of the things I'm currently working on, or even branch one to contribute!
 
 - Documenting tools for creating accessible (mathematics) documents.
 - Authoring interactive course notes and other class resources through the obsidian-markdown plugin I wrote (currently in beta).
-- Or visit my [teaching](/teaching) page to see what classed I've taught and see some of my teaching materials.
+- Or visit my [teaching](/teaching) page to see what classed I've taught and see some of my teaching materials, including samples of my interactive lecture notes (`coming soon!`)
 
 {% comment %}
 
