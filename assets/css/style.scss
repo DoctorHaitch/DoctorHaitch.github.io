@@ -334,44 +334,75 @@ footer {
   }
 }
 
-section > h1:first-child {
-  margin: 0; /* ✅ no bleed hacks */
+.main-content > h1:first-of-type {
+    margin:0;
+    padding:0.55em 0.8em;
+    font-family:'Roboto Serif', serif;
+    font-weight:600;
+    background:rgba(var(--color-info), 0.22);
+    border-top:1px solid rgba(0,0,0,0.06);
+    border-bottom:1px solid rgba(0,0,0,0.06)}
 
-  padding: 0.55em 0.8em;
+p,ul,ol{margin:0 0 0.9em}
 
-  font-family: 'Roboto Serif', serif;
-  font-weight: 600;
-
-  background: rgba(var(--color-info), 0.22);
-
-  border-top: 1px solid rgba(0,0,0,0.06);
-  border-bottom: 1px solid rgba(0,0,0,0.06);
+.profile-panel{
+    float:right;
+    width:280px;
+    margin:0 0 0rem 0rem;
+    padding:1.4rem 0 1.4rem 1.4rem; /* remove right padding */
+    background:rgba(var(--color-meta), 0.08);
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
 }
 
-p, ul, ol {
-  margin: 0 0 0.9em;
+.profile-image{
+    width:100%;
+    display:block;
+    border-top-left-radius: 8px;
+    /* border-top-right-radius: 8px; */
+    /* border-bottom-left-radius: 8px; */
+    margin-bottom:-.75rem;
+}
+.main-content::after{content:"";display:block;clear:both}
+
+.profile-panel h3{
+    margin:0;
+    padding:0.5em 0.8em 0;
+    font-family:'Roboto Serif', serif;
+    font-weight:600;
+    background:rgba(var(--color-meta), 0.12);
+    border-top:1px solid rgba(0,0,0,0.06);
 }
 
-/* New profile for main page. */
-
-.profile-panel {
-  float: right;
-  width: 280px;
-  margin: 0 0 1.5rem 2rem;
-  padding: 1rem;
-
-  background: #f8f8f8;
-  border-radius: 10px;
+.profile-title{
+    margin:0 0 0.5em;
+    padding:0 1em;
+    font-family:'Roboto Serif', serif;
+    font-weight:600;
+    font-size:0.9rem;
+    background:rgba(var(--color-meta), 0.12);
+    border-bottom:1px solid rgba(0,0,0,0.06);
+    border-bottom-left-radius:8px;
+    border-bottom-right-radius:8px;
 }
 
-.profile-image {
-  width: 100%;
-  border-radius: 8px;
-  margin-bottom: 1rem;
+.profile-section{
+    margin:1em 0 0 0;
+    padding: 0;
+    font-family:'Roboto Serif', serif;
+    font-weight:600;
+    font-size:0.9rem;
+    background:rgba(var(--color-meta), 0.12);
+    border-top:1px solid rgba(0,0,0,0.06);
+    border-bottom:1px solid rgba(0,0,0,0.06);
+    border-radius:12px;
 }
 
-.main-content::after {
-  content: "";
-  display: block;
-  clear: both;
+.profile-section h4{
+    margin-top:0;
+    padding:0 0 0 .5em;
+    font-size:0.95rem;
+    color:var(--muted);
+    background:rgba(var(--color-meta), 0.12);
+    border-radius:12px 12px 0 0
 }

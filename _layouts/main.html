@@ -8,12 +8,7 @@
 
 
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
-    <script src="{{ '/assets/js/scale.fix.js' | relative_url }}"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
 
     {% include head-custom.html %}
   </head>
@@ -62,14 +57,12 @@
             {% if p.schedule %}
               <div class="profile-section">
                 <h4>Schedule ({{ p.schedule.semester }})</h4>
-                <ul>
-                  {% for item in p.schedule.items %}
-                    <li>
-                      <strong>{{ item.name }}</strong><br>
-                      <span class="details">{{ item.details }}</span>
-                    </li>
-                  {% endfor %}
-                </ul>
+                {% for item in p.schedule.items %}
+                <blockquote>
+                  <strong>{{ item.name }}</strong><br>
+                  <span class="details">{{ item.details }}</span>
+                </blockquote>
+                {% endfor %}
               </div>
             {% endif %}
 
@@ -97,6 +90,5 @@
     <footer>
       <p>Hosted on GitHub Pages &mdash; Original Theme by Me.</p>
     </footer>
-    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
   </body>
 </html>

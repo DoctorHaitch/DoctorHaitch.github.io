@@ -1,5 +1,6 @@
 name: "Prof. Kris Hollingsworth"
 title: "Assistant Professor"
+institution: "Minnesota State University, Mankato"
 
 image: /imgs/kgh-w-gemma.jpg
 
@@ -17,8 +18,8 @@ schedule:
     - name: "Math122-01: Calculus II"
       details: "MTRF 8:00-8:50"
   
-    - name: "Math122-01: Calculus II"
-      details: "MTRF 8:00-8:50"
+    - name: "Math122-02: Calculus II"
+      details: "MTRF 9:00-9:50"
 
 seminars:
   items:
