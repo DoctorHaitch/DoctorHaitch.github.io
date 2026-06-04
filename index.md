@@ -6,6 +6,14 @@ permalink: /
 
 # Welcome!
 
+Currently under construction as I organize content and write the theme. In the meantime, visit my [GitHub profile](https://github.com/DoctorHaitch) to see some of the things I'm currently working on:
+
+- Documenting tools for creating accessible (mathematics) documents.
+- Authoring interactive course notes and other class resources through the obsidian-markdown plugin I wrote (currently in beta).
+- Or visit my [teaching](/teaching) page to see what classed I've taught and see some of my teaching materials.
+
+{% comment %}
+
 ## Work in Progress!
 I've just finally set this up transitioning from a very old Google sites page. It will take me a bit of time to migrate over all the old materials, and then start updating it with everything that has happened since then! But I look forward to getting this setup, and getting caught up with some folks in the process!
 
@@ -34,3 +42,4 @@ I have recently been involved in the development of a new education platform, Do
 - Most outreach activities are currently suspended due to precautions against spreading COVID-19. Outreach programming will begin again in the near future, and I will update this section with details soon.
 - In the rare moments I have away from the department, I am an avid bike rider. I have a custom fixie bicycle built on a Surly Steamroller frame and I am currently retired from motorized  2-wheel vehicles but enjoyed my 2015 Honda CB300F and 2017 Kawasaki Ninja 300. For some interesting problems related to bicycles and motorcycles, see these notes.
 - Additionally, I am an enthusiastic board game player—I’m particularly a fan of cooperative or asymmetric games such as Castle Panic or Doom, respectively. I also collect interesting puzzles (both jigsaw and brain-teasers).
+{% endcomment %}
