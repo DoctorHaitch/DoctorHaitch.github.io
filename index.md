@@ -6,11 +6,10 @@ permalink: /
 
 # Welcome!
 
-*Note:*
+## Work in Progress!
 I've just finally set this up transitioning from a very old Google sites page. It will take me a bit of time to migrate over all the old materials, and then start updating it with everything that has happened since then! But I look forward to getting this setup, and getting caught up with some folks in the process!
 
 ## About Me (OLD!)
-About Me
 
 Hello! My name is Kris Hollingsworth and I am starting this Fall (2022) as an Assistant Professor in the Department of Mathematics and Statistics at Minnesota State University, Mankato. I grew up in the Ozark Mountains in North Central Arkansas, and I spent a lot of time outdoors hiking, bicycling, and hammock camping. I don't get a lot of time for hiking or camping these days, but I still commute to campus by bicycle every day (I'm mostly riding a custom fixie built on a Surly Steamroller frame, but I'm looking at building out something on my spare cyclocross frame for winter commuting). [More recently, I started commuting on an Apollo Ghost, as I found the electric kick scooter better suited for winter commuting!]
 

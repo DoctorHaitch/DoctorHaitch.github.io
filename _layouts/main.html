@@ -4,13 +4,13 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-{% seo %}
-
+    {% seo %}
 
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
     {% include head-custom.html %}
+    
   </head>
   <body>
     <div class="wrapper">
@@ -46,11 +46,18 @@
             {% if p.contact %}
               <div class="profile-section">
                 <h4>Contact</h4>
-                <ul>
-                  <li>Email: {{ p.contact[0].email }}</li>
-                  <li>Office: {{ p.contact[0].office }}</li>
-                  <li>Office: {{ p.contact[0].office }}</li>
-                </ul>
+                <blockquote>
+                  <span class="broad">Email:</span><br/>
+                  <span class="details">{{ p.contact[0].email }}</span>
+                </blockquote>
+                <blockquote>
+                  <span class="broad">Office:</span><br/>
+                  <span class="details">{{ p.contact[0].office }}</span>
+                </blockquote>
+                <blockquote>
+                  <span class="broad">Phone:</span><br/>
+                  <span class="details">{{ p.contact[0].phone }}</span>
+                </blockquote>
               </div>
             {% endif %}
 
@@ -59,7 +66,7 @@
                 <h4>Schedule ({{ p.schedule.semester }})</h4>
                 {% for item in p.schedule.items %}
                 <blockquote>
-                  <strong>{{ item.name }}</strong><br>
+                  <span class="broad">{{ item.name }}</span><br>
                   <span class="details">{{ item.details }}</span>
                 </blockquote>
                 {% endfor %}
@@ -71,10 +78,10 @@
                 <h4>Seminars and Discussions</h4>
                 <ul>
                   {% for item in p.seminars.items %}
-                    <li>
-                      <strong>{{ item.name }}</strong><br>
+                    <blockquote>
+                      <span class="broad">{{ item.name }}</span><br>
                       <span class="details">{{ item.details }}</span>
-                    </li>
+                    </blockquote>
                   {% endfor %}
                 </ul>
               </div>

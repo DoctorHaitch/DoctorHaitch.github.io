@@ -21,6 +21,9 @@ schedule:
     - name: "Math122-02: Calculus II"
       details: "MTRF 9:00-9:50"
 
+    - name: "Math417/517: Real Analysis"
+      details: "MTRF 9:00-9:50"
+
 seminars:
   items:
     - name: "TBD"
