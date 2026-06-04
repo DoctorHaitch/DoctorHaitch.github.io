@@ -5,9 +5,9 @@ institution: "Minnesota State University, Mankato"
 image: /imgs/kgh-w-gemma.jpg
 
 contact:
-  - email: "kristopher.hollingsworth@mnsu.edu"
-  - office: "Wissink Hall 253"
-  - phone: "(507) 389-6506"
+  email: "kristopher.hollingsworth@mnsu.edu"
+  office: "Wissink Hall 253"
+  phone: "(507) 389-6506"
 
 schedule:
   semester: "Fall 2026"
