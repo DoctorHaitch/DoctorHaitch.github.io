@@ -456,11 +456,11 @@ mark > span.glossary:hover {
 }
 
 .glossary-popup[data-type="theorem"] {
-  --popup-color: var(--callout-warning);
+  --popup-color: var(--callout-all);
 }
 
 .glossary-popup[data-type="fact"] {
-  --popup-color: var(--callout-success);
+  --popup-color: var(--callout-information);
 }
 
 .glossary-popup {
