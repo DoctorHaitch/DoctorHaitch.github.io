@@ -15,7 +15,7 @@ title: Teaching
 ### Minnesota State University, Mankato
 
 - **Math122**:  Calculus II
-	- `Coming Soon`
+	- `Coming Soon` [Preview For Workshop](/E02-C17-IntegrationByParts.html)
 - **Math316**: Intermediate Analysis
 	- `Coming Soon`
 
