@@ -1,0 +1,726 @@
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Atkinson+Hyperlegible+Mono&family=STIX+Two+Text&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap');
+
+/* =========================================
+   ROOT VARIABLES + ICONS + COLORS + COMPLETE SYSTEM
+   (Merged from Obsidian + Calc2 + Glossary + Hover)
+   ========================================= */
+
+:root {
+  --callout-information: 204,121,167;
+  --callout-action: 230,159,0;
+  --callout-resolution: 0,158,115;
+
+  --callout-alert: 215,38,61;
+  --callout-meta: 51,34,136;
+
+  --callout-info-action: 217,140,84;
+  --callout-info-resolution: 102,140,141;
+  --callout-action-resolution: 115,158,58;
+  --callout-all: 145,146,94;
+
+  --callout-coffee: 150,110,80;
+}
+
+.theme-dark {
+  --callout-information: 240,170,210;
+  --callout-action: 255,200,90;
+  --callout-resolution: 80,220,160;
+  --callout-alert: 255,200,100;
+  --callout-meta: 140,210,255;
+
+  --callout-info-action: 245,180,130;
+  --callout-info-resolution: 150,200,200;
+  --callout-action-resolution: 170,210,110;
+  --callout-all: 200,200,140;
+  --callout-coffee: 190,150,120;
+}
+
+/* =========================================
+   ICON VARIABLES (Lucide-based, already defined)
+   ========================================= */
+
+:root {
+  --icon-coffee: url("../icons/coffee.svg");
+  --icon-bike: url("../icons/bike.svg");
+  --icon-info: url("../icons/info.svg");
+  --icon-navigation: url("../icons/navigation.svg");
+  --icon-octagon-x: url("../icons/octagon-x.svg");
+  --icon-blocks: url("../icons/blocks.svg");
+  --icon-landmark: url("../icons/landmark.svg");
+
+  --icon-book: url("../icons/book.svg");
+  --icon-book-marked: url("../icons/book-marked.svg");
+  --icon-book-open-text: url("../icons/book-open-text.svg");
+  --icon-book-search: url("../icons/book-search.svg");
+  --icon-scan-eye: url("../icons/scan-eye.svg");
+
+  --icon-hat-glasses: url("../icons/hat-glasses.svg");
+  --icon-dumbbell: url("../icons/dumbbell.svg");
+  --icon-flame-kindling: url("../icons/flame-kindling.svg");
+  --icon-list-todo: url("../icons/list-todo.svg");
+
+  --icon-compass: url("../icons/compass.svg");
+  --icon-map: url("../icons/map.svg");
+  --icon-map-pinned: url("../icons/map-pinned.svg");
+  --icon-map-pin: url("../icons/map-pin.svg");
+  --icon-puzzle: url("../icons/puzzle.svg");
+  --icon-waypoints: url("../icons/waypoints.svg");
+
+  --icon-bookmark: url("../icons/bookmark.svg");
+  --icon-library-big: url("../icons/library-big.svg");
+  --icon-telescope: url("../icons/telescope.svg");
+
+  --icon-spotlight: url("../icons/spotlight.svg");
+  --icon-paperclip: url("../icons/paperclip.svg");
+  --icon-luggage: url("../icons/luggage.svg");
+
+  --icon-messages-square: url("../icons/messages-square.svg");
+
+  --icon-triangle-alert: url("../icons/triangle-alert.svg");
+  --icon-octagon-alert: url("../icons/octagon-alert.svg");
+
+  --icon-megaphone: url("../icons/megaphone.svg");
+
+  --icon-message-circle-question-mark: url("../icons/message-circle-question-mark.svg");
+  --icon-flag: url("../icons/flag.svg");
+  --icon-quote: url("../icons/quote.svg");
+}
+
+
+/* =========================================
+   BASE PAGE
+   ========================================= */
+
+html {
+  font-family: 'Atkinson Hyperlegible', Arial, sans-serif;
+  line-height: 1.65;
+  background: #f8f9fb;
+  color: #222;
+}
+
+body {
+  max-width: 750px;
+  margin: auto;
+  padding: 2rem;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Roboto Serif', Georgia, serif;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+/* =========================================
+   CALLOUT COLOR ASSIGNMENT
+   ========================================= */
+
+.callout[data-callout="note"] { --callout-color: var(--callout-coffee); }
+.callout[data-callout="strategy"],
+.callout[data-callout="tip"],
+.callout[data-callout="caution"],
+.callout[data-callout="remark"] { --callout-color: var(--callout-meta); }
+
+.callout[data-callout="discuss"],
+.callout[data-callout="announcement"],
+.callout[data-callout="warning"] { --callout-color: var(--callout-alert); }
+
+.callout[data-callout="done"] { --callout-color: var(--callout-resolution); }
+
+.callout[data-callout="todo"],
+.callout[data-callout="exercise"],
+.callout[data-callout="warmup"] { --callout-color: var(--callout-action); }
+
+.callout[data-callout="info"],
+.callout[data-callout="notation"],
+.callout[data-callout="definition"],
+.callout[data-callout="fact"],
+.callout[data-callout="quote"] { --callout-color: var(--callout-information); }
+
+.callout[data-callout="hint"],
+.callout[data-callout="preview"],
+.callout[data-callout="goals"] { --callout-color: var(--callout-info-resolution); }
+
+.callout[data-callout="corollary"],
+.callout[data-callout="proposition"],
+.callout[data-callout="example"],
+.callout[data-callout="recall"] { --callout-color: var(--callout-info-action); }
+
+.callout[data-callout="steps"],
+.callout[data-callout="experiment"],
+.callout[data-callout="investigate"],
+.callout[data-callout="assemble"],
+.callout[data-callout="waypoint"],
+.callout[data-callout="waypoints"],
+.callout[data-callout="prompt"] { --callout-color: var(--callout-action-resolution); }
+
+.callout[data-callout="solution"],
+.callout[data-callout="theorem"],
+.callout[data-callout="answer"],
+.callout[data-callout="visual"] { --callout-color: var(--callout-all); }
+
+/* =========================================
+   BASE CALLOUT
+   ========================================= */
+
+.callout {
+  --callout-intensity: 0.12;
+  --callout-border-width: 4px;
+
+  border-left: var(--callout-border-width) solid rgb(var(--callout-color));
+  border-radius: 8px;
+  overflow: hidden; /* ✅ prevents bleed */
+  background: rgba(var(--callout-color), var(--callout-intensity));
+  margin: 1em 0;
+}
+
+.callout-content { padding: 0.6em 0.9em 0.8em; }
+.callout .callout { margin: 0.75em 0; }
+
+/* =========================================
+   TITLE
+   ========================================= */
+
+.callout-icon {
+  width: 0 !important;
+  min-width: 0 !important;
+  overflow: hidden !important;
+}
+
+.callout-title {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.1em !important;
+  padding: 0.5em 0.5em 0.5em 0.35em !important;
+  background: rgba(var(--callout-color), 0.22) !important;
+  font-weight: 600 !important;
+
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.callout-title::before {
+  content: "";
+  display: inline-block;
+
+  width: 1.1em;
+  height: 1.1em;
+  flex-shrink: 0;
+
+  background-image: var(--icon, var(--icon-coffee));
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  transform: translateY(-1px);
+}
+
+/* =========================================
+   INTENSITY TIERS (FULL)
+   ========================================= */
+
+.callout[data-callout="strategy"],
+.callout[data-callout="tip"],
+.callout[data-callout="hint"],
+.callout[data-callout="remark"] {
+  --callout-intensity: 0.08;
+  --callout-border-width: 2px;
+}
+
+.callout[data-callout="notation"],
+.callout[data-callout="fact"],
+.callout[data-callout="proposition"],
+.callout[data-callout="note"],
+.callout[data-callout="answer"],
+.callout[data-callout="info"],
+.callout[data-callout="definition"],
+.callout[data-callout="todo"],
+.callout[data-callout="corollary"],
+.callout[data-callout="quote"],
+.callout[data-callout="example"],
+.callout[data-callout="steps"],
+.callout[data-callout="visual"],
+.callout[data-callout="exercise"],
+.callout[data-callout="goals"],
+.callout[data-callout="recall"],
+.callout[data-callout="preview"] {
+  --callout-intensity: 0.14;
+  --callout-border-width: 3px;
+}
+
+.callout[data-callout="waypoint"],
+.callout[data-callout="waypoints"],
+.callout[data-callout="experiment"],
+.callout[data-callout="prompt"],
+.callout[data-callout="investigate"],
+.callout[data-callout="announcement"],
+.callout[data-callout="discuss"],
+.callout[data-callout="theorem"],
+.callout[data-callout="caution"],
+.callout[data-callout="solution"] {
+  --callout-intensity: 0.22;
+  --callout-border-width: 4px;
+}
+
+.callout[data-callout="warning"],
+.callout[data-callout="assemble"],
+.callout[data-callout="done"] {
+  --callout-intensity: 0.26;
+  --callout-border-width: 4.5px;
+}
+
+/* =========================================
+   GLOSSARY INLINE
+   ========================================= */
+
+mark {
+  --def-color: var(--callout-information);
+  background: rgba(var(--def-color), 0.25) !important;
+  border-bottom: 1px solid rgba(var(--def-color), 0.85);
+}
+
+/* Remove base mark styling when it contains a glossary */
+mark:has(> span.glossary) {
+  background: none !important;
+  border-bottom: none !important;
+}
+
+/* Target glossary span instead of internal link like in Obsidian CSS */
+mark > span.glossary {
+  cursor: help;
+  text-decoration: none !important;
+  background: rgba(var(--def-color), 0.25) !important;
+  border-left: 3px solid rgba(var(--callout-information), 1);
+  padding-right: 2px;
+  border-bottom: 
+}
+
+/* Hover effect */
+mark > span.glossary:hover {
+  border-bottom: 2px solid rgba(var(--callout-information), 1);
+}
+
+
+/* =========================================
+   GLOSSARY EMBEDS
+   ========================================= */
+
+.internal-embed.inline-embed[src*="Glossary"] {
+  display: block !important;
+  width: 100%;
+}
+
+.internal-embed[src*="Glossary"] {
+  margin: 0.9em 0 !important;
+}
+
+/* =========================================
+   HOVER
+   ========================================= */
+
+.popover .callout-content { display: block !important; }
+.popover .callout-fold { display: none !important; }
+
+/* =========================================
+   ICON ASSIGNMENT (SAFE LAST LAYER)
+   ========================================= */
+
+/* Knowledge */
+
+.callout[data-callout="info"] { --icon: var(--icon-info); }
+.callout[data-callout="notation"] { --icon: var(--icon-book-type); }
+
+.glossary-popup[data-type="fact"] { 
+  --icon: var(--icon-book); }
+.callout[data-callout="fact"] { 
+  --icon: var(--icon-book); }
+
+.glossary-popup[data-type="definition"] {
+  --icon: var(--icon-book-marked); }
+.callout[data-callout="definition"] {
+  --icon: var(--icon-book-marked); }
+
+.callout[data-callout="answer"],
+.callout[data-callout="proposition"],
+.callout[data-callout="corollary"] {
+  --icon: var(--icon-library-big);
+}
+
+.glossary-popup[data-type="theorem"] {
+  --icon: var(--icon-book-search); }
+.callout[data-callout="theorem"] {
+  --icon: var(--icon-book-search); }
+
+/* Representation */
+
+.callout[data-callout="visual"] { --icon: var(--icon-scan-eye); }
+.callout[data-callout="example"] { --icon: var(--icon-landmark); }
+
+/* Navigation */
+
+.callout[data-callout="hint"] { --icon: var(--icon-compass); }
+.callout[data-callout="steps"] { --icon: var(--icon-map); }
+.callout[data-callout="assemble"] { --icon: var(--icon-puzzle); }
+.callout[data-callout="solution"] { --icon: var(--icon-map); }
+.callout[data-callout="done"] { --icon: var(--icon-map-pinned); }
+
+/* Action */
+
+.callout[data-callout="experiment"] { --icon: var(--icon-hat-glasses); }
+
+.callout[data-callout="waypoint"],
+.callout[data-callout="waypoints"] {
+  --icon: var(--icon-waypoints);
+}
+
+.callout[data-callout="exercise"] { --icon: var(--icon-bike); }
+.callout[data-callout="warmup"] { --icon: var(--icon-flame-kindling); }
+.callout[data-callout="todo"] { --icon: var(--icon-list-todo); }
+.callout[data-callout="prompt"] { --icon: var(--icon-message-circle-question-mark); }
+
+/* Meta */
+
+.callout[data-callout="strategy"] { --icon: var(--icon-luggage); }
+.callout[data-callout="tip"] { --icon: var(--icon-navigation); }
+.callout[data-callout="remark"] { --icon: var(--icon-paperclip); }
+.callout[data-callout="quote"] { --icon: var(--icon-quote); }
+
+/* Temporal */
+
+.callout[data-callout="recall"] { --icon: var(--icon-bookmark); }
+.callout[data-callout="preview"] { --icon: var(--icon-telescope); }
+
+/* Warnings */
+
+.callout[data-callout="caution"] { --icon: var(--icon-triangle-alert); }
+.callout[data-callout="warning"] { --icon: var(--icon-octagon-x); }
+
+/* Announcement */
+
+.callout[data-callout="announcement"] { --icon: var(--icon-megaphone); }
+
+/* Structure */
+
+.callout[data-callout="goals"] { --icon: var(--icon-map-pin); }
+.callout[data-callout="discuss"] { --icon: var(--icon-messages-square); }
+
+/* Note */
+
+.callout[data-callout="note"] { --icon: var(--icon-coffee); }
+
+/* fallback */
+[data-type] {
+  --icon: var(--icon-coffee);
+}
+
+
+
+/* =========================
+   Anchor (positioning context)
+========================= */
+
+.glossary-anchor {
+  position: relative;
+  display: inline-block;
+}
+
+/* =========================
+   Glossary term
+========================= */
+
+.glossary {
+  cursor: help;
+  border-bottom: 1px dotted currentColor;
+  padding: 0 0 0 .2em;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-left: 3px solid rgb(var(--popup-color));
+  border-radius: 8px;
+}
+
+
+
+
+/* =========================
+   Popup
+========================= */
+
+
+.glossary-popup {
+  --popup-color: var(--callout-information);
+}
+
+.glossary-popup[data-type="definition"] {
+  --popup-color: var(--callout-information);
+}
+
+.glossary-popup[data-type="theorem"] {
+  --popup-color: var(--callout-warning);
+}
+
+.glossary-popup[data-type="fact"] {
+  --popup-color: var(--callout-success);
+}
+
+.glossary-popup {
+  display: none;
+  position: absolute;
+
+  top: 1.6em;
+  left: 0;
+
+  z-index: 1000;
+
+  /* ✅ FIX: use rgb() since variable is "R,G,B" */
+  background-color: color-mix(in srgb, rgb(var(--popup-color)) 25%, white);
+
+  /* card styling */
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-left: 3px solid rgb(var(--popup-color));
+  border-radius: 8px;
+
+/*  padding: 0.6em 0.8em; */
+
+
+  padding: 0;   /* ✅ changed */
+  overflow: hidden; /* ✅ ensures rounded corners clip title */
+
+
+  /* sizing */
+  width: max-content;
+  max-width: 320px;
+
+  /* text */
+  font-size: 0.9em;
+  line-height: 1.4;
+
+  /* depth */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+
+  /* animation */
+  opacity: 0;
+  transform: translateY(6px);
+  pointer-events: none;
+
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+
+/* =========================
+   Show on hover
+========================= */
+
+.glossary-anchor:hover .glossary-popup {
+  display: block;
+  opacity: 1;
+  transform: translateY(5px);
+  pointer-events: auto;
+}
+
+/* =========================
+   Arrow
+========================= */
+
+/*
+.glossary-popup::before {
+  content: "";
+  position: absolute;
+
+  top: -6px;
+  left: 12px;
+
+  width: 10px;
+  height: 10px;
+
+  background-color: rgb(var(--callout-information));
+
+  transform: rotate(45deg);
+
+  border-left: 1px solid rgba(0, 0, 0, 0.15);
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
+} */
+
+/* =========================
+   Math tuning
+========================= */
+
+.glossary-popup math {
+  font-size: 0.95em;
+}
+
+math[display="block"] {
+  display: block;
+  margin: 0.7em 0;
+  padding: 0.01px 0; /* tiny padding prevents collapse */
+  font-size: 1.10em;
+}
+
+/* =========================
+   Highlight inside popup
+========================= */
+
+.glossary-popup mark {
+  background: rgba(255, 230, 120, 0.6);
+  padding: 0 0.1em;
+  border-radius: 2px;
+}
+
+/* =========================
+   Pinned (floating mode)
+========================= */
+
+.glossary-anchor.pinned .glossary-popup {
+  display: block;
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+
+  position: fixed;   /* ✅ key for dragging */
+  top: 100px;
+  left: 100px;
+
+  cursor: grab;
+}
+
+/* while dragging */
+.glossary-popup.dragging {
+  cursor: grabbing;
+  transition: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.callout img {
+  margin: 0.5em 0;
+  border-radius: 6px;
+}
+
+
+/* =========================
+   Popup Title Bar
+========================= */
+
+.glossary-popup-title {
+  display: flex;
+  align-items: center;
+  gap: 0.1em;
+
+  padding: 0.45em 0.55em 0.45em 0.4em;
+
+  font-weight: 600;
+
+  /* match callout look */
+  background: rgba(var(--popup-color), 0.22);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+/* optional icon support (mirrors callout) */
+.glossary-popup-title::before {
+  content: "";
+
+  width: 1em;
+  height: 1em;
+  flex-shrink: 0;
+
+  background-image: var(--icon, var(--icon-coffee));
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.9;
+
+  transform: translateY(-1px);
+}
+
+/* =========================
+   Popup Body
+========================= */
+
+.glossary-popup-body {
+  display: inline-block;
+  padding: 0.5em 0.7em 0.65em 0em;
+  margin-left: .4em; /* align with title text, not icon */
+}
+
+/* =========================
+   Restore arrows on details
+========================= */
+
+/* Remove default browser marker */
+details summary {
+  list-style: none;
+  cursor: pointer;
+}
+
+details summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Make title layout work with arrow */
+details summary.callout-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* key */
+}
+
+/* Arrow */
+details summary.callout-title::after {
+  content: "";
+  
+  width: 0.4em;
+  height: 0.4em;
+
+  border-right: 2px solid rgb(var(--callout-color));
+  border-bottom: 2px solid rgb(var(--callout-color));
+
+  transform-origin: center;
+  transform: rotate(45deg);
+  transition: transform 0.2s ease;
+  opacity: 0.7;
+
+  
+  margin-left: auto;   /* ✅ this is the key fix */
+  flex-shrink: 0;
+}
+
+/* Open state */
+details[open] summary.callout-title::after {
+  transform: rotate(135deg);
+}
+
+.callout details summary.callout-title::after {
+  transform: rotate(45deg);
+}
+
+.callout details[open] > summary.callout-title::after {
+  transform: rotate(135deg);
+}
+
+/* Code blocks + inline code */
+
+pre {
+  padding: 1em;
+  border-radius: 8px;
+  overflow-x: auto;
+}
+
+code,
+pre {
+  --code-background: #1a1a1a;
+  --code-normal: #dddddd;
+  --code-comment: #a0a0a0;
+  --code-keyword: #ff79c6;
+  --code-string: #50fa7b;
+
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+
+  background-color: var(--code-background);
+  color: var(--code-normal);
+}
