@@ -5,6 +5,11 @@ title: Scholarship
 
 # Scholarly Activity
 
+## Materials for Doenet Workshop Show and Tell:
+
+- [Preview For Workshop](/E02-C17-IntegrationByParts.html)
+- [Resurrected Cryptography Activty](https://beta.doenet.org/activityViewer/qDDf1g9cMFz5VrzUikp3qt)
+
 ## Contribution to scholarly growth of students
 ### Present Students
 #### Graduate Students
