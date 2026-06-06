@@ -1,7 +1,10 @@
 title: Kris Hollingsworth, PhD
 description: Accessibility doesn't need to look boring.
-remote_theme: pages-themes/modernist@v0.2.0
+
 github:
   is_project_page: false
 plugins:
 - jekyll-remote-theme # add this line to the plugins list if you already have one
+
+paginate: 5          # posts per page (change as you like)
+paginate_path: "/blog/page:num/"

@@ -1,6 +1,7 @@
 ---
-layout: default
+layout: main
 title: Scholarship
+profile: false
 ---
 
 # Scholarly Activity

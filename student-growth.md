@@ -1,6 +1,7 @@
 ---
-layout: default
+layout: main
 title: Contribution to Student Development
+profile: false
 ---
 # Contribution to Student Development
 

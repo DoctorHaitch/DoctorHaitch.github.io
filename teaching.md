@@ -1,6 +1,7 @@
 ---
-layout: default
+layout: main
 title: Teaching
+profile: false
 ---
 
 # Teaching Record
