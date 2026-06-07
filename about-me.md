@@ -1,10 +1,9 @@
 ---
 layout: main
-title: Home
-permalink: /
+title: About Me
 ---
 
-# About me
+# About Me
 
 Kris Hollingsworth is a mathematician, assistant professor, and coffee enthusiast based out of Minnesota State University, Mankato. Their scholarship includes abstract harmonic analysis and frame theory for representations of high-dimensional data. In the classroom, Dr. Hollingsworth encourages students to discover ideas themselves through interactive course-notes with digital manipulatives and real-time feedback they design using DoenetML. They have also taught and organized outreach through programs like MathPath and MathHappens, as well as hosting hands-on interactive mathematics at local K-12 schools' family nights.
 

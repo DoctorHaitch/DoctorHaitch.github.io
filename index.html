@@ -2,8 +2,10 @@
 layout: default
 title: Blog
 hide-breadcrumbs: true
-profile: false
+profile: true
 ---
+
+<h1>Recent Posts</h1>
 
 {% for post in paginator.posts %}
 
@@ -19,6 +21,12 @@ profile: false
       </h3>
     {% endif %}
   </a>
+  {% if post.excerpt %}
+    <p class="post-description">
+      {{ post.excerpt }}
+    </p>
+  {% endif %}
+
 
   <p class="post-meta">
     Posted by
