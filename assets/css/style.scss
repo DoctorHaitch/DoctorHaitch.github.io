@@ -384,12 +384,13 @@ ul ul {
 /* INLINE CALLOUTS (exclude fancy quotes explicitly) */
 blockquote[data-type]:not([data-type="fancy-quote"]) {
   position: relative;
-  margin: 0.2em 0;
-  padding: 0.2em 0.8em 0.2em 2.4em;
+  margin: 0em 0 .3em;
+  padding: 0.1em 0.75em 0.1em 2.3em;
 
   border: none;
   background: none;
   width: fit-content;
+  line-height: 1.35;
 
   font-size: 0.95em;
 }
@@ -426,6 +427,10 @@ li blockquote[data-type="description"] {
   letter-spacing: 0.015em;
 
   font-size: 0.85em;
+  line-height: 1.3;
+  padding-top: 0.08em;
+  padding-bottom: 0.08em;
+
   color: var(--muted);
 }
 
@@ -433,6 +438,9 @@ blockquote[data-type="description"] p {
   margin: 0;
 }
 
+blockquote[data-type]:not([data-type="fancy-quote"]) p {
+  display: inline;
+}
 
 /* =========================================
    STUDENT PROJECTS
