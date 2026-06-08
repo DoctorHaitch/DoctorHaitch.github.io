@@ -3,6 +3,9 @@
 
 @import "rouge-base16-dark";
 
+$font-sans: 'Atkinson Hyperlegible', sans-serif;
+$font-serif: 'Roboto Serif', serif;
+
 /* =========================================
    FONTS
 ========================================= */
@@ -40,7 +43,7 @@ html{
 body{
     margin:0;
     padding:40px 0;
-    font-family:'Atkinson Hyperlegible', sans-serif;line-height:1.65;
+    font-family:$font-sans;line-height:1.65;
     color:var(--ink)
 }
 
@@ -62,7 +65,7 @@ header{
 }
 
 header h1{
-    font-family:'Roboto Serif', serif;
+    font-family:$font-serif;
     font-size:1.7rem;
     margin:0;
     color: color-mix(in srgb, rgb(var(--color-meta)) 70%, white);
@@ -93,7 +96,7 @@ section ul{
 }
 
 h1,h2,h3,h4{
-    font-family:'Roboto Serif', serif;
+    font-family:$font-serif;
     margin-top:0
 }
 
@@ -103,24 +106,29 @@ a:hover{text-decoration:underline}
 blockquote{margin:0.8em 0;padding:0.5em 0.8em;border-left:3px solid rgb(var(--color-action));border-radius:6px;background:rgba(var(--color-action), 0.08);font-style:normal}
 li blockquote{margin:0 2em;font-size:.85em}
 blockquote p{margin:0}
-pre{padding:1em;border-radius:8px;background:#1c1f26;color:#eee;box-shadow:inset 0 0 0 1px rgba(255,255,255,0.05)}
-.sidebar{position:sticky;top:20px;float:left;margin-left:-230px;width:220px;padding:0px;border-radius:12px;background:rgba(var(--color-meta), 0.08);backdrop-filter:blur(8px);border:1px solid rgba(0,0,0,0.08);box-shadow:0 8px 20px rgba(0,0,0,0.08);z-index:5}.sidebar h3{margin-top:0;padding:0 0 0 .5em;font-size:0.95rem;color:var(--muted);background:rgba(var(--color-meta), 0.12);border-radius:12px 12px 0 0}.sidebar a{display:block;padding:4px 8px;line-height:1.3;border-radius:6px;font-size:0.9rem;color:var(--ink)}
+pre{padding:1em;border-radius:8px;background:#1c1f26;color:#eee;box-shadow:inset 0 0 0 1px rgba(255,255,255,0.05);overflow-x:auto}
+.sidebar{position:sticky;top:20px;float:left;margin-left:-230px;width:220px;padding:0px;border-radius:12px;background:rgba(var(--color-meta), 0.08);backdrop-filter:blur(8px);border:1px solid rgba(0,0,0,0.08);box-shadow:0 8px 20px rgba(0,0,0,0.08);z-index:5}
+.sidebar h3{margin-top:0;padding:0 0 0 .5em;font-size:0.95rem;color:var(--muted);background:rgba(var(--color-meta), 0.12);border-radius:12px 12px 0 0}
+.sidebar a{display:block;padding:4px 8px;line-height:1.3;border-radius:6px;font-size:0.9rem;color:var(--ink)}
 .sidebar a:hover{background:rgba(var(--color-info), 0.12)}
 .sidebar a.active{background:rgba(var(--color-action), 0.18);color:#000}
-.sidebar ul{margin:0;padding:0;list-style:none}footer{width:740px;margin:20px auto;padding:10px;color:var(--muted);font-size:0.85rem}@media (max-width: 980px){.sidebar{position:static;float:none;margin:0 20px 20px;width:auto}
+.sidebar ul{margin:0;padding:0;list-style:none}
+footer{width:740px;margin:20px auto;padding:10px;color:var(--muted);font-size:0.85rem}
+@media (max-width: 980px){.sidebar{position:static;float:none;margin:0 20px 20px;width:auto}
 
-.wrapper{width:100%;border-radius:0}}@media (max-width: 740px){body{padding:0}section{padding:1rem}}
+.wrapper{width:100%;border-radius:0}}
+@media (max-width: 740px){body{padding:0}section{padding:1rem}}
 
 .main-content>h1:first-of-type{
     margin:0;
     padding:0.15em 0.4em;
-    font-family:'Roboto Serif', serif;font-weight:600;
+    font-family:$font-serif;font-weight:600;
     background:rgba(var(--color-info), 0.20);
     border-top:1px solid rgba(0,0,0,0.06);
     border-bottom:1px solid rgba(0,0,0,0.06)
 }
 
-p,ul,ol{
+p,ol{
     margin:0 0 0.9em
 }
 
@@ -139,7 +147,7 @@ p,ul,ol{
 .profile-panel h3{
     margin:0 0;
     padding:0.5em 0.8em 0;
-    font-family:'Roboto Serif', serif;
+    font-family:$font-serif;
     font-weight:600;
     /* background:rgba(var(--color-meta), 0.12); */
     background: color-mix(in srgb, rgb(var(--color-meta)) 22%, white);
@@ -150,7 +158,7 @@ p,ul,ol{
 .profile-title{
     margin:0 0 0.5em;
     padding:0 1em;
-    font-family:'Roboto Serif', serif;
+    font-family:$font-serif;
     font-weight:600;font-size:0.9rem;
     /* background:rgba(var(--color-meta), 0.12); */
     background: color-mix(in srgb, rgb(var(--color-meta)) 22%, white);
@@ -161,7 +169,7 @@ p,ul,ol{
 
 .profile-section{
     margin:1em 0 0 0;
-    padding:0;font-family:'Roboto Serif', serif;
+    padding:0;font-family:$font-serif;
     font-weight:600;font-size:0.9rem;
     /* background:rgba(var(--color-meta), 0.12); */
     border-top:1px solid rgba(0,0,0,0.06);
@@ -190,13 +198,13 @@ p,ul,ol{
 }
 
 .profile-section>blockquote:first-of-type{   
-    font-family:'Roboto Serif', serif;
+    font-family:$font-serif;
     font-weight:600;
     margin:0 0;
 }
 
 .profile-section>blockquote:last-of-type{   
-    font-family:'Roboto Serif', serif;
+    font-family:$font-serif;
     font-weight:600;
     margin:0 0;
     border-radius:0 0 12px 12px;
@@ -216,7 +224,7 @@ blockquote .details{
 h2{
     margin:0;
     padding:0.15em 0.4em;
-    font-family:'Roboto Serif', serif;font-weight:600;
+    font-family:$font-serif;font-weight:600;
     /*background:rgba(var(--color-action), 0.02);
      border-top:1px solid rgba(var(--color-action),0.06);
     border-bottom:1px solid rgba(var(--color-action),0.06); */
@@ -260,7 +268,7 @@ h3.post-subtitle{
     padding-top:0;
     color:rgb(var(--ink));
     padding-bottom:0;
-    font-family:'Roboto Serif', serif;font-weight:400;
+    font-family:$font-serif;font-weight:400;
     background-image: linear-gradient(to right,rgba(var(--color-info),0.12),rgba(var(--color-info),0));
     border-left:1px solid rgba(var(--color-info));
     width: 60%;
@@ -302,7 +310,7 @@ position: relative;
 
     border-left: 1.5px solid rgba(var(--color-action),0.3);
 
-    font-family: 'Roboto Serif', serif;
+    font-family: $font-serif;
     font-size: 1.2rem;
     line-height: 1.7;
 
@@ -339,11 +347,6 @@ blockquote[data-type="fancy-quote"] p {
 }
 
 /* Code blocks + inline code */
-pre {
-  padding: 1em;
-  border-radius: 8px;
-  overflow-x: auto;
-}
 code,
 pre {
   --code-background: #1a1a1a;
