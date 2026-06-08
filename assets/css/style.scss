@@ -418,13 +418,18 @@ blockquote[data-type="description"]::before {
 
 /* Nested (course list) refinement */
 li blockquote[data-type="description"] {
-  margin: 0.0em 0 0.25em 2em;
+  margin: 0.05em 0 0.25em 2em;
   padding: 0.15em 0.6em 0.15em 2.4em;
   letter-spacing: 0.015em;
 
   font-size: 0.85em;
   color: var(--muted);
 }
+
+blockquote[data-type="description"] p {
+  margin: 0;
+}
+
 
 /* =========================================
    STUDENT PROJECTS
@@ -486,3 +491,4 @@ li blockquote[data-type="description"] {
 [data-type="student-project"] a:hover {
   border-bottom-color: rgba(var(--color-info), 0.5);
 }
+
