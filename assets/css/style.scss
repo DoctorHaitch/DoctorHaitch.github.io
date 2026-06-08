@@ -33,6 +33,7 @@ $font-serif: 'Roboto Serif', serif;
     --icon-book-open: #{'url("/assets/icons/book-open.svg")'};
     --icon-presentation: #{'url("/assets/icons/presentation.svg")'};
     --icon-notebook-text: #{'url("/assets/icons/notebook-text.svg")'};
+    --icon-paper: #{'url("/assets/icons/notebook-text.svg")'};
 }
 
 html{
@@ -443,63 +444,401 @@ blockquote[data-type]:not([data-type="fancy-quote"]) p {
 }
 
 /* =========================================
-   STUDENT PROJECTS
+   STUDENT PROJECTS (PROFILE-CARD BLEND)
 ========================================= */
 
-/* Container for each project group */
-.student-work {
-  margin: 0.02em 0 0.15em 0;
+.students {
+  margin-top: 0.8rem;
 }
 
-/* Project type pill (quiet metadata) */
-.project-type {
-  display: inline-block;
+/* --- STUDENT CARD (now closer to profile-panel style) --- */
+.student-card {
+  margin: 0.7rem 0;
+  padding: 0;
 
-  margin: 0.02em 0 0.02em 2em;
-  margin-right: 0.4em;
-
-  padding: 0.05em 0.45em;
-
-  font-size: 0.7em;
-  font-weight: 500;
-  letter-spacing: 0.02em;
-
-  color: rgba(var(--ink), 0.55);
   background: rgba(var(--color-meta), 0.05);
+  border-radius: 12px;
 
-  border: 1px solid rgba(var(--color-meta), 0.12);
-  border-radius: 999px;
+  border: 1px solid rgba(0,0,0,0.06);
+  border-left: 2px solid rgba(var(--color-meta), 0.25);
+
+  box-shadow:
+    0 6px 16px rgba(0,0,0,0.05),
+    inset 0 1px 0 rgba(255,255,255,0.4);
+
+  overflow: hidden;
 }
 
-/* Status text (binds visually to pill) */
-.status {
-  font-size: 0.75em;
+/* --- HEADER (mirrors section headers in your panels) --- */
+.student-header {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+
+  padding: 0.45rem 0.75rem;
+
+  background: color-mix(in srgb, rgb(var(--color-meta)) 18%, white);
+
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
+/* Name (primary anchor) */
+.student-name {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--ink);
+}
+
+/* Status (quiet metadata) */
+.student-status {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+/* --- PROJECTS CONTAINER --- */
+.student-projects {
+  padding: 0.4rem 0.75rem 0.55rem;
+}
+
+/* Individual project row (tighter + segmented feel) */
+.student-work {
+  /* margin: 0.3rem 0; */
+  margin: 0.25rem 0 0.35rem;
+  padding-left: 0.9rem;   /* ✅ this is the key shift */
+  padding-top: 0.25rem;  
+}
+
+/* Add subtle separators between projects */
+.student-work + .student-work {
+  border-top: 1px solid rgba(0,0,0,0.05);
+  margin-top: 0.35rem;
+  padding-top: 0.35rem;
+}
+
+/* --- META STRIP (pill + status) --- */
+.project-meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35em;
+
+  margin-left: 0rem;
+  margin-bottom: 0.05rem;
+}
+
+/* Refined pill (closer to your UI system tone) */
+.project-type {
+/*
+  font-size: 0.68em;
+  padding: 0.04em 0.45em;
+
+  background: rgba(var(--color-meta), 0.08);
+  border: 1px solid rgba(var(--color-meta), 0.18);
+
+  color: rgba(var(--ink), 0.6); */
+  font-size: 0.66em;
+  padding: 0.03em 0.4em;
+
+  border-radius: 999px;
+
+  background: rgba(var(--color-meta), 0.05);
+  border: 1px solid rgba(var(--color-meta), 0.12);
+
+  color: rgba(var(--ink), 0.5);
+}
+
+/* Status next to pill */
+.project-meta .status {
+  font-size: 0.72em;
   color: var(--muted);
   opacity: 0.75;
 }
 
-/* Project title (primary content) */
-[data-type="student-project"] {
+/* --- PROJECT TITLE --- */
+.project-title[data-type="student-project"] {
+  position: relative;
+  --icon: var(--icon-paper); /* default */
+
   display: block;
 
-  margin: 0.05em 0 0.2em 2em;
+  padding: 0.15em 0.6em 0.15em 1.8em;
+  /* margin-left: 0.35rem; */
+  margin-left: .5em;
+
+  /* 
+  margin: 0.15rem 0 0.25rem 0.3rem;
+  padding: 0.15em 0.6em 0.15em 1.7em;
+  */
 
   font-size: 0.95em;
   font-weight: 500;
+  color: var(--ink);
   font-style: italic;
-  line-height: 1.45;
+  line-height: 1.4;
 
-  color: rgb(var(--ink));
+  border-radius: 6px;
+
+  /*
+  background:
+    linear-gradient(
+      to right,
+      rgba(var(--color-meta), 0.08),
+      rgba(var(--color-meta), 0.02) 60%,
+      rgba(var(--color-meta), 0)
+    ); */
+
+    /* background: none; */
+
+    background:
+    linear-gradient(
+        to right,
+        rgba(var(--color-meta), 0.06),
+        rgba(var(--color-meta), 0.015) 60%,
+        rgba(var(--color-meta), 0)
+    );
+
+  /* border-left: 1.5px solid rgba(var(--color-info), 0.35); */
 }
 
-/* Linked titles (subtle, non-"webby") */
-[data-type="student-project"] a {
+.project-icon-paper {
+  --icon: var(--icon-paper);
+}
+
+.project-icon-presentation {
+  --icon: var(--icon-presentation);
+}
+
+.project-title[data-type="student-project"]::before {
+  content: "";
+  position: absolute;
+
+  /* left: 0em; */
+  left: 0em;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 1.25em;
+  height: 1.25em;
+
+  background: var(--icon) no-repeat center / 70%;
+
+  /* border: 1.5px solid rgba(var(--color-meta), 0.2);
+  background-color: rgba(var(--color-meta), 0.04); */
+
+  border: 1px solid rgba(var(--color-meta), 0.18);
+  background-color: rgba(var(--color-meta), 0.035);
+
+  border-radius: 4px;
+}
+
+/* Links (subtle, academic) */
+.project-title a {
   color: inherit;
   text-decoration: none;
-  border-bottom: 1px solid rgba(var(--color-info), 0.25);
+  border-bottom: 1px solid rgba(var(--color-info), 0.22);
 }
 
-[data-type="student-project"] a:hover {
-  border-bottom-color: rgba(var(--color-info), 0.5);
+.project-title a:hover {
+  border-bottom-color: rgba(var(--color-info), 0.55);
 }
 
+.project-icon-paper {
+  border-left-color: rgba(var(--color-resolution), 0.45);
+  background:
+    linear-gradient(
+      to right,
+      rgba(var(--color-resolution), 0.10),
+      rgba(var(--color-resolution), 0.03) 60%,
+      rgba(var(--color-resolution), 0)
+    );
+}
+
+.project-icon-paper::before {
+  --icon: var(--icon-paper);
+
+  background: var(--icon) no-repeat center / 70%;
+  border-color: rgba(var(--color-resolution), 0.35);
+  background-color: rgba(var(--color-resolution), 0.10);
+}
+
+.project-icon-presentation {
+  border-left-color: rgba(var(--color-action), 0.5);
+  background:
+    linear-gradient(
+      to right,
+      rgba(var(--color-action), 0.12),
+      rgba(var(--color-action), 0.04) 60%,
+      rgba(var(--color-action), 0)
+    );
+}
+
+.project-icon-presentation::before {
+  --icon: var(--icon-presentation);
+
+  background: var(--icon) no-repeat center / 70%;
+  border-color: rgba(var(--color-action), 0.4);
+  background-color: rgba(var(--color-action), 0.12);
+}
+
+.project-title[data-type="student-project"] p {
+  display: inline;
+  margin: 0;
+}
+
+/* --- HOVER --- */
+.student-card:hover {
+  box-shadow:
+    0 2.5px 6px rgba(0,0,0,0.08),
+    inset 0 1px 0 rgba(255,255,255,0.5);
+}
+
+/* =========================================
+   PAST STUDENTS (CONDENSED VARIANT)
+========================================= */
+
+.students-past .student-card {
+  margin: 0.4rem 0;
+
+  background: rgba(var(--color-meta), 0.035);
+  border-left: 2px solid rgba(var(--color-meta), 0.25);
+
+  box-shadow: none;
+}
+
+/* Header tighter + less prominent */
+.students-past .student-header {
+  padding: 0.05rem 0.65rem;
+  background: color-mix(in srgb, rgb(var(--color-meta)) 14%, white);
+}
+
+/* Name slightly smaller */
+.students-past .student-name {
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+/* University becomes visible but quiet */
+.students-past .student-status {
+  font-size: 0.75rem;
+  color: var(--muted);
+  opacity: 0.85;
+}
+
+/* Reduce project padding */
+.students-past .student-projects {
+  padding: 0rem 0.65rem 0.2rem;
+}
+
+/* Tighter rows */
+.students-past .student-work {
+  padding-left: 0.75rem;
+  margin: 0.2rem 0 0.25rem;
+}
+
+/* Subtler separators */
+.students-past .student-work + .student-work {
+  border-top: 1px solid rgba(0,0,0,0.04);
+  margin-top: 0.25rem;
+  padding-top: 0.25rem;
+}
+
+/* Pills smaller + quieter */
+.students-past .project-type {
+  font-size: 0.6em;
+  padding: 0.02em 0.35em;
+
+  background: rgba(var(--color-meta), 0.04);
+  border: 1px solid rgba(var(--color-meta), 0.10);
+
+  color: rgba(var(--ink), 0.5);
+}
+
+/* Titles slightly lighter emphasis */
+.students-past .project-title[data-type="student-project"] {
+  font-size: 0.9em;
+  font-style: italic;
+
+  padding-left: 1.9em; /* still aligned with icon */
+
+  background:
+    linear-gradient(
+      to right,
+      rgba(var(--color-meta), 0.04),
+      rgba(var(--color-meta), 0.01) 60%,
+      rgba(var(--color-meta), 0)
+    );
+}
+
+/* Icons slightly smaller and quieter */
+.students-past .project-title[data-type="student-project"]::before {
+  width: 1.15em;
+  height: 1.15em;
+
+  border: 1px solid rgba(var(--color-meta), 0.15);
+  background-color: rgba(var(--color-meta), 0.03);
+}
+
+/* =========================================
+   STUDENT OUTCOME (PAST STUDENTS)
+========================================= */
+
+.students-past .student-outcome {
+  padding: 0.25rem 0.65rem 0.2rem;
+
+  font-size: 0.78rem;
+  font-family: var(--font-serif);
+
+  color: color-mix(in srgb, rgb(var(--color-resolution)) 60%, black);
+
+  background:
+    linear-gradient(
+      to right,
+      rgba(var(--color-resolution), 0.10),
+      rgba(var(--color-resolution), 0.03) 60%,
+      rgba(var(--color-resolution), 0)
+    );
+
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+/* =========================================
+   COLLAPSIBLE STUDENT SECTION
+========================================= */
+
+.students-collapsible {
+  margin-top: 1rem;
+}
+
+/* Summary = your "section heading" */
+.students-collapsible summary {
+  cursor: pointer;
+
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  font-weight: 600;
+
+  margin-bottom: 0.5rem;
+
+  color: rgb(var(--color-resolution));
+
+  list-style: none; /* remove default arrow */
+}
+
+/* Custom disclosure arrow */
+.students-collapsible summary::before {
+  content: "▸";
+  display: inline-block;
+  margin-right: 0.4em;
+  transition: transform 0.2s ease;
+}
+
+/* Rotate when open */
+.students-collapsible[open] summary::before {
+  transform: rotate(90deg);
+}
+
+/* Remove default marker (browser-specific) */
+.students-collapsible summary::-webkit-details-marker {
+  display: none;
+}

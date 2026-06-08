@@ -1,5 +1,6 @@
 present:
   - name: Brian Larson
+    university: Minnesota State University, Mankato
     level: Master's Student
     expected: Summer 2026
     projects:
@@ -7,10 +8,50 @@ present:
         title: Tiling Systems for High Dimensional Data
         status: In Progress
 
-past-graduate:
+past:
+  - name: Isaac Wicklund
+    university: Minnesota State University, Mankato
+    current-status: Graduate Student (EE) at Minnesota State University, Mankato
+    level: Undergraduate Student
+    graduated: Spring 2026
+    projects:
+      - type: Capstone Project
+        title: "[Graph-Theoretic and Linear Optimization Approaches to Boolean Logic Minimization](/assets/student-projects/2026-isaac-wicklund-capstone.pdf)"
+
   - name: Brendan Schlader
+    university: Minnesota State University, Mankato
+    current-status: Ph.D. Student at University of Kansas
     level: Master's Student
-    when: Summer 2025
+    graduated: Summer 2025
     projects:
       - type: Master's Thesis
         title: "[Spectral Theory and the Gelfand Transform](https://cornerstone.lib.mnsu.edu/etds/1551/)"
+
+  - name: Hunter Wilmes
+    university: Minnesota State University, Mankato
+    current-status: Predictive Analytics Analyst at Salt River Project
+    level: Master's Student
+    graduated: Spring 2024
+    projects:
+      - type: Alternate Plan Paper
+        title: "[Topics in Frame Theory: Frames of Translates](/assets/student-projects/2024-hunter-wilmes-app.pdf)"
+      - type: Defense Presentation
+        title: "[Topics in Frame Theory: Frames of Translates](/assets/student-projects/2024-hunter-wilmes-presentation.pdf)"
+
+  - name: Paige Skrip (née Shumskas)
+    university: University of Delaware
+    current-status: Process Engineer at Air Products
+    level: Undergraduate Student
+    graduated: Spring 2021
+    projects:
+      - type: Research Poster Presentation
+        title: "TODO: Add title here."
+
+  - name: Nathaniel Kim
+    university: University of Delaware
+    current-status: N/A
+    level: Undergraduate Student
+    graduated: N/A
+    projects:
+      - type: Research Poster Presentation
+        title: "TODO: Add title here."

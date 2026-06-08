@@ -7,73 +7,118 @@ profile: false
 # Scholarly Activity
 
 ## Contribution to scholarly growth of students
-### Present Students
-#### Graduate Students
 
+<details open class="students-collapsible">
+  <summary>Present Students</summary>
+  <div class="students">
 
-<ul>
-{% for student in site.data.students.present %}
-  <li>
-    <strong>{{ student.name }}</strong>
-    <span class="status">({{student.level}}, Expected Completion: {{ student.expected }})</span>
+    {% for student in site.data.students.present %}
+    <div class="student-card">
 
-    {% for project in student.projects %}
-      <div class="student-work">
-        <span class="project-type">{{ project.type }}</span>{% if project.status %} <span class="status">({{ project.status }})</span>{% endif %}
-        <span data-type="student-project">
-          {{ project.title | markdownify }}
+      <div class="student-header">
+        <span class="student-name">{{ student.name }}</span>
+        <span class="student-status">
+          {{ student.level }}, Expected {{ student.expected }}
         </span>
       </div>
+
+      <div class="student-projects">
+        {% for project in student.projects %}
+        <div class="student-work">
+
+          <div class="project-meta">
+            <span class="project-type">{{ project.type }}</span>
+            {% if project.status %}
+              <span class="status">{{ project.status }}</span>
+            {% endif %}
+          </div>
+
+          
+          {% assign t = project.type | downcase %}
+
+          {% if t contains "presentation" or t contains "talk" %}
+            {% assign icon_class = "project-icon-presentation" %}
+          {% elsif t contains "poster" %}
+            {% assign icon_class = "project-icon-poster" %}
+          {% elsif t contains "paper" %}
+            {% assign icon_class = "project-icon-paper" %}
+          {% else %}
+            {% assign icon_class = "project-icon-paper" %}
+          {% endif %}
+
+          <div class="project-title {{ icon_class }}" data-type="student-project">
+            {{ project.title | markdownify }}
+          </div>
+
+        </div>
+        {% endfor %}
+      </div>
+
+    </div>
     {% endfor %}
 
-  </li>
-{% endfor %}
-</ul>
+  </div>
+</details>
 
-### Past Students
-#### Graduate Students (*University of Minnesota, Mankato*)
+<details class="students-collapsible">
+  <summary>Past Students</summary>
+  <div class="students students-past">
 
-<ul>
-{% for student in site.data.students.past-graduate %}
-  <li>
-    <strong>{{ student.name }}</strong>
-    <span class="status">({{student.level}}, Completion: {{ student.when }})</span>
+    {% for student in site.data.students.past %}
+    <div class="student-card past-student">
 
-    {% for project in student.projects %}
-      <div class="student-work">
-        <span class="project-type">{{ project.type }}</span> {% if project.status %} <span class="status">({{ project.status }})</span>{% endif %}
-        <span data-type="student-project">
-          {{ project.title | markdownify }}
+      <div class="student-header">
+        <span class="student-name">{{ student.name }}</span>
+
+        <span class="student-status">
+          {{ student.level }}
+          {% if student.university %}
+            — {{ student.university }}
+          {% endif %}
         </span>
       </div>
+
+      {% if student.current-status %}
+        <div class="student-outcome">
+          Graduated: {{ student.graduated }}
+        <br/>
+          Current: {{ student.current-status }}
+        </div>
+      {% endif %}
+
+      <div class="student-projects">
+        {% for project in student.projects %}
+
+          {% assign t = project.type | downcase %}
+          {% if t contains "presentation" or t contains "talk" %}
+            {% assign icon_class = "project-icon-presentation" %}
+          {% elsif t contains "paper" %}
+            {% assign icon_class = "project-icon-paper" %}
+          {% else %}
+            {% assign icon_class = "project-icon-paper" %}
+          {% endif %}
+
+          <div class="student-work">
+            <div class="project-meta">
+              <span class="project-type">{{ project.type }}</span>
+            </div>
+
+            <div class="project-title {{ icon_class }}" data-type="student-project">
+              {{ project.title | markdownify }}
+            </div>
+          </div>
+
+        {% endfor %}
+      </div>
+
+    </div>
     {% endfor %}
 
-  </li>
-{% endfor %}
-</ul>
+  </div>
+</details>
 
-- **Brendan Schlader** (Summer, 2025)
-    - Master's Thesis
-        > [Spectral Theory and the Gelfand Transform](/assets/student-projects/2025-brendan-schlader-thesis.pdf)
-        {: data-type="article"}
-- **Hunter Wilmes** (Spring, 2024)
-    - Alternate Plan Paper
-        > [Topics in Frame Theory: Frames of Translates](/assets/student-projects/2024-hunter-wilmes-app.pdf)
-        {: data-type="article"}
-    - Defense Presentation
-        > [Topics in Frame Theory: Frames of Translates](/assets/student-projects/2024-hunter-wilmes-presentation.pdf)
-        {: data-type="presentation"}
 
-#### Undergraduate Students (*University of Minnesota, Mankato*)
-- **Isaac Wicklund** (Spring, 2026)
-    - Independent Study
-    - Capstone Project
-        > [Graph-Theoretic and Linear Optimization Approaches to Boolean Logic Minimization](/assets/student-projects/2026-isaac-wicklund-capstone.pdf)
-        {: data-type="article"}
-
-#### Undergraduate Students (*University of Delaware*)
-
-### Open Educational Resource Development
+## Open Educational Resource Development
 - `Coming Soon`
 
 ## Written Scholarship
