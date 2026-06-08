@@ -9,12 +9,49 @@ profile: false
 ## Contribution to scholarly growth of students
 ### Present Students
 #### Graduate Students
-- **Brian Larson** (Expected: Summer 2026)
-    - Alternate Plan Paper, Working Title
-        > Tiling Systems for High Dimensional Data (In Progress)
+
+
+<ul>
+{% for student in site.data.students.present %}
+  <li>
+    <strong>{{ student.name }}</strong>
+    <span class="status">({{student.level}}, Expected Completion: {{ student.expected }})</span>
+
+    {% for project in student.projects %}
+      <div class="student-work">
+        <span class="project-type">{{ project.type }}</span>{% if project.status %} <span class="status">({{ project.status }})</span>{% endif %}
+        <span data-type="student-project">
+          {{ project.title | markdownify }}
+        </span>
+      </div>
+    {% endfor %}
+
+  </li>
+{% endfor %}
+</ul>
 
 ### Past Students
 #### Graduate Students (*University of Minnesota, Mankato*)
+
+<ul>
+{% for student in site.data.students.past-graduate %}
+  <li>
+    <strong>{{ student.name }}</strong>
+    <span class="status">({{student.level}}, Completion: {{ student.when }})</span>
+
+    {% for project in student.projects %}
+      <div class="student-work">
+        <span class="project-type">{{ project.type }}</span> {% if project.status %} <span class="status">({{ project.status }})</span>{% endif %}
+        <span data-type="student-project">
+          {{ project.title | markdownify }}
+        </span>
+      </div>
+    {% endfor %}
+
+  </li>
+{% endfor %}
+</ul>
+
 - **Brendan Schlader** (Summer, 2025)
     - Master's Thesis
         > [Spectral Theory and the Gelfand Transform](/assets/student-projects/2025-brendan-schlader-thesis.pdf)

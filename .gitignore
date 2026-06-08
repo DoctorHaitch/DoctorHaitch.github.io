@@ -7,3 +7,4 @@
 Gemfile
 Gemfile.lock
 /_site/
+local-test.sh

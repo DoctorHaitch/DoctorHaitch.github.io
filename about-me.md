@@ -5,15 +5,28 @@ title: About Me
 
 # About Me
 
-Kris Hollingsworth is a mathematician, assistant professor, and coffee enthusiast based out of Minnesota State University, Mankato. Their scholarship includes abstract harmonic analysis and frame theory for representations of high-dimensional data. In the classroom, Dr. Hollingsworth encourages students to discover ideas themselves through interactive course-notes with digital manipulatives and real-time feedback they design using DoenetML. They have also taught and organized outreach through programs like MathPath and MathHappens, as well as hosting hands-on interactive mathematics at local K-12 schools' family nights.
+I am a mathematician, assistant professor, and coffee enthusiast at Minnesota State University, Mankato. My research interests include abstract harmonic analysis and frame theory, with a particular focus on representations of high-dimensional data.
+
+In the classroom, I encourage students to discover mathematical ideas for themselves through interactive course notes featuring digital manipulatives and real-time feedback, many of which I design using [DoenetML](https://beta.doenet.org). Beyond the university, I have taught and organized outreach through programs such as MathPath and MathHappens, and I regularly bring hands-on, interactive mathematics activities to K–12 family nights and community events.
+
+This site is currently under construction as I continue organizing materials, expanding content, and developing the Jekyll theme that powers it. In the meantime, you can visit my [GitHub profile](https://github.com/DoctorHaitch) to see some of the projects I'm currently working on—or even contribute to one yourself.
+
+Current projects include:
+
+- Documenting tools and workflows for creating accessible mathematics documents.
+- Developing interactive course notes and educational resources through the [Obsidian plugin](https://github.com/DoctorHaitch/obsidian-doenet) I wrote (currently in beta).
+- Expanding my collection of teaching materials, including interactive lecture notes and resources for courses I have taught.
+
+
+{% comment %}
+
+ In the classroom, Dr. Hollingsworth encourages students to discover ideas themselves through interactive course-notes with digital manipulatives and real-time feedback they design using DoenetML. They have also taught and organized outreach through programs like MathPath and MathHappens, as well as hosting hands-on interactive mathematics at local K-12 schools' family nights.
 
 This site is currently under construction as I organize more materials and information, and continue to develop the Jekyll theme it runs from. In the meantime, visit my [GitHub profile](https://github.com/DoctorHaitch) to see some of the things I'm currently working on, or even branch one to contribute!
 
 - Documenting tools for creating accessible (mathematics) documents.
 - Authoring interactive course notes and other class resources through the obsidian-markdown plugin I wrote (currently in beta).
 - Or visit my [teaching](/teaching) page to see what classed I've taught and see some of my teaching materials, including samples of my interactive lecture notes (`coming soon!`)
-
-{% comment %}
 
 ## Work in Progress!
 I've just finally set this up transitioning from a very old Google sites page. It will take me a bit of time to migrate over all the old materials, and then start updating it with everything that has happened since then! But I look forward to getting this setup, and getting caught up with some folks in the process!

@@ -22,9 +22,9 @@ profile: false
 	- `Coming Soon`
 
 ### University of Minnesota
-- Math 2473: Integral Vector Calculus (~80 students)
+- **Math 2473**: Integral Vector Calculus (~80 students)
   - Sample Lecture Notes [Week 10: Surface Integrals PDF](/assets/sample-teaching/UMN-C3-W10-SurfaceIntegrals-Lecture.pdf)
-- Math 5248: Mathematical Cryptology and Number Theory (~30 students)
+- **Math 5248**: Mathematical Cryptology and Number Theory (~30 students)
   - Syllabus [PDF](/assets/sample-teaching/UMN-5248-03-Syllabus.pdf)
   - Sample Project Assignments
     - Prove the Euclidean Algorithm [PDF](/assets/sample-teaching/UMN-5248-04-EuclideanAlgorithm.pdf)
@@ -47,6 +47,7 @@ profile: false
 	- **Math122**: Calculus II (~20 students, includes a Learning Community)
 	- **Math290**: Foundations of Mathematics (~10 students)
 		> Introduction to Proof through Analysis on the Real Line
+		{: data-type="description"}
 	- **Math618**: Functional Analysis (~5 students)
 - Fall 2024
 	- **Math122**: Calculus II (~60 students, 2 sections)
@@ -86,7 +87,8 @@ I primarily taught and coordinated courses for the [University of Minnesota's Ta
   - **Math 243**: Analytic Geometry and Calculus II for Engineers (~15 students)
 - Winter 2019
   - **Math 230**: Finite Mathematics (~30 students)
-    > (Discrete Probability, Matrix Theory, and Linear Programming)
+    > Discrete Probability, Matrix Theory, and Linear Programming.
+	{: data-type="description"}
 - Summer 2018
   - **Math 115**: Pre-calculus and trigonometry (~20 students)
   - **Math 115**: Pre-calculus and trigonometry (~10 students)

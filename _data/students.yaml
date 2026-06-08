@@ -1,0 +1,16 @@
+present:
+  - name: Brian Larson
+    level: Master's Student
+    expected: Summer 2026
+    projects:
+      - type: Alternate Plan Paper
+        title: Tiling Systems for High Dimensional Data
+        status: In Progress
+
+past-graduate:
+  - name: Brendan Schlader
+    level: Master's Student
+    when: Summer 2025
+    projects:
+      - type: Master's Thesis
+        title: "[Spectral Theory and the Gelfand Transform](https://cornerstone.lib.mnsu.edu/etds/1551/)"

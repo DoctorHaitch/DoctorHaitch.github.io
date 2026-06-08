@@ -14,10 +14,11 @@ profile: false
 
 
 > Fences are a trick. Fences don't keep people out, they trick people into keeping themselves out.
-> 
->   > -- Joey Comeau, Author
->   > {:data-type="author"}
+>
+> — Joey Comeau, Author
 {: data-type="fancy-quote"}
+
+You can find the [full list of Show and Tell presentations](https://community.doenet.org/t/2026-doenet-workshop-final-day-show-and-tell/135) on the [Doenet Community page](https://community.doenet.org/).
 
 ## [`accessible-math`](https://github.com/DoctorHaitch/accessible-math) Resources Github Repo
 
@@ -83,7 +84,7 @@ This workshop used an [AIM-style approach](https://aimath.org/workshops/about/) 
 
 - I had several great conversations with [Dr. Christina Safranski](https://snas.franciscan.edu/faculty/safranski-christina/) about teaching Calculus. Dr. Safranski is one of the contributing authors for the OER Calculus Textbook [Active Calculus](https://activecalculus.org/), which uses Doenet for their "preview" activities and are slowly increasing the incorporation with exercises.
 - I spent several hours working with [Oscar Levin, Ph.D.](https://math.oscarlevin.com/) discussing the design of PreTeXt, and possible synergies in the work on my own pedagogical UI with both PreTeXt and DoenetML.
-- [Dr. Anurag Katyal](https://www.pitimespi.com/) showed of several interesting Algebraic Geometry activities developed in Doenet. We plan to collaborate on turning several of them into outreach activities appropriate for Math Circles or other community games in the near future, and I hope to develop a future MathPath session around them.
+- [Professor Anurag Katyal](https://www.pitimespi.com/) showed of several interesting Algebraic Geometry activities developed in Doenet. We plan to collaborate on turning several of them into outreach activities appropriate for Math Circles or other community games in the near future, and I hope to develop a future MathPath session around them.
 
 Thanks to the
 - The Doenet crew for organizing a great workshop,
