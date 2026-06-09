@@ -1,0 +1,190 @@
+- title: "Constructing Discrete Frames from Continuous Wavelet Transforms"
+  year: 2024
+  month: 11
+  type: "invited"    # invited | contributed | keynote | seminar
+  event: "SLU's Math Colloquium"
+  event_type: "department colloquium"
+  institution: "St. Louis University"
+  city: "St. Louis"
+  state: "MO"
+
+- title: "A Friendly Introduction to Graph Signal Processing"
+  year: 2024
+  month: 4
+  type: "keynote"    # invited | contributed | keynote | seminar
+  event: "MAA Spring Sectional Meeting"
+  event_type: "conference"
+  institution: "University of St. Thomas"
+  city: "St. Paul"
+  state: "MN"
+
+- title: "Harry Potter Grading for Higher Ed: EMRN Grading"
+  year: 2023
+  month: 3
+  type: "contributed"
+  event: "MAA-NCS Spring Sectional Meeting"
+  institution: "Winona State University"
+  city: "Winona"
+  state: "MN"
+
+- title: "Life After Delaware (with some Job Search Advice)"
+  year: 2023
+  month: 3
+  type: "invited"
+  event: "University of Delaware Winter Research Symposium"
+  institution: "University of Delaware"
+  city: "Newark"
+  state: "DE"
+
+- title: "Discrete Frame Constructions on Regular (and Irregular) Domains"
+  year: 2023
+  month: 2
+  type: "seminar"
+  event: "ECET Department Research Seminar"
+  institution: "Minnesota State University, Mankato"
+  city: "Mankato"
+  state: "MN"
+
+- title: "Introducing Abstract Harmonic Analysis to Undergraduate Researchers"
+  year: 2023
+  month: 1
+  type: "contributed"
+  event: "AMS Special Session on Analysis at Undergraduate Institutions (JMM 2023)"
+  institution: "Joint Mathematics Meetings"
+  city: "Boston"
+  state: "MA"
+
+- title: "Constructing Discrete Frames from Continuous Wavelet Transforms"
+  year: 2022
+  month: 6
+  type: "invited"
+  event: "CAHAS"
+  institution: "Banff International Research Station"
+  city: "Calgary"
+  state: "AB"
+
+- title: "Specifications Grading"
+  year: 2020
+  month: 11
+  type: "seminar"
+  event: "MathCEP Seminar"
+  institution: "University of Minnesota"
+  city: "Minneapolis"
+  state: "MN"
+
+- title: "Data Representation for Signal Processing"
+  year: 2019
+  month: 10
+  type: "contributed"
+  event: "Women in Engineering STEM Presentation Workshop"
+  institution: "University of Delaware"
+  city: "Newark"
+  state: "DE"
+
+- title: "Mathematical Techniques in Signal Processing"
+  year: 2019
+  month: 4
+  type: "contributed"
+  event: "Graduate Students' Forum for Research and Creative Works"
+  institution: "University of Delaware"
+  city: "Newark"
+  state: "DE"
+
+- title: "Fourier Analysis on Graphs"
+  year: 2018
+  month: 11
+  type: "contributed"
+  event: "Mid-Atlantic Analysis Meeting"
+  institution: "Virginia Tech"
+  city: "Blacksburg"
+  state: "VA"
+
+- title: "An Introduction to Frame Theory"
+  year: 2018
+  month: 10
+  type: "seminar"
+  event: "Undergraduate Math Club"
+  institution: "University of Delaware"
+  city: "Newark"
+  state: "DE"
+
+- title: "Constructing Discrete Frames from Continuous Wavelet Transforms"
+  year: 2018
+  month: 9
+  type: "contributed"
+  event: "Northeast Analysis Network"
+  institution: "University at Albany"
+  city: "Albany"
+  state: "NY"
+
+- title: "Constructing Discrete Frames from the Continuous Wavelet Transform"
+  year: 2018
+  month: 8
+  type: "seminar"
+  event: "Summer Research Symposium"
+  institution: "University of Delaware"
+  city: "Newark"
+  state: "DE"
+
+- title: "Constructing Discrete Frames from Continuous Wavelet Transforms"
+  year: 2018
+  month: 2
+  type: "seminar"
+  event: "Hallenbeck Graduate Student Seminar"
+  institution: "University of Delaware"
+  city: "Newark"
+  state: "DE"
+
+- title: "Sound Exploder: Viewing Audio as a Mathematical Object"
+  year: 2018
+  month: 1
+  type: "outreach"
+  event: "MathCounts Day"
+  institution: "University of Delaware"
+  city: "Newark"
+  state: "DE"
+
+- title: "An Introduction to Graph Signal Processing"
+  year: 2017
+  month: 11
+  type: "seminar"
+  event: "PRODAG Seminar"
+  institution: "University of Delaware"
+  city: "Newark"
+  state: "DE"
+
+- title: "Some Fun With Hypercubes"
+  year: 2017
+  month: 3
+  type: "contributed"
+  event: "Hollenbeck Graduate Student Seminar"
+  institution: "University of Delaware"
+  city: "Newark"
+  state: "DE"
+
+- title: "Constructing a Frame from a Continuous Wavelet Transform"
+  year: 2017
+  month: 2
+  type: "seminar"
+  event: "What's Hot in Mathematics Workshop"
+  institution: "University of Delaware"
+  city: "Newark"
+  state: "DE"
+
+- title: "Constructing a Discrete Frame from a Continuous Wavelet Transform"
+  year: 2016
+  month: 8
+  type: "seminar"
+  event: "Summer Research Symposium"
+  institution: "University of Delaware"
+  city: "Newark"
+  state: "DE"
+
+- title: "A (brief) Introduction to Frame Theory"
+  year: 2016
+  month: 7
+  type: "seminar"
+  event: "Summer Research Seminar"
+  institution: "University of Delaware"
+  city: "Newark"
+  state: "DE"

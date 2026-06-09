@@ -1,0 +1,327 @@
+- semester: Fall 2026
+  status: current
+  university: Minnesota State University, Mankato
+  courses:
+    - code: Math122
+      title: Calculus II
+      level: undergrad
+      meta: [2 Sections]
+      desc: Techniques and applications of single-variable integration, sequences, and series.
+
+    - code: Math417/517
+      title: Real Analysis
+      level: grad
+      desc: Topology of the real line, limits, continuity, differentiation, Riemann integration, sequences and series of functions.
+
+- semester: Spring 2026
+  university: Minnesota State University, Mankato 
+  status: past
+  courses:
+    - code: Math170
+      title: Introduction to Mathematical Software Programming
+      level: undergrad
+      meta: [First time teaching]
+      desc: An introduction to programming for mathematical applications, using MATLAB and LaTeX.
+      students: ~15
+    - code: Math122
+      title: Calculus II
+      level: undergrad
+      meta: [2 Sections]
+      desc: Techniques and applications of integration, sequences, and series.
+      students: ~25
+
+- semester: Fall 2025
+  university: Minnesota State University, Mankato 
+  status: past
+  courses:
+    - code: Math122
+      title: Calculus II
+      level: undergrad
+      meta: [2 Sections]
+      desc: Techniques and applications of single-variable integration, sequences, and series.
+      students: ~40
+    - code: Math499
+      title: Individual Study
+      level: undergrad
+      desc: Independent study in Boolean Logic Optimization for Circuit Design.
+      students: 1
+    - code: Math605
+      title: Graphs and Algorithms
+      level: grad
+      desc: Linear programming techniques for combinatorial optimization.
+      students: ~5
+
+- semester: Spring 2025
+  university: Minnesota State University, Mankato 
+  status: past
+  courses:
+    - code: Math122
+      title: Calculus II
+      level: undergrad
+      meta: [Learning Community]
+      desc: Techniques and applications of single-variable integration, sequences, and series.
+      students: ~20
+    - code: Math290
+      title: Introduction to Proof
+      level: undergrad
+      meta: [First time teaching]
+      desc: An introduction to mathematical proof techniques and formal logic. Basic point-set topology of the real line.
+      students: ~10
+    - code: Math618
+      title: Functional Analysis
+      level: grad
+      desc: An introduction to the theory of Banach spaces, Hilbert spaces, and linear functionals. Covers the Hahn-Banach theorem, the open mapping theorem, the closed graph theorem, and the uniform boundedness principle.
+      students: ~5
+
+- semester: Fall 2024
+  university: Minnesota State University, Mankato 
+  status: past
+  courses:
+    - code: Math122
+      title: Calculus II
+      level: undergrad
+      meta: [2 Sections]
+      desc: Techniques and applications of single-variable integration, sequences, and series.
+      students: ~60
+    - code: Math417/517
+      title: Real Analysis
+      level: grad
+      desc: Topology of the real line, limits, continuity, differentiation, Riemann integration, sequences and series of functions.
+      students: ~10
+
+- semester: Spring 2024
+  university: Minnesota State University, Mankato 
+  status: past
+  courses:
+    - code: Math316
+      title: Intermediate Analysis
+      level: undergrad
+      desc: A continuation of Single-Variable Calculus, with a focus on rigorous proofs and deeper understanding of the real number system.
+      students: ~15
+    - code: Math375
+      title: Introduction to Discrete Mathematics
+      level: undergrad
+      desc: An introduction to the fundamental concepts of discrete mathematics, including logic, set theory, combinatorics, and graph theory.
+      students: ~15
+
+- semester: Fall 2023
+  university: Minnesota State University, Mankato 
+  status: past
+  courses:
+    - code: Math122
+      title: Calculus II
+      level: undergrad
+      meta: [2 Sections]
+      desc: Techniques and applications of single-variable integration, sequences, and series.
+      students: ~50
+    - code: Math605
+      title: Graphs and Algorithms
+      level: grad
+      desc: Linear programming techniques for combinatorial optimization.
+      students: ~5
+
+- semester: Spring 2023
+  university: Minnesota State University, Mankato 
+  status: past
+  courses:
+    - code: Math170
+      title: Calculus II
+      level: undergrad
+      meta: [Co-instructor]
+      desc: Introduction to programming for mathematical applications, using python.
+      students: ~25
+    - code: Math316
+      title: Intermediate Analysis
+      level: undergrad
+      desc: A continuation of Single-Variable Calculus, with a focus on rigorous proofs and deeper understanding of the real number system.
+      students: ~15
+    - code: Math618
+      title: Functional Analysis
+      level: grad
+      desc: An introduction to the theory of Banach spaces, Hilbert spaces, and linear functionals. Covers the Hahn-Banach theorem, the open mapping theorem, the closed graph theorem, and the uniform boundedness principle.
+      students: ~5
+
+- semester: Fall 2022
+  university: Minnesota State University, Mankato 
+  status: past
+  courses:
+    - code: Math121
+      title: Calculus I
+      level: undergrad
+      desc: Limits, derivatives and their applications. Introduction to Riemann integration.
+      students: ~30
+    - code: Math122
+      title: Calculus II
+      level: undergrad
+      meta: [2 Sections]
+      desc: Techniques and applications of single-variable integration, sequences, and series.
+      students: ~50
+
+- semester: Spring 2022
+  university: University of Minnesota, Twin Cities
+  status: past
+  courses:
+    - code: Math2471
+      title: Linear Algebra
+      level: undergrad
+      meta: 
+        - "UMTYMP"
+        - "Co-instructor"
+      desc: Theoretical course in linear algebra, including Euclidean space and general vector spaces, including function spaces; eigenvalues and discrete dynamical systems.
+      students: ~26
+    - code: Math2473
+      title: Multivariable Differential Calculus
+      level: undergrad
+      meta:
+        - "UMTYMP"
+        - "Course Coordinator"
+      desc: Multiple integration; integrals on parametric curves and surfaces; classical theorems in vector analysis, stressing a conceptual and geometric approach.
+      students: ~90
+    - code: Math5248
+      title: Mathematical Cryptology and Number Theory
+      level: undergrad
+      meta: [First time teaching]
+      desc: An introduction to the mathematical foundations of cryptography, including number theory, modular arithmetic, and cryptographic protocols.
+      students: ~30
+
+
+- semester: Fall 2021
+  university: University of Minnesota, Twin Cities
+  status: past
+  courses:
+    - code: Math1473
+      title: Differential Equations, Introduction to Proof, and Linear Algebra
+      level: undergrad
+      meta:
+        - "UMTYMP"
+        - "Course Coordinator"
+      desc:  Introduction to differential equations, including first and second-order linear differential equations; systems of linear equations; logic, set theory, and methods of proof; precise definition of limits of sequences and functions; 3D coordinates; dot and cross products; equations of lines and planes in 3D; linear transformations.
+      students: ~90
+    - code: Math4990
+      title: "Advanced Topics: Transfinite Sets"
+      level: undergrad
+      meta: [Co-instructor]
+      desc: Covers the basics of set theory and rigorous treatment of functions. Included counting principles and bijective proofs, leading to the concept of cardinality and the hierarchy of infinite cardinalities.
+      students: ~15
+    - code: Math2472
+      title: Vector Calculus
+      level: undergrad
+      meta: 
+        - "UMTYMP"
+        - "Course Coordinator"
+      desc: Multivariable functions; differential geometry of curves in Euclidean space; parametric surfaces; partial and directional derivatives; total derivative matrix and linear approximations; chain rule; quadratic forms, Sylvester's Theorem, Taylor's Theorem, and multivariable optimization; Lagrange multipliers.
+      students: ~50
+
+- semester: Spring 2021
+  university: University of Minnesota, Twin Cities
+  status: past
+  courses:
+    - code: Math3283W
+      title: Sequences, series, and foundations
+      level: undergrad
+      meta:
+        - "Course Coordinator"
+        - "Remote Synchronous"
+      desc: Introduction to reasoning used in advanced mathematics courses. Logic, mathematical induction, real number system, general/monotone/recursively defined sequences, convergence of infinite series/sequences, Taylor's series, power series with applications to differential equations, Newton's method. Writing-intensive component.
+      students: ~150
+    - code: Math 2471
+      title: Linear Algebra
+      level: undergrad
+      meta:
+        - "UMTYMP"
+        - "Co-instructor"
+      desc: Theoretical course in linear algebra, including Euclidean space and general vector spaces, including function spaces; eigenvalues and discrete dynamical systems.
+      students: ~25
+    - code: Math2473
+      title: Multivariable Differential Calculus
+      level: undergrad
+      meta:
+        - "UMTYMP"
+        - "Course Coordinator"
+      desc: Multiple integration; integrals on parametric curves and surfaces; classical theorems in vector analysis, stressing a conceptual and geometric approach.
+      students: ~90
+    
+
+- semester: Fall 2020
+  university: University of Minnesota, Twin Cities
+  status: past
+  courses:
+    - code: Math1471
+      title: Single Variable Calculus
+      level: undergrad
+      desc: Functions of one variable; limits; continuity; derivatives, including applications and the geometric interpretation of first and second derivatives; mean value theorem and extended mean value theorem; extreme values; linear approximations; optimization.  Proofs of major results, such as the product rule, chain rule, and L'Hospital's rule.
+      students: ~150
+      meta: 
+        - "UMTYMP"
+        - "Course Coordinator"
+    - code: Math2472
+      title: Vector Calculus
+      level: undergrad
+      meta: 
+        - "UMTYMP"
+        - "Co-instructor"
+      desc: Multivariable functions; differential geometry of curves in Euclidean space; parametric surfaces; partial and directional derivatives; total derivative matrix and linear approximations; chain rule; quadratic forms, Sylvester's Theorem, Taylor's Theorem, and multivariable optimization; Lagrange multipliers.
+      students: ~25
+
+- semester: Summer 2020
+  university: University of Delaware
+  status: past
+  courses:
+    - code: Math242
+      title: Analytic Geometry and Calculus B for Engineers
+      level: undergrad
+      desc: Brief review of MATH 241; applications of integration; integration techniques; parametric curves; polar coordinates; infinite sequences and series. Includes use of computers to perform symbolic, numerical and graphical analysis.
+      students: ~15
+      meta: 
+        - "Remote Synchronous"
+        - "5-Week Course"
+
+- semester: Winter 2020
+  university: University of Delaware
+  status: past
+  courses:
+    - code: Math230
+      title: Finite Mathematics
+      level: undergrad
+      desc: Set theory, probability, optimization, linear programming and an introduction to matrix methods. For students in the behavioral, management and social sciences.
+      students: ~30
+      meta: 
+        - "5-Week Course"
+
+- semester: Summer 2018
+  university: University of Delaware
+  status: past
+  courses:
+    - code: Math115
+      title: Pre-calculus and trigonometry
+      level: undergrad
+      desc: "An in-depth study of functions designed to prepare students for Math221: Calculus I for Life Sciences."
+      students: ~30
+      meta: 
+        - "5-Week Course"
+        - "2 Sections"
+
+- semester: Fall 2015-Spring 2020, Teaching Assistant
+  university: University of Delaware
+  status: past
+  courses:
+    - code: Math221
+      title: Calculus I for Life Sciences
+      level: undergrad
+      desc: "The procedures and ideas of calculus are fundamental to many disciplines including business and the life sciences. Calculus is sometimes defined as the study of change by examining the nature of space, time, and motion. This course explores the ideas of calculus for those students not intending to go on in the sciences."
+      students: ~25
+      meta: 
+        - "5-Week Course"
+        - "2 Sections"
+    - code: Math242
+      title: Analytic Geometry and Calculus B for Engineers
+      level: undergrad
+      desc: Brief review of MATH 241; applications of integration; integration techniques; parametric curves; polar coordinates; infinite sequences and series. Includes use of computers to perform symbolic, numerical and graphical analysis.
+      students: ~20
+      meta: 
+        - "4 Sections"
+    - code: Math243
+      title: Analytic Geometry and Calculus C for Engineers
+      level: undergrad
+      desc: Vectors, operations on vectors, velocity and acceleration, partial derivatives, directional derivatives, optimization of functions of two or more variables, integration over two and three dimensional regions, line integrals, Green's Theorem, surface integrals, the Divergence theorem. Includes use of computers to perform symbolic, numerical and graphical analysis.
+      students: ~20
