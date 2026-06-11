@@ -55,3 +55,28 @@ past:
     projects:
       - type: Research Poster Presentation
         title: "TODO: Add title here."
+
+
+letters:
+  - name: Nara Sheen
+    supporting: PhD Application
+    letter-recipients:
+      - University of Colorado, Boulder
+      - Michigan State University
+      - Purdue University
+      - University of Washington
+      - University of Toronto
+      - University of Illinois, Chicago
+      - University of Michigan, Ann Arbor
+      - University of Minnesota, Twin Cities
+      - University of Wisconsin, Madison
+      - Northwestern University
+      - University of Georgia
+      - University of Notre Dame
+      - Concordia University, Quebec
+      - University of Nebraska, Lincoln
+      - Boston College
+      - Colorado State University
+      - University of Victoria
+      - Pennsylvania State University
+    outcome: Accepted to (blah)

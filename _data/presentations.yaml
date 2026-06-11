@@ -1,3 +1,13 @@
+- title: "obsidian-doenet, A New Tool for Embedding Interactive Content in Markdown"
+  year: 2026
+  month: 6
+  type: "invited"    # invited | contributed | keynote | seminar
+  event: "Doenet Community Workshop 2026"
+  event_type: "workshop"
+  institution: "Institute for Mathematics and its Applications"
+  city: "Minneapolis"
+  state: "MN"
+
 - title: "Constructing Discrete Frames from Continuous Wavelet Transforms"
   year: 2024
   month: 11

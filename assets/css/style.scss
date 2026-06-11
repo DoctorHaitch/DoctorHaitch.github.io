@@ -36,6 +36,7 @@ $font-serif: 'Roboto Serif', serif;
     --icon-paper: #{'url("/assets/icons/notebook-text.svg")'};
     --icon-library: #{'url("/assets/icons/library.svg")'};
     --icon-speech: #{'url("/assets/icons/speech.svg")'};
+    --content-pad: 1.4rem;
 }
 
 html{
@@ -117,10 +118,56 @@ pre{padding:1em;border-radius:8px;background:#1c1f26;color:#eee;box-shadow:inset
 .sidebar a.active{background:rgba(var(--color-action), 0.18);color:#000}
 .sidebar ul{margin:0;padding:0;list-style:none}
 footer{width:740px;margin:20px auto;padding:10px;color:var(--muted);font-size:0.85rem}
-@media (max-width: 980px){.sidebar{position:static;float:none;margin:0 20px 20px;width:auto}
+@media (max-width: 980px){
+  .sidebar{position:static;float:none;margin:0 20px 20px;width:auto}
+  .wrapper{width:100%;border-radius:0}
+}
 
-.wrapper{width:100%;border-radius:0}}
+
+@media (max-width: 980px) {
+
+  .sidebar {
+    position: static;
+    float: none;
+
+    margin: 0;     /* ✅ align with content padding */
+    width: auto;
+
+    border-radius: 0;
+
+    background: rgba(var(--color-meta), 0.04);  /* ✅ softer */
+    backdrop-filter: none;                      /* ✅ remove "floating glass" feel */
+
+    box-shadow: none;                           /* ✅ remove float illusion */
+    border: 1px solid rgba(0,0,0,0.05);
+    border-left: 4px solid rgba(var(--color-meta), 0.25); /* ✅ maintain visual anchor without float */
+
+    padding: 0;
+  }
+
+  /* soften header so it feels like a section header */
+  .sidebar h3 {
+    font-size: 0.85rem;
+    padding: 0.3rem 0.6rem;
+    border-radius: 0;
+
+    background: rgba(var(--color-meta), 0.08);
+    color: var(--muted);
+  }
+
+  /* tighten links for compact vertical scan */
+  .sidebar a {
+    padding: 5px 10px;
+    font-size: 0.85rem;
+  }
+
+}
+
 @media (max-width: 740px){body{padding:0}section{padding:1rem}}
+
+.main-content{
+    position: relative;
+}
 
 .main-content>h1:first-of-type{
     margin:0;
@@ -229,6 +276,7 @@ h2,
     margin:16px 0px 0px;
     padding:0.15em 0.4em;
     padding:3.6px 22.4px;
+    
     font-family:$font-serif;font-weight:600;
     /*background:rgba(var(--color-action), 0.02);
      border-top:1px solid rgba(var(--color-action),0.06);
@@ -513,7 +561,7 @@ blockquote[data-type]:not([data-type="fancy-quote"]) p {
 .student-work {
   /* margin: 0.3rem 0; */
   margin: 0.25rem 0 0.35rem;
-  padding-left: 0.9rem;   /* ✅ this is the key shift */
+  padding-left: 0.7rem;   /* ✅ this is the key shift */
   padding-top: 0.25rem;  
 }
 
@@ -529,7 +577,7 @@ blockquote[data-type]:not([data-type="fancy-quote"]) p {
   display: inline-flex;
   align-items: center;
   gap: 0.35em;
-
+  
   margin-left: 0rem;
   margin-bottom: 0.05rem;
 }
@@ -607,6 +655,7 @@ blockquote[data-type]:not([data-type="fancy-quote"]) p {
     );
 
   /* border-left: 1.5px solid rgba(var(--color-info), 0.35); */
+
 }
 
 .project-icon-paper {
@@ -895,11 +944,6 @@ blockquote[data-type]:not([data-type="fancy-quote"]) p {
 } 
 */
 
-/* remove default marker */
-summary.collapsible-title {
-  list-style: none;
-}
-
 summary.collapsible-title::-webkit-details-marker {
   display: none;
 }
@@ -925,13 +969,6 @@ summary.collapsible-title::after {
 /* open state */
 details[open] > summary.collapsible-title::after {
   transform: rotate(135deg);
-}
-
-summary.collapsible-title {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  cursor: pointer;
 }
 
 /*
@@ -1016,10 +1053,38 @@ section > *:not(h1:first-child) {
 }
 
 
+/* 
 summary.collapsible-title {
-  margin-left: -1.4rem;  /* subtle pull, not full breakout */
-  margin-right: -1.4rem;
+  left: -1.4rem;
+
+  list-style: none;
+  position: relative;
+  left: calc(-1 * var(--content-pad));
+  width: calc(100% + var(--content-pad));
+  
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;  
+
+} */
+
+
+summary.collapsible-title {
+  position: relative;
+  transform: translateX(calc(-1 * var(--content-pad)));
+
+  /* width: 100%; */                          /* ✅ keep natural width */
+  margin-right: 0;                      /* ✅ prevent overflow tricks */
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+
+  list-style: none;
 }
+
 
 /* PRESENTATION */
 
@@ -1120,3 +1185,6 @@ summary.collapsible-title {
 .presentation-type-seminar::before {
   --icon: var(--icon-speech);
 }
+
+
+

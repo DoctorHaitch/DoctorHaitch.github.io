@@ -1,32 +1,43 @@
 ---
 layout: main
 title: Teaching
-profile: false
+
+profile:
+  title: "Sample Materials"
+  # image: /imgs/kgh-w-gemma.jpg
+
+  blocks:
+  - title: "Interactive Lecture Notes"
+    items:
+      - name: "Calculus II"
+        details:
+          - "[Area Between Curves](/E01-C10-AreaBetweenCurves-DoenetGraphs.html)"
+          - "[Integration by Parts](/E02-C17-IntegrationByParts.html)"
+  - title: "Assignments"
+    items:
+      - name: Mathematical Cryptology
+        details:
+          - "[Prove the Euclidean Algorithm](/assets/sample-teaching/UMN-5248-04-EuclideanAlgorithm.pdf)"
+          - "[Brute Force Attacks on Hashing Algorithms](/assets/sample-teaching/UMN-5248-02-SHA512-DictionaryAttack.pdf)"
+          - "[Euler's Theorem vs. Euclid's Algorithm](/assets/sample-teaching/UMN-5248-12-ModularInverses.pdf)"
+
+  - title: "Lecture Slides"
+    items:
+      - name: "Calculus III"
+        details:
+          - "[Surface Integrals](/assets/sample-teaching/UMN-C3-W10-SurfaceIntegrals-Lecture.pdf)"
+
+  - title: "Other Sample Materials"
+    items: 
+      - name: "Course Syllabi"
+        details: "[Mathematical Cryptology](/assets/sample-teaching/UMN-5248-03-Syllabus.pdf)"
+
+# profile: false
 ---
 
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 # Teaching Record
-
-## Sample Teaching Materials
-
-### Minnesota State University, Mankato
-
-- **Math122**:  Calculus II
-	- `Coming Soon` 
-
-- **Math316**: Intermediate Analysis
-	- `Coming Soon`
-
-### University of Minnesota
-- **Math 2473**: Integral Vector Calculus (~80 students)
-  - Sample Lecture Notes [Week 10: Surface Integrals PDF](/assets/sample-teaching/UMN-C3-W10-SurfaceIntegrals-Lecture.pdf)
-- **Math 5248**: Mathematical Cryptology and Number Theory (~30 students)
-  - Syllabus [PDF](/assets/sample-teaching/UMN-5248-03-Syllabus.pdf)
-  - Sample Project Assignments
-    - Prove the Euclidean Algorithm [PDF](/assets/sample-teaching/UMN-5248-04-EuclideanAlgorithm.pdf)
-    - Brute Force Attacks on Hashing Algorithms [PDF](/assets/sample-teaching/UMN-5248-02-SHA512-DictionaryAttack.pdf)
-    - Euler's Theorem vs. Euclid's Algorithm [PDF](/assets/sample-teaching/UMN-5248-12-ModularInverses.pdf)
 
 <details class="collapsible-h2" open>
   <summary class="collapsible-title">
@@ -52,6 +63,7 @@ profile: false
 				project-level-{{ course.level }}
 				">
 
+      <span class="meta-right">
 				<strong>{{ course.code }}</strong>: {{ course.title }}
 				{% for each in course.meta %}
           <span class="project-type project-meta">{{ each }}</span>
@@ -60,6 +72,7 @@ profile: false
 				{% if course.level == "grad" %}
 				<span class="course-level-label">Graduate</span>
 				{% endif %}
+      </span>
 
 			</div>
 

@@ -35,43 +35,31 @@
               <img src="{{ p.image | relative_url }}" class="profile-image">
             {% endif %}
 
-            {% if p.name %}
-              <h3>{{ p.name }}</h3>
-            {% endif %}
-
             {% if p.title %}
-              <p class="profile-title">{{ p.title }}</p>
+              <h3>{{ p.title }}</h3>
             {% endif %}
 
-            {% if p.contact %}
-              <div class="profile-section">
-                <h4>Contact</h4>
-                <blockquote>
-                  <span class="broad">Email:</span>
-                  <span class="details">{{ p.contact.email }}</span>
-                </blockquote>
-                <blockquote>
-                  <span class="broad">Office:</span>
-                  <span class="details">{{ p.contact.office }}</span>
-                </blockquote>
-                <blockquote>
-                  <span class="broad">Phone:</span>
-                  <span class="details">{{ p.contact.phone }}</span>
-                </blockquote>
-              </div>
+            {% if p.subtitle %}
+              <p class="profile-title">{{ p.subtitle }}</p>
             {% endif %}
 
-            {% if p.schedule %}
-              <div class="profile-section">
-                <h4>Schedule ({{ p.schedule.semester }})</h4>
-                {% for item in p.schedule.items %}
-                <blockquote>
-                  <span class="broad">{{ item.name }}</span>
-                  <span class="details">{{ item.details }}</span>
-                </blockquote>
-                {% endfor %}
-              </div>
+            {% if p.blocks %}
+              {% for block in p.blocks %}
+                <div class="profile-section">
+                  <h4>{{ block.title }}</h4>
+                  {% for item in block.items %}
+                    <blockquote>
+                      <span class="broad">{{ item.name }}</span>
+                      {% for line in item.details %}
+                        <span class="details">{{ line | markdownify }}</span>
+                      {% endfor %}
+                    </blockquote>
+                  {% endfor %}
+                </div>
+              {% endfor %}
             {% endif %}
+
+            <!-- 
 
             {% if p.seminars %}
               <div class="profile-section">
@@ -84,6 +72,7 @@
                 {% endfor %}
               </div>
             {% endif %}
+            -->
           </aside>
           {% endif %}
           {{ content }}

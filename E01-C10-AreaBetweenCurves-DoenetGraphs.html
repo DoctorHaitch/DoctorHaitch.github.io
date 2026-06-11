@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" href="/assets/css/Calc2.css">
+</head>
+
+<body>
+  <header>
+    <div class="header-line">
+      <div><strong>(MATH122 - Calculus II)</strong> Course Notes</div>
+      <div><strong>Author:</strong> Kris Hollingsworth, PhD (Dr. ℋ)</div>
+    </div>
+  </header>
+
+  <h1 id="class-10-7.1-area-between-curves">Class 10: (7.1) Area Between
+  Curves</h1>
+  <div class="callout callout-goals" data-callout="goals">
+  <details open>
+  <summary class="callout-title">Today’s Plan</summary>
+  <div class="callout-content">
+  <ul>
+  <li><label><input type="checkbox" />Roll Call</label></li>
+  <li>Learn another application of definite integration.</li>
+  <li>Learn a new way to think about integration</li>
+  </ul>
+  </div>
+  </details>
+  </div>
+  <div class="callout callout-todo" data-callout="todo">
+  <details open>
+  <summary class="callout-title">Today’s Assignments</summary>
+  <div class="callout-content">
+  <ul class="task-list">
+  <li><label><input type="checkbox" />Turn in
+  <code>Guided Practice 7</code>.</label></li>
+  <li><label><input type="checkbox" />We’ll complete material for
+  <code>Learning Problems 04</code> today.</label></li>
+  </ul>
+  </div>
+  </details>
+  </div>
+  <div class="callout callout-warmup" data-callout="warmup">
+  <details open>
+  <summary class="callout-title">Warm-up Activity</summary>
+  <div class="callout-content">
+  <iframe id="doenet-frame-1" class="doenet-frame" style="width:100%; border:none; min-height:50px; display:block;" sandbox="allow-scripts allow-same-origin" src="data:text/html;base64,PCFET0NUWVBFIGh0bWw+CjxodG1sPgo8aGVhZD4KPG1ldGEgY2hhcnNldD0idXRmLTgiPgo8bGluayByZWw9InN0eWxlc2hlZXQiCmhyZWY9Imh0dHBzOi8vY2RuLmpzZGVsaXZyLm5ldC9ucG0vQGRvZW5ldC9zdGFuZGFsb25lQGxhdGVzdC9zdHlsZS5jc3MiPgo8c3R5bGU+CmJvZHkgeyBtYXJnaW46MDsgcGFkZGluZzowOyB9Cmh0bWwsIGJvZHkgewogIGhlaWdodDphdXRvICFpbXBvcnRhbnQ7CiAgbWluLWhlaWdodDowICFpbXBvcnRhbnQ7CiAgb3ZlcmZsb3c6dmlzaWJsZSAhaW1wb3J0YW50Owp9Cjwvc3R5bGU+CjwvaGVhZD4KCjxib2R5PgoKPGRpdiBpZD0iYXBwLTEiPjwvZGl2PgoKPHNjcmlwdCB0eXBlPSJtb2R1bGUiPgppbXBvcnQgeyByZW5kZXJEb2VuZXRWaWV3ZXJUb0NvbnRhaW5lciB9CmZyb20gImh0dHBzOi8vY2RuLmpzZGVsaXZyLm5ldC9ucG0vQGRvZW5ldC9zdGFuZGFsb25lQGxhdGVzdC9kb2VuZXQtc3RhbmRhbG9uZS5qcyI7CgooZnVuY3Rpb24gKCkgewogIGNvbnN0IGNvbnRhaW5lciA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCJhcHAtMSIpOwogIGlmICghY29udGFpbmVyKSByZXR1cm47CgogIC8vIERlY29kZSBiYXNlNjQgc2FmZWx5IGFzIFVURi04CiAgY29uc3QgcmF3ID0gYXRvYigiUEhObGRIVndQZ29nSUR4dWRXMWlaWElnYm1GdFpUMGlZU0krTWp3dmJuVnRZbVZ5UGdvZ0lEeHVkVzFpWlhJZ2JtRnRaVDBpWWlJK056d3ZiblZ0WW1WeVBnb2dJRHh6ZEhsc1pVUmxabWx1YVhScGIyNGdibUZ0WlQwaVRVZHlaV1Z1VTNSNWJHVWlJSE4wZVd4bFRuVnRZbVZ5UFNJeE1DSWdiR2x1WlZkcFpIUm9QU0l6SWlCc2FXNWxVM1I1YkdVOUluTnZiR2xrSWlCc2FXNWxRMjlzYjNJOUlpTXdNRGRETlVFaUlHeHBibVZEYjJ4dmNsZHZjbVE5SWtkeVpXVnVJaUJtYVd4c1QzQmhZMmwwZVQwaUxqSTRJaUJtYVd4c1EyOXNiM0k5SWlNd01EbEZOek1pSUM4K0NpQWdQSE4wZVd4bFJHVm1hVzVwZEdsdmJpQnVZVzFsUFNKTlFteDFaVk4wZVd4bElpQnpkSGxzWlU1MWJXSmxjajBpT1NJZ2JHbHVaVmRwWkhSb1BTSXpJaUJzYVc1bFUzUjViR1U5SW5OdmJHbGtJaUJzYVc1bFEyOXNiM0k5SWlNeVFUZEdPVVVpSUd4cGJtVlBjR0ZqYVhSNVBTSXVOemNpSUd4cGJtVkRiMnh2Y2xkdmNtUTlJbXhwWjJoMElHSnNkV1VpSUdacGJHeERiMnh2Y2owaUl6YzNRa0pFUkNJZ0x6NEtJQ0E4Wm5WdVkzUnBiMjRnYm1GdFpUMGlaaUlnYzNSNWJHVk9kVzFpWlhJOUlqRXdJaUJrYjIxaGFXNDlJbHN5TERkZElqNHhMalVxYzJsdUtIZ3BLelE4TDJaMWJtTjBhVzl1UGdvZ0lEeG1kVzVqZEdsdmJpQnVZVzFsUFNKbklpQnpkSGxzWlU1MWJXSmxjajBpT1NJZ1pHOXRZV2x1UFNKYk1pdzNYU0krTVM4ekttTnZjeWg0S1NzM1BDOW1kVzVqZEdsdmJqNEtJQ0E4Wm5WdVkzUnBiMjRnYzNSNWJHVk9kVzFpWlhJOUlqRXdJaUJ1WVcxbFBTSjZJaUJrYjIxaGFXNDlJbHN5TERkZElqNHdQQzltZFc1amRHbHZiajRLUEM5elpYUjFjRDRLUENFdExTQWxKU1VsSlNVbEpTVWxKU1VsSlNVbEpTVWxKU1VsSlNVbEpTVWxDaUFnSUNBZ0pTVWxKU1VsSlNVbEpTVWxKU1VsSlNVZ1JtbHljM1FnVUd4dmRBb2xKU1VsSlNVbEpTVWxKU1VsSlNVbEpTVWxKU1VsSlNVbEpTVWxKU1VsSlNVZ0xTMCtDanhsZUdWeVkybHpaU0J1YjBGMWRHOVVhWFJzWlQ0S1BHZHlZWEJvSUdacGVFRjRaWE1nZDJsa2RHZzlJamd3SlNJZ2MyaHZkMEp2Y21SbGNqMGlabUZzYzJVaUlHRnpjR1ZqZEZKaGRHbHZQU0l4TGpjMUlpQm5jbWxrUFNKMGNuVmxJaUI0YldsdVBTSXhJaUI0YldGNFBTSTRJaUJrYVhOd2JHRjVXRUY0YVhOVWFXTnJUR0ZpWld4elBTSm1ZV3h6WlNJZ2VXMXBiajBpTFRFaUlIbHRZWGc5SWpnaUlITm9iM2RPWVhacFoyRjBhVzl1UFNKbVlXeHpaU0lnWkdWamIzSmhkR2wyWlQ0S0lDQThjMmh2Y25SRVpYTmpjbWx3ZEdsdmJqNUJJR1oxYm1OMGFXOXVJR1lvZUNrZ1ltVjBkMlZsYmlCNFBXRWdZVzVrSUhnOVlpQjNhWFJvSUhSb1pTQmhjbVZoSUdKbGRIZGxaVzRnWmloNEtTQmhibVFnZEdobElIZ3RZWGhwY3lCemFHRmtaV1FnYVc0Z0pHWXVjM1I1YkdWRVpYTmpjbWx3ZEdsdmJpNDhMM05vYjNKMFJHVnpZM0pwY0hScGIyNCtDaUFnUEd4cGJtVlRaV2R0Wlc1MElITjBlV3hsVG5WdFltVnlQU0l4TUNJZ1ptbDRURzlqWVhScGIyNGdaVzVrY0c5cGJuUnpQU0lvSkdFc0pDUm1LQ1JoS1NrZ0tDUmhMREFwSWlBdlBpQWdDaUFnUEd4cGJtVlRaV2R0Wlc1MElITjBlV3hsVG5WdFltVnlQU0l4TUNJZ1ptbDRURzlqWVhScGIyNGdaVzVrY0c5cGJuUnpQU0lvTnl3a0pHWW9OeWtwSUNnM0xEQXBJaUJzWVdKbGJFbHpUbUZ0WlNBdlBnb2dJRHhzWVdKbGJDQndiM05wZEdsdmJrWnliMjFCYm1Ob2IzSTlJbkpwWjJoMElpQmhibU5vYjNJOUlpZ2tZU3d0TUM0MUtTSWdabWw0VEc5allYUnBiMjQrUEcwK1hHaDFaMlVnWVR3dmJUNDhMMnhoWW1Wc1Bnb2dJRHhzWVdKbGJDQmhibU5vYjNJOUlpZ2tZaXd0TUM0MUtTSWdabWw0VEc5allYUnBiMjQrUEcwK1hHaDFaMlVnWWp3dmJUNDhMMnhoWW1Wc1Bnb2dQR3hoWW1Wc0lHWnBlRXh2WTJGMGFXOXVJR0Z1WTJodmNqMGlLQ2drWVNza1lpa3ZNUzQ1TERNdU1qVXBJajQ4YlQ1Y2FIVm5aU0JtS0hncFBDOXRQand2YkdGaVpXdytDaUFnUEhKbFoybHZia0psZEhkbFpXNURkWEoyWlhNZ2FHbGtaVDBpWm1Gc2MyVWlJSE4wZVd4bFRuVnRZbVZ5UFNJeE1DSWdZbTkxYm1SaGNubFdZV3gxWlhNOUlqSWdOeUkrSkdZZ0pIbzhMM0psWjJsdmJrSmxkSGRsWlc1RGRYSjJaWE0rQ2p3dlozSmhjR2crQ2p4d1Bnb2dJQW9nSUR4aGJuTjNaWEkrQ2lBZ0lDQThiR0ZpWld3K1YzSnBkR1VnWVc0Z1pYaHdjbVZ6YzJsdmJpQjBhR0YwSUhKbGNISmxjMlZ1ZEhNZ2RHaGxJQ1JtTG5OMGVXeGxSR1Z6WTNKcGNIUnBiMjRnYzJoaFpHVmtJR0Z5WldFNlBDOXNZV0psYkQ0S0lDQWdJRHh0UGx4cGJuUmZZVjVpSUdZb2VDa2daSGc4TDIwK0NpQWdQQzloYm5OM1pYSStDand2Y0Q0S1BDOWxlR1Z5WTJselpUNEtDandoTFMwZ0pTVWxKU1VsSlNVbEpTVWxKU1VsSlNVbEpTVWxKU1VsSlNVbEpRb2dJQ0FnSUNVbEpTVWxKU1VsSlNVbEpTVWxKU1VnVTJWamIyNWtJRkJzYjNRS0pTVWxKU1VsSlNVbEpTVWxKU1VsSlNVbEpTVWxKU1VsSlNVbEpTVWxKU1VsSUMwdFBnbzhaWGhsY21OcGMyVWdibTlCZFhSdlZHbDBiR1UrQ2p4bmNtRndhQ0JtYVhoQmVHVnpJSGRwWkhSb1BTSTRNQ1VpSUhOb2IzZENiM0prWlhJOUltWmhiSE5sSWlCaGMzQmxZM1JTWVhScGJ6MGlNUzQzTlNJZ1ozSnBaRDBpZEhKMVpTSWdlRzFwYmowaU1TSWdlRzFoZUQwaU9DSWdaR2x6Y0d4aGVWaEJlR2x6VkdsamEweGhZbVZzY3owaVptRnNjMlVpSUhsdGFXNDlJaTB4SWlCNWJXRjRQU0k0SWlCemFHOTNUbUYyYVdkaGRHbHZiajBpWm1Gc2MyVWlJR1JsWTI5eVlYUnBkbVUrQ2lBZ1BITm9iM0owUkdWelkzSnBjSFJwYjI0K1FTQm1kVzVqZEdsdmJpQm5LSGdwSUdKbGRIZGxaVzRnZUQxaElHRnVaQ0I0UFdJZ2QybDBhQ0IwYUdVZ1lYSmxZU0JpWlhSM1pXVnVJR2NvZUNrZ1lXNWtJSFJvWlNCNExXRjRhWE1nYzJoaFpHVmtJR2x1SUNSbkxuTjBlV3hsUkdWelkzSnBjSFJwYjI0dVBDOXphRzl5ZEVSbGMyTnlhWEIwYVc5dVBnb2dJRHhzYVc1bFUyVm5iV1Z1ZENCemRIbHNaVTUxYldKbGNqMGlPU0lnWm1sNFRHOWpZWFJwYjI0Z1pXNWtjRzlwYm5SelBTSW9KR0VzSkNSbktDUmhLU2tnS0NSaExEQXBJaUF2UGlBZ0NpQWdQR3hwYm1WVFpXZHRaVzUwSUhOMGVXeGxUblZ0WW1WeVBTSTVJaUJtYVhoTWIyTmhkR2x2YmlCbGJtUndiMmx1ZEhNOUlpZzNMQ1FrWnlnM0tTa2dLRGNzTUNraUlHeGhZbVZzU1hOT1lXMWxJQzgrQ2lBZ1BHeGhZbVZzSUhCdmMybDBhVzl1Um5KdmJVRnVZMmh2Y2owaWNtbG5hSFFpSUdGdVkyaHZjajBpS0NSaExDMHdMalVwSWlCbWFYaE1iMk5oZEdsdmJqNDhiVDVjYUhWblpTQmhQQzl0UGp3dmJHRmlaV3crQ2lBZ1BHeGhZbVZzSUdGdVkyaHZjajBpS0NSaUxDMHdMalVwSWlCbWFYaE1iMk5oZEdsdmJqNDhiVDVjYUhWblpTQmlQQzl0UGp3dmJHRmlaV3crQ2lBOGJHRmlaV3dnWm1sNFRHOWpZWFJwYjI0Z1lXNWphRzl5UFNJb0pHRXJNQzQxTENRa1p5Z2tZU2tyTUM0MUtTSStQRzArWEdoMVoyVWdaeWg0S1R3dmJUNDhMMnhoWW1Wc1Bnb2dJRHh5WldkcGIyNUNaWFIzWldWdVEzVnlkbVZ6SUdocFpHVTlJbVpoYkhObElpQnpkSGxzWlU1MWJXSmxjajBpT1NJZ1ltOTFibVJoY25sV1lXeDFaWE05SWpJZ055SStKR2NnSkhvOEwzSmxaMmx2YmtKbGRIZGxaVzVEZFhKMlpYTStDand2WjNKaGNHZytDanh3UGdvZ0lEeGhibk4zWlhJK0NpQWdJQ0E4YkdGaVpXdytDaUFnSUNBZ0lGZHlhWFJsSUdGdUlHVjRjSEpsYzNOcGIyNGdkR2hoZENCeVpYQnlaWE5sYm5SeklIUm9aU0FrWnk1emRIbHNaVVJsYzJOeWFYQjBhVzl1SUhOb1lXUmxaQ0JoY21WaE9pQUtJQ0FnSUR3dmJHRmlaV3crQ2lBZ0lDQThiVDVjYVc1MFgyRmVZaUJuS0hncElHUjRQQzl0UGdvZ0lEd3ZZVzV6ZDJWeVBnbzhMM0ErQ2p3dlpYaGxjbU5wYzJVK0NnbzhJUzB0SUNVbEpTVWxKU1VsSlNVbEpTVWxKU1VsSlNVbEpTVWxKU1VsSlNVS0lDQWdJQ0FsSlNVbEpTVWxKU1VsSlNVbEpTVWxKU0JVYUdseVpDQlFiRzkwQ2lVbEpTVWxKU1VsSlNVbEpTVWxKU1VsSlNVbEpTVWxKU1VsSlNVbEpTVWxKU0F0TFQ0S1BHVjRaWEpqYVhObElHNXZRWFYwYjFScGRHeGxQZ284WjNKaGNHZ2dabWw0UVhobGN5QjNhV1IwYUQwaU9EQWxJaUJ6YUc5M1FtOXlaR1Z5UFNKbVlXeHpaU0lnWVhOd1pXTjBVbUYwYVc4OUlqRXVOelVpSUdkeWFXUTlJblJ5ZFdVaUlIaHRhVzQ5SWpFaUlIaHRZWGc5SWpnaUlHUnBjM0JzWVhsWVFYaHBjMVJwWTJ0TVlXSmxiSE05SW1aaGJITmxJaUI1YldsdVBTSXRNU0lnZVcxaGVEMGlPQ0lnYzJodmQwNWhkbWxuWVhScGIyNDlJbVpoYkhObElpQmtaV052Y21GMGFYWmxQZ29nSUR4emFHOXlkRVJsYzJOeWFYQjBhVzl1UGtKdmRHZ2dablZ1WTNScGIyNXpJR1lvZUNrZ1lXNWtJR2NvZUNrZ1ltVjBkMlZsYmlCNFBXRWdZVzVrSUhnOVlpQjNhWFJvSUhSb1pTQmhjbVZoSUdKbGRIZGxaVzRnWmloNEtTQmhibVFnZEdobElIZ3RZWGhwY3lCemFHRmtaV1FnYVc0Z0pHWXVjM1I1YkdWRVpYTmpjbWx3ZEdsdmJpQmhibVFnZEdobElHRnlaV0VnWW1WMGQyVmxiaUJuS0hncElHRnVaQ0IwYUdVZ2VDMWhlR2x6SUhOb1lXUmxaQ0JwYmlBa1p5NXpkSGxzWlVSbGMyTnlhWEIwYVc5dUxqd3ZjMmh2Y25SRVpYTmpjbWx3ZEdsdmJqNEtJQ0E4YkdsdVpWTmxaMjFsYm5RZ2MzUjViR1ZPZFcxaVpYSTlJamtpSUdacGVFeHZZMkYwYVc5dUlHVnVaSEJ2YVc1MGN6MGlLQ1JoTENRa1p5Z2tZU2twSUNna1lTd3dLU0lnTHo0Z0lBb2dJRHhzYVc1bFUyVm5iV1Z1ZENCemRIbHNaVTUxYldKbGNqMGlPU0lnWm1sNFRHOWpZWFJwYjI0Z1pXNWtjRzlwYm5SelBTSW9OeXdrSkdjb055a3BJQ2czTERBcElpQnNZV0psYkVselRtRnRaU0F2UGdvZ0lEeHNZV0psYkNCd2IzTnBkR2x2YmtaeWIyMUJibU5vYjNJOUluSnBaMmgwSWlCaGJtTm9iM0k5SWlna1lTd3RNQzQxS1NJZ1ptbDRURzlqWVhScGIyNCtQRzArWEdoMVoyVWdZVHd2YlQ0OEwyeGhZbVZzUGdvZ0lEeHNZV0psYkNCaGJtTm9iM0k5SWlna1lpd3RNQzQxS1NJZ1ptbDRURzlqWVhScGIyNCtQRzArWEdoMVoyVWdZand2YlQ0OEwyeGhZbVZzUGdvZ0lEeHNZV0psYkNCbWFYaE1iMk5oZEdsdmJpQmhibU5vYjNJOUlpZ29KR0VySkdJcEx6RXVPU3d6TGpJMUtTSStQRzArWEdoMVoyVWdaaWg0S1R3dmJUNDhMMnhoWW1Wc1Bnb2dQR3hoWW1Wc0lHWnBlRXh2WTJGMGFXOXVJR0Z1WTJodmNqMGlLQ1JoS3pBdU5Td2tKR2NvSkdFcEt6QXVOU2tpUGp4dFBseG9kV2RsSUdjb2VDazhMMjArUEM5c1lXSmxiRDRLSUNBOGNtVm5hVzl1UW1WMGQyVmxia04xY25abGN5Qm9hV1JsUFNKbVlXeHpaU0lnYzNSNWJHVk9kVzFpWlhJOUlqa2lJR0p2ZFc1a1lYSjVWbUZzZFdWelBTSXlJRGNpUGlSbklDUjZQQzl5WldkcGIyNUNaWFIzWldWdVEzVnlkbVZ6UGdvZ0lEeHlaV2RwYjI1Q1pYUjNaV1Z1UTNWeWRtVnpJR2hwWkdVOUltWmhiSE5sSWlCemRIbHNaVTUxYldKbGNqMGlNVEFpSUdKdmRXNWtZWEo1Vm1Gc2RXVnpQU0l5SURjaVBpUm1JQ1I2UEM5eVpXZHBiMjVDWlhSM1pXVnVRM1Z5ZG1WelBnbzhMMmR5WVhCb1BnbzhjRDRLSUNBOFlXNXpkMlZ5SUc1aGJXVTlJblJsYzNRaVBnb2dJQ0FnUEd4aFltVnNQbGR5YVhSbElHRWdiV0YwYUdWdFlYUnBZMkZzSUdWNGNISmxjM05wYjI0Z2QyaHBZMmdnWTJGc1kzVnNZWFJsY3lCMGFHVWdZWEpsWVNCM2FHbGphQ0JwY3lBa1p5NXpkSGxzWlVSbGMyTnlhWEIwYVc5dUxDQmlkWFFnYm05MElDUm1Mbk4wZVd4bFJHVnpZM0pwY0hScGIyNHVQQzlzWVdKbGJENEtJQ0FnSUR4aGQyRnlaRDRLSUNBZ0lDQWdQRzArWEdsdWRGOTdZWDFlZTJKOVoxeHNaV1owS0hoY2NtbG5hSFFwWkhndFhHbHVkRjk3WVgxZWUySjlabHhzWldaMEtIaGNjbWxuYUhRcFpIZzhMMjArQ2lBZ0lDQThMMkYzWVhKa1Bnb2dJQ0FnUEdGM1lYSmtJR055WldScGREMGlNQ0lnYm1GdFpUMGlZMjl0WW1sdVpXUk9iMUJoY21WdWN5SStDaUFnSUNBZ0lEeHRQbHhwYm5SZllWNWlJR2NvZUNrdFppaDRLU0JrZUR3dmJUNEtJQ0FnSUR3dllYZGhjbVErQ2lBZ0lDQThZWGRoY21RZ2JtRnRaVDBpWTI5dFltbHVaV1FpUGdvZ0lDQWdJQ0E4YlQ1Y2FXNTBYMkZlWWlBb1p5aDRLUzFtS0hncEtTQmtlRHd2YlQ0S0lDQWdJRHd2WVhkaGNtUStDaUFnUEM5aGJuTjNaWEkrQ2p3dmNENEtJQ0E4YzJWMGRYQStDaUFnSUNBOFltOXZiR1ZoYmlCdVlXMWxQU0pDWVdOcmQyRnlaSE1pUGdvZ0lDQWdJQ0E4ZDJobGJqNEtJQ0FnSUNBZ0lDQWtkR1Z6ZEQwOGJUNWNhVzUwWDJGZVlpQW9aaWg0S1MxbktIZ3BLU0JrZUR3dmJUNEtJQ0FnSUNBZ0lDQnZjZ29nSUNBZ0lDQWdJQ1IwWlhOMFBUeHRQbHhwYm5SZllWNWlJR1lvZUNrZ1pIZ2dMU0JjYVc1MFgyRmVZaUJuS0hncElHUjRQQzl0UGdvZ0lDQWdJQ0E4TDNkb1pXNCtDaUFnSUNBOEwySnZiMnhsWVc0K0NpQWdQQzl6WlhSMWNENEtQR1psWldSaVlXTnJJR052Ym1ScGRHbHZiajBpSkVKaFkydDNZWEprY3lJK0NpQWdRMkZ5WldaMWJDRWdWR2hwY3lCcGN5QmhiRzF2YzNRZ2RHaGxJR052Y25KbFkzUWdZVzV6ZDJWeUxDQmlkWFFnYkc5dmF5QmlZV05ySUdGMElIUm9aU0J5Wld4aGRHbHZibk5vYVhBZ1ltVjBkMlZsYmlCMGFHVWdkSGR2SUdGeVpXRnpJR05zYjNObGJIa3VJRmRvYVdOb0lHOXVaU0JwY3lCMGFHVWdKR2N1YzNSNWJHVkVaWE5qY21sd2RHbHZiaUJoY21WaFB3bzhMMlpsWldSaVlXTnJQZ284Wm1WbFpHSmhZMnNnWTI5dVpHbDBhVzl1UFNJa1kyOXRZbWx1WldST2IxQmhjbVZ1Y3lJK0NpQWdQSEErQ2lBZ0lDQk9iM1JsTENCbWNtOXRJSFJvWlNCa1pXWnBibWwwYVc5dUlHOW1JR2x1ZEdWbmNtRjBhVzl1Q2lBZ0lDQThiV1UrQ2lBZ0lDQWdJRnhwYm5SZmUyRjlYbnRpZlNCbUtIZ3BMV2NvZUNrZ1pIZ0tJQ0FnSUNBZ1BTQmNiR2x0WDN0dVhIUnZYR2x1Wm5SNWZTQmNjM1Z0WDN0cFBURjlYbTRnWmloNFgya3BMV2NvZUY5cEtTQmNSR1ZzZEdFZ2VDd0tJQ0FnSUR3dmJXVStDaUFnSUNCM2FHbGphQ0JwY3lCamJHOXpaU3dnWW5WMElHNXZkQ0J4ZFdsMFpTQjBhR1VnWTI5eWNtVmpkQ0JwYm5SbFozSmhiQ0VLSUNBOEwzQStDand2Wm1WbFpHSmhZMnMrQ2p4bVpXVmtZbUZqYXlCamIyNWthWFJwYjI0OUlpUmpiMjFpYVc1bFpDSStDaUFnUEhBK0NpQWdJQ0JYYUdsc1pTQjViM1Z5SUdGdWMzZGxjaUJwY3lCamIzSnlaV04wTENCcGRDQnBjeUJ1YjNRZ2NYVnBkR1VnYVc0Z2RHaGxJR1p2Y20wZ2QyVWdkMjkxYkdRZ1pYaHdaV04wSUdKaGMyVmtJRzl1SUhSb1pTQnhkV1Z6ZEdsdmJuTTZDaUFnSUNBOGJXVStYR2x1ZEY5N1lYMWVlMko5SUdZb2VDbGNPMlI0SUMwZ1hHbHVkRjk3WVgxZWUySjlJR2NvZUNrZ1pIZ3VQQzl0WlQ0S0lDQWdJRTFoYTJVZ2MzVnlaU0I1YjNVZ2EyNXZkeUIzYUhrZ2VXOTFjaUJoYm5OM1pYSWdhWE1nWlhGMWFYWmhiR1Z1ZENCMGJ5QjBhR2x6SUc5dVpTRUtJQ0E4TDNBK0Nqd3ZabVZsWkdKaFkycytDand2WlhobGNtTnBjMlUrIik7CgogIGxldCBkZWNvZGVkOwogIHRyeSB7CiAgICBkZWNvZGVkID0gbmV3IFRleHREZWNvZGVyKCJ1dGYtOCIpLmRlY29kZSgKICAgICAgVWludDhBcnJheS5mcm9tKHJhdywgYyA9PiBjLmNoYXJDb2RlQXQoMCkpCiAgICApOwogIH0gY2F0Y2ggKGUpIHsKICAgIGNvbnNvbGUud2FybigiVVRGLTggZGVjb2RlIGZhaWxlZCwgZmFsbGluZyBiYWNrOiIsIGUpOwogICAgZGVjb2RlZCA9IHJhdzsKICB9CgogIC8vIFBhdGNoIGtub3duIGVuY29kaW5nIGNvcnJ1cHRpb24gKHNhZmV0eSBuZXQpCiAgZGVjb2RlZCA9IGRlY29kZWQucmVwbGFjZSgvXHUwMEVGXHUwMEJDXHUwMEJGL2csICJcdUZGM0YiKTsKCiAgLy8gSW5qZWN0IERvZW5ldE1MCiAgY29uc3QgcyA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoInNjcmlwdCIpOwogIHMudHlwZSA9ICJ0ZXh0L2RvZW5ldG1sIjsKICBzLnRleHRDb250ZW50ID0gZGVjb2RlZDsKICBjb250YWluZXIuYXBwZW5kQ2hpbGQocyk7CgogIGlmICh0eXBlb2YgcmVuZGVyRG9lbmV0Vmlld2VyVG9Db250YWluZXIgIT09ICJmdW5jdGlvbiIpIHsKICAgIGNvbnNvbGUuZXJyb3IoIkRvZW5ldCBmYWlsZWQgdG8gbG9hZCAoZG9lbmV0LWZyYW1lLTEpIik7CiAgICByZXR1cm47CiAgfQoKICByZW5kZXJEb2VuZXRWaWV3ZXJUb0NvbnRhaW5lcihjb250YWluZXIsIG51bGwsIHsKICAgIGFkZFZpcnR1YWxLZXlib2FyZDogZmFsc2UKICB9KTsKfSkoKTsKPC9zY3JpcHQ+Cgo8c2NyaXB0Pgpjb25zdCByb290ID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoImFwcC0xIik7CmxldCBsYXN0U2VudCA9IDA7CgpmdW5jdGlvbiBzZW5kSGVpZ2h0KGgpIHsKICBwYXJlbnQucG9zdE1lc3NhZ2UoewogICAgZG9lbmV0SGVpZ2h0OiBNYXRoLmNlaWwoaCksCiAgICBmcmFtZUlkOiAiZG9lbmV0LWZyYW1lLTEiCiAgfSwgIioiKTsKfQoKY29uc3Qgcm8gPSBuZXcgUmVzaXplT2JzZXJ2ZXIoZW50cmllcyA9PiB7CiAgY29uc3QgaCA9IGVudHJpZXNbMF0uY29udGVudFJlY3QuaGVpZ2h0OwogIGlmIChNYXRoLmFicyhoIC0gbGFzdFNlbnQpID4gNikgewogICAgbGFzdFNlbnQgPSBoOwogICAgc2VuZEhlaWdodChoKTsKICB9Cn0pOwoKcm8ub2JzZXJ2ZShyb290KTsKCndpbmRvdy5hZGRFdmVudExpc3RlbmVyKCJsb2FkIiwgKCkgPT4gewogIHNldFRpbWVvdXQoKCkgPT4gc2VuZEhlaWdodChyb290LnNjcm9sbEhlaWdodCksIDEwMCk7CiAgc2V0VGltZW91dCgoKSA9PiBzZW5kSGVpZ2h0KHJvb3Quc2Nyb2xsSGVpZ2h0KSwgNTAwKTsKfSk7Cjwvc2NyaXB0PgoKPC9ib2R5Pgo8L2h0bWw+CjwhLS0gMTc4MTIwMjI3NyAtLT4="></iframe>
+  </div>
+  </details>
+  </div>
+  <div class="callout callout-exercise" data-callout="exercise">
+  <details open>
+  <summary class="callout-title">Exercise: Back to Riemann Sums</summary>
+  <div class="callout-content">
+  <ol type="1">
+  <li>Draw a <span class="glossary-anchor"><mark><span class="glossary"
+  data-type="definition">Riemann sum</span></mark><span
+  class="glossary-popup" data-type="definition"><span
+  class="glossary-popup-title">Riemann sum</span><span
+  class="glossary-popup-body">A <mark>Riemann sum</mark> is a method for
+  approximating the total area underneath a curve on a graph, otherwise
+  known as an integral. It works by dividing the area into shapes
+  (usually rectangles) and summing their areas. This is often written as
+  <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi><mo>=</mo><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><mi>f</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false" form="postfix">)</mo><mi mathvariant="normal">Δ</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">S=\sum_{i=1}^n f(x_i)\Delta x</annotation></semantics></math>
+  where
+  <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>x</mi><mi>i</mi></msub><annotation encoding="application/x-tex">x_i</annotation></semantics></math>
+  is a point in the
+  <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math>-th
+  subinterval,
+  <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">f(x_i)</annotation></semantics></math>
+  is the height of the rectangle, and
+  <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>x</mi><mo>=</mo><mfrac><mrow><mi>b</mi><mo>−</mo><mi>a</mi></mrow><mi>n</mi></mfrac></mrow><annotation encoding="application/x-tex">\Delta x=\frac{b-a}{n}</annotation></semantics></math>
+  is the width. </span></span></span> that approximates the area of
+  interest (blue but not green).</li>
+  <li>Analyze the formula to find the area of a representative
+  slice.</li>
+  <li>Use the definition of a definite integral to find the same formula
+  for this area we did in the warm-up.</li>
+  </ol>
+  <div class="callout callout-visual" data-callout="visual">
+  <details>
+  <summary class="callout-title">Visual Aid</summary>
+  <div class="callout-content">
+  <iframe id="doenet-frame-2" class="doenet-frame" style="width:100%; border:none; min-height:50px; display:block;" sandbox="allow-scripts allow-same-origin" src="data:text/html;base64,PCFET0NUWVBFIGh0bWw+CjxodG1sPgo8aGVhZD4KPG1ldGEgY2hhcnNldD0idXRmLTgiPgo8bGluayByZWw9InN0eWxlc2hlZXQiCmhyZWY9Imh0dHBzOi8vY2RuLmpzZGVsaXZyLm5ldC9ucG0vQGRvZW5ldC9zdGFuZGFsb25lQGxhdGVzdC9zdHlsZS5jc3MiPgo8c3R5bGU+CmJvZHkgeyBtYXJnaW46MDsgcGFkZGluZzowOyB9Cmh0bWwsIGJvZHkgewogIGhlaWdodDphdXRvICFpbXBvcnRhbnQ7CiAgbWluLWhlaWdodDowICFpbXBvcnRhbnQ7CiAgb3ZlcmZsb3c6dmlzaWJsZSAhaW1wb3J0YW50Owp9Cjwvc3R5bGU+CjwvaGVhZD4KCjxib2R5PgoKPGRpdiBpZD0iYXBwLTIiPjwvZGl2PgoKPHNjcmlwdCB0eXBlPSJtb2R1bGUiPgppbXBvcnQgeyByZW5kZXJEb2VuZXRWaWV3ZXJUb0NvbnRhaW5lciB9CmZyb20gImh0dHBzOi8vY2RuLmpzZGVsaXZyLm5ldC9ucG0vQGRvZW5ldC9zdGFuZGFsb25lQGxhdGVzdC9kb2VuZXQtc3RhbmRhbG9uZS5qcyI7CgooZnVuY3Rpb24gKCkgewogIGNvbnN0IGNvbnRhaW5lciA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCJhcHAtMiIpOwogIGlmICghY29udGFpbmVyKSByZXR1cm47CgogIC8vIERlY29kZSBiYXNlNjQgc2FmZWx5IGFzIFVURi04CiAgY29uc3QgcmF3ID0gYXRvYigiUEhObGRIVndQZ29nSUR4dWRXMWlaWElnYm1GdFpUMGlZU0krTWp3dmJuVnRZbVZ5UGdvZ0lEeHVkVzFpWlhJZ2JtRnRaVDBpWWlJK056d3ZiblZ0WW1WeVBnb2dJRHh1ZFcxaVpYSWdibUZ0WlQwaVRYVjBaV1JIY21WbGJpSStNVEUzTnpNelBDOXVkVzFpWlhJK0NpQWdQSE4wZVd4bFJHVm1hVzVwZEdsdmJpQnVZVzFsUFNKTlIzSmxaVzVUZEhsc1pTSWdjM1I1YkdWT2RXMWlaWEk5SWpFd0lpQnNhVzVsVjJsa2RHZzlJak1pSUd4cGJtVlRkSGxzWlQwaWMyOXNhV1FpSUd4cGJtVkRiMnh2Y2owaUl5Uk5kWFJsWkVkeVpXVnVJaUFnWm1sc2JFTnZiRzl5UFNJakpFMTFkR1ZrUjNKbFpXNGlJQzgrQ2lBZ1BHNTFiV0psY2lCdVlXMWxQU0pOZFhSbFpFbHVaR2xuYnlJK016TXlNamc0UEM5dWRXMWlaWEkrQ2lBZ1BHWjFibU4wYVc5dUlHNWhiV1U5SW1ZaUlITjBlV3hsVG5WdFltVnlQU0l4TUNJZ1pHOXRZV2x1UFNKYk1pdzNYU0krTVM0MUtuTnBiaWg0S1NzMFBDOW1kVzVqZEdsdmJqNEtJQ0E4Wm5WdVkzUnBiMjRnYm1GdFpUMGlaeUlnYzNSNWJHVk9kVzFpWlhJOUlqa2lJR1J2YldGcGJqMGlXeklzTjEwaVBqRXZNeXBqYjNNb2VDa3JOend2Wm5WdVkzUnBiMjQrQ2lBZ1BHWjFibU4wYVc5dUlITjBlV3hsVG5WdFltVnlQU0l4TUNJZ2JtRnRaVDBpZWlJZ1pHOXRZV2x1UFNKYk1pdzNYU0krTUR3dlpuVnVZM1JwYjI0K0Nqd3ZjMlYwZFhBK0NnbzhJUzB0SUNVbEpTVWxKU1VsSlNVbEpTVWxKU1VsSlNVbEpTVWxKU1VsSlNVS0lDQWdJQ0FsSlNVbEpTVWxKU1VsSlNVbEpTVWxKU0JVYUdseVpDQlFiRzkwQ2lVbEpTVWxKU1VsSlNVbEpTVWxKU1VsSlNVbEpTVWxKU1VsSlNVbEpTVWxKU0F0TFQ0S1BHZHlZWEJvSUdacGVFRjRaWE1nZDJsa2RHZzlJamd3SlNJZ2MyaHZkMEp2Y21SbGNqMGlabUZzYzJVaUlHRnpjR1ZqZEZKaGRHbHZQU0l4TGpjMUlpQm5jbWxrUFNKMGNuVmxJaUI0YldsdVBTSXhJaUI0YldGNFBTSTRJaUJrYVhOd2JHRjVXRUY0YVhOVWFXTnJUR0ZpWld4elBTSm1ZV3h6WlNJZ2VXMXBiajBpTFRFaUlIbHRZWGc5SWpraUlITm9iM2RPWVhacFoyRjBhVzl1UFNKbVlXeHpaU0lnWkdWamIzSmhkR2wyWlQ0S0lDQThjMmh2Y25SRVpYTmpjbWx3ZEdsdmJqNUNiM1JvSUdaMWJtTjBhVzl1Y3lCbUtIZ3BJR0Z1WkNCbktIZ3BJR0psZEhkbFpXNGdlRDFoSUdGdVpDQjRQV0lnZDJsMGFDQjBhR1VnWVhKbFlTQmlaWFIzWldWdUlHWW9lQ2tnWVc1a0lIUm9aU0I0TFdGNGFYTWdjMmhoWkdWa0lHbHVJR2R5WldWdUlHRnVaQ0IwYUdVZ1lYSmxZU0JpWlhSM1pXVnVJR2NvZUNrZ1lXNWtJSFJvWlNCNExXRjRhWE1nYzJoaFpHVmtJR2x1SUdsdVpHbG5ieTQ4TDNOb2IzSjBSR1Z6WTNKcGNIUnBiMjQrQ2lBZ1BHeHBibVZUWldkdFpXNTBJSE4wZVd4bFRuVnRZbVZ5UFNJNUlpQm1hWGhNYjJOaGRHbHZiaUJsYm1Sd2IybHVkSE05SWlna1lTd2tKR2NvSkdFcEtTQW9KR0VzTUNraUlDOCtJQ0FLSUNBOGJHbHVaVk5sWjIxbGJuUWdjM1I1YkdWT2RXMWlaWEk5SWpraUlHWnBlRXh2WTJGMGFXOXVJR1Z1WkhCdmFXNTBjejBpS0Rjc0pDUm5LRGNwS1NBb055d3dLU0lnYkdGaVpXeEpjMDVoYldVZ0x6NEtJQ0E4YkdGaVpXd2djRzl6YVhScGIyNUdjbTl0UVc1amFHOXlQU0p5YVdkb2RDSWdZVzVqYUc5eVBTSW9KR0VzTFRBdU5Ta2lJR1pwZUV4dlkyRjBhVzl1UGp4dFBseG9kV2RsSUdFOEwyMCtQQzlzWVdKbGJENEtJQ0E4YkdGaVpXd2dZVzVqYUc5eVBTSW9KR0lzTFRBdU5Ta2lJR1pwZUV4dlkyRjBhVzl1UGp4dFBseG9kV2RsSUdJOEwyMCtQQzlzWVdKbGJENEtJQ0E4YkdGaVpXd2dabWw0VEc5allYUnBiMjRnWVc1amFHOXlQU0lvS0NSaEt5UmlLUzh4TGprc015NHlOU2tpUGp4dFBseG9kV2RsSUdZb2VDazhMMjArUEM5c1lXSmxiRDRLSUR4c1lXSmxiQ0JtYVhoTWIyTmhkR2x2YmlCaGJtTm9iM0k5SWlna1lTc3dMalVzSkNSbktDUmhLU3N3TGpVcElqNDhiVDVjYUhWblpTQm5LSGdwUEM5dFBqd3ZiR0ZpWld3K0NpQWdQSEpsWjJsdmJrSmxkSGRsWlc1RGRYSjJaWE1nYUdsa1pUMGlabUZzYzJVaUlITjBlV3hsVG5WdFltVnlQU0k1SWlCaWIzVnVaR0Z5ZVZaaGJIVmxjejBpTWlBM0lqNGtaeUFrZWp3dmNtVm5hVzl1UW1WMGQyVmxia04xY25abGN6NEtJQ0E4Y21WbmFXOXVRbVYwZDJWbGJrTjFjblpsY3lCb2FXUmxQU0ptWVd4elpTSWdjM1I1YkdWT2RXMWlaWEk5SWpFd0lpQmliM1Z1WkdGeWVWWmhiSFZsY3owaU1pQTNJajRrWmlBa2Vqd3ZjbVZuYVc5dVFtVjBkMlZsYmtOMWNuWmxjejRLSUNBOGNtVndaV0YwUm05eVUyVnhkV1Z1WTJVZ2JtRnRaVDBpZEdWemRDSWdabkp2YlQwaUpHRWlJSFJ2UFNJa1lpMGtaR1ZzZEdGWUlpQnpkR1Z3UFNJa1pHVnNkR0ZZSWlCMllXeDFaVTVoYldVOUluWWlQZ29nSUNBZ1BITmxkSFZ3UGdvZ0lDQWdJQ0E4SVMwdElGQnlaWFpsYm5RZ2QyVnBjbVFnWkc5dFlXbHVJSEp2ZFc1a0xXOW1aaUJwYzNOMVpYTWdjbWxuYUhRZ1pXNWtjRzlwYm5RZ0xTMCtDaUFnSUNBZ0lEeHRZWFJvSUc1aGJXVTlJbkpwWjJoMFVHOXBiblFpSUhOcGJYQnNhV1o1UG0xcGJpZ2tkaXNrWkdWc2RHRllMQ1JpS1R3dmJXRjBhRDRLSUNBZ0lDQWdQSEJ2YVc1MElHNWhiV1U5SW5ZeElpQnNZV0psYkVselRtRnRaVDRvSkhZc0lDUWtaaWdrZGlrcFBDOXdiMmx1ZEQ0S0lDQWdJQ0FnUEhCdmFXNTBJRzVoYldVOUluWXlJaUJzWVdKbGJFbHpUbUZ0WlQ0b0pISnBaMmgwVUc5cGJuUXNJQ1FrWnlna2NtbG5hSFJRYjJsdWRDMHVNREF4S1NrOEwzQnZhVzUwUGdvZ0lDQWdQQzl6WlhSMWNENEtJQ0E4Y21WamRHRnVaMnhsSUdocFpHVTlJbTV2ZENna2MyaHZkMEp2ZUdWektTSWdjM1I1YkdWT2RXMWlaWEk5SWpVaUlHWnBiR3hsWkNCMlpYSjBhV05sY3owaUpIWXhJQ1IyTWlJZ0x6NEtJQ0E4TDNKbGNHVmhkRVp2Y2xObGNYVmxibU5sUGdvOEwyZHlZWEJvUGdvOFltOXZiR1ZoYmtsdWNIVjBJRzVoYldVOUluTm9iM2RDYjNobGN5SStDaUFnUEd4aFltVnNQbE5vYjNjZ1VtbGxiV0Z1YmlCemRXMGdZWEJ3Y205NGFXMWhkR2x2Ymk0OEwyeGhZbVZzUGdvOEwySnZiMnhsWVc1SmJuQjFkRDRLUEhOc2FXUmxjaUJvYVdSbFBTSnViM1FvSkhOb2IzZENiM2hsY3lraUlHbHVhWFJwWVd4V1lXeDFaVDBpTXlJZ1puSnZiVDBpTVNJZ2RHODlJakUxSWlCdVlXMWxQU0p5WldOMGN5SWdjMmh2ZDFScFkydHpQU0ptWVd4elpTSStQR3hoWW1Wc1BrNTFiV0psY2lCdlppQlNaV04wWVc1bmJHVnpQQzlzWVdKbGJENDhMM05zYVdSbGNqNEtQSE5sZEhWd1BqeHVkVzFpWlhJZ2JtRnRaVDBpWkdWc2RHRllJajRvSkdJdEpHRXBMeVJ5WldOMGN6d3ZiblZ0WW1WeVBqd3ZjMlYwZFhBKyIpOwoKICBsZXQgZGVjb2RlZDsKICB0cnkgewogICAgZGVjb2RlZCA9IG5ldyBUZXh0RGVjb2RlcigidXRmLTgiKS5kZWNvZGUoCiAgICAgIFVpbnQ4QXJyYXkuZnJvbShyYXcsIGMgPT4gYy5jaGFyQ29kZUF0KDApKQogICAgKTsKICB9IGNhdGNoIChlKSB7CiAgICBjb25zb2xlLndhcm4oIlVURi04IGRlY29kZSBmYWlsZWQsIGZhbGxpbmcgYmFjazoiLCBlKTsKICAgIGRlY29kZWQgPSByYXc7CiAgfQoKICAvLyBQYXRjaCBrbm93biBlbmNvZGluZyBjb3JydXB0aW9uIChzYWZldHkgbmV0KQogIGRlY29kZWQgPSBkZWNvZGVkLnJlcGxhY2UoL1x1MDBFRlx1MDBCQ1x1MDBCRi9nLCAiXHVGRjNGIik7CgogIC8vIEluamVjdCBEb2VuZXRNTAogIGNvbnN0IHMgPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50KCJzY3JpcHQiKTsKICBzLnR5cGUgPSAidGV4dC9kb2VuZXRtbCI7CiAgcy50ZXh0Q29udGVudCA9IGRlY29kZWQ7CiAgY29udGFpbmVyLmFwcGVuZENoaWxkKHMpOwoKICBpZiAodHlwZW9mIHJlbmRlckRvZW5ldFZpZXdlclRvQ29udGFpbmVyICE9PSAiZnVuY3Rpb24iKSB7CiAgICBjb25zb2xlLmVycm9yKCJEb2VuZXQgZmFpbGVkIHRvIGxvYWQgKGRvZW5ldC1mcmFtZS0yKSIpOwogICAgcmV0dXJuOwogIH0KCiAgcmVuZGVyRG9lbmV0Vmlld2VyVG9Db250YWluZXIoY29udGFpbmVyLCBudWxsLCB7CiAgICBhZGRWaXJ0dWFsS2V5Ym9hcmQ6IGZhbHNlCiAgfSk7Cn0pKCk7Cjwvc2NyaXB0PgoKPHNjcmlwdD4KY29uc3Qgcm9vdCA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCJhcHAtMiIpOwpsZXQgbGFzdFNlbnQgPSAwOwoKZnVuY3Rpb24gc2VuZEhlaWdodChoKSB7CiAgcGFyZW50LnBvc3RNZXNzYWdlKHsKICAgIGRvZW5ldEhlaWdodDogTWF0aC5jZWlsKGgpLAogICAgZnJhbWVJZDogImRvZW5ldC1mcmFtZS0yIgogIH0sICIqIik7Cn0KCmNvbnN0IHJvID0gbmV3IFJlc2l6ZU9ic2VydmVyKGVudHJpZXMgPT4gewogIGNvbnN0IGggPSBlbnRyaWVzWzBdLmNvbnRlbnRSZWN0LmhlaWdodDsKICBpZiAoTWF0aC5hYnMoaCAtIGxhc3RTZW50KSA+IDYpIHsKICAgIGxhc3RTZW50ID0gaDsKICAgIHNlbmRIZWlnaHQoaCk7CiAgfQp9KTsKCnJvLm9ic2VydmUocm9vdCk7Cgp3aW5kb3cuYWRkRXZlbnRMaXN0ZW5lcigibG9hZCIsICgpID0+IHsKICBzZXRUaW1lb3V0KCgpID0+IHNlbmRIZWlnaHQocm9vdC5zY3JvbGxIZWlnaHQpLCAxMDApOwogIHNldFRpbWVvdXQoKCkgPT4gc2VuZEhlaWdodChyb290LnNjcm9sbEhlaWdodCksIDUwMCk7Cn0pOwo8L3NjcmlwdD4KCjwvYm9keT4KPC9odG1sPgo8IS0tIDE3ODEyMDIyNzcgLS0+"></iframe>
+  </div>
+  </details>
+  </div>
+  </div>
+  </details>
+  </div>
+  <div class="callout callout-example" data-callout="example">
+  <details>
+  <summary class="callout-title">Example 1</summary>
+  <div class="callout-content">
+  <p>Find the area enclosed by the curves
+  <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>:</mo><mi>y</mi><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>−</mo><mn>1</mn><msup><mo stretchy="false" form="postfix">)</mo><mn>2</mn></msup><mo>,</mo><mspace width="2.0em"></mspace><mi>g</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>:</mo><mi>y</mi><mo>=</mo><mi>−</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>−</mo><mn>1</mn><msup><mo stretchy="false" form="postfix">)</mo><mn>2</mn></msup><mo>+</mo><mn>4</mn><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>−</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">f(x): y=(x-1)^2,\qquad g(x): y=-(x-1)^2+4(x-1)</annotation></semantics></math></p>
+  <div class="callout callout-waypoint" data-callout="waypoint">
+  <details>
+  <summary class="callout-title">Steps</summary>
+  <div class="callout-content">
+  <ol type="1">
+  <li>Find the bounds of integration.</li>
+  <li>Determine which curve is on top.</li>
+  <li>Write down the correct integral.</li>
+  <li>Evaluate the integral.</li>
+  </ol>
+  </div>
+  </details>
+  </div>
+  <div class="callout callout-steps" data-callout="steps">
+  <details>
+  <summary class="callout-title">Solution</summary>
+  <div class="callout-content">
+  <p><strong>Step 1:</strong> Find the bounds of integration.</p>
+  <p>Carefully graph each curve or solve
+  <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>−</mo><mn>1</mn><msup><mo stretchy="false" form="postfix">)</mo><mn>2</mn></msup><mo>=</mo><mi>−</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>−</mo><mn>1</mn><msup><mo stretchy="false" form="postfix">)</mo><mn>2</mn></msup><mo>+</mo><mn>4</mn><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>−</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex"> (x-1)^2=-(x-1)^2+4(x-1).</annotation></semantics></math>
+  Yields
+  <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">x=1</annotation></semantics></math>
+  or
+  <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">x=3</annotation></semantics></math>.</p>
+  <p><strong>Step 2:</strong> Determine which curve is on top.</p>
+  <p>Use graphical reasoning about the curves (they are parabolas, after
+  all.) Alternative check at
+  <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">x=2</annotation></semantics></math>.
+  <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mn>1</mn><mspace width="2.0em"></mspace><mtext mathvariant="normal">and</mtext><mspace width="2.0em"></mspace><mi>g</mi><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mn>5</mn><mo>,</mo></mrow><annotation encoding="application/x-tex">f(2)=1 \qquad \text{and} \qquad g(2)=5,</annotation></semantics></math>
+  so
+  <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>g</mi><annotation encoding="application/x-tex">g</annotation></semantics></math>
+  is on top.</p>
+  <p><strong>Step 3:</strong> Write down the correct integral.
+  <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mo>∫</mo><mn>1</mn><mn>3</mn></msubsup><mo stretchy="false" form="prefix">[</mo><mi>g</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>−</mo><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">]</mo><mspace width="0.278em"></mspace><mi>d</mi><mi>x</mi><mo>=</mo><msubsup><mo>∫</mo><mn>1</mn><mn>3</mn></msubsup><mo stretchy="false" form="prefix">[</mo><mn>4</mn><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>−</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mo>−</mo><mn>2</mn><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>−</mo><mn>1</mn><msup><mo stretchy="false" form="postfix">)</mo><mn>2</mn></msup><mo stretchy="false" form="postfix">]</mo><mspace width="0.278em"></mspace><mi>d</mi><mi>x</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">\int_1^3 [g(x)-f(x)]\;dx = \int_1^3 [4(x-1)-2(x-1)^2]\;dx.</annotation></semantics></math></p>
+  <p><strong>Step 4:</strong> Evaluate the Integral.
+  <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mo>∫</mo><mn>1</mn><mn>3</mn></msubsup><mo stretchy="false" form="prefix">[</mo><mn>4</mn><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>−</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mo>−</mo><mn>2</mn><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>−</mo><mn>1</mn><msup><mo stretchy="false" form="postfix">)</mo><mn>2</mn></msup><mo stretchy="false" form="postfix">]</mo><mspace width="0.278em"></mspace><mi>d</mi><mi>x</mi><mo>=</mo><mfrac><mn>8</mn><mn>3</mn></mfrac><mspace width="0.278em"></mspace><mi>.</mi></mrow><annotation encoding="application/x-tex">\int_1^3 [4(x-1)-2(x-1)^2]\;dx = \frac{8}{3}\;.</annotation></semantics></math>
+  (You should show all your work in the computation, either expanding
+  the quadratic or performing a
+  <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>u</mi><annotation encoding="application/x-tex">u</annotation></semantics></math>-substitution.)</p>
+  </div>
+  </details>
+  </div>
+  <div class="callout callout-strategy" data-callout="strategy">
+  <details>
+  <summary class="callout-title">Alternative solution.</summary>
+  <div class="callout-content">
+  <p>Notice that setting
+  <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mo>=</mo><mi>x</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">u=x-1</annotation></semantics></math>
+  at the very beginning simplifies the work significantly, rather than
+  waiting to substitute until the integral step. Choosing to simplify
+  early like this reflects a deeper understanding of how the expressions
+  are related, rather than just following a sequence of steps.</p>
+  <p>This kind of insight doesn’t usually happen right away—it’s built
+  gradually through sustained effort and reflection. As you work more
+  problems, you’ll begin to recognize patterns: which substitutions
+  simplify things and when to try them. Developing that intuition is a
+  long-term goal, and every problem you <strong>wrestle with and work
+  through intentionally</strong> helps move you in that direction.</p>
+  </div>
+  </details>
+  </div>
+  </div>
+  </details>
+  </div>
+  <div class="callout callout-example" data-callout="example">
+  <details>
+  <summary class="callout-title">Example 2</summary>
+  <div class="callout-content">
+  <p>Setup a math expression that represents the area of the region
+  bounded by the curves<br />
+  <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>=</mo><mi>x</mi><mo>−</mo><mn>1</mn><mo>,</mo><mspace width="2.0em"></mspace><msup><mi>y</mi><mn>2</mn></msup><mo>=</mo><mn>2</mn><mi>x</mi><mo>+</mo><mn>6</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">y=x-1,\qquad y^2=2x+6.</annotation></semantics></math></p>
+  <iframe id="doenet-frame-3" class="doenet-frame" style="width:100%; border:none; min-height:50px; display:block;" sandbox="allow-scripts allow-same-origin" src="data:text/html;base64,PCFET0NUWVBFIGh0bWw+CjxodG1sPgo8aGVhZD4KPG1ldGEgY2hhcnNldD0idXRmLTgiPgo8bGluayByZWw9InN0eWxlc2hlZXQiCmhyZWY9Imh0dHBzOi8vY2RuLmpzZGVsaXZyLm5ldC9ucG0vQGRvZW5ldC9zdGFuZGFsb25lQGxhdGVzdC9zdHlsZS5jc3MiPgo8c3R5bGU+CmJvZHkgeyBtYXJnaW46MDsgcGFkZGluZzowOyB9Cmh0bWwsIGJvZHkgewogIGhlaWdodDphdXRvICFpbXBvcnRhbnQ7CiAgbWluLWhlaWdodDowICFpbXBvcnRhbnQ7CiAgb3ZlcmZsb3c6dmlzaWJsZSAhaW1wb3J0YW50Owp9Cjwvc3R5bGU+CjwvaGVhZD4KCjxib2R5PgoKPGRpdiBpZD0iYXBwLTMiPjwvZGl2PgoKPHNjcmlwdCB0eXBlPSJtb2R1bGUiPgppbXBvcnQgeyByZW5kZXJEb2VuZXRWaWV3ZXJUb0NvbnRhaW5lciB9CmZyb20gImh0dHBzOi8vY2RuLmpzZGVsaXZyLm5ldC9ucG0vQGRvZW5ldC9zdGFuZGFsb25lQGxhdGVzdC9kb2VuZXQtc3RhbmRhbG9uZS5qcyI7CgooZnVuY3Rpb24gKCkgewogIGNvbnN0IGNvbnRhaW5lciA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCJhcHAtMyIpOwogIGlmICghY29udGFpbmVyKSByZXR1cm47CgogIC8vIERlY29kZSBiYXNlNjQgc2FmZWx5IGFzIFVURi04CiAgY29uc3QgcmF3ID0gYXRvYigiUEhBK0NpQWdRMmhsWTJzZ2VXOTFjaUIzYjNKck9nb2dJRHhoYm5OM1pYSWdibUZ0WlQwaVlXNXpJaUIwZVhCbFBTSnRZWFJvSWo0S0lDQWdJRHdoTFMwZ1BHMWhkR2hKYm5CMWRDQndjbVZtYVd4c1RHRjBaWGc5SWx4cGJuUmZZVjVpSUdZb2VDa2daSGdpTHo0Z0xTMCtDaUFnSUNBOElTMHRJRVJsWW5WbklIQnlaV1pwYkd3S0lDQWdJRHh0WVhSb1NXNXdkWFFnY0hKbFptbHNiRXhoZEdWNFBTSmNhVzUwWDN0ZmV5MHpmWDFlZXkweGZWeHpjWEowZXpSNEt6RXlmV1I0WENBclhDQmNhVzUwWDNzdE1YMWVlelY5WEd4bFpuUW9YSE54Y25SN01uZ3JObjFjSUMxNEt6RmNjbWxuYUhRcFhDQmtlQ0lnTHo0S0lDQWdJQzB0UGdvZ0lDQWdQSE5vYjNKMFJHVnpZM0pwY0hScGIyNCtDaUFnSUNBZ0lFVnVkR1Z5SUdGdWMzZGxjaUIwYnlCamFHVmpheUI1YjNWeUlIZHZjbXN1Q2lBZ0lDQThMM05vYjNKMFJHVnpZM0pwY0hScGIyNCtDaUFnSUNBOFlYZGhjbVErQ2lBZ0lDQWdJRHh0UGx4cGJuUmZleTB6ZlY1N0xURjlNbHh6Y1hKMGV6SjRLelo5SUdSNElDc2dYR2x1ZEY5N0xURjlYalVnVzF4emNYSjBleko0S3paOUxTaDRMVEVwWFNCa2VEd3ZiVDRLSUNBZ0lEd3ZZWGRoY21RK0NpQWdJQ0E4WVhkaGNtUStDaUFnSUNBZ0lDQWdJQ0FnSUR4dFBseHBiblJmZXkwemZWNTdMVEY5SUZ4emNYSjBlelFnZUNBcklERXlmV1I0SUNzZ1hHbHVkRjk3TFRGOVhuczFmU0JjYkdWbWRDaGNjM0Z5ZEhzeUlIZ2dLeUEyZlNBdElIZ2dLeUF4WEhKcFoyaDBLV1I0UEM5dFBnb2dJQ0FnUEM5aGQyRnlaRDRLSUNBOEwyRnVjM2RsY2o0S1BDOXdQZ29LUEhObGRIVndQZ29nSUR4dFlYUmphR1Z6VUdGMGRHVnliaUJ1WVcxbFBTSnRhWE56YVc1blNXNTBaV2R5WVc1a0lpQndZWFIwWlhKdVBTTGlpS3RmS0NsZUtDa2daTys4dnlJK0pHRnVjend2YldGMFkyaGxjMUJoZEhSbGNtNCtDaUFnUEcxaGRHTm9aWE5RWVhSMFpYSnVJRzVoYldVOUluZHliMjVuVm1GeUlpQndZWFIwWlhKdVBTTGlpS3RmS0NsZUtDa2c3N3kvSUdSNUlqNGtZVzV6UEM5dFlYUmphR1Z6VUdGMGRHVnliajRLSUNBOGJXRjBZMmhsYzFCaGRIUmxjbTRnYm1GdFpUMGliMjVsU1c1MFpXZHlZV3dpSUhCaGRIUmxjbTQ5SXVLSXExOG9LVjRvS2UrOHYyUjRJajRrWVc1elBDOXRZWFJqYUdWelVHRjBkR1Z5Ymo0S0lDQThiV0YwWTJobGMxQmhkSFJsY200Z2JtRnRaVDBpWW05MWJtUnpJaUJ3WVhSMFpYSnVQU0xpaUt0ZktDMHpLVjRvTFRFcDc3eS9aSGdyNG9pclh5Z3RNU2xlS0RVcDc3eS9aSGdpUGlSaGJuTThMMjFoZEdOb1pYTlFZWFIwWlhKdVBnb2dJRHh0WVhSamFHVnpVR0YwZEdWeWJpQnVZVzFsUFNKMGIzUmhiRUp2ZFc1a2N5SWdjR0YwZEdWeWJqMGk0b2lyWHlndE15bGVLRFVwNzd5L1pIZ2lQaVJoYm5NOEwyMWhkR05vWlhOUVlYUjBaWEp1UGdvOEwzTmxkSFZ3UGdvS1BHWmxaV1JpWVdOcklHTnZibVJwZEdsdmJqMGlKRzFwYzNOcGJtZEpiblJsWjNKaGJtUWlQZ29nSUZsdmRTQnpaV1Z0SUhSdklHSmxJRzFwYzNOcGJtY2dZVzRnYVc1MFpXZHlZVzVrTGdvOEwyWmxaV1JpWVdOclBnbzhabVZsWkdKaFkyc2dDaUFnWTI5dVpHbDBhVzl1UFNJa2QzSnZibWRXWVhJaVBnb2dJQ0FnV1c5MUlHRndjR1ZoY2lCMGJ5QmlaU0JxZFcxd2FXNW5JR0ZvWldGa0lTQlVhR0YwSjNNZ1ozSmxZWFFoSUVKMWRDQm9aWEpsSUhkbEozSmxJR3h2YjJ0cGJtY2dabTl5SUdsdWRHVm5jbUYwYVc5dUlIZHBkR2dnY21WemNHVmpkQ0IwYnlBOGJUNTRQQzl0UGk0S1BDOW1aV1ZrWW1GamF6NEtQR1psWldSaVlXTnJJQW9nSUdOdmJtUnBkR2x2YmowaUpHOXVaVWx1ZEdWbmNtRnNJR0Z1WkNCdWIzUW9KSFJ2ZEdGc1FtOTFibVJ6S1NJK0NpQWdJQ0JaYjNVZ1lYSmxJR2x1ZEdWbmNtRjBhVzVuSUhkcGRHZ2djbVZ6Y0dWamRDQjBieUIwYUdVZ2NtbG5hSFFnZG1GeWFXRmliR1VzSUdKMWRDQjViM1VnYldsbmFIUWdkMkZ1ZENCMGJ5QnlaWFpwYzJsMElIbHZkWElnYzJ0bGRHTm9JRzl5SUhWelpTQjBhR1VnZG1semRXRnNJR0ZwWkNCMGJ5QnBibk53WldOMElIUm9aU0J5WlhCeVpYTmxiblJoZEdsMlpTQnpiR2xqWlNCdGIzSmxJR05zYjNObGJIa3VJRmRvWVhRZ2MyaHZkV3hrSUhSb1pTQnZkbVZ5WVd4c0lHSnZkVzVrY3lCaVpUOEtQQzltWldWa1ltRmphejRLUEdabFpXUmlZV05ySUdOdmJtUnBkR2x2YmowaUpIUnZkR0ZzUW05MWJtUnpJajRLSUNCWmIzVWdhR0YyWlNCMGFHVWdjbWxuYUhRZ2IzWmxjbUZzYkNCaWIzVnVaSE1nYjJZZ1BHMCtlRDB0TXp3dmJUNGdkRzhnUEcwK2VEMDFQQzl0UGl3Z1luVjBJR2x6SUhSb1pYSmxJSE52YldWMGFHbHVaeUJvWVhCd1pXNXBibWNnYVc0Z2RHaGxJRzFwWkdSc1pTQjBhR0YwSUcxaGRIUmxjbk1nZEc4Z2VXOTFjaUJwYm5SbFozSmhibVEvQ2p3dlptVmxaR0poWTJzK0NqeG1aV1ZrWW1GamF5QmpiMjVrYVhScGIyNDlJaVJpYjNWdVpITWdZVzVrSUc1dmRDZ2tZVzV6TG1OeVpXUnBkRUZqYUdsbGRtVmtLU0krQ2lBZ1dXOTFKM0psSUdGc2JXOXpkQ0IwYUdWeVpTRWdTblZ6ZENCaVpTQmhJR0pwZENCdGIzSmxJR05oY21WbWRXd2dkMmwwYUNCMGFHVWdhVzUwWldkeVlXNWtjeXdnZEdobElISmxjM1FnYjJZZ2RHaGxJR1Y0Y0hKbGMzTnBiMjRnYVhNZ1kyOXljbVZqZENFS1BDOW1aV1ZrWW1GamF6ND0iKTsKCiAgbGV0IGRlY29kZWQ7CiAgdHJ5IHsKICAgIGRlY29kZWQgPSBuZXcgVGV4dERlY29kZXIoInV0Zi04IikuZGVjb2RlKAogICAgICBVaW50OEFycmF5LmZyb20ocmF3LCBjID0+IGMuY2hhckNvZGVBdCgwKSkKICAgICk7CiAgfSBjYXRjaCAoZSkgewogICAgY29uc29sZS53YXJuKCJVVEYtOCBkZWNvZGUgZmFpbGVkLCBmYWxsaW5nIGJhY2s6IiwgZSk7CiAgICBkZWNvZGVkID0gcmF3OwogIH0KCiAgLy8gUGF0Y2gga25vd24gZW5jb2RpbmcgY29ycnVwdGlvbiAoc2FmZXR5IG5ldCkKICBkZWNvZGVkID0gZGVjb2RlZC5yZXBsYWNlKC9cdTAwRUZcdTAwQkNcdTAwQkYvZywgIlx1RkYzRiIpOwoKICAvLyBJbmplY3QgRG9lbmV0TUwKICBjb25zdCBzID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgic2NyaXB0Iik7CiAgcy50eXBlID0gInRleHQvZG9lbmV0bWwiOwogIHMudGV4dENvbnRlbnQgPSBkZWNvZGVkOwogIGNvbnRhaW5lci5hcHBlbmRDaGlsZChzKTsKCiAgaWYgKHR5cGVvZiByZW5kZXJEb2VuZXRWaWV3ZXJUb0NvbnRhaW5lciAhPT0gImZ1bmN0aW9uIikgewogICAgY29uc29sZS5lcnJvcigiRG9lbmV0IGZhaWxlZCB0byBsb2FkIChkb2VuZXQtZnJhbWUtMykiKTsKICAgIHJldHVybjsKICB9CgogIHJlbmRlckRvZW5ldFZpZXdlclRvQ29udGFpbmVyKGNvbnRhaW5lciwgbnVsbCwgewogICAgYWRkVmlydHVhbEtleWJvYXJkOiBmYWxzZQogIH0pOwp9KSgpOwo8L3NjcmlwdD4KCjxzY3JpcHQ+CmNvbnN0IHJvb3QgPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgiYXBwLTMiKTsKbGV0IGxhc3RTZW50ID0gMDsKCmZ1bmN0aW9uIHNlbmRIZWlnaHQoaCkgewogIHBhcmVudC5wb3N0TWVzc2FnZSh7CiAgICBkb2VuZXRIZWlnaHQ6IE1hdGguY2VpbChoKSwKICAgIGZyYW1lSWQ6ICJkb2VuZXQtZnJhbWUtMyIKICB9LCAiKiIpOwp9Cgpjb25zdCBybyA9IG5ldyBSZXNpemVPYnNlcnZlcihlbnRyaWVzID0+IHsKICBjb25zdCBoID0gZW50cmllc1swXS5jb250ZW50UmVjdC5oZWlnaHQ7CiAgaWYgKE1hdGguYWJzKGggLSBsYXN0U2VudCkgPiA2KSB7CiAgICBsYXN0U2VudCA9IGg7CiAgICBzZW5kSGVpZ2h0KGgpOwogIH0KfSk7Cgpyby5vYnNlcnZlKHJvb3QpOwoKd2luZG93LmFkZEV2ZW50TGlzdGVuZXIoImxvYWQiLCAoKSA9PiB7CiAgc2V0VGltZW91dCgoKSA9PiBzZW5kSGVpZ2h0KHJvb3Quc2Nyb2xsSGVpZ2h0KSwgMTAwKTsKICBzZXRUaW1lb3V0KCgpID0+IHNlbmRIZWlnaHQocm9vdC5zY3JvbGxIZWlnaHQpLCA1MDApOwp9KTsKPC9zY3JpcHQ+Cgo8L2JvZHk+CjwvaHRtbD4KPCEtLSAxNzgxMjAyMjc3IC0tPg=="></iframe>
+  <div class="callout callout-warning" data-callout="warning">
+  <div class="callout-title">
+  Warning
+  </div>
+  <div class="callout-content">
+  <p>Before you open any of the boxes below, try to solve the problem on
+  your own first. If you get stuck, use the hint to guide your thinking.
+  Only open the visual aid if you still need support after that. The
+  goal here is to build your own reasoning and problem-solving skills,
+  and that means spending time working through uncertainty and making
+  your own connections. Resist the urge to reveal everything too
+  quickly—give your brain a real chance to grapple with the ideas
+  first.</p>
+  </div>
+  </div>
+  <div class="callout callout-steps" data-callout="steps">
+  <details>
+  <summary class="callout-title">Steps</summary>
+  <div class="callout-content">
+  <ol type="1">
+  <li>This time, I would highly recommend plotting both curves.
+  <ul>
+  <li>The first curve is a standard linear function, so it should be
+  immediate.</li>
+  <li>With a small bit of work, the second curve can be done nearly as
+  quickly as
+  <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>y</mi><mn>2</mn></msup><mo>=</mo><mn>2</mn><mi>x</mi><mo>+</mo><mn>6</mn><mo>=</mo><mn>2</mn><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>+</mo><mn>3</mn><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">y^2=2x+6 = 2(x+3).</annotation></semantics></math>
+  This immediately tells us that the plot is a parabola with vertex at
+  <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mn>3</mn><mo>,</mo><mn>0</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(-3,0)</annotation></semantics></math>
+  opening in the positive
+  <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>
+  direction. It’s also compressed by a factor of two from left to right.
+  This immediately provides all the information necessary to
+  sufficiently graph the curve.</li>
+  </ul></li>
+  <li>Identify the points of intersection and which curve is on top
+  either algebraically or graphically. If working graphically, be
+  certain to verify your work algebraically. Pictures can lie!</li>
+  <li>Try to setup the appropriate integral, but do so by carefully
+  analyzing the picture you have drawn. You can check your initial work
+  using the visual aid.</li>
+  </ol>
+  </div>
+  </details>
+  </div>
+  <div class="callout callout-cite" data-callout="cite">
+  <details>
+  <summary class="callout-title">Visual Aid</summary>
+  <div class="callout-content">
+  <p></p>
+  <iframe id="doenet-frame-4" class="doenet-frame" style="width:100%; border:none; min-height:50px; display:block;" sandbox="allow-scripts allow-same-origin" src="data:text/html;base64,PCFET0NUWVBFIGh0bWw+CjxodG1sPgo8aGVhZD4KPG1ldGEgY2hhcnNldD0idXRmLTgiPgo8bGluayByZWw9InN0eWxlc2hlZXQiCmhyZWY9Imh0dHBzOi8vY2RuLmpzZGVsaXZyLm5ldC9ucG0vQGRvZW5ldC9zdGFuZGFsb25lQGxhdGVzdC9zdHlsZS5jc3MiPgo8c3R5bGU+CmJvZHkgeyBtYXJnaW46MDsgcGFkZGluZzowOyB9Cmh0bWwsIGJvZHkgewogIGhlaWdodDphdXRvICFpbXBvcnRhbnQ7CiAgbWluLWhlaWdodDowICFpbXBvcnRhbnQ7CiAgb3ZlcmZsb3c6dmlzaWJsZSAhaW1wb3J0YW50Owp9Cjwvc3R5bGU+CjwvaGVhZD4KCjxib2R5PgoKPGRpdiBpZD0iYXBwLTQiPjwvZGl2PgoKPHNjcmlwdCB0eXBlPSJtb2R1bGUiPgppbXBvcnQgeyByZW5kZXJEb2VuZXRWaWV3ZXJUb0NvbnRhaW5lciB9CmZyb20gImh0dHBzOi8vY2RuLmpzZGVsaXZyLm5ldC9ucG0vQGRvZW5ldC9zdGFuZGFsb25lQGxhdGVzdC9kb2VuZXQtc3RhbmRhbG9uZS5qcyI7CgooZnVuY3Rpb24gKCkgewogIGNvbnN0IGNvbnRhaW5lciA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCJhcHAtNCIpOwogIGlmICghY29udGFpbmVyKSByZXR1cm47CgogIC8vIERlY29kZSBiYXNlNjQgc2FmZWx5IGFzIFVURi04CiAgY29uc3QgcmF3ID0gYXRvYigiUEhObGRIVndQZ29nSUR4dWRXMWlaWElnYm1GdFpUMGlZU0krTFRNOEwyNTFiV0psY2o0S0lDQThiblZ0WW1WeUlHNWhiV1U5SW1JaVBqVThMMjUxYldKbGNqNEtJQ0E4Ym5WdFltVnlJRzVoYldVOUlrMTFkR1ZrUjNKbFpXNGlQakV4Tnpjek16d3ZiblZ0WW1WeVBnb2dJRHh6ZEhsc1pVUmxabWx1YVhScGIyNGdibUZ0WlQwaVRVZHlaV1Z1VTNSNWJHVWlJSE4wZVd4bFRuVnRZbVZ5UFNJeE1DSWdiR2x1WlZkcFpIUm9QU0l6SWlCc2FXNWxVM1I1YkdVOUluTnZiR2xrSWlCc2FXNWxRMjlzYjNJOUlpTWtUWFYwWldSSGNtVmxiaUlnSUdacGJHeERiMnh2Y2owaUl5Uk5kWFJsWkVkeVpXVnVJaUF2UGdvZ0lEeHVkVzFpWlhJZ2JtRnRaVDBpVFhWMFpXUkpibVJwWjI4aVBqTXpNakk0T0R3dmJuVnRZbVZ5UGdvZ0lEeG1kVzVqZEdsdmJpQnVZVzFsUFNKbUlpQnpkSGxzWlU1MWJXSmxjajBpTVRBaUlHUnZiV0ZwYmowaVd5UmhMVEVzSkdJck1WMGlQbmd0TVR3dlpuVnVZM1JwYjI0K0NpQWdQR1oxYm1OMGFXOXVJRzVoYldVOUltY2lJSE4wZVd4bFRuVnRZbVZ5UFNJNUlpQmtiMjFoYVc0OUlsc2tZU3drWWlzeFhTSStjM0Z5ZENneWVDczJLVHd2Wm5WdVkzUnBiMjQrQ2lBZ1BHWjFibU4wYVc5dUlHNWhiV1U5SW1naUlITjBlV3hsVG5WdFltVnlQU0k1SWlCa2IyMWhhVzQ5SWxza1lTd2tZbDBpUGkxemNYSjBLREo0S3pZcFBDOW1kVzVqZEdsdmJqNEtJQ0E4Wm5WdVkzUnBiMjRnYzNSNWJHVk9kVzFpWlhJOUlqRXdJaUJ1WVcxbFBTSjZJaUJrYjIxaGFXNDlJbHNrWVN3a1lsMGlQakE4TDJaMWJtTjBhVzl1UGdvOEwzTmxkSFZ3UGdvS1BDRXRMU0FsSlNVbEpTVWxKU1VsSlNVbEpTVWxKU1VsSlNVbEpTVWxKU1VsQ2lBZ0lDQWdKU1VsSlNVbEpTVWxKU1VsSlNVbEpTVWdSSEpoZHlCaElFZHlZWEJvQ2lVbEpTVWxKU1VsSlNVbEpTVWxKU1VsSlNVbEpTVWxKU1VsSlNVbEpTVWxKU0F0TFQ0S1BHZHlZWEJvSUdacGVFRjRaWE1nZDJsa2RHZzlJamd3SlNJZ2MyaHZkMEp2Y21SbGNqMGlabUZzYzJVaUlHRnpjR1ZqZEZKaGRHbHZQU0l4TGpjMUlpQm5jbWxrUFNKMGNuVmxJaUI0YldsdVBTSWtZUzB4SWlCNGJXRjRQU0lrWWlzeElpQmthWE53YkdGNVdFRjRhWE5VYVdOclRHRmlaV3h6UFNKbVlXeHpaU0lnZVcxcGJqMGlMVE1pSUhsdFlYZzlJalVpSUhOb2IzZE9ZWFpwWjJGMGFXOXVQU0ptWVd4elpTSWdaR1ZqYjNKaGRHbDJaVDRLSUNBOGMyaHZjblJFWlhOamNtbHdkR2x2Ymo1VWFHVWdaM0poY0doeklHOW1JSGxlTWoweWVDczJJR0Z1WkNCNVBYZ3RNU0JtY205dElIZzlMVE1nZEc4Z2VEMDFJR0Z1WkNCNVBTMHlJSFJ2SUhrOU5Dd2djMmh2ZDJsdVp5QjBhR1ZwY2lCcGJuUmxjbk5sWTNScGIyNXpJR0Z1WkNCaGJHeHZkMmx1WnlCaElISmxjSEpsYzJWdWRHRjBhWFpsSUhabGNuUnBZMkZzSUhOc2FXTmxJSFJ2SUdKbElHUnlZWGR1SUdGdVpDQnRiM1psWkNCb2IzSnBlbTl1ZEdGc2JIa3VQQzl6YUc5eWRFUmxjMk55YVhCMGFXOXVQZ29nSUR4c2FXNWxVMlZuYldWdWRDQnpkSGxzWlU1MWJXSmxjajBpT1NJZ1ptbDRURzlqWVhScGIyNGdaVzVrY0c5cGJuUnpQU0lvSkdFc0pDUm5LQ1JoS1NrZ0tDUmhMREFwSWlBdlBpQWdDaUFnUEd4cGJtVlRaV2R0Wlc1MElITjBlV3hsVG5WdFltVnlQU0k1SWlCbWFYaE1iMk5oZEdsdmJpQmxibVJ3YjJsdWRITTlJaWczTENRa1p5ZzNLU2tnS0Rjc01Da2lJR3hoWW1Wc1NYTk9ZVzFsSUM4K0NpQWdKR1lnSkdjZ0pHZ0tJQ0E4Ym5WdFltVnlJR2hwWkdVZ2JtRnRaVDBpWW05MFRHVm1kQ0krYldGNEtDUWthQ2drZUZaaGJDa3NKQ1JtS0NSNFZtRnNLU2s4TDI1MWJXSmxjajRLSUNBOGNtVmpkR0Z1WjJ4bElHaHBaR1U5SW01dmRDZ2tjMmh2ZDFOc2FXTmxLU0lnYzNSNWJHVk9kVzFpWlhJOUlqVWlJR1pwYkd4bFpDQjJaWEowYVdObGN6MGlLQ1I0Vm1Gc0xDQWtZbTkwVEdWbWRDa2dLQ1I0Vm1Gc0t6QXVNaXdnSkNSbktDUjRWbUZzS1NraUlDOCtDand2WjNKaGNHZytDanhpYjI5c1pXRnVTVzV3ZFhRZ2JtRnRaVDBpYzJodmQxTnNhV05sSWo0S0lDQThiR0ZpWld3K1UyaHZkeUJ5WlhCeVpYTmxiblJoZEdsMlpTQnpiR2xqWlM0OEwyeGhZbVZzUGdvOEwySnZiMnhsWVc1SmJuQjFkRDRLUEhOc2FXUmxjaUJwYm1sMGFXRnNWbUZzZFdVOUlpMHlMamdpSUc1aGJXVTlJbmhXWVd3aUlHWnliMjA5SWkweklpQjBiejBpTkM0NElpQnpkR1Z3UFNJd0xqSWlJSE5vYjNkVWFXTnJjejBpWm1Gc2MyVWlJSE5vYjNkV1lXeDFaVDBpWm1Gc2MyVWlJR2hwWkdVOUltNXZkQ2drYzJodmQxTnNhV05sS1NJZ0x6ND0iKTsKCiAgbGV0IGRlY29kZWQ7CiAgdHJ5IHsKICAgIGRlY29kZWQgPSBuZXcgVGV4dERlY29kZXIoInV0Zi04IikuZGVjb2RlKAogICAgICBVaW50OEFycmF5LmZyb20ocmF3LCBjID0+IGMuY2hhckNvZGVBdCgwKSkKICAgICk7CiAgfSBjYXRjaCAoZSkgewogICAgY29uc29sZS53YXJuKCJVVEYtOCBkZWNvZGUgZmFpbGVkLCBmYWxsaW5nIGJhY2s6IiwgZSk7CiAgICBkZWNvZGVkID0gcmF3OwogIH0KCiAgLy8gUGF0Y2gga25vd24gZW5jb2RpbmcgY29ycnVwdGlvbiAoc2FmZXR5IG5ldCkKICBkZWNvZGVkID0gZGVjb2RlZC5yZXBsYWNlKC9cdTAwRUZcdTAwQkNcdTAwQkYvZywgIlx1RkYzRiIpOwoKICAvLyBJbmplY3QgRG9lbmV0TUwKICBjb25zdCBzID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgic2NyaXB0Iik7CiAgcy50eXBlID0gInRleHQvZG9lbmV0bWwiOwogIHMudGV4dENvbnRlbnQgPSBkZWNvZGVkOwogIGNvbnRhaW5lci5hcHBlbmRDaGlsZChzKTsKCiAgaWYgKHR5cGVvZiByZW5kZXJEb2VuZXRWaWV3ZXJUb0NvbnRhaW5lciAhPT0gImZ1bmN0aW9uIikgewogICAgY29uc29sZS5lcnJvcigiRG9lbmV0IGZhaWxlZCB0byBsb2FkIChkb2VuZXQtZnJhbWUtNCkiKTsKICAgIHJldHVybjsKICB9CgogIHJlbmRlckRvZW5ldFZpZXdlclRvQ29udGFpbmVyKGNvbnRhaW5lciwgbnVsbCwgewogICAgYWRkVmlydHVhbEtleWJvYXJkOiBmYWxzZQogIH0pOwp9KSgpOwo8L3NjcmlwdD4KCjxzY3JpcHQ+CmNvbnN0IHJvb3QgPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgiYXBwLTQiKTsKbGV0IGxhc3RTZW50ID0gMDsKCmZ1bmN0aW9uIHNlbmRIZWlnaHQoaCkgewogIHBhcmVudC5wb3N0TWVzc2FnZSh7CiAgICBkb2VuZXRIZWlnaHQ6IE1hdGguY2VpbChoKSwKICAgIGZyYW1lSWQ6ICJkb2VuZXQtZnJhbWUtNCIKICB9LCAiKiIpOwp9Cgpjb25zdCBybyA9IG5ldyBSZXNpemVPYnNlcnZlcihlbnRyaWVzID0+IHsKICBjb25zdCBoID0gZW50cmllc1swXS5jb250ZW50UmVjdC5oZWlnaHQ7CiAgaWYgKE1hdGguYWJzKGggLSBsYXN0U2VudCkgPiA2KSB7CiAgICBsYXN0U2VudCA9IGg7CiAgICBzZW5kSGVpZ2h0KGgpOwogIH0KfSk7Cgpyby5vYnNlcnZlKHJvb3QpOwoKd2luZG93LmFkZEV2ZW50TGlzdGVuZXIoImxvYWQiLCAoKSA9PiB7CiAgc2V0VGltZW91dCgoKSA9PiBzZW5kSGVpZ2h0KHJvb3Quc2Nyb2xsSGVpZ2h0KSwgMTAwKTsKICBzZXRUaW1lb3V0KCgpID0+IHNlbmRIZWlnaHQocm9vdC5zY3JvbGxIZWlnaHQpLCA1MDApOwp9KTsKPC9zY3JpcHQ+Cgo8L2JvZHk+CjwvaHRtbD4KPCEtLSAxNzgxMjAyMjc4IC0tPg=="></iframe>
+  <div class="callout callout-prompt" data-callout="prompt">
+  <details open>
+  <summary class="callout-title">Prompt</summary>
+  <div class="callout-content">
+  <p>What do you notice that is different about this picture from any of
+  our prior examples of Riemann sums?</p>
+  </div>
+  </details>
+  </div>
+  </div>
+  </details>
+  </div>
+  </div>
+  </details>
+  </div>
+  <div class="callout callout-example" data-callout="example">
+  <details>
+  <summary class="callout-title">Example 3</summary>
+  <div class="callout-content">
+  <p>For Example 3, we’ll repeat Example 2, but we’ll look for a way to
+  simplify the calculation from two integrals to one. I’d recommend
+  looking at your sketch (or the picture above) to think through how we
+  might accomplish this.</p>
+  <p>You can also look at the visual aid for the problem below and see
+  if you can predict what will change and try and setup an appropriate
+  integral in the answer validator to see if you’ve got it figured
+  out!</p>
+  <iframe id="doenet-frame-5" class="doenet-frame" style="width:100%; border:none; min-height:50px; display:block;" sandbox="allow-scripts allow-same-origin" src="data:text/html;base64,PCFET0NUWVBFIGh0bWw+CjxodG1sPgo8aGVhZD4KPG1ldGEgY2hhcnNldD0idXRmLTgiPgo8bGluayByZWw9InN0eWxlc2hlZXQiCmhyZWY9Imh0dHBzOi8vY2RuLmpzZGVsaXZyLm5ldC9ucG0vQGRvZW5ldC9zdGFuZGFsb25lQGxhdGVzdC9zdHlsZS5jc3MiPgo8c3R5bGU+CmJvZHkgeyBtYXJnaW46MDsgcGFkZGluZzowOyB9Cmh0bWwsIGJvZHkgewogIGhlaWdodDphdXRvICFpbXBvcnRhbnQ7CiAgbWluLWhlaWdodDowICFpbXBvcnRhbnQ7CiAgb3ZlcmZsb3c6dmlzaWJsZSAhaW1wb3J0YW50Owp9Cjwvc3R5bGU+CjwvaGVhZD4KCjxib2R5PgoKPGRpdiBpZD0iYXBwLTUiPjwvZGl2PgoKPHNjcmlwdCB0eXBlPSJtb2R1bGUiPgppbXBvcnQgeyByZW5kZXJEb2VuZXRWaWV3ZXJUb0NvbnRhaW5lciB9CmZyb20gImh0dHBzOi8vY2RuLmpzZGVsaXZyLm5ldC9ucG0vQGRvZW5ldC9zdGFuZGFsb25lQGxhdGVzdC9kb2VuZXQtc3RhbmRhbG9uZS5qcyI7CgooZnVuY3Rpb24gKCkgewogIGNvbnN0IGNvbnRhaW5lciA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCJhcHAtNSIpOwogIGlmICghY29udGFpbmVyKSByZXR1cm47CgogIC8vIERlY29kZSBiYXNlNjQgc2FmZWx5IGFzIFVURi04CiAgY29uc3QgcmF3ID0gYXRvYigiUEdGdWMzZGxjajQ4YldGMGFFbHVjSFYwUGp4c1lXSmxiRDVEYUdWamF5QjViM1Z5SUhkdmNtczZJRHd2YkdGaVpXdytQQzl0WVhSb1NXNXdkWFErQ2p4aGQyRnlaRDQ4YldGMGFDQm1iM0p0WVhROUlteGhkR1Y0SWo1Y2FXNTBYM3N0TW4xZU5DQW9LSGtyTVNrdEtIbGVNaTAyS1M4eUtTQmtlVHd2YldGMGFENDhMMkYzWVhKa1BnbzhZWGRoY21RZ1kzSmxaR2wwUFNJd0lpQnVZVzFsUFNKdGFYTnphVzVuVUdGeVpXNXpJajQ4YldGMGFDQm1iM0p0WVhROUlteGhkR1Y0SWo1Y2FXNTBYM3N0TW4xZU5DQW9lU3N4S1Mwb2VWNHlMVFlwTHpJZ1pIazhMMjFoZEdnK1BDOWhkMkZ5WkQ0OEwyRnVjM2RsY2o0S1BHWmxaV1JpWVdOcklHTnZibVJwZEdsdmJqMGlKRzFwYzNOcGJtZFFZWEpsYm5NaVBrRnNiVzl6ZENCMGFHVnlaU0VnU1NCMGFHbHVheUI1YjNVZ2FuVnpkQ0JtYjNKbmIzUWdjMjl0WlNCd1lYSmxiblJvWlhObGN5QnpiMjFsZDJobGNtVXVQQzltWldWa1ltRmphejQ9Iik7CgogIGxldCBkZWNvZGVkOwogIHRyeSB7CiAgICBkZWNvZGVkID0gbmV3IFRleHREZWNvZGVyKCJ1dGYtOCIpLmRlY29kZSgKICAgICAgVWludDhBcnJheS5mcm9tKHJhdywgYyA9PiBjLmNoYXJDb2RlQXQoMCkpCiAgICApOwogIH0gY2F0Y2ggKGUpIHsKICAgIGNvbnNvbGUud2FybigiVVRGLTggZGVjb2RlIGZhaWxlZCwgZmFsbGluZyBiYWNrOiIsIGUpOwogICAgZGVjb2RlZCA9IHJhdzsKICB9CgogIC8vIFBhdGNoIGtub3duIGVuY29kaW5nIGNvcnJ1cHRpb24gKHNhZmV0eSBuZXQpCiAgZGVjb2RlZCA9IGRlY29kZWQucmVwbGFjZSgvXHUwMEVGXHUwMEJDXHUwMEJGL2csICJcdUZGM0YiKTsKCiAgLy8gSW5qZWN0IERvZW5ldE1MCiAgY29uc3QgcyA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoInNjcmlwdCIpOwogIHMudHlwZSA9ICJ0ZXh0L2RvZW5ldG1sIjsKICBzLnRleHRDb250ZW50ID0gZGVjb2RlZDsKICBjb250YWluZXIuYXBwZW5kQ2hpbGQocyk7CgogIGlmICh0eXBlb2YgcmVuZGVyRG9lbmV0Vmlld2VyVG9Db250YWluZXIgIT09ICJmdW5jdGlvbiIpIHsKICAgIGNvbnNvbGUuZXJyb3IoIkRvZW5ldCBmYWlsZWQgdG8gbG9hZCAoZG9lbmV0LWZyYW1lLTUpIik7CiAgICByZXR1cm47CiAgfQoKICByZW5kZXJEb2VuZXRWaWV3ZXJUb0NvbnRhaW5lcihjb250YWluZXIsIG51bGwsIHsKICAgIGFkZFZpcnR1YWxLZXlib2FyZDogZmFsc2UKICB9KTsKfSkoKTsKPC9zY3JpcHQ+Cgo8c2NyaXB0Pgpjb25zdCByb290ID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoImFwcC01Iik7CmxldCBsYXN0U2VudCA9IDA7CgpmdW5jdGlvbiBzZW5kSGVpZ2h0KGgpIHsKICBwYXJlbnQucG9zdE1lc3NhZ2UoewogICAgZG9lbmV0SGVpZ2h0OiBNYXRoLmNlaWwoaCksCiAgICBmcmFtZUlkOiAiZG9lbmV0LWZyYW1lLTUiCiAgfSwgIioiKTsKfQoKY29uc3Qgcm8gPSBuZXcgUmVzaXplT2JzZXJ2ZXIoZW50cmllcyA9PiB7CiAgY29uc3QgaCA9IGVudHJpZXNbMF0uY29udGVudFJlY3QuaGVpZ2h0OwogIGlmIChNYXRoLmFicyhoIC0gbGFzdFNlbnQpID4gNikgewogICAgbGFzdFNlbnQgPSBoOwogICAgc2VuZEhlaWdodChoKTsKICB9Cn0pOwoKcm8ub2JzZXJ2ZShyb290KTsKCndpbmRvdy5hZGRFdmVudExpc3RlbmVyKCJsb2FkIiwgKCkgPT4gewogIHNldFRpbWVvdXQoKCkgPT4gc2VuZEhlaWdodChyb290LnNjcm9sbEhlaWdodCksIDEwMCk7CiAgc2V0VGltZW91dCgoKSA9PiBzZW5kSGVpZ2h0KHJvb3Quc2Nyb2xsSGVpZ2h0KSwgNTAwKTsKfSk7Cjwvc2NyaXB0PgoKPC9ib2R5Pgo8L2h0bWw+CjwhLS0gMTc4MTIwMjI3OCAtLT4="></iframe>
+  <div class="callout callout-visual" data-callout="visual">
+  <details>
+  <summary class="callout-title">Visual Aid</summary>
+  <div class="callout-content">
+  <iframe id="doenet-frame-6" class="doenet-frame" style="width:100%; border:none; min-height:50px; display:block;" sandbox="allow-scripts allow-same-origin" src="data:text/html;base64,PCFET0NUWVBFIGh0bWw+CjxodG1sPgo8aGVhZD4KPG1ldGEgY2hhcnNldD0idXRmLTgiPgo8bGluayByZWw9InN0eWxlc2hlZXQiCmhyZWY9Imh0dHBzOi8vY2RuLmpzZGVsaXZyLm5ldC9ucG0vQGRvZW5ldC9zdGFuZGFsb25lQGxhdGVzdC9zdHlsZS5jc3MiPgo8c3R5bGU+CmJvZHkgeyBtYXJnaW46MDsgcGFkZGluZzowOyB9Cmh0bWwsIGJvZHkgewogIGhlaWdodDphdXRvICFpbXBvcnRhbnQ7CiAgbWluLWhlaWdodDowICFpbXBvcnRhbnQ7CiAgb3ZlcmZsb3c6dmlzaWJsZSAhaW1wb3J0YW50Owp9Cjwvc3R5bGU+CjwvaGVhZD4KCjxib2R5PgoKPGRpdiBpZD0iYXBwLTYiPjwvZGl2PgoKPHNjcmlwdCB0eXBlPSJtb2R1bGUiPgppbXBvcnQgeyByZW5kZXJEb2VuZXRWaWV3ZXJUb0NvbnRhaW5lciB9CmZyb20gImh0dHBzOi8vY2RuLmpzZGVsaXZyLm5ldC9ucG0vQGRvZW5ldC9zdGFuZGFsb25lQGxhdGVzdC9kb2VuZXQtc3RhbmRhbG9uZS5qcyI7CgooZnVuY3Rpb24gKCkgewogIGNvbnN0IGNvbnRhaW5lciA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCJhcHAtNiIpOwogIGlmICghY29udGFpbmVyKSByZXR1cm47CgogIC8vIERlY29kZSBiYXNlNjQgc2FmZWx5IGFzIFVURi04CiAgY29uc3QgcmF3ID0gYXRvYigiUEhObGRIVndQZ29nSUR4dWRXMWlaWElnYm1GdFpUMGlZU0krTFRNOEwyNTFiV0psY2o0S0lDQThiblZ0WW1WeUlHNWhiV1U5SW1JaVBqVThMMjUxYldKbGNqNEtJQ0E4Ym5WdFltVnlJRzVoYldVOUlrMTFkR1ZrUjNKbFpXNGlQakV4Tnpjek16d3ZiblZ0WW1WeVBnb2dJRHh6ZEhsc1pVUmxabWx1YVhScGIyNGdibUZ0WlQwaVRVZHlaV1Z1VTNSNWJHVWlJSE4wZVd4bFRuVnRZbVZ5UFNJeE1DSWdiR2x1WlZkcFpIUm9QU0l6SWlCc2FXNWxVM1I1YkdVOUluTnZiR2xrSWlCc2FXNWxRMjlzYjNJOUlpTWtUWFYwWldSSGNtVmxiaUlnSUdacGJHeERiMnh2Y2owaUl5Uk5kWFJsWkVkeVpXVnVJaUF2UGdvZ0lEeHVkVzFpWlhJZ2JtRnRaVDBpVFhWMFpXUkpibVJwWjI4aVBqTXpNakk0T0R3dmJuVnRZbVZ5UGdvZ0lEeG1kVzVqZEdsdmJpQnVZVzFsUFNKbUlpQnpkSGxzWlU1MWJXSmxjajBpTVRBaUlHUnZiV0ZwYmowaVd5UmhMVEVzSkdJck1WMGlQbmd0TVR3dlpuVnVZM1JwYjI0K0NpQWdQR1oxYm1OMGFXOXVJRzVoYldVOUltY2lJSE4wZVd4bFRuVnRZbVZ5UFNJNUlpQmtiMjFoYVc0OUlsc2tZU3drWWlzeFhTSStjM0Z5ZENneWVDczJLVHd2Wm5WdVkzUnBiMjQrQ2lBZ1BHWjFibU4wYVc5dUlHNWhiV1U5SW1naUlITjBlV3hsVG5WdFltVnlQU0k1SWlCa2IyMWhhVzQ5SWxza1lTd2tZbDBpUGkxemNYSjBLREo0S3pZcFBDOW1kVzVqZEdsdmJqNEtJQ0E4Wm5WdVkzUnBiMjRnYzNSNWJHVk9kVzFpWlhJOUlqRXdJaUJ1WVcxbFBTSjZJaUJrYjIxaGFXNDlJbHNrWVN3a1lsMGlQakE4TDJaMWJtTjBhVzl1UGdvZ0lEeG1kVzVqZEdsdmJpQnVZVzFsUFNKd0lpQjJZWEpwWVdKc1pUMGllU0krS0hsZU1pMDJLUzh5UEM5bWRXNWpkR2x2Ymo0S0lDQThablZ1WTNScGIyNGdibUZ0WlQwaWNTSWdkbUZ5YVdGaWJHVTlJbmtpUG5rck1Ud3ZablZ1WTNScGIyNCtDand2YzJWMGRYQStDZ284SVMwdElDVWxKU1VsSlNVbEpTVWxKU1VsSlNVbEpTVWxKU1VsSlNVbEpTVUtJQ0FnSUNBbEpTVWxKU1VsSlNVbEpTVWxKU1VsSlNCRWNtRjNJR0VnUjNKaGNHZ0tKU1VsSlNVbEpTVWxKU1VsSlNVbEpTVWxKU1VsSlNVbEpTVWxKU1VsSlNVbElDMHRQZ284WjNKaGNHZ2dabWw0UVhobGN5QjNhV1IwYUQwaU9EQWxJaUJ6YUc5M1FtOXlaR1Z5UFNKbVlXeHpaU0lnWVhOd1pXTjBVbUYwYVc4OUlqRXVOelVpSUdkeWFXUTlJblJ5ZFdVaUlIaHRhVzQ5SWlSaExURWlJSGh0WVhnOUlpUmlLekVpSUdScGMzQnNZWGxZUVhocGMxUnBZMnRNWVdKbGJITTlJbVpoYkhObElpQjViV2x1UFNJdE15SWdlVzFoZUQwaU5TSWdjMmh2ZDA1aGRtbG5ZWFJwYjI0OUltWmhiSE5sSWlCa1pXTnZjbUYwYVhabFBnb2dJRHh6YUc5eWRFUmxjMk55YVhCMGFXOXVQbFJvWlNCbmNtRndhSE1nYjJZZ2VWNHlQVEo0S3pZZ1lXNWtJSGs5ZUMweElHWnliMjBnZUQwdE15QjBieUI0UFRVZ1lXNWtJSGs5TFRJZ2RHOGdlVDAwTENCemFHOTNhVzVuSUhSb1pXbHlJR2x1ZEdWeWMyVmpkR2x2Ym5NZ1lXNWtJR0ZzYkc5M2FXNW5JR0VnY21Wd2NtVnpaVzUwWVhScGRtVWdhRzl5YVhwdmJuUmhiQ0J6YkdsalpTQjBieUJpWlNCa2NtRjNiaUJoYm1RZ2JXOTJaV1FnZG1WeWRHbGpZV3hzZVM0OEwzTm9iM0owUkdWelkzSnBjSFJwYjI0K0NpQWdQR3hwYm1WVFpXZHRaVzUwSUhOMGVXeGxUblZ0WW1WeVBTSTVJaUJtYVhoTWIyTmhkR2x2YmlCbGJtUndiMmx1ZEhNOUlpZ2tZU3drSkdjb0pHRXBLU0FvSkdFc01Da2lJQzgrSUNBS0lDQThiR2x1WlZObFoyMWxiblFnYzNSNWJHVk9kVzFpWlhJOUlqa2lJR1pwZUV4dlkyRjBhVzl1SUdWdVpIQnZhVzUwY3owaUtEY3NKQ1JuS0RjcEtTQW9OeXd3S1NJZ2JHRmlaV3hKYzA1aGJXVWdMejRLSUNBa1ppQWtaeUFrYUFvZ0lEeHVkVzFpWlhJZ2FHbGtaU0J1WVcxbFBTSnNaV1owUlc1a1VHOXBiblFpUGlRa2NDZ2tlVlpoYkNrOEwyNTFiV0psY2o0S0lDQThiblZ0WW1WeUlHaHBaR1VnYm1GdFpUMGljbWxuYUhSRmJtUlFiMmx1ZENJK0pDUnhLQ1I1Vm1Gc0tUd3ZiblZ0WW1WeVBnb2dJRHdoTFMwS0lDQThjRzlwYm5RZ2FHbGtaU0J1WVcxbFBTSmliM1JNWldaMElqNEtJQ0FnSUNBZ0tDUnNaV1owUlc1a1VHOXBiblFzSUNSNVZtRnNLUW9nSUR3dmNHOXBiblErQ2lBZ1BIQnZhVzUwSUdocFpHVWdibUZ0WlQwaWRHOXdVbWxuYUhRaVBnb2dJQ0FnS0NSeWFXZG9kRVZ1WkZCdmFXNTBMQ0FrZVZaaGJDc3VNaWtLSUNBOEwzQnZhVzUwUGdvZ0lDMHRQZ29nSUR4eVpXTjBZVzVuYkdVZ2FHbGtaVDBpYm05MEtDUnphRzkzVTJ4cFkyVXBJaUJ6ZEhsc1pVNTFiV0psY2owaU5TSWdabWxzYkdWa0lIWmxjblJwWTJWelBTSW9KR3hsWm5SRmJtUlFiMmx1ZEN3Z0pIbFdZV3dwSUNna2NtbG5hSFJGYm1SUWIybHVkQ3dnSkhsV1lXd3JMaklwSWlBdlBnbzhMMmR5WVhCb1BnbzhZbTl2YkdWaGJpQnVZVzFsUFNKemFHOTNVMnhwWTJVaUlHaHBaR1UrZEhKMVpUd3ZZbTl2YkdWaGJqNEtQSE5zYVdSbGNpQnBibWwwYVdGc1ZtRnNkV1U5SWkwd0xqZ2lJRzVoYldVOUlubFdZV3dpSUdaeWIyMDlJaTB5SWlCMGJ6MGlNeTQ0SWlCemRHVndQU0l3TGpJaUlITm9iM2RVYVdOcmN6MGlabUZzYzJVaUlITm9iM2RXWVd4MVpUMGlabUZzYzJVaUlHaHBaR1U5SW01dmRDZ2tjMmh2ZDFOc2FXTmxLU0lnTHo0PSIpOwoKICBsZXQgZGVjb2RlZDsKICB0cnkgewogICAgZGVjb2RlZCA9IG5ldyBUZXh0RGVjb2RlcigidXRmLTgiKS5kZWNvZGUoCiAgICAgIFVpbnQ4QXJyYXkuZnJvbShyYXcsIGMgPT4gYy5jaGFyQ29kZUF0KDApKQogICAgKTsKICB9IGNhdGNoIChlKSB7CiAgICBjb25zb2xlLndhcm4oIlVURi04IGRlY29kZSBmYWlsZWQsIGZhbGxpbmcgYmFjazoiLCBlKTsKICAgIGRlY29kZWQgPSByYXc7CiAgfQoKICAvLyBQYXRjaCBrbm93biBlbmNvZGluZyBjb3JydXB0aW9uIChzYWZldHkgbmV0KQogIGRlY29kZWQgPSBkZWNvZGVkLnJlcGxhY2UoL1x1MDBFRlx1MDBCQ1x1MDBCRi9nLCAiXHVGRjNGIik7CgogIC8vIEluamVjdCBEb2VuZXRNTAogIGNvbnN0IHMgPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50KCJzY3JpcHQiKTsKICBzLnR5cGUgPSAidGV4dC9kb2VuZXRtbCI7CiAgcy50ZXh0Q29udGVudCA9IGRlY29kZWQ7CiAgY29udGFpbmVyLmFwcGVuZENoaWxkKHMpOwoKICBpZiAodHlwZW9mIHJlbmRlckRvZW5ldFZpZXdlclRvQ29udGFpbmVyICE9PSAiZnVuY3Rpb24iKSB7CiAgICBjb25zb2xlLmVycm9yKCJEb2VuZXQgZmFpbGVkIHRvIGxvYWQgKGRvZW5ldC1mcmFtZS02KSIpOwogICAgcmV0dXJuOwogIH0KCiAgcmVuZGVyRG9lbmV0Vmlld2VyVG9Db250YWluZXIoY29udGFpbmVyLCBudWxsLCB7CiAgICBhZGRWaXJ0dWFsS2V5Ym9hcmQ6IGZhbHNlCiAgfSk7Cn0pKCk7Cjwvc2NyaXB0PgoKPHNjcmlwdD4KY29uc3Qgcm9vdCA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCJhcHAtNiIpOwpsZXQgbGFzdFNlbnQgPSAwOwoKZnVuY3Rpb24gc2VuZEhlaWdodChoKSB7CiAgcGFyZW50LnBvc3RNZXNzYWdlKHsKICAgIGRvZW5ldEhlaWdodDogTWF0aC5jZWlsKGgpLAogICAgZnJhbWVJZDogImRvZW5ldC1mcmFtZS02IgogIH0sICIqIik7Cn0KCmNvbnN0IHJvID0gbmV3IFJlc2l6ZU9ic2VydmVyKGVudHJpZXMgPT4gewogIGNvbnN0IGggPSBlbnRyaWVzWzBdLmNvbnRlbnRSZWN0LmhlaWdodDsKICBpZiAoTWF0aC5hYnMoaCAtIGxhc3RTZW50KSA+IDYpIHsKICAgIGxhc3RTZW50ID0gaDsKICAgIHNlbmRIZWlnaHQoaCk7CiAgfQp9KTsKCnJvLm9ic2VydmUocm9vdCk7Cgp3aW5kb3cuYWRkRXZlbnRMaXN0ZW5lcigibG9hZCIsICgpID0+IHsKICBzZXRUaW1lb3V0KCgpID0+IHNlbmRIZWlnaHQocm9vdC5zY3JvbGxIZWlnaHQpLCAxMDApOwogIHNldFRpbWVvdXQoKCkgPT4gc2VuZEhlaWdodChyb290LnNjcm9sbEhlaWdodCksIDUwMCk7Cn0pOwo8L3NjcmlwdD4KCjwvYm9keT4KPC9odG1sPgo8IS0tIDE3ODEyMDIyNzggLS0+"></iframe>
+  </div>
+  </details>
+  </div>
+  <div class="callout callout-todo" data-callout="todo"><details><summary class="callout-title">Completed on Board</summary><div class="callout-content"><p>We will work through the solution as a class, with the instructor leading and students contributing key steps, ideas, and justifications throughout.</p></div></details></div>
+  </div>
+  </details>
+  </div>
+  <div class="callout callout-exercise" data-callout="exercise">
+  <details>
+  <summary class="callout-title">Exercise</summary>
+  <div class="callout-content">
+  <p>Determine the minimal number of integrals required for integration
+  with respect to each variable.</p>
+  <img
+  src="/Users/ye6366mb/OneDrive%20-%20Minnesota%20State/ObsidianVault/M122-Calculus2/images/E01-C15-ExercisePlot.png"
+  alt="Alt-text. Did missing this break it?" />
+  <div class="callout callout-todo" data-callout="todo"><details><summary class="callout-title">Work in class</summary><div class="callout-content"><p>Students will begin with individual or collaborative work time, followed by a guided solution on the board developed through student input. Be prepared to explain your reasoning and contribute to each step of the process.</p></div></details></div>
+  </div>
+  </details>
+  </div>
+  <div class="callout callout-example" data-callout="example">
+  <details>
+  <summary class="callout-title">Example 4 (Time Permitting)</summary>
+  <div class="callout-content">
+  <p>Find the area between the curves
+  <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>=</mo><mrow><mi mathvariant="normal">sin</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">y=\sin(x)</annotation></semantics></math>
+  and
+  <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>=</mo><mrow><mi mathvariant="normal">cos</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">y=\cos(x)</annotation></semantics></math>
+  on the interval
+  <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">[</mo><mn>0</mn><mo>,</mo><mfrac><mi>π</mi><mn>2</mn></mfrac><mo stretchy="true" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">\left[0,\frac{\pi}{2}\right]</annotation></semantics></math>.</p>
+  <div class="callout callout-visual" data-callout="visual">
+  <details>
+  <summary class="callout-title">Visual Aid</summary>
+  <div class="callout-content">
+  <iframe id="doenet-frame-7" class="doenet-frame" style="width:100%; border:none; min-height:50px; display:block;" sandbox="allow-scripts allow-same-origin" src="data:text/html;base64,PCFET0NUWVBFIGh0bWw+CjxodG1sPgo8aGVhZD4KPG1ldGEgY2hhcnNldD0idXRmLTgiPgo8bGluayByZWw9InN0eWxlc2hlZXQiCmhyZWY9Imh0dHBzOi8vY2RuLmpzZGVsaXZyLm5ldC9ucG0vQGRvZW5ldC9zdGFuZGFsb25lQGxhdGVzdC9zdHlsZS5jc3MiPgo8c3R5bGU+CmJvZHkgeyBtYXJnaW46MDsgcGFkZGluZzowOyB9Cmh0bWwsIGJvZHkgewogIGhlaWdodDphdXRvICFpbXBvcnRhbnQ7CiAgbWluLWhlaWdodDowICFpbXBvcnRhbnQ7CiAgb3ZlcmZsb3c6dmlzaWJsZSAhaW1wb3J0YW50Owp9Cjwvc3R5bGU+CjwvaGVhZD4KCjxib2R5PgoKPGRpdiBpZD0iYXBwLTciPjwvZGl2PgoKPHNjcmlwdCB0eXBlPSJtb2R1bGUiPgppbXBvcnQgeyByZW5kZXJEb2VuZXRWaWV3ZXJUb0NvbnRhaW5lciB9CmZyb20gImh0dHBzOi8vY2RuLmpzZGVsaXZyLm5ldC9ucG0vQGRvZW5ldC9zdGFuZGFsb25lQGxhdGVzdC9kb2VuZXQtc3RhbmRhbG9uZS5qcyI7CgooZnVuY3Rpb24gKCkgewogIGNvbnN0IGNvbnRhaW5lciA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCJhcHAtNyIpOwogIGlmICghY29udGFpbmVyKSByZXR1cm47CgogIC8vIERlY29kZSBiYXNlNjQgc2FmZWx5IGFzIFVURi04CiAgY29uc3QgcmF3ID0gYXRvYigiUEhObGRIVndQZ29nSUR4emRIbHNaVVJsWm1sdWFYUnBiMjRnYm1GdFpUMGlUVWR5WldWdVUzUjViR1VpSUhOMGVXeGxUblZ0WW1WeVBTSXhNQ0lnYkdsdVpWZHBaSFJvUFNJMExqQWlJR3hwYm1WVGRIbHNaVDBpYzI5c2FXUWlJR3hwYm1WRGIyeHZjajBpSXpBd04wTTFRU0lnYkdsdVpVTnZiRzl5VjI5eVpEMGlSM0psWlc0aUlHWnBiR3hQY0dGamFYUjVQU0l1TWpnaUlHWnBiR3hEYjJ4dmNqMGlJekF3T1VVM015SWdMejRLSUNBOGMzUjViR1ZFWldacGJtbDBhVzl1SUhOMGVXeGxUblZ0WW1WeVBTSTVJZ29nSUNBZ2JHbHVaVU52Ykc5eVBTSWpPRUUyUmpBNElnb2dJQ0FnYkdsdVpVOXdZV05wZEhrOUlpNDNOQ0lLSUNBZ0lHWnBiR3hQY0dGamFYUjVQU0l1TWpVaUNpQWdJQ0JzYVc1bFYybGtkR2c5SWpNaUNpQWdJQ0JtYVd4c1EyOXNiM0k5SWlOQ056azFNRUlpQ2lBZ0lDQm1hV3hzUTI5c2IzSlhiM0prUFNKTmRYTjBZWEprSWlBdlBnb2dJRHh6ZEhsc1pVUmxabWx1YVhScGIyNGdjM1I1YkdWT2RXMWlaWEk5SWpNaUNpQWdJQ0JzYVc1bFEyOXNiM0k5SWlNelF6ZEdRVFlpQ2lBZ0lDQnNhVzVsVDNCaFkybDBlVDBpTGpnaUNpQWdJQ0JtYVd4c1EyOXNiM0k5SWlNMU5EazVRemNpQ2lBZ0lDQm1hV3hzVDNCaFkybDBlVDBpTGpFMUlnb2dJQ0FnWm1sc2JFTnZiRzl5VjI5eVpEMGlVMnQ1SUVKc2RXVWlJQzgrQ2p3dmMyVjBkWEErQ2p4bmNtRndhQ0I0VFdsdVBTSXRNQzQxSWlCNFRXRjRQU0l5SWlCNVRXbHVQU0l0TUM0MUlpQjVUV0Y0UFNJeExqVWlJR1pwZUVGNFpYTWdjMmh2ZDA1aGRtbG5ZWFJwYjI0OUltWmhiSE5sSWlCbmNtbGtQU0p3YVM4MElDNDFJaUJrYVhOd2JHRjVXRUY0YVhOVWFXTnJUR0ZpWld4elBTSm1ZV3h6WlNJZ1pHbHpjR3hoZVZsQmVHbHpWR2xqYTB4aFltVnNjejBpWm1Gc2MyVWlJSGhVYVdOclUyTmhiR1ZHWVdOMGIzSTlJbkJwTHpRaUlHUnBjM0JzWVhsWVFYaHBjMVJwWTJ0elBTSm1ZV3h6WlNJZ1pHbHpjR3hoZVZsQmVHbHpWR2xqYTNNOUltWmhiSE5sSWo0S0lDQThjMmh2Y25SRVpYTmpjbWx3ZEdsdmJqNEtJQ0FnSUZCc2IzUWdiMllnYzJsdUtIZ3BJR0Z1WkNCamIzTW9lQ2tnY0d4dmRIUmxaQ0JpWlhSM1pXVnVJSGc5TFRFdk1pQmhibVFnZUQweUlHRnVaQ0I1UFMweEx6SWdZVzVrSUhrOU15OHlMaUJVYUdVZ2NtVm5hVzl1SUdKbGRIZGxaVzRnZEdobElHTjFjblpsY3lCbWNtOXRJSGc5TUNCMGJ5QjRQWEJwTHpJZ2FYTWdjMmhoWkdWa0xnb2dJRHd2YzJodmNuUkVaWE5qY21sd2RHbHZiajRLSUNBOGNtVm5hVzl1UW1WMGQyVmxia04xY25abGN5QnpkSGxzWlU1MWJXSmxjajBpTXlJZ1ltOTFibVJoY25sV1lXeDFaWE05SWpBZ2NHa3ZNaUkrSkdjZ0pHWThMM0psWjJsdmJrSmxkSGRsWlc1RGRYSjJaWE0rQ2lBZ1BHWjFibU4wYVc5dUlHNWhiV1U5SW1ZaUlITjBlV3hsVG5WdFltVnlQU0k1SWlCa2IyMWhhVzQ5SWxzdE1TdzBYU0krYzJsdUtIZ3BQQzltZFc1amRHbHZiajRLSUNBOGJHRmlaV3dnWm1sNFpXUWdZVzVqYUc5eVBTSW9jR2t2TWl3eExqRXBJajQ4YlQ1Y2JHRnlaMlZjYzJsdUtIZ3BQQzl0UGp3dmJHRmlaV3crQ2lBZ1BHWjFibU4wYVc5dUlHNWhiV1U5SW1jaUlITjBlV3hsVG5WdFltVnlQU0l4TUNJZ1pHOXRZV2x1UFNKYkxURXNORjBpUG1OdmN5aDRLVHd2Wm5WdVkzUnBiMjQrQ2lBZ1BHeGhZbVZzSUdacGVHVmtJR0Z1WTJodmNqMGlLREFzTVM0eEtTSStQRzArWEd4aGNtZGxYR052Y3loNEtUd3ZiVDQ4TDJ4aFltVnNQZ284TDJkeVlYQm9QZz09Iik7CgogIGxldCBkZWNvZGVkOwogIHRyeSB7CiAgICBkZWNvZGVkID0gbmV3IFRleHREZWNvZGVyKCJ1dGYtOCIpLmRlY29kZSgKICAgICAgVWludDhBcnJheS5mcm9tKHJhdywgYyA9PiBjLmNoYXJDb2RlQXQoMCkpCiAgICApOwogIH0gY2F0Y2ggKGUpIHsKICAgIGNvbnNvbGUud2FybigiVVRGLTggZGVjb2RlIGZhaWxlZCwgZmFsbGluZyBiYWNrOiIsIGUpOwogICAgZGVjb2RlZCA9IHJhdzsKICB9CgogIC8vIFBhdGNoIGtub3duIGVuY29kaW5nIGNvcnJ1cHRpb24gKHNhZmV0eSBuZXQpCiAgZGVjb2RlZCA9IGRlY29kZWQucmVwbGFjZSgvXHUwMEVGXHUwMEJDXHUwMEJGL2csICJcdUZGM0YiKTsKCiAgLy8gSW5qZWN0IERvZW5ldE1MCiAgY29uc3QgcyA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoInNjcmlwdCIpOwogIHMudHlwZSA9ICJ0ZXh0L2RvZW5ldG1sIjsKICBzLnRleHRDb250ZW50ID0gZGVjb2RlZDsKICBjb250YWluZXIuYXBwZW5kQ2hpbGQocyk7CgogIGlmICh0eXBlb2YgcmVuZGVyRG9lbmV0Vmlld2VyVG9Db250YWluZXIgIT09ICJmdW5jdGlvbiIpIHsKICAgIGNvbnNvbGUuZXJyb3IoIkRvZW5ldCBmYWlsZWQgdG8gbG9hZCAoZG9lbmV0LWZyYW1lLTcpIik7CiAgICByZXR1cm47CiAgfQoKICByZW5kZXJEb2VuZXRWaWV3ZXJUb0NvbnRhaW5lcihjb250YWluZXIsIG51bGwsIHsKICAgIGFkZFZpcnR1YWxLZXlib2FyZDogZmFsc2UKICB9KTsKfSkoKTsKPC9zY3JpcHQ+Cgo8c2NyaXB0Pgpjb25zdCByb290ID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoImFwcC03Iik7CmxldCBsYXN0U2VudCA9IDA7CgpmdW5jdGlvbiBzZW5kSGVpZ2h0KGgpIHsKICBwYXJlbnQucG9zdE1lc3NhZ2UoewogICAgZG9lbmV0SGVpZ2h0OiBNYXRoLmNlaWwoaCksCiAgICBmcmFtZUlkOiAiZG9lbmV0LWZyYW1lLTciCiAgfSwgIioiKTsKfQoKY29uc3Qgcm8gPSBuZXcgUmVzaXplT2JzZXJ2ZXIoZW50cmllcyA9PiB7CiAgY29uc3QgaCA9IGVudHJpZXNbMF0uY29udGVudFJlY3QuaGVpZ2h0OwogIGlmIChNYXRoLmFicyhoIC0gbGFzdFNlbnQpID4gNikgewogICAgbGFzdFNlbnQgPSBoOwogICAgc2VuZEhlaWdodChoKTsKICB9Cn0pOwoKcm8ub2JzZXJ2ZShyb290KTsKCndpbmRvdy5hZGRFdmVudExpc3RlbmVyKCJsb2FkIiwgKCkgPT4gewogIHNldFRpbWVvdXQoKCkgPT4gc2VuZEhlaWdodChyb290LnNjcm9sbEhlaWdodCksIDEwMCk7CiAgc2V0VGltZW91dCgoKSA9PiBzZW5kSGVpZ2h0KHJvb3Quc2Nyb2xsSGVpZ2h0KSwgNTAwKTsKfSk7Cjwvc2NyaXB0PgoKPC9ib2R5Pgo8L2h0bWw+CjwhLS0gMTc4MTIwMjI3OCAtLT4="></iframe>
+  </div>
+  </details>
+  </div>
+  <div class="callout callout-waypoint" data-callout="waypoint">
+  <details>
+  <summary class="callout-title">Steps</summary>
+  <div class="callout-content">
+  <ol type="1">
+  <li>Find the point of intersection.</li>
+  <li>Setup the integral(s).</li>
+  <li>Calculate the Final Answer.</li>
+  </ol>
+  </div>
+  </details>
+  </div>
+  <div class="callout callout-answer" data-callout="answer">
+  <details>
+  <summary class="callout-title">Solution</summary>
+  <div class="callout-content">
+  <p>You should obtain
+  <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mo>∫</mo><mn>0</mn><mrow><mi>π</mi><mi>/</mi><mn>4</mn></mrow></msubsup><mo stretchy="false" form="prefix">[</mo><mrow><mi mathvariant="normal">cos</mi><mo>&#8289;</mo></mrow><mi>x</mi><mo>−</mo><mrow><mi mathvariant="normal">sin</mi><mo>&#8289;</mo></mrow><mi>x</mi><mo stretchy="false" form="postfix">]</mo><mspace width="0.278em"></mspace><mi>d</mi><mi>x</mi><mo>+</mo><msubsup><mo>∫</mo><mrow><mi>π</mi><mi>/</mi><mn>4</mn></mrow><mrow><mi>π</mi><mi>/</mi><mn>2</mn></mrow></msubsup><mo stretchy="false" form="prefix">[</mo><mrow><mi mathvariant="normal">sin</mi><mo>&#8289;</mo></mrow><mi>x</mi><mo>−</mo><mrow><mi mathvariant="normal">cos</mi><mo>&#8289;</mo></mrow><mi>x</mi><mo stretchy="false" form="postfix">]</mo><mspace width="0.278em"></mspace><mi>d</mi><mi>x</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">\int_0^{\pi/4}[\cos x - \sin x]\;dx + \int_{\pi/4}^{\pi/2}[\sin x - \cos x]\;dx.</annotation></semantics></math>
+  The calculation is left as a practice exercise, although you may check
+  your work here.</p>
+  <iframe id="doenet-frame-8" class="doenet-frame" style="width:100%; border:none; min-height:50px; display:block;" sandbox="allow-scripts allow-same-origin" src="data:text/html;base64,PCFET0NUWVBFIGh0bWw+CjxodG1sPgo8aGVhZD4KPG1ldGEgY2hhcnNldD0idXRmLTgiPgo8bGluayByZWw9InN0eWxlc2hlZXQiCmhyZWY9Imh0dHBzOi8vY2RuLmpzZGVsaXZyLm5ldC9ucG0vQGRvZW5ldC9zdGFuZGFsb25lQGxhdGVzdC9zdHlsZS5jc3MiPgo8c3R5bGU+CmJvZHkgeyBtYXJnaW46MDsgcGFkZGluZzowOyB9Cmh0bWwsIGJvZHkgewogIGhlaWdodDphdXRvICFpbXBvcnRhbnQ7CiAgbWluLWhlaWdodDowICFpbXBvcnRhbnQ7CiAgb3ZlcmZsb3c6dmlzaWJsZSAhaW1wb3J0YW50Owp9Cjwvc3R5bGU+CjwvaGVhZD4KCjxib2R5PgoKPGRpdiBpZD0iYXBwLTgiPjwvZGl2PgoKPHNjcmlwdCB0eXBlPSJtb2R1bGUiPgppbXBvcnQgeyByZW5kZXJEb2VuZXRWaWV3ZXJUb0NvbnRhaW5lciB9CmZyb20gImh0dHBzOi8vY2RuLmpzZGVsaXZyLm5ldC9ucG0vQGRvZW5ldC9zdGFuZGFsb25lQGxhdGVzdC9kb2VuZXQtc3RhbmRhbG9uZS5qcyI7CgooZnVuY3Rpb24gKCkgewogIGNvbnN0IGNvbnRhaW5lciA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCJhcHAtOCIpOwogIGlmICghY29udGFpbmVyKSByZXR1cm47CgogIC8vIERlY29kZSBiYXNlNjQgc2FmZWx5IGFzIFVURi04CiAgY29uc3QgcmF3ID0gYXRvYigiUEdGdWMzZGxjajQ4YldGMGFFbHVjSFYwUGp4c1lXSmxiRDVEYUdWamF5QjViM1Z5SUhkdmNtczZJRHd2YkdGaVpXdytQQzl0WVhSb1NXNXdkWFErQ2p4dFlYUm9QaklvYzNGeWRDZ3lLUzB4S1R3dmJXRjBhRDQ4TDJGdWMzZGxjajQ9Iik7CgogIGxldCBkZWNvZGVkOwogIHRyeSB7CiAgICBkZWNvZGVkID0gbmV3IFRleHREZWNvZGVyKCJ1dGYtOCIpLmRlY29kZSgKICAgICAgVWludDhBcnJheS5mcm9tKHJhdywgYyA9PiBjLmNoYXJDb2RlQXQoMCkpCiAgICApOwogIH0gY2F0Y2ggKGUpIHsKICAgIGNvbnNvbGUud2FybigiVVRGLTggZGVjb2RlIGZhaWxlZCwgZmFsbGluZyBiYWNrOiIsIGUpOwogICAgZGVjb2RlZCA9IHJhdzsKICB9CgogIC8vIFBhdGNoIGtub3duIGVuY29kaW5nIGNvcnJ1cHRpb24gKHNhZmV0eSBuZXQpCiAgZGVjb2RlZCA9IGRlY29kZWQucmVwbGFjZSgvXHUwMEVGXHUwMEJDXHUwMEJGL2csICJcdUZGM0YiKTsKCiAgLy8gSW5qZWN0IERvZW5ldE1MCiAgY29uc3QgcyA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoInNjcmlwdCIpOwogIHMudHlwZSA9ICJ0ZXh0L2RvZW5ldG1sIjsKICBzLnRleHRDb250ZW50ID0gZGVjb2RlZDsKICBjb250YWluZXIuYXBwZW5kQ2hpbGQocyk7CgogIGlmICh0eXBlb2YgcmVuZGVyRG9lbmV0Vmlld2VyVG9Db250YWluZXIgIT09ICJmdW5jdGlvbiIpIHsKICAgIGNvbnNvbGUuZXJyb3IoIkRvZW5ldCBmYWlsZWQgdG8gbG9hZCAoZG9lbmV0LWZyYW1lLTgpIik7CiAgICByZXR1cm47CiAgfQoKICByZW5kZXJEb2VuZXRWaWV3ZXJUb0NvbnRhaW5lcihjb250YWluZXIsIG51bGwsIHsKICAgIGFkZFZpcnR1YWxLZXlib2FyZDogZmFsc2UKICB9KTsKfSkoKTsKPC9zY3JpcHQ+Cgo8c2NyaXB0Pgpjb25zdCByb290ID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoImFwcC04Iik7CmxldCBsYXN0U2VudCA9IDA7CgpmdW5jdGlvbiBzZW5kSGVpZ2h0KGgpIHsKICBwYXJlbnQucG9zdE1lc3NhZ2UoewogICAgZG9lbmV0SGVpZ2h0OiBNYXRoLmNlaWwoaCksCiAgICBmcmFtZUlkOiAiZG9lbmV0LWZyYW1lLTgiCiAgfSwgIioiKTsKfQoKY29uc3Qgcm8gPSBuZXcgUmVzaXplT2JzZXJ2ZXIoZW50cmllcyA9PiB7CiAgY29uc3QgaCA9IGVudHJpZXNbMF0uY29udGVudFJlY3QuaGVpZ2h0OwogIGlmIChNYXRoLmFicyhoIC0gbGFzdFNlbnQpID4gNikgewogICAgbGFzdFNlbnQgPSBoOwogICAgc2VuZEhlaWdodChoKTsKICB9Cn0pOwoKcm8ub2JzZXJ2ZShyb290KTsKCndpbmRvdy5hZGRFdmVudExpc3RlbmVyKCJsb2FkIiwgKCkgPT4gewogIHNldFRpbWVvdXQoKCkgPT4gc2VuZEhlaWdodChyb290LnNjcm9sbEhlaWdodCksIDEwMCk7CiAgc2V0VGltZW91dCgoKSA9PiBzZW5kSGVpZ2h0KHJvb3Quc2Nyb2xsSGVpZ2h0KSwgNTAwKTsKfSk7Cjwvc2NyaXB0PgoKPC9ib2R5Pgo8L2h0bWw+CjwhLS0gMTc4MTIwMjI3OCAtLT4="></iframe>
+  </div>
+  </details>
+  </div>
+  </div>
+  </details>
+  </div>
+
+  <footer>
+    <div class="footer-line">
+      <div>Written in <a href="https://obsidian.md/">Obsidian Markdown Editor</a></div>
+      <div>HTML Generated by <a href="https://pandoc.org/">Pandoc</a></div>
+      <div>Last Updated: June 11, 2026</div><br/>
+      <div>Visit my <a href="https://github.com/DoctorHaitch/LaTeX_Accessibility">GitHub</a> for more information on creating accessible mathematics.</div>
+    </div>
+  </footer>
+
+<!--  =========================
+      Robust iframe height sync
+========================= -->
+
+
+<script>
+const iframeHeights = new Map();
+
+window.addEventListener("message", (e) => {
+  const { doenetHeight, frameId } = e.data || {};
+  if (!doenetHeight || !frameId) return;
+
+  const frame = document.getElementById(frameId);
+  if (!frame) return;
+
+  const newHeight = Math.ceil(doenetHeight) + 6;
+
+  const lastHeight = iframeHeights.get(frameId) || 0;
+
+  // ✅ Update if meaningfully different OR first time
+  if (Math.abs(newHeight - lastHeight) > 2) {
+    iframeHeights.set(frameId, newHeight);
+    frame.style.height = newHeight + "px";
+  }
+});
+
+
+/* =========================
+   Fallback stabilization pass
+   (fixes missed or late renders)
+========================= */
+
+function stabilizeIframes() {
+  document.querySelectorAll("iframe.doenet-frame").forEach(frame => {
+    try {
+      frame.contentWindow.postMessage({ requestHeight: true }, "*");
+    } catch (e) {
+      // ignore cross-origin restrictions (data URLs are fine)
+    }
+  });
+}
+
+/* run multiple passes after load */
+window.addEventListener("load", () => {
+  let attempts = 0;
+
+  const interval = setInterval(() => {
+    stabilizeIframes();
+    attempts++;
+
+    if (attempts > 15) clearInterval(interval);
+  }, 150);
+});
+</script>
+
+
+<script>
+/* =========================
+   Pop-over definitions and theorem cards
+========================= */
+
+let activePopup = null;
+let offsetX = 0;
+let offsetY = 0;
+let isDragging = false;
+let hasMoved = false;
+let justDragged = false;
+
+/* =========================
+   Click = pin / unpin / close
+========================= */
+
+document.addEventListener("click", (e) => {
+  const anchor = e.target.closest(".glossary-anchor");
+  const popup = e.target.closest(".glossary-popup");
+
+  /* ✅ Click popup → CLOSE */
+  if (popup) {
+    if (justDragged) {
+      justDragged = false;   // ignore drag-release click
+      return;
+    }
+
+
+    const parent = popup.closest(".glossary-anchor");
+    if (parent) {
+      parent.classList.remove("pinned");
+
+      // ✅ reset position
+      popup.style.left = "";
+      popup.style.top = "";
+    }
+    return;
+  }
+
+  /* ✅ Click term → TOGGLE PIN */
+  if (anchor) {
+    if (justDragged) {
+      justDragged = false;
+      return;
+    }
+
+    document.querySelectorAll(".glossary-anchor.pinned")
+      .forEach(el => {
+        if (el !== anchor) el.classList.remove("pinned");
+      });
+
+    anchor.classList.toggle("pinned");
+    activePopup = anchor.querySelector(".glossary-popup");
+    return;
+  }
+});
+
+/* =========================
+   Mousedown = start drag
+========================= */
+
+document.addEventListener("mousedown", (e) => {
+  const popup = e.target.closest(".glossary-popup");
+
+  if (!popup || !popup.closest(".pinned")) return;
+
+  isDragging = true;
+  hasMoved = false;
+  activePopup = popup;
+
+  const rect = popup.getBoundingClientRect();
+
+  offsetX = e.clientX - rect.left;
+  offsetY = e.clientY - rect.top;
+
+  popup.classList.add("dragging");
+
+  // prevent text selection while dragging
+  document.body.style.userSelect = "none";
+});
+
+
+/* =========================
+   Mousemove = drag motion
+========================= */
+
+document.addEventListener("mousemove", (e) => {
+  if (!isDragging || !activePopup) return;
+
+  hasMoved = true;
+
+  const width = activePopup.offsetWidth;
+  const height = activePopup.offsetHeight;
+
+  let x = e.clientX - offsetX;
+  let y = e.clientY - offsetY;
+
+  /* ✅ keep inside viewport */
+  x = Math.max(10, Math.min(window.innerWidth - width - 10, x));
+  y = Math.max(10, Math.min(window.innerHeight - height - 10, y));
+
+  activePopup.style.left = x + "px";
+  activePopup.style.top = y + "px";
+});
+
+
+/* =========================
+   Mouseup = stop drag
+========================= */
+
+document.addEventListener("mouseup", () => {
+  if (activePopup) {
+    activePopup.classList.remove("dragging");
+  }
+
+  if (hasMoved) {
+    justDragged = true;   // ✅ mark that a drag happened
+  }
+
+  setTimeout(() => {
+    isDragging = false;
+    hasMoved = false;
+
+    // optional cleanup after a short delay
+    setTimeout(() => {
+      justDragged = false;
+    }, 150);
+  }, 0);
+
+  document.body.style.userSelect = "";
+});
+</script>
+
+</body>
+</html>
