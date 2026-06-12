@@ -37,10 +37,31 @@ $font-serif: 'Roboto Serif', serif;
     --icon-library: #{'url("/assets/icons/library.svg")'};
     --icon-speech: #{'url("/assets/icons/speech.svg")'};
     --content-pad: 1.4rem;
+    --code-background: #1c1f26;
+}
+
+/* =========================================
+   DARK MODE (AUTO)
+========================================= */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper-bg: #1a1d2b;
+    --card-bg: #23263a;
+    --ink: #e6eaf2;
+    --muted: #a8b0c5;
+
+    /* keep your same color identity, just tuned */
+    --color-info: 86,180,233;
+    --color-action: 230,210,120;
+    --color-resolution: 80,196,45;
+    --color-meta: 108,117,125;
+    --code-background: #151822;
+  }
 }
 
 html{
-    background:#f5f7fb;
+    background: var(--paper-bg);
     height:100%
 }
 
@@ -54,7 +75,7 @@ body{
 .wrapper{
     width:720px;
     margin:0 auto;
-    background:#fbfcff;
+    background: var(--card-bg);
     border-radius:14px;
     box-shadow:0 10px 30px rgba(0,0,0,0.1),0 2px 6px rgba(0,0,0,0.06);
     box-sizing:border-box
@@ -405,7 +426,6 @@ blockquote[data-type="fancy-quote"] p {
 /* Code blocks + inline code */
 code,
 pre {
-  --code-background: #1a1a1a;
   --code-normal: #dddddd;
   --code-comment: #a0a0a0;
   --code-keyword: #ff79c6;
@@ -1186,5 +1206,48 @@ summary.collapsible-title {
   --icon: var(--icon-speech);
 }
 
+/* =========================================
+   DARK MODE TWEAKS
+========================================= */
 
+@media (prefers-color-scheme: dark) {
 
+  .wrapper,
+  .sidebar,
+  .student-card,
+  .profile-panel {
+    border-color: rgba(255,255,255,0.06) !important;
+  }
+
+  header {
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .student-work + .student-work {
+    border-top: 1px solid rgba(255,255,255,0.05);
+  }
+
+  header ul {
+    background: rgba(30, 34, 54, 0.7);
+  }
+
+section {
+    background: rgba(var(--color-info), 0.15);
+  }
+
+  h2,
+  .collapsible-title {
+    background-image: linear-gradient(
+      to right,
+      rgba(var(--color-info), 0.18),
+      rgba(var(--color-info), 0.10),
+      rgba(var(--color-info), 0.04),
+      rgba(var(--color-info), 0)
+    );
+  }
+
+  img {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.6);
+  }
+
+}

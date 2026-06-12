@@ -23,19 +23,60 @@
   --callout-coffee: 150,110,80;
 }
 
-.theme-dark {
-  --callout-information: 240,170,210;
-  --callout-action: 255,200,90;
-  --callout-resolution: 80,220,160;
-  --callout-alert: 255,200,100;
-  --callout-meta: 140,210,255;
 
-  --callout-info-action: 245,180,130;
-  --callout-info-resolution: 150,200,200;
-  --callout-action-resolution: 170,210,110;
-  --callout-all: 200,200,140;
-  --callout-coffee: 190,150,120;
+
+/* =========================================
+   DARK MODE (OBSIDIAN + SYSTEM)
+   ========================================= */
+
+/* ---------- VARIABLES (BOTH METHODS) ---------- */
+
+/* Obsidian */
+.theme-dark {
+  --callout-information: 86,180,233;
+  --callout-action: 230,210,120;
+  --callout-resolution: 80,196,45;
+  --callout-alert: 240,170,210;
+  --callout-meta: 108,117,125;
+
+  --callout-info-action: 158,195,177;
+  --callout-info-resolution: 83,188,139;
+  --callout-action-resolution: 155,203,83;
+  --callout-all: 132,195,133;
+
+  --callout-coffee: 150,110,80;
+
+  --background-primary: #1A1D2B;
+  --background-secondary: #161925;
+  --background-tertiary: #202336;
+
+  --callout-title-text: #dddddd;
 }
+
+/* System dark mode (standalone) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --callout-information: 86,180,233;
+    --callout-action: 230,210,120;
+    --callout-resolution: 80,196,45;
+    --callout-alert: 240,170,210;
+    --callout-meta: 108,117,125;
+
+    --callout-info-action: 158,195,177;
+    --callout-info-resolution: 83,188,139;
+    --callout-action-resolution: 155,203,83;
+    --callout-all: 132,195,133;
+
+    --callout-coffee: 150,110,80;
+
+    --background-primary: #1A1D2B;
+    --background-secondary: #161925;
+    --background-tertiary: #202336;
+
+    --callout-title-text: #dddddd;
+  }
+}
+
 
 /* =========================================
    ICON VARIABLES (Lucide-based, already defined)
@@ -96,8 +137,8 @@
 html {
   font-family: 'Atkinson Hyperlegible', Arial, sans-serif;
   line-height: 1.65;
-  background: #f8f9fb;
-  color: #222;
+  background: var(--background-primary, #f8f9fb);
+  color: var(--text-color, #222);
 }
 
 body {
@@ -324,6 +365,129 @@ mark > span.glossary:hover {
 .popover .callout-fold { display: none !important; }
 
 /* =========================================
+   DARK MODE CALLOUT SYSTEM
+   ========================================= */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-primary: #1A1D2B;
+    --background-secondary: #161925;
+    --background-tertiary: #202336;
+
+    --callout-title-text: #dddddd;
+
+    background: var(--background-primary);
+    color: #e6eaf2;
+  }
+
+  .callout {
+    background-color: rgba(255, 255, 255, 0.03);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+
+    background-image: linear-gradient(
+      rgba(var(--callout-color), 0.18),
+      rgba(var(--callout-color), 0.18)
+    );
+  }
+
+  .callout-title {
+    color: var(--callout-title-text) !important;
+  }
+
+  .callout-title::before {
+    filter: brightness(1.8) contrast(1.1);
+  }
+
+  .callout-content {
+    color: #e6eaf2;
+  }
+}
+.theme-dark,
+@media (prefers-color-scheme: dark) {
+  --background-primary: #1A1D2B;
+  --background-secondary: #161925;
+  --background-tertiary: #202336;
+
+  --callout-title-text: #dddddd;
+
+  background: var(--background-primary);
+  color: #e6eaf2;
+}
+
+.theme-dark .callout {
+  background-color: rgba(255, 255, 255, 0.03);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+
+  background-image: linear-gradient(
+    rgba(var(--callout-color), 0.18),
+    rgba(var(--callout-color), 0.18)
+  );
+}
+
+.theme-dark .callout-title {
+  color: var(--callout-title-text) !important;
+}
+
+.theme-dark .callout-title::before {
+  filter: brightness(1.8) contrast(1.1);
+}
+
+.theme-dark .callout-content {
+  color: #e6eaf2;
+}
+
+/* =========================================
+   DARK MODE GLOSSARY POPUP FIX
+   ========================================= */
+
+/* Obsidian */
+.theme-dark .glossary-popup {
+  background-color: var(--background-primary);
+  
+  /* soft tint layer */
+  background-image: linear-gradient(
+    rgba(var(--popup-color), 0.16),
+    rgba(var(--popup-color), 0.16)
+  );
+
+  border: 1px solid rgba(255,255,255,0.08);
+  border-left: 3px solid rgb(var(--popup-color));
+
+  color: var(--text-normal);
+}
+
+/* Standalone system dark mode */
+@media (prefers-color-scheme: dark) {
+  .glossary-popup {
+    background-color: var(--background-primary);
+
+    background-image: linear-gradient(
+      rgba(var(--popup-color), 0.16),
+      rgba(var(--popup-color), 0.16)
+    );
+
+    border: 1px solid rgba(255,255,255,0.08);
+    border-left: 3px solid rgb(var(--popup-color));
+
+    color: #e6eaf2;
+  }
+}
+
+.theme-dark .glossary-popup-title,
+@media (prefers-color-scheme: dark) {
+  .glossary-popup-title {
+    background: rgba(var(--popup-color), 0.22);
+    color: var(--callout-title-text);
+  }
+}
+
+.theme-dark .glossary-popup,
+@media (prefers-color-scheme: dark) {
+  .glossary-popup {
+    box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+  }
+}
+
+/* =========================================
    ICON ASSIGNMENT (SAFE LAST LAYER)
    ========================================= */
 
@@ -415,8 +579,6 @@ mark > span.glossary:hover {
   --icon: var(--icon-coffee);
 }
 
-
-
 /* =========================
    Anchor (positioning context)
 ========================= */
@@ -438,8 +600,6 @@ mark > span.glossary:hover {
   border-left: 3px solid rgb(var(--popup-color));
   border-radius: 8px;
 }
-
-
 
 
 /* =========================
@@ -473,7 +633,13 @@ mark > span.glossary:hover {
   z-index: 1000;
 
   /* ✅ FIX: use rgb() since variable is "R,G,B" */
-  background-color: color-mix(in srgb, rgb(var(--popup-color)) 25%, white);
+  /* background-color: color-mix(in srgb, rgb(var(--popup-color)) 25%, white); */
+  background-color: color-mix(
+  in srgb,
+  rgb(var(--popup-color)) 25%,
+  var(--background-primary)
+);
+
 
   /* card styling */
   border: 1px solid rgba(0, 0, 0, 0.15);
