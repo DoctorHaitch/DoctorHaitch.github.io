@@ -319,7 +319,14 @@
       desc: Brief review of MATH 241; applications of integration; integration techniques; parametric curves; polar coordinates; infinite sequences and series. Includes use of computers to perform symbolic, numerical and graphical analysis.
       students: ~20
       meta: 
-        - "4 Sections"
+        - "3 Sections"
+    - code: Math242
+      title: Analytic Geometry and Calculus B for Engineers
+      level: undergrad
+      desc: Special topics section for honors students. Similar to the regular section, but with presentations of proofs and challenging extensions such as integral transforms and Fourier series.
+      students: ~25
+      meta: 
+        - "Honors Section"
     - code: Math243
       title: Analytic Geometry and Calculus C for Engineers
       level: undergrad

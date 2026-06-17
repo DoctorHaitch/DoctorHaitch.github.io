@@ -1,0 +1,55 @@
+articles:
+  - title: 'Discrete frames for \(L^2(\mathbb R^{n^2})\) arising from tiling systems on \(\rm{GL}_n(\mathbb{R})\)'
+    status: "Published"
+    type: journal-paper
+    authors: "Mahya Ghandehari and Kris Hollingsworth"
+    journal: "Journal of Mathematical Analysis and Applications"
+    volume: 503
+    number: 2
+    year: 2021
+    month: "November"
+    day: 15
+    link: 
+      - name: "arXiv"
+        url: "https://arxiv.org/abs/2003.13113"
+      - name: "DOI"
+        url: "https://doi.org/10.1016/j.jmaa.2021.125328"
+
+  - title: "Gabor-type frames for signal processing on graphs"
+    status: "Published"
+    type: journal-paper
+    authors: "Mahya Ghandehari, Dominique Guillot, and Kris Hollingsworth"
+    journal: "Journal of Fourier Analysis and Applications"
+    volume: 27
+    number: 25
+    year: 2021
+    link: 
+      - name: "arXiv"
+        url: "https://arxiv.org/abs/2009.06058"
+      - name: "DOI"
+        url: "https://doi.org/10.1007/s00041-021-09826-1"
+
+  - title: "A non-commutative viewpoint on graph signal processing"
+    status: "Published"
+    type: conference-paper
+    authors: "Mahya Ghandehari, Dominique Guillot, and Kris Hollingsworth"
+    journal: "Proceedings of the International Conference on Sampling Theory and Applications (SampTA)"
+    location: "Bordeaux, France"
+    year: 2019
+    month: "July"
+    link: 
+      - name: "SAMPTA Conference PDF"
+        url: "https://sampta2019.sciencesconf.org/267522/Ghandehary.pdf"
+      - name: "DOI"
+        url: "https://doi.org/10.1109/SampTA45681.2019.9030858"
+
+theses:
+  - title: "Discrete Frames for High-Dimensional Data"
+    subtitle: "Constructions on Regular and Irregular Domains"
+    author: "Kris Hollingsworth"
+    type: phd-thesis
+    university: "University of Delaware"
+    year: 2020
+    link: 
+      - name: "PDF"
+        url: "/assets/research/kgh-dissertation.pdf"

@@ -1,0 +1,98 @@
+work: 
+  - company: Minnesota State University, Mankato
+    position: Assistant Professor, Department of Mathematics and Statistics
+    city: Mankato, MN
+    dates: 2022-Present
+    current: true
+
+  - company: MathHappens Foundation
+    position: Mankato, MN Math Room Coordinator
+    city: Austin, TX
+    dates: 2023-2026
+    current: false
+
+  - company: University of Minnesota
+    position: MathCEP Assistant Professor, School of Mathematics
+    city: Minneapolis, MN
+    dates: 2020-2022
+    current: false
+
+  - company: North Arkansas College, Learning Resources Center
+    position: Tutor (Pre-college Mathematics, Calculus, English Composition, Oral Communication)
+    city: Harrison, AR
+    dates: 2014-2015
+    current: false
+
+  - company: University of Central Arkansas, Disability Services
+    position: Classroom Assistant
+    city: Conway, AR
+    dates: 2013
+
+  - company: University of Central Arkansas, Dept. of Mathematics
+    position: Grader for Calculus I and II
+    city: Conway, AR
+    dates: 2013
+
+  - company: North Arkansas College, Workstudy Program
+    position: Studio Assistant, Art Department
+    city: Harrison, AR
+    dates: 2011-2012
+    current: false
+
+  - company: North Arkansas College, TRIO Student Support Services
+    position: Mathematics Tutor
+    city: Harrison, AR
+    dates: 2010-2011
+    current: false
+
+  - company: North Arkansas College, Disability Services
+    position: Classroom Assistant and Tutor for Blind Students, Intro to Programming
+    city: Harrison, AR
+    dates: 2010
+    current: false
+  
+  - company: Trianglehead Photography
+    position: Owner/Operator
+    city: Harrison, AR
+    dates: 2007-2009
+    current: false
+
+  - company: Konaware, Inc.
+    position: Application Engineer, IT Systems Administrator
+    city: Harrison, AR \& Fayetteville, AR
+    dates: 2005-2007
+    current: false
+
+  - company: Advanced Computer Services
+    position: Computer Programmer, IT Systems Administrator
+    city: Harrison, AR
+    dates: 2003-2005
+    current: false
+
+education:
+  - university: University of Delaware
+    city: Newark, DE
+    degree: PhD, Mathematics
+    year: 2020
+    thesis: "Discrete Frames for High-Dimensional Data: Constructions on Regular and Irregular Domains"
+    advisors: Mahya Ghandehari and Dominique Guillot
+
+  - university: University of Delaware
+    city: Newark, DE
+    degree: MS, Mathematics
+    year: 2017
+
+  - university: University of Central Arkansas
+    city: Conway, AR
+    degree: BA, Mathematics
+    meta: summa cum laude
+    year: 2014
+    minor: Studio Art
+
+  - university: North Arkansas College
+    city: Harrison, AR
+    degree: AA, General Education
+    meta:
+      - summa cum laude
+      - student commencement speaker
+    year: 2012

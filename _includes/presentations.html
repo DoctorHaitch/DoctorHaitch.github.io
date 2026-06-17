@@ -1,0 +1,37 @@
+<details class="collapsible-h2">
+  <summary class="collapsible-title">
+    Presentations
+  </summary>
+
+<ul class="presentations-list">
+  {% assign talks = site.data.presentations 
+     | sort: "month" 
+     | sort: "year" 
+     | reverse %}
+
+  {% for talk in talks %}
+    <li class="presentation-item">
+
+      <div class="presentation-entry">
+        
+        <strong>{{ talk.title }}</strong>
+
+
+        <span class="presentation-meta">
+          <span class="event">
+            {{ talk.event }}
+            {% if talk.event_type %} ({{ talk.event_type }}){% endif %}
+          </span>
+          — {{ talk.institution }}, {{ talk.city }}, {{ talk.state }}
+          <span class="presentation-date">
+            {{ talk.month }}/{{ talk.year }}
+          </span>
+        </span>
+
+
+      </div>
+
+    </li>
+  {% endfor %}
+  </ul>
+</details>

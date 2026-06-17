@@ -29,3 +29,15 @@ blocks:
     items:
       - name: "TBD"
         details: "TBD"
+
+  - title: "Research Interests"
+    items:
+      - name: "Frame Theory"
+      - name: "Wavelet Theory"
+      - name: "Computational Algebra"
+
+research-interests:
+  - "Frame Theory"
+  - "Wavelet Theory"
+  - "Representation Theory"
+  - "Spectral Graph Theory"

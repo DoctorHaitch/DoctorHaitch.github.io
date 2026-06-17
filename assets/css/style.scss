@@ -41,6 +41,58 @@ $font-serif: 'Roboto Serif', serif;
 }
 
 /* =========================================
+   META SURFACE SYSTEM (FOR SUBTLE LAYERING + DIVISION)
+========================================= */
+
+:root {
+
+  /* --- META SURFACE SYSTEM --- */
+
+  --meta-surface-strong: linear-gradient(
+    to right,
+    rgba(var(--color-meta), 0.22),
+    rgba(var(--color-meta), 0.10) 55%,
+    rgba(var(--color-meta), 0.04) 70%,
+    rgba(var(--color-meta), 0)
+  );
+
+  --meta-surface-soft: linear-gradient(
+    to right,
+    rgba(var(--color-meta), 0.14),
+    rgba(var(--color-meta), 0.06) 55%,
+    rgba(var(--color-meta), 0.02) 70%,
+    rgba(var(--color-meta), 0)
+  );
+
+  --meta-border-subtle: 1px solid rgba(0,0,0,0.06);
+
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+
+    --meta-surface-strong: linear-gradient(
+      to right,
+      rgba(var(--color-meta), 0.26),
+      rgba(var(--color-meta), 0.14) 55%,
+      rgba(var(--color-meta), 0.06) 70%,
+      rgba(var(--color-meta), 0)
+    );
+
+    --meta-surface-soft: linear-gradient(
+      to right,
+      rgba(var(--color-meta), 0.18),
+      rgba(var(--color-meta), 0.08) 55%,
+      rgba(var(--color-meta), 0.03) 70%,
+      rgba(var(--color-meta), 0)
+    );
+
+    --meta-border-subtle: 1px solid rgba(255,255,255,0.06);
+
+  }
+}
+
+/* =========================================
    DARK MODE (AUTO)
 ========================================= */
 
@@ -53,7 +105,8 @@ $font-serif: 'Roboto Serif', serif;
 
     /* keep your same color identity, just tuned */
     --color-info: 86,180,233;
-    --color-action: 230,210,120;
+    /* --color-action: 230,210,120; */
+    --color-action: 184, 112, 70;
     --color-resolution: 80,196,45;
     --color-meta: 108,117,125;
     --code-background: #151822;
@@ -550,11 +603,9 @@ blockquote[data-type]:not([data-type="fancy-quote"]) p {
   align-items: baseline;
   flex-wrap: wrap;
   gap: 0.5rem;
-
   padding: 0.45rem 0.75rem;
 
   background: color-mix(in srgb, rgb(var(--color-meta)) 18%, white);
-
   border-bottom: 1px solid rgba(0,0,0,0.06);
 }
 
@@ -881,23 +932,45 @@ blockquote[data-type]:not([data-type="fancy-quote"]) p {
    STUDENT OUTCOME (PAST STUDENTS)
 ========================================= */
 
-.students-past .student-outcome {
-  padding: 0.25rem 0.65rem 0.2rem;
+/*.student-outcome { */
+.student-card > .student-outcome {
+  padding: 0.30rem 0.75rem 0.25rem;
+  margin: 0;                  /* ✅ ensure no offset */
+  width: 100%;                /* ✅ guarantees full stretch */
+  box-sizing: border-box;     /* ✅ prevents shrink issues */
 
-  font-size: 0.78rem;
+
+  font-size: 0.8rem;
   font-family: var(--font-serif);
 
-  color: color-mix(in srgb, rgb(var(--color-resolution)) 60%, black);
+  /* ✅ adaptive color (works in both modes) */
+  color: color-mix(in srgb, rgb(var(--color-resolution)) 70%, var(--ink));
 
-  background:
-    linear-gradient(
-      to right,
-      rgba(var(--color-resolution), 0.10),
-      rgba(var(--color-resolution), 0.03) 60%,
-      rgba(var(--color-resolution), 0)
-    );
+  /* ✅ integrate with your surface system */
+  background: linear-gradient(
+    to right,
+    rgba(var(--color-resolution), 0.12),
+    rgba(var(--color-resolution), 0.04) 60%,
+    rgba(var(--color-resolution), 0)
+  );
 
-  border-bottom: 1px solid rgba(0,0,0,0.05);
+  /* ✅ proper section divider */
+  border-bottom: var(--meta-border-subtle);
+
+  border-left: none;
+  border-right: none;
+
+  /* ✅ THIS is the missing piece */
+  margin-left: 0;
+
+}
+
+.student-header + .student-outcome {
+  border-top: none;
+}
+
+.student-outcome + .student-projects {
+  border-top: none;
 }
 
 /* =========================================
@@ -911,16 +984,26 @@ blockquote[data-type]:not([data-type="fancy-quote"]) p {
 /* Summary = your "section heading" */
 .students-collapsible summary {
   cursor: pointer;
-
+  margin-left: -1.4rem;
   font-family: var(--font-serif);
   font-size: 1.3rem;
   font-weight: 600;
-
   margin-bottom: 0.5rem;
 
   color: rgb(var(--color-resolution));
 
   list-style: none; /* remove default arrow */
+}
+
+.students-collapsible summary {
+  padding: 0.35rem 0.6rem;
+
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  background: var(--meta-surface-soft);
+  /* border: var(--meta-border-subtle); */
+  width: fit-content;
+  /* border-left: 3px solid rgba(var(--color-resolution), 0.6); */
 }
 
 /* Custom disclosure arrow */
@@ -929,6 +1012,7 @@ blockquote[data-type]:not([data-type="fancy-quote"]) p {
   display: inline-block;
   margin-right: 0.4em;
   transition: transform 0.2s ease;
+  color: rgba(var(--color-meta), 0.8);
 }
 
 /* Rotate when open */
@@ -1250,4 +1334,168 @@ section {
     box-shadow: 0 4px 16px rgba(0,0,0,0.6);
   }
 
+}
+
+@media (prefers-color-scheme: dark) {
+
+  .profile-title,
+  .student-header,
+  .sidebar h3 {
+    background: var(--meta-surface-strong);
+    border-bottom: var(--meta-border-subtle);
+  }
+
+  .profile-section h4,
+  .profile-panel h3,
+  .sidebar h3 {
+    color: color-mix(in srgb, var(--ink) 92%, rgb(var(--color-meta)));
+  }
+
+  .profile-title,
+  .profile-panel h3 {
+    background: color-mix(in srgb, rgb(var(--color-resolution)) 35%, black);
+    border-bottom: var(--meta-border-subtle);
+  }
+
+  .profile-section h4,
+  .student-header,
+  .students-past .student-header {
+    background: color-mix(in srgb, rgb(var(--color-meta)) 40%, black);
+    border-bottom: var(--meta-border-subtle);
+  }
+
+  .students-past .student-card {
+    background: rgba(var(--color-meta), 0.06);
+    border-left: 2px solid rgba(var(--color-meta), 0.35);
+  }
+
+  .students-past .student-work + .student-work {
+    border-top: 1px solid rgba(255,255,255,0.04);
+  }
+
+  .students-past .project-type {
+    background: rgba(var(--color-meta), 0.08);
+    border: 1px solid rgba(var(--color-meta), 0.18);
+  }
+
+  .students-past .project-title[data-type="student-project"] {
+    background:
+      linear-gradient(
+        to right,
+        rgba(var(--color-meta), 0.08),
+        rgba(var(--color-meta), 0.02) 60%,
+        rgba(var(--color-meta), 0)
+      );
+  }
+
+  .students-past .project-title[data-type="student-project"]::before {
+    border: 1px solid rgba(var(--color-meta), 0.25);
+    background-color: rgba(var(--color-meta), 0.08);
+  }
+
+  .student-outcome {
+    color: color-mix(in srgb, rgb(var(--color-resolution)) 75%, white);
+
+    background: linear-gradient(
+      to right,
+      rgba(var(--color-resolution), 0.18),
+      rgba(var(--color-resolution), 0.07) 60%,
+      rgba(var(--color-resolution), 0)
+    );
+
+    border-bottom: var(--meta-border-subtle);
+  }
+
+
+
+  /* --- BODY CONTAINER --- */
+  .student-projects {
+    background:
+      linear-gradient(
+        to bottom,
+        rgba(var(--color-meta), 0.04),
+        rgba(var(--color-meta), 0.02)
+      );
+  }
+
+  /* --- ROW SEPARATION --- */
+  .student-work + .student-work {
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+
+  /* --- PROJECT TITLE (CORE BODY ELEMENT) --- */
+  .project-title {
+    background:
+      linear-gradient(
+        to right,
+        rgba(var(--color-meta), 0.10),
+        rgba(var(--color-meta), 0.035) 60%,
+        rgba(var(--color-meta), 0)
+      );
+  }
+
+  /* --- ICON BACKING (important for visual anchoring) --- */
+  .project-title::before {
+    border: 1px solid rgba(var(--color-meta), 0.28);
+    background-color: rgba(var(--color-meta), 0.12);
+  }
+
+  /* --- META TEXT (slightly stronger readability) --- */
+  .project-meta .status {
+    opacity: 0.9;
+  }
+
+  .profile-panel {
+    background: linear-gradient(
+      to bottom,
+      rgba(var(--color-meta), 0.20),
+      rgba(var(--color-meta), 0.10)
+    );
+
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+
+
+}
+
+
+.student-projects {
+  padding: 0.4rem 0.75rem 0.5rem;
+}
+
+.students-past .student-projects {
+  padding: 0.2rem 0.65rem 0.3rem;
+}
+
+.student-card > .student-outcome {
+  padding: 0.3rem 0.75rem;
+}
+
+.authors {
+  display: inline;
+  font-size: 0.9em;
+  color: var(--muted);
+  font-style: normal;
+}
+
+.authors-bf {
+  display: inline;
+  font-size: 0.9em;
+  color: var(--muted);
+  font-style: normal;
+  font-weight: 525;
+}
+
+.short-work-title {
+  display: inline;
+  margin-top: 0.15rem;
+  font-size: .9em;
+  font-style: normal;
+}
+
+.journal-name {
+  display: inline;
+  font-size: 0.9em;
+  color: var(--muted);
+  font-style: italic;
 }

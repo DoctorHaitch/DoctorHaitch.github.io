@@ -1,0 +1,8 @@
+
+
+- name: LaTeX Writing Workshop
+  description: "A workshop on using LaTeX for writing research papers, theses, and presentations. Emphasis placed on typesetting complex mathematics and proper citations using BibTeX."
+  sponsor: University of Delaware, Department of Mathematics
+  leader: Dr. Francisco-Javier Sayas
+  semester: Fall 2015
+  display: false
