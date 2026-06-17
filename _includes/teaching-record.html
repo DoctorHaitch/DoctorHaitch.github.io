@@ -1,0 +1,79 @@
+<details class="collapsible-h2" open>
+  <summary class="collapsible-title">Current Courses</summary>
+
+  {% for sem in site.data.teaching %}
+  {% if sem.status == "current" %}
+    <div class="detail-card">
+      <div class="detail-header">
+        <span class="detail-name">{{ sem.semester }}</span>
+        <span class="detail-status">{{ sem.university }}</span>
+      </div>
+      <div class="detail-body">
+        {% for course in sem.courses %}
+          <div class="detail-item">
+            <div class="item-title item-icon-course item-level-{{ course.level }}">
+            <span class="item-label">
+                <strong>{{ course.code }}</strong>: {{ course.title }}
+            </span>
+            {% if course.meta or course.level == "grad" %}
+                <span class="meta-right">
+                {% for each in course.meta %}
+                    <span class="item-type">{{ each }}</span>
+                {% endfor %}
+                {% if course.level == "grad" %}
+                    <span class="course-level-label">Graduate</span>
+                {% endif %}
+                </span>
+            {% endif %}
+            </div>
+            {% if course.desc %}
+            <div class="course-description">{{ course.desc }}</div>
+            {% endif %}            
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  {% endif %}
+  {% endfor %}
+
+</details>
+
+<details class="collapsible-h2">
+  <summary class="collapsible-title">Detailed Teaching Record</summary>
+
+  {% for sem in site.data.teaching %}
+  {% if sem.status == "past" %}
+    <div class="detail-card detail-card--compact">
+      <div class="detail-header">
+        <span class="detail-name">{{ sem.semester }}</span>
+        <span class="detail-status">{{ sem.university }}</span>
+      </div>
+      <div class="detail-body">
+        {% for course in sem.courses %}
+          <div class="detail-item">
+            <div class="item-title item-icon-course item-level-{{ course.level }}">
+              <span class="item-label">
+                <strong>{{ course.code }}</strong>: {{ course.title }}
+              </span>
+              {% if course.meta or course.level == "grad" %}
+                <span class="meta-right">
+                {% for each in course.meta %}
+                    <span class="item-type">{{ each }}</span>
+                {% endfor %}
+                {% if course.level == "grad" %}
+                    <span class="course-level-label">Graduate</span>
+                {% endif %}
+                </span>
+              {% endif %}
+            </div>
+            {% if course.desc %}
+              <div class="course-description">{{ course.desc }}</div>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  {% endif %}
+  {% endfor %}
+
+</details>

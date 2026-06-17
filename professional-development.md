@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: main
 title: Professional Development Activities
 ---
 # Professional Development Activities

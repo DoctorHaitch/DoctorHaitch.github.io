@@ -1,40 +1,44 @@
 <details class="collapsible-h2">
   <summary class="collapsible-title">Published Scholarship and Preprints</summary>
-  <div class="students">
-    {% for article in site.data.publications.articles %}
-    <div class="student-card">
 
-      <div class="student-header">
-        <span class="student-name">{{ article.title }}</span>
-        <span class="student-status">
-          {{ article.status }}
-        </span>
+  <div class="detail-cards">
+    {% for article in site.data.publications.articles %}
+    <div class="detail-card">
+
+      <div class="detail-header">
+        <span class="detail-name">{{ article.title }}</span>
+        <span class="detail-status">{{ article.status }}</span>
       </div>
 
-      <div class="student-outcome">
+      <div class="detail-subheader">
         {{ article.journal }}
       </div>
 
-      <div class="student-projects">
-        <div class="student-work">
-          {% assign icon_class = "project-icon-paper" %}
+      <div class="detail-body">
+        <div class="detail-item">
 
-          <div class="project-title {{ icon_class }}" data-type="student-project">
-            <span class="authors">{{ article.authors }}.</span>
-            <span class="short-work-title">{{ article.title }}.</span>
-            <span class="journal-name">{{ article.journal }}</span>{% if article.volume %}<span class="authors">, {{ article.volume }}</span>{% if article.number %}<span class="authors-bf">({{ article.number }})</span>{% endif %}{% endif %}{% if article.pages %}<span class="authors">:{{ article.pages }}</span>{% endif %}<span class="authors">, {{ article.year }}.</span>
-          </div>
-          <div>
-          <span style="margin-left: 35px;" class="authors">Access:</span>
-          {% for target in article.link %}
-            <span class="project-type project-meta">
-              <a href="{{ target.url }}">{{ target.name }}</a>
+          <div class="item-title item-icon-paper">
+            <span class="item-label">
+              <span class="authors">{{ article.authors }}.</span>
+              <span class="short-work-title">{{ article.title }}.</span>
+              <span class="journal-name">{{ article.journal }}</span>{% if article.volume %}<span class="authors">, {{ article.volume }}</span>{% if article.number %}<span class="authors-bf">({{ article.number }})</span>{% endif %}{% endif %}{% if article.pages %}<span class="authors">:{{ article.pages }}</span>{% endif %}<span class="authors">, {{ article.year }}.</span>
             </span>
-          {% endfor %}
           </div>
+
+          <div style="margin-left: 35px;">
+            <span class="authors">Access:</span>
+            {% for target in article.link %}
+              <span class="item-type item-meta">
+                <a href="{{ target.url }}">{{ target.name }}</a>
+              </span>
+            {% endfor %}
+          </div>
+
         </div>
       </div>
+
     </div>
     {% endfor %}
   </div>
+
 </details>

@@ -9,3 +9,4 @@ Gemfile.lock
 /_site/
 local-test.sh
 /assets/css/style-*.scss
+/vendor

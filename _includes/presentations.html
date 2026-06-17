@@ -5,8 +5,7 @@
 
 <ul class="presentations-list">
   {% assign talks = site.data.presentations 
-     | sort: "month" 
-     | sort: "year" 
+     | sort: "date" 
      | reverse %}
 
   {% for talk in talks %}
@@ -16,18 +15,38 @@
         
         <strong>{{ talk.title }}</strong>
 
+          <span class="event">
+            {{ talk.event }}
+            {% if talk.event_type %} ({{ talk.event_type }}){% endif %}
+          </span>
+          <span class="presentation-meta">
+            <span class="item-meta item-meta--split">
+              — {{ talk.institution }}, {{ talk.city }}, {{ talk.state }}
+              <span class="meta-right">
+                <span class="item-type">{{ talk.type }}</span>
+                <span class="item-date">{{ talk.date | date: "%b %Y" }}</span>
+              </span>
+            </span>
+          </span>
 
+<!--
         <span class="presentation-meta">
           <span class="event">
             {{ talk.event }}
             {% if talk.event_type %} ({{ talk.event_type }}){% endif %}
           </span>
           — {{ talk.institution }}, {{ talk.city }}, {{ talk.state }}
+          <span class="item-meta">
+            <span class="presentation-date">
+              {{ talk.date | date: "%b %Y" }}
+            </span>
+          </span>
+
           <span class="presentation-date">
-            {{ talk.month }}/{{ talk.year }}
+            {{ talk.date | date: "%b %Y" }}
           </span>
         </span>
-
+-->
 
       </div>
 

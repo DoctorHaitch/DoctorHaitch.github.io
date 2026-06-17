@@ -1,53 +1,96 @@
 ---
 ---
 
-@import "rouge-base16-dark";
+/* @import "rouge-base16-dark"; */
+@use "rouge-base16-dark" as *;
 
-$font-sans: 'Atkinson Hyperlegible', sans-serif;
+// =========================================
+//   SCSS VARIABLES
+// =========================================
+
+$font-sans:  'Atkinson Hyperlegible', sans-serif;
 $font-serif: 'Roboto Serif', serif;
 
-/* =========================================
-   FONTS
-========================================= */
+// Shared transition
+$transition-fast: 0.15s ease;
+$transition-mid:  0.2s ease;
 
-@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Roboto+Serif:wght@400;600;700&display=swap');
+// Border radius scale
+$radius-sm:   4px;
+$radius-md:   6px;
+$radius-lg:   8px;
+$radius-xl:  12px;
+$radius-2xl: 14px;
 
-/* =========================================
-   ROOT PALETTE (FROM YOUR SYSTEM)
-========================================= */
+// Card density toggle amounts — used by compact variant
+$density-full-pad:    0.75rem;
+$density-compact-pad: 0.65rem;
 
-:root{
-    --color-info: 102, 126, 234;
-    --color-action: 230, 159, 0;
-    --color-resolution: 0, 158, 115;
-    --color-meta: 51,34,136;
-    --doc-accent: rgb(var(--color-info));
-    --paper-bg: #f7f8fb;
-    --card-bg: #ffffff;
-    --ink: #333333;
-    --muted: #666;
 
-        /* =========================================
-        ICON VARIABLES (Lucide-based, already defined)
-        ========================================= */
-    --icon-book-open: #{'url("/assets/icons/book-open.svg")'};
-    --icon-presentation: #{'url("/assets/icons/presentation.svg")'};
-    --icon-notebook-text: #{'url("/assets/icons/notebook-text.svg")'};
-    --icon-paper: #{'url("/assets/icons/notebook-text.svg")'};
-    --icon-library: #{'url("/assets/icons/library.svg")'};
-    --icon-speech: #{'url("/assets/icons/speech.svg")'};
-    --content-pad: 1.4rem;
-    --code-background: #1c1f26;
-}
 
-/* =========================================
-   META SURFACE SYSTEM (FOR SUBTLE LAYERING + DIVISION)
-========================================= */
+
+// =========================================
+//   ROOT PALETTE
+// =========================================
 
 :root {
+  // Raw color channels (used with rgba())
+  --color-info:       102, 126, 234;
+  --color-action:     230, 159, 0;
+  --color-resolution: 0, 158, 115;
+  --color-meta:       51, 34, 136;
 
-  /* --- META SURFACE SYSTEM --- */
+  // Semantic aliases (rgb() wrappers)
+  --c-info:       rgb(var(--color-info));
+  --c-action:     rgb(var(--color-action));
+  --c-resolution: rgb(var(--color-resolution));
+  --c-meta:       rgb(var(--color-meta));
 
+  // Surface / text
+  --doc-accent: var(--c-info);
+  --paper-bg:   #f7f8fb;
+  --card-bg:    #ffffff;
+  --ink:        #333333;
+  --muted:      #666;
+
+  // Spacing
+  --content-pad: 1.4rem;
+
+  // Code
+  --code-background: #1c1f26;
+
+  // Icon references (Lucide SVGs)
+  --icon-book-open:     #{'url("/assets/icons/book-open.svg")'};
+  --icon-presentation:  #{'url("/assets/icons/presentation.svg")'};
+  --icon-notebook-text: #{'url("/assets/icons/notebook-text.svg")'};
+  --icon-paper:         #{'url("/assets/icons/notebook-text.svg")'};
+  --icon-library:       #{'url("/assets/icons/library.svg")'};
+  --icon-speech:        #{'url("/assets/icons/speech.svg")'};
+
+  // Font references as CSS custom properties
+  // (so HTML can reference --font-serif / --font-sans consistently)
+  --font-sans:  #{$font-sans};
+  --font-serif: #{$font-serif};
+
+  // Detail card header backgrounds — defined here so dark mode can override
+  // without fighting color-mix(..., white) hardcodes in component rules
+  --detail-header-bg:         color-mix(in srgb, var(--c-meta) 18%, white);
+  --detail-header-bg-compact: color-mix(in srgb, var(--c-meta) 14%, white);
+
+  // Profile panel header backgrounds
+  --profile-name-bg:    color-mix(in srgb, var(--c-meta) 22%, white);
+  --profile-title-bg:   color-mix(in srgb, var(--c-meta) 22%, white);
+  --profile-name-color: #444444;
+}
+
+
+// =========================================
+//   META SURFACE SYSTEM
+//   Reusable gradient surfaces for subtle
+//   layering and section division
+// =========================================
+
+:root {
   --meta-surface-strong: linear-gradient(
     to right,
     rgba(var(--color-meta), 0.22),
@@ -64,12 +107,47 @@ $font-serif: 'Roboto Serif', serif;
     rgba(var(--color-meta), 0)
   );
 
-  --meta-border-subtle: 1px solid rgba(0,0,0,0.06);
+  --meta-border-subtle: 1px solid rgba(0, 0, 0, 0.06);
 
+  // Reusable info-tinted gradient (used for h2, section backgrounds, etc.)
+  --info-surface: linear-gradient(
+    to right,
+    rgba(var(--color-info), 0.12) 0%,
+    rgba(var(--color-info), 0.08) 55%,
+    rgba(var(--color-info), 0.04) 65%,
+    rgba(var(--color-info), 0) 75%
+  );
 }
+
+
+// =========================================
+//   DARK MODE
+// =========================================
 
 @media (prefers-color-scheme: dark) {
   :root {
+    --paper-bg: #1a1d2b;
+    --card-bg:  #23263a;
+    --ink:      #e6eaf2;
+    --muted:    #a8b0c5;
+
+    --color-info:       86, 180, 233;
+    --color-action:     184, 112, 70;
+    --color-resolution: 80, 196, 45;
+    --color-meta:       108, 117, 125;
+
+    --code-background: #151822;
+
+    --meta-border-subtle: 1px solid rgba(255, 255, 255, 0.06);
+
+    // Detail header backgrounds flip to dark-safe values
+    --detail-header-bg:         rgba(var(--color-meta), 0.32);
+    --detail-header-bg-compact: rgba(var(--color-meta), 0.26);
+
+    // Profile panel headers
+    --profile-name-bg:    rgba(var(--color-meta), 0.32);
+    --profile-title-bg:   rgba(var(--color-meta), 0.22);
+    --profile-name-color: var(--ink);
 
     --meta-surface-strong: linear-gradient(
       to right,
@@ -87,1241 +165,7 @@ $font-serif: 'Roboto Serif', serif;
       rgba(var(--color-meta), 0)
     );
 
-    --meta-border-subtle: 1px solid rgba(255,255,255,0.06);
-
-  }
-}
-
-/* =========================================
-   DARK MODE (AUTO)
-========================================= */
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --paper-bg: #1a1d2b;
-    --card-bg: #23263a;
-    --ink: #e6eaf2;
-    --muted: #a8b0c5;
-
-    /* keep your same color identity, just tuned */
-    --color-info: 86,180,233;
-    /* --color-action: 230,210,120; */
-    --color-action: 184, 112, 70;
-    --color-resolution: 80,196,45;
-    --color-meta: 108,117,125;
-    --code-background: #151822;
-  }
-}
-
-html{
-    background: var(--paper-bg);
-    height:100%
-}
-
-body{
-    margin:0;
-    padding:40px 0;
-    font-family:$font-sans;line-height:1.65;
-    color:var(--ink)
-}
-
-.wrapper{
-    width:720px;
-    margin:0 auto;
-    background: var(--card-bg);
-    border-radius:14px;
-    box-shadow:0 10px 30px rgba(0,0,0,0.1),0 2px 6px rgba(0,0,0,0.06);
-    box-sizing:border-box
-}
-
-header{
-    padding:1.2rem 1.4rem;
-    border-bottom:1px solid rgba(0,0,0,0.08);
-    border-left:4px solid var(--doc-accent);
-    background:rgba(var(--color-info), 0.12);
-    border-radius:12px 12px 0 0
-}
-
-header h1{
-    font-family:$font-serif;
-    font-size:1.7rem;
-    margin:0;
-    color: color-mix(in srgb, rgb(var(--color-meta)) 70%, white);
-}
-
-header p{margin:0.2em 0 0;color:var(--muted)}
-header ul{position:absolute;top:18px;right:20px;display:flex;gap:6px;list-style:none;padding:6px;margin:0;background:rgba(255,255,255,0.5);backdrop-filter:blur(6px);border-radius:8px}
-header ul li{margin:0}
-header ul a{display:block;padding:6px 10px;font-size:12px;border-radius:6px;color:var(--ink);transition:0.15s ease}
-header ul a:hover{background:rgba(var(--color-info), 0.15)}
-
-section{
-    padding-top:0;
-    padding-bottom:1.4rem;
-    border-left:4px solid var(--doc-accent);
-    background:rgba(var(--color-info), 0.1);
-    border-radius:0 0 12px 12px
-}
-
-section>*:not(h1:first-child){
-    margin-top:1rem;
-    padding-left:1.4rem;
-    padding-right:1.4rem
-}
-    
-section ul{
-    margin:0 0 0 1.4rem
-}
-
-h1,h2,h3,h4{
-    font-family:$font-serif;
-    margin-top:0
-}
-
-h3{color:rgb(var(--color-resolution));margin-top:1em;margin-bottom:0.4em}
-a{color:rgb(var(--color-info));text-decoration:none}
-a:hover{text-decoration:underline}
-blockquote{margin:0.8em 0;padding:0.5em 0.8em;border-left:3px solid rgb(var(--color-action));border-radius:6px;background:rgba(var(--color-action), 0.08);font-style:normal}
-li blockquote{margin:0 2em;font-size:.85em}
-blockquote p{margin:0}
-pre{padding:1em;border-radius:8px;background:#1c1f26;color:#eee;box-shadow:inset 0 0 0 1px rgba(255,255,255,0.05);overflow-x:auto}
-.sidebar{position:sticky;top:20px;float:left;margin-left:-230px;width:220px;padding:0px;border-radius:12px;background:rgba(var(--color-meta), 0.08);backdrop-filter:blur(8px);border:1px solid rgba(0,0,0,0.08);box-shadow:0 8px 20px rgba(0,0,0,0.08);z-index:5}
-.sidebar h3{margin-top:0;padding:0 0 0 .5em;font-size:0.95rem;color:var(--muted);background:rgba(var(--color-meta), 0.12);border-radius:12px 12px 0 0}
-.sidebar a{display:block;padding:4px 8px;line-height:1.3;border-radius:6px;font-size:0.9rem;color:var(--ink)}
-.sidebar a:hover{background:rgba(var(--color-info), 0.12)}
-.sidebar a.active{background:rgba(var(--color-action), 0.18);color:#000}
-.sidebar ul{margin:0;padding:0;list-style:none}
-footer{width:740px;margin:20px auto;padding:10px;color:var(--muted);font-size:0.85rem}
-@media (max-width: 980px){
-  .sidebar{position:static;float:none;margin:0 20px 20px;width:auto}
-  .wrapper{width:100%;border-radius:0}
-}
-
-
-@media (max-width: 980px) {
-
-  .sidebar {
-    position: static;
-    float: none;
-
-    margin: 0;     /* ✅ align with content padding */
-    width: auto;
-
-    border-radius: 0;
-
-    background: rgba(var(--color-meta), 0.04);  /* ✅ softer */
-    backdrop-filter: none;                      /* ✅ remove "floating glass" feel */
-
-    box-shadow: none;                           /* ✅ remove float illusion */
-    border: 1px solid rgba(0,0,0,0.05);
-    border-left: 4px solid rgba(var(--color-meta), 0.25); /* ✅ maintain visual anchor without float */
-
-    padding: 0;
-  }
-
-  /* soften header so it feels like a section header */
-  .sidebar h3 {
-    font-size: 0.85rem;
-    padding: 0.3rem 0.6rem;
-    border-radius: 0;
-
-    background: rgba(var(--color-meta), 0.08);
-    color: var(--muted);
-  }
-
-  /* tighten links for compact vertical scan */
-  .sidebar a {
-    padding: 5px 10px;
-    font-size: 0.85rem;
-  }
-
-}
-
-@media (max-width: 740px){body{padding:0}section{padding:1rem}}
-
-.main-content{
-    position: relative;
-}
-
-.main-content>h1:first-of-type{
-    margin:0;
-    padding:0.15em 0.4em;
-    font-family:$font-serif;font-weight:600;
-    background:rgba(var(--color-info), 0.20);
-    border-top:1px solid rgba(0,0,0,0.06);
-    border-bottom:1px solid rgba(0,0,0,0.06)
-}
-
-p,ol{
-    margin:0 0 0.9em
-}
-
-.profile-panel{
-    float:right;
-    width:280px;
-    margin:0 0 0rem 1.4rem;
-    padding:1.4rem 0 1.4rem 1.4rem;
-    background:rgba(var(--color-meta), 0.06);
-    border-top-left-radius:10px;
-    border-bottom-left-radius:10px
-}
-.profile-image{width:100%;display:block;border-top-left-radius:8px;margin-bottom:-.75rem}
-.main-content::after{content:"";display:block;clear:both}
-
-.profile-panel h3{
-    margin:0 0;
-    padding:0.5em 0.8em 0;
-    font-family:$font-serif;
-    font-weight:600;
-    /* background:rgba(var(--color-meta), 0.12); */
-    background: color-mix(in srgb, rgb(var(--color-meta)) 22%, white);
-    border-top:1px solid rgba(0,0,0,0.06);
-    color:#444444;
-}
-
-.profile-title{
-    margin:0 0 0.5em;
-    padding:0 1em;
-    font-family:$font-serif;
-    font-weight:600;font-size:0.9rem;
-    /* background:rgba(var(--color-meta), 0.12); */
-    background: color-mix(in srgb, rgb(var(--color-meta)) 22%, white);
-    border-bottom:1px solid rgba(0,0,0,0.06);
-    border-bottom-left-radius:8px;
-    border-bottom-right-radius:8px
-}
-
-.profile-section{
-    margin:1em 0 0 0;
-    padding:0;font-family:$font-serif;
-    font-weight:600;font-size:0.9rem;
-    /* background:rgba(var(--color-meta), 0.12); */
-    border-top:1px solid rgba(0,0,0,0.06);
-    border-bottom:1px solid rgba(0,0,0,0.06);
-    border-radius:12px
-}
-
-
-.profile-section h4{
-    margin-top:0;
-    margin-bottom:0;
-    padding:0 0 0 .5em;
-    font-size:0.95rem;
-    color:var(--muted);
-    background:rgba(var(--color-meta), 0.12);
-    border-radius:12px 12px 0 0
-}
-
- /* NEW STUFF */
-.profile-section blockquote{
-    margin:0 0;
-    border-radius:0px;
-    background:rgba(var(--color-meta), 0.06);
-    border-bottom:2px solid rgba(0,0,0,0.06);
-    padding:0em .5em;
-}
-
-.profile-section>blockquote:first-of-type{   
-    font-family:$font-serif;
-    font-weight:600;
-    margin:0 0;
-}
-
-.profile-section>blockquote:last-of-type{   
-    font-family:$font-serif;
-    font-weight:600;
-    margin:0 0;
-    border-radius:0 0 12px 12px;
-}
-
-blockquote .broad{
-    display:block;
-    font-weight:600;
-}
-blockquote .details{
-    display:block;
-    font-weight:400;
-    font-size:0.8rem;
-    padding: 0em .5em;
-}
-
-h2,
-.collapsible-title{
-    margin:16px 0px 0px;
-    padding:0.15em 0.4em;
-    padding:3.6px 22.4px;
-    
-    font-family:$font-serif;font-weight:600;
-    /*background:rgba(var(--color-action), 0.02);
-     border-top:1px solid rgba(var(--color-action),0.06);
-    border-bottom:1px solid rgba(var(--color-action),0.06); */
-    
-    background-image: linear-gradient(
-    to right,
-    rgba(var(--color-info), 0.12) 0%,
-    rgba(var(--color-info), 0.08) 55%,
-    rgba(var(--color-info), 0.04) 65%,
-    rgba(var(--color-info), 0) 75%
-    );
-
-    line-height: 39.6px;
-    font-size: 24px;
-
-}
-
-a h2{
-    border-left:1px solid rgba(var(--color-info));
-    border-top-left-radius:10px;
-    padding-left:.5rem;
-    padding-top:0;
-    padding-bottom:0;
-}
-
-p.post-meta{
-    border-left:1px solid rgba(var(--color-info));
-    border-bottom-left-radius:10px;
-    padding-left: .5em;
-/*    border-bottom:1px solid rgba(var(--color-info),.1);
-    width: 75%; */
-    background-image: linear-gradient(
-    to right,
-        rgba(var(--color-info), 0.06) 0%,
-        rgba(var(--color-info), 0.04) 65%,
-        rgba(var(--color-info), 0.01) 85%,
-        rgba(var(--color-info), 0) 100%
-    );
-}
-
-h3.post-subtitle{
-    margin:0;
-    padding-left:.5rem;
-    padding-top:0;
-    color:rgb(var(--ink));
-    padding-bottom:0;
-    font-family:$font-serif;font-weight:400;
-    background-image: linear-gradient(to right,rgba(var(--color-info),0.12),rgba(var(--color-info),0));
-    border-left:1px solid rgba(var(--color-info));
-    width: 60%;
-}
-   
-section > div.post-preview {
-  padding-left: 0;
-  padding-right: 0;
-  margin-top: .5rem;
-  margin-left: .5rem;
-}
-
-p.post-description{
-    margin:0;
-    padding-left:.5rem;
-    border-left:1px solid rgba(var(--color-info));
-    padding-top:.5rem;
-    padding-bottom:.5rem;
-    width: 90%;
-}
-
-/* =========================================
-   FANCY QUOTE HERO (ROBUST)
-========================================= */
-
-blockquote[data-type="fancy-quote"] {
-
-position: relative;
-    margin: 1rem 1rem;
-    padding-top: 1.4rem;
-    border-radius: 14px;
-
-    background:
-        linear-gradient(
-            to bottom right,
-            rgba(var(--color-info), 0.10),
-            rgba(var(--color-action), 0.08)
-        );
-
-    border-left: 1.5px solid rgba(var(--color-action),0.3);
-
-    font-family: $font-serif;
-    font-size: 1.2rem;
-    line-height: 1.7;
-
-}
-
-/* Big decorative quote mark */
-blockquote[data-type="fancy-quote"]::before {
-    content: "“";
-    position: absolute;
-    top: -20px;
-    left: 2px;
-    font-size: 4rem;
-    color: rgba(var(--color-action), 0.25);
-}
-
-/* Main quote text */
-blockquote[data-type="fancy-quote"] > p:first-child {
-  margin: 0;
-  font-weight: 500;
-}
-
-/* Author line */
-blockquote[data-type="fancy-quote"] > p:last-child {
-  font-size: 0.85rem;
-  color: var(--muted);
-  font-style: italic;
-  text-align: right;
-}
-
-
-/* Remove unwanted spacing */
-blockquote[data-type="fancy-quote"] p {
-  margin: 0;
-}
-
-/* Code blocks + inline code */
-code,
-pre {
-  --code-normal: #dddddd;
-  --code-comment: #a0a0a0;
-  --code-keyword: #ff79c6;
-  --code-string: #50fa7b;
-
-  padding: 0.2em 0.4em;
-  border-radius: 4px;
-  
-  background-color: var(--code-background);
-  color: var(--code-normal);
-}
-
-img{
-    max-width:100%;
-    border-radius:8px;
-    box-shadow:0 4px 12px rgba(0,0,0,0.1);
-}
-
-ul {
-  margin: 0;
-  padding-left: 1.2em;
-}
-
-ul ul {
-  padding-left: 0em; /* smaller indent for nested lists */
-}
-
-/* =========================================
-   INLINE CALLOUT (ICON BRACKET STYLE)
-========================================= */
-
-/* INLINE CALLOUTS (exclude fancy quotes explicitly) */
-blockquote[data-type]:not([data-type="fancy-quote"]) {
-  position: relative;
-  margin: 0em 0 .3em;
-  padding: 0.1em 0.75em 0.1em 2.3em;
-
-  border: none;
-  background: none;
-  width: fit-content;
-  line-height: 1.35;
-
-  font-size: 0.95em;
-}
-
-blockquote[data-type]:not([data-type="fancy-quote"])::before {
-  content: "";
-  position: absolute;
-  left: 0.4em;
-  top: 50%;
-  transform: translateY(-48%);
-
-  width: 1.3em;
-  height: 1.3em;
-
-  background: var(--icon) no-repeat center / 70%;
-
-  border: 1.5px solid rgba(var(--color-info), 0.25);
-  background-color: rgba(var(--color-info), 0.06);
-  border-radius: 4px;
-  opacity: 0.9;
-}
-
-/* Description type */
-blockquote[data-type="description"]::before {
-  font-size: 1.1em;
-  --icon: var(--icon-book-open);
-  filter: opacity(0.7);
-}
-
-/* Nested (course list) refinement */
-li blockquote[data-type="description"] {
-  margin: 0.05em 0 0.25em 2em;
-  padding: 0.15em 0.6em 0.15em 2.4em;
-  letter-spacing: 0.015em;
-
-  font-size: 0.85em;
-  line-height: 1.3;
-  padding-top: 0.08em;
-  padding-bottom: 0.08em;
-
-  color: var(--muted);
-}
-
-blockquote[data-type="description"] p {
-  margin: 0;
-}
-
-blockquote[data-type]:not([data-type="fancy-quote"]) p {
-  display: inline;
-}
-
-/* =========================================
-   STUDENT PROJECTS (PROFILE-CARD BLEND)
-========================================= */
-
-.students {
-  margin-top: 0.8rem;
-}
-
-/* --- STUDENT CARD (now closer to profile-panel style) --- */
-.student-card {
-  margin: 0.7rem 0; /* slight horizontal inset */
-  padding: 0;
-
-  background: rgba(var(--color-meta), 0.05);
-  border-radius: 12px;
-
-  border: 1px solid rgba(0,0,0,0.06);
-  border-left: 2px solid rgba(var(--color-meta), 0.25);
-
-  box-shadow:
-    0 6px 16px rgba(0,0,0,0.05),
-    inset 0 1px 0 rgba(255,255,255,0.4);
-
-  overflow: hidden;
-}
-
-/* --- HEADER (mirrors section headers in your panels) --- */
-.student-header {
-  display: flex;
-  align-items: baseline;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  padding: 0.45rem 0.75rem;
-
-  background: color-mix(in srgb, rgb(var(--color-meta)) 18%, white);
-  border-bottom: 1px solid rgba(0,0,0,0.06);
-}
-
-/* Name (primary anchor) */
-.student-name {
-  font-family: var(--font-serif);
-  font-weight: 600;
-  font-size: 1rem;
-  color: var(--ink);
-}
-
-/* Status (quiet metadata) */
-.student-status {
-  font-size: 0.8rem;
-  color: var(--muted);
-}
-
-/* --- PROJECTS CONTAINER --- */
-.student-projects {
-  padding: 0.4rem 0.75rem 0.55rem;
-}
-
-/* Individual project row (tighter + segmented feel) */
-.student-work {
-  /* margin: 0.3rem 0; */
-  margin: 0.25rem 0 0.35rem;
-  padding-left: 0.7rem;   /* ✅ this is the key shift */
-  padding-top: 0.25rem;  
-}
-
-/* Add subtle separators between projects */
-.student-work + .student-work {
-  border-top: 1px solid rgba(0,0,0,0.05);
-  margin-top: 0.35rem;
-  padding-top: 0.35rem;
-}
-
-/* --- META STRIP (pill + status) --- */
-.project-meta {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35em;
-  
-  margin-left: 0rem;
-  margin-bottom: 0.05rem;
-}
-
-/* Refined pill (closer to your UI system tone) */
-.project-type {
-/*
-  font-size: 0.68em;
-  padding: 0.04em 0.45em;
-
-  background: rgba(var(--color-meta), 0.08);
-  border: 1px solid rgba(var(--color-meta), 0.18);
-
-  color: rgba(var(--ink), 0.6); */
-  font-size: 0.66em;
-  padding: 0.03em 0.4em;
-
-  border-radius: 999px;
-
-  background: rgba(var(--color-meta), 0.05);
-  border: 1px solid rgba(var(--color-meta), 0.12);
-
-  color: rgba(var(--ink), 0.5);
-}
-
-/* Status next to pill */
-.project-meta .status {
-  font-size: 0.72em;
-  color: var(--muted);
-  opacity: 0.75;
-}
-
-/* --- PROJECT TITLE --- */
-/* .project-title[data-type="student-project"] { */
-.project-title {
-  position: relative;
-  --icon: var(--icon-paper); /* default */
-
-  display: block;
-
-  padding: 0.15em 0.6em 0.15em 1.8em;
-  /* margin-left: 0.35rem; */
-  margin-left: .5em;
-
-  /* 
-  margin: 0.15rem 0 0.25rem 0.3rem;
-  padding: 0.15em 0.6em 0.15em 1.7em;
-  */
-
-  font-size: 0.95em;
-  font-weight: 500;
-  color: var(--ink);
-  font-style: italic;
-  line-height: 1.4;
-
-  border-radius: 6px;
-
-  /*
-  background:
-    linear-gradient(
-      to right,
-      rgba(var(--color-meta), 0.08),
-      rgba(var(--color-meta), 0.02) 60%,
-      rgba(var(--color-meta), 0)
-    ); */
-
-    /* background: none; */
-
-    background:
-    linear-gradient(
-        to right,
-        rgba(var(--color-meta), 0.06),
-        rgba(var(--color-meta), 0.015) 60%,
-        rgba(var(--color-meta), 0)
-    );
-
-  /* border-left: 1.5px solid rgba(var(--color-info), 0.35); */
-
-}
-
-.project-icon-paper {
-  --icon: var(--icon-paper);
-}
-
-.project-icon-presentation {
-  --icon: var(--icon-presentation);
-}
-
-.project-icon-library {
-  border-left-color: rgba(var(--color-info), 0.45);
-
-  background:
-    linear-gradient(
-      to right,
-      rgba(var(--color-info), 0.10),
-      rgba(var(--color-info), 0.03) 60%,
-      rgba(var(--color-info), 0)
-    );
-}
-.project-icon-library::before {
-  --icon: var(--icon-library);
-
-  background: var(--icon) no-repeat center / 70%;
-
-  border-color: rgba(var(--color-meta), 0.35);
-  background-color: rgba(var(--color-meta), 0.10);
-}
-
-/* .project-title[data-type="student-project"]::before */
-.project-title::before {
-  content: "";
-  position: absolute;
-
-  /* left: 0em; */
-  left: 0em;
-  top: 50%;
-  transform: translateY(-50%);
-
-  width: 1.25em;
-  height: 1.25em;
-
-  background: var(--icon) no-repeat center / 70%;
-
-  /* border: 1.5px solid rgba(var(--color-meta), 0.2);
-  background-color: rgba(var(--color-meta), 0.04); */
-
-  border: 1px solid rgba(var(--color-meta), 0.18);
-  background-color: rgba(var(--color-meta), 0.035);
-
-  border-radius: 4px;
-}
-
-/* Links (subtle, academic) */
-.project-title a {
-  color: inherit;
-  text-decoration: none;
-  border-bottom: 1px solid rgba(var(--color-info), 0.22);
-}
-
-.project-title a:hover {
-  border-bottom-color: rgba(var(--color-info), 0.55);
-}
-
-.project-icon-paper {
-  border-left-color: rgba(var(--color-resolution), 0.45);
-  background:
-    linear-gradient(
-      to right,
-      rgba(var(--color-resolution), 0.10),
-      rgba(var(--color-resolution), 0.03) 60%,
-      rgba(var(--color-resolution), 0)
-    );
-}
-
-.project-icon-paper::before {
-  --icon: var(--icon-paper);
-
-  background: var(--icon) no-repeat center / 70%;
-  border-color: rgba(var(--color-resolution), 0.35);
-  background-color: rgba(var(--color-resolution), 0.10);
-}
-
-.project-icon-presentation {
-  border-left-color: rgba(var(--color-action), 0.5);
-  background:
-    linear-gradient(
-      to right,
-      rgba(var(--color-action), 0.12),
-      rgba(var(--color-action), 0.04) 60%,
-      rgba(var(--color-action), 0)
-    );
-}
-
-.project-icon-presentation::before {
-  --icon: var(--icon-presentation);
-
-  background: var(--icon) no-repeat center / 70%;
-  border-color: rgba(var(--color-action), 0.4);
-  background-color: rgba(var(--color-action), 0.12);
-}
-
-.project-title[data-type="student-project"] p {
-  display: inline;
-  margin: 0;
-}
-
-/* --- HOVER --- */
-.student-card:hover {
-  box-shadow:
-    0 2.5px 6px rgba(0,0,0,0.08),
-    inset 0 1px 0 rgba(255,255,255,0.5);
-}
-
-/* =========================================
-   PAST STUDENTS (CONDENSED VARIANT)
-========================================= */
-
-.students-past .student-card {
-  margin: 0.4rem 0;
-
-  background: rgba(var(--color-meta), 0.035);
-  border-left: 2px solid rgba(var(--color-meta), 0.25);
-
-  box-shadow: none;
-}
-
-/* Header tighter + less prominent */
-.students-past .student-header {
-  padding: 0.05rem 0.65rem;
-  background: color-mix(in srgb, rgb(var(--color-meta)) 14%, white);
-}
-
-/* Name slightly smaller */
-.students-past .student-name {
-  font-size: 0.95rem;
-  font-weight: 600;
-}
-
-/* University becomes visible but quiet */
-.students-past .student-status {
-  font-size: 0.75rem;
-  color: var(--muted);
-  opacity: 0.85;
-}
-
-/* Reduce project padding */
-.students-past .student-projects {
-  padding: 0rem 0.65rem 0.2rem;
-}
-
-/* Tighter rows */
-.students-past .student-work {
-  padding-left: 0.75rem;
-  margin: 0.2rem 0 0.25rem;
-}
-
-/* Subtler separators */
-.students-past .student-work + .student-work {
-  border-top: 1px solid rgba(0,0,0,0.04);
-  margin-top: 0.25rem;
-  padding-top: 0.25rem;
-}
-
-/* Pills smaller + quieter */
-.students-past .project-type {
-  font-size: 0.6em;
-  padding: 0.02em 0.35em;
-
-  background: rgba(var(--color-meta), 0.04);
-  border: 1px solid rgba(var(--color-meta), 0.10);
-
-  color: rgba(var(--ink), 0.5);
-}
-
-/* Titles slightly lighter emphasis */
-.students-past .project-title[data-type="student-project"] {
-  font-size: 0.9em;
-  font-style: italic;
-
-  padding-left: 1.9em; /* still aligned with icon */
-
-  background:
-    linear-gradient(
-      to right,
-      rgba(var(--color-meta), 0.04),
-      rgba(var(--color-meta), 0.01) 60%,
-      rgba(var(--color-meta), 0)
-    );
-}
-
-/* Icons slightly smaller and quieter */
-.students-past .project-title[data-type="student-project"]::before {
-  width: 1.15em;
-  height: 1.15em;
-
-  border: 1px solid rgba(var(--color-meta), 0.15);
-  background-color: rgba(var(--color-meta), 0.03);
-}
-
-/* =========================================
-   STUDENT OUTCOME (PAST STUDENTS)
-========================================= */
-
-/*.student-outcome { */
-.student-card > .student-outcome {
-  padding: 0.30rem 0.75rem 0.25rem;
-  margin: 0;                  /* ✅ ensure no offset */
-  width: 100%;                /* ✅ guarantees full stretch */
-  box-sizing: border-box;     /* ✅ prevents shrink issues */
-
-
-  font-size: 0.8rem;
-  font-family: var(--font-serif);
-
-  /* ✅ adaptive color (works in both modes) */
-  color: color-mix(in srgb, rgb(var(--color-resolution)) 70%, var(--ink));
-
-  /* ✅ integrate with your surface system */
-  background: linear-gradient(
-    to right,
-    rgba(var(--color-resolution), 0.12),
-    rgba(var(--color-resolution), 0.04) 60%,
-    rgba(var(--color-resolution), 0)
-  );
-
-  /* ✅ proper section divider */
-  border-bottom: var(--meta-border-subtle);
-
-  border-left: none;
-  border-right: none;
-
-  /* ✅ THIS is the missing piece */
-  margin-left: 0;
-
-}
-
-.student-header + .student-outcome {
-  border-top: none;
-}
-
-.student-outcome + .student-projects {
-  border-top: none;
-}
-
-/* =========================================
-   COLLAPSIBLE STUDENT SECTION
-========================================= */
-
-.students-collapsible {
-  margin-top: 1rem;
-}
-
-/* Summary = your "section heading" */
-.students-collapsible summary {
-  cursor: pointer;
-  margin-left: -1.4rem;
-  font-family: var(--font-serif);
-  font-size: 1.3rem;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-
-  color: rgb(var(--color-resolution));
-
-  list-style: none; /* remove default arrow */
-}
-
-.students-collapsible summary {
-  padding: 0.35rem 0.6rem;
-
-  border-top-right-radius: 8px;
-  border-bottom-right-radius: 8px;
-  background: var(--meta-surface-soft);
-  /* border: var(--meta-border-subtle); */
-  width: fit-content;
-  /* border-left: 3px solid rgba(var(--color-resolution), 0.6); */
-}
-
-/* Custom disclosure arrow */
-.students-collapsible summary::before {
-  content: "▸";
-  display: inline-block;
-  margin-right: 0.4em;
-  transition: transform 0.2s ease;
-  color: rgba(var(--color-meta), 0.8);
-}
-
-/* Rotate when open */
-.students-collapsible[open] summary::before {
-  transform: rotate(90deg);
-}
-
-/* Remove default marker (browser-specific) */
-.students-collapsible summary::-webkit-details-marker {
-  display: none;
-}
-
-/* =========================================
-   COLLAPSIBLE H2 TITLES
-========================================= */
-
-/*
-.collapsible-title {
-    margin:0;
-    padding:0.15em 0.4em;
-
-    font-family:$font-serif;font-weight:600;
-    
-    background-image: linear-gradient(
-    to right,
-    rgba(var(--color-info), 0.12) 0%,
-    rgba(var(--color-info), 0.08) 55%,
-    rgba(var(--color-info), 0.04) 65%,
-    rgba(var(--color-info), 0) 75%
-    );
-    line-height: 39.6px;
-    font-size: 24px;
-} 
-*/
-
-summary.collapsible-title::-webkit-details-marker {
-  display: none;
-}
-
-/* arrow */
-summary.collapsible-title::after {
-  content: "";
-  
-  width: 0.45em;
-  height: 0.45em;
-
-  border-right: 2px solid rgb(var(--color-info));
-  border-bottom: 2px solid rgb(var(--color-info));
-
-  transform: rotate(45deg);
-  transform-origin: center;
-  transition: transform 0.2s ease;
-
-  margin-left: auto;
-  opacity: 0.7;
-}
-
-/* open state */
-details[open] > summary.collapsible-title::after {
-  transform: rotate(135deg);
-}
-
-/*
-section > details {
-  margin-left: -1.4rem;
-  margin-right: -1.4rem;
-}
-
-section > details > *:not(summary) {
-  padding-left: 1.4rem;
-  padding-right: 1.4rem;
-}
-*/
-
-section > *:not(h1:first-child) {
-  padding-left: 1.4rem;
-  padding-right: 1.4rem;
-}
-
-
-.project-level-undergrad {
-  border-left-color: rgba(var(--color-info), 0.35);
-
-  background:
-    linear-gradient(
-      to right,
-      rgba(var(--color-info), 0.08),
-      rgba(var(--color-info), 0.02) 60%,
-      rgba(var(--color-info), 0)
-    );
-}
-
-.project-level-grad {
-  border-left-color: rgba(var(--color-meta), 0.5);
-
-  background:
-    linear-gradient(
-      to right,
-      rgba(var(--color-meta), 0.12),
-      rgba(var(--color-meta), 0.03) 60%,
-      rgba(var(--color-meta), 0)
-    );
-}
-
-/* Optional: slightly heavier typography */
-.project-level-grad {
-  font-weight: 600;
-}
-
-.course-level-label {
-  font-size: 0.65em;
-  margin-left: 0.4em;
-  padding: 0.05em 0.35em;
-  border-radius: 999px;
-
-  background: rgba(var(--color-meta), 0.08);
-  border: 1px solid rgba(var(--color-meta), 0.18);
-
-  color: rgba(var(--ink), 0.6);
-}
-
-.course-description {
-  margin-left: 1.4em;
-  margin-top: 0.1em;
-
-  font-size: 0.8rem;
-  line-height: 1.35;
-
-  color: var(--muted);
-
-  font-style: normal;
-
-  max-width: 85%;
-}
-
-.project-level-undergrad::before {
-  --icon: var(--icon-book-open);
-}
-
-.project-level-grad::before {
-  --icon: var(--icon-library);
-}
-
-
-/* 
-summary.collapsible-title {
-  left: -1.4rem;
-
-  list-style: none;
-  position: relative;
-  left: calc(-1 * var(--content-pad));
-  width: calc(100% + var(--content-pad));
-  
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  cursor: pointer;  
-
-} */
-
-
-summary.collapsible-title {
-  position: relative;
-  transform: translateX(calc(-1 * var(--content-pad)));
-
-  /* width: 100%; */                          /* ✅ keep natural width */
-  margin-right: 0;                      /* ✅ prevent overflow tricks */
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  cursor: pointer;
-
-  list-style: none;
-}
-
-
-/* PRESENTATION */
-
-.presentations-list {
-  position: relative;
-  margin-left: 0rem;
-  padding-left: 0;
-  list-style: none;
-}
-
-
-/* vertical guide line */
-/*
-.presentations-list::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0.4rem;
-  bottom: 0.4rem;
-  width: 1px;
-  background: rgba(var(--color-info), 0.18);
-}
-*/
-
-/* item spacing */
-.presentation-item {
-  position: relative;
-  margin: 0.75rem 0;
-  padding-left: 1.8rem;  /* tighter + cleaner */
-}
-
-/* icon sits exactly on the guide line */
-.presentation-item::before {
-  content: "";
-  position: absolute;
-
-  left: -0.35rem;   /* aligns icon ON the line */
-  top: 0.45rem;
-
-  width: 1.25em;
-  height: 1.25em;
-
-  background: var(--icon-speech) no-repeat center / 70%;
-
-  border: 1px solid rgba(var(--color-action), 0.35);
-  background-color: rgba(var(--color-action), 0.10);
-
-  border-radius: 5px;
-  opacity: .5;
-}
-
-/* Remove the “cardy indent feel” */
-.presentation-entry {
-  display: block;
-  padding: 0.35rem 0 0.45rem 0;
-
-  border-radius: 0;
-  background: none;
-  border-left: none;
-}
-
-/* ✅ Title aligns cleanly with list */
-.presentation-entry strong {
-  display: block;
-  margin: 0;
-
-  font-size: 1em;
-  line-height: 1.35;
-
-  font-style: italic;
-}
-
-/* ✅ Metadata sits naturally underneath */
-.presentation-meta {
-  display: block;
-  margin-top: 0.15rem;
-
-  font-size: 0.9em;
-  color: var(--muted);
-}
-
-/* subtle date */
-.presentation-date {
-  margin-left: 0.4em;
-  font-size: 0.85em;
-  color: #777;
-}
-
-/* Kill project-title icon system for presentations */
-.presentation-entry::before {
-  content: none !important;
-}
-
-.presentation-type-keynote::before {
-  --icon: var(--icon-presentation);
-}
-
-.presentation-type-seminar::before {
-  --icon: var(--icon-speech);
-}
-
-/* =========================================
-   DARK MODE TWEAKS
-========================================= */
-
-@media (prefers-color-scheme: dark) {
-
-  .wrapper,
-  .sidebar,
-  .student-card,
-  .profile-panel {
-    border-color: rgba(255,255,255,0.06) !important;
-  }
-
-  header {
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-  }
-
-  .student-work + .student-work {
-    border-top: 1px solid rgba(255,255,255,0.05);
-  }
-
-  header ul {
-    background: rgba(30, 34, 54, 0.7);
-  }
-
-section {
-    background: rgba(var(--color-info), 0.15);
-  }
-
-  h2,
-  .collapsible-title {
-    background-image: linear-gradient(
+    --info-surface: linear-gradient(
       to right,
       rgba(var(--color-info), 0.18),
       rgba(var(--color-info), 0.10),
@@ -1330,118 +174,149 @@ section {
     );
   }
 
-  img {
-    box-shadow: 0 4px 16px rgba(0,0,0,0.6);
+  // ---- Structural dark adjustments ----
+
+  .wrapper,
+  .sidebar,
+  .detail-card,
+  .profile-panel {
+    border-color: rgba(255, 255, 255, 0.06) !important;
   }
 
-}
+  header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
 
-@media (prefers-color-scheme: dark) {
+  header ul {
+    background: rgba(30, 34, 54, 0.7);
+  }
 
-  .profile-title,
-  .student-header,
+  section {
+    background: rgba(var(--color-info), 0.15);
+  }
+
+  h2,
+  .collapsible-title {
+    background-image: var(--info-surface);
+  }
+
+  img {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6);
+  }
+
+  // ---- Component dark adjustments ----
+
+  // profile-panel h3 and profile-title handled by custom properties above
   .sidebar h3 {
     background: var(--meta-surface-strong);
     border-bottom: var(--meta-border-subtle);
+    color: color-mix(in srgb, var(--ink) 92%, var(--c-meta));
   }
 
-  .profile-section h4,
-  .profile-panel h3,
-  .sidebar h3 {
-    color: color-mix(in srgb, var(--ink) 92%, rgb(var(--color-meta)));
-  }
 
-  .profile-title,
-  .profile-panel h3 {
-    background: color-mix(in srgb, rgb(var(--color-resolution)) 35%, black);
+  // detail-header bg handled by --detail-header-bg custom property above
+  .profile-section h4 {
+    background: rgba(var(--color-meta), 0.32);
     border-bottom: var(--meta-border-subtle);
   }
 
-  .profile-section h4,
-  .student-header,
-  .students-past .student-header {
-    background: color-mix(in srgb, rgb(var(--color-meta)) 40%, black);
-    border-bottom: var(--meta-border-subtle);
-  }
-
-  .students-past .student-card {
+  .detail-card--compact {
     background: rgba(var(--color-meta), 0.06);
     border-left: 2px solid rgba(var(--color-meta), 0.35);
   }
 
-  .students-past .student-work + .student-work {
-    border-top: 1px solid rgba(255,255,255,0.04);
+  .detail-card--compact .detail-item + .detail-item {
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
   }
 
-  .students-past .project-type {
+  // item-type gets slightly stronger tint in dark compact cards
+  .detail-card--compact .item-type {
     background: rgba(var(--color-meta), 0.08);
     border: 1px solid rgba(var(--color-meta), 0.18);
   }
 
-  .students-past .project-title[data-type="student-project"] {
-    background:
-      linear-gradient(
-        to right,
-        rgba(var(--color-meta), 0.08),
-        rgba(var(--color-meta), 0.02) 60%,
-        rgba(var(--color-meta), 0)
-      );
+  // item-date: boost opacity slightly in dark mode for legibility
+  .item-date {
+    background: rgba(var(--color-info), 0.10);
+    border: 1px solid rgba(var(--color-info), 0.28);
+    color: rgba(var(--ink), 0.75);
   }
 
-  .students-past .project-title[data-type="student-project"]::before {
-    border: 1px solid rgba(var(--color-meta), 0.25);
-    background-color: rgba(var(--color-meta), 0.08);
-  }
+  // item-title icon/bg handled by .item-icon-* dark mode rules below — no override here
 
-  .student-outcome {
-    color: color-mix(in srgb, rgb(var(--color-resolution)) 75%, white);
-
+  .detail-subheader {
+    color: color-mix(in srgb, var(--c-resolution) 75%, white);
     background: linear-gradient(
       to right,
       rgba(var(--color-resolution), 0.18),
       rgba(var(--color-resolution), 0.07) 60%,
       rgba(var(--color-resolution), 0)
     );
-
     border-bottom: var(--meta-border-subtle);
   }
 
-
-
-  /* --- BODY CONTAINER --- */
-  .student-projects {
-    background:
-      linear-gradient(
-        to bottom,
-        rgba(var(--color-meta), 0.04),
-        rgba(var(--color-meta), 0.02)
-      );
+  .detail-body {
+    background: linear-gradient(
+      to bottom,
+      rgba(var(--color-meta), 0.04),
+      rgba(var(--color-meta), 0.02)
+    );
   }
 
-  /* --- ROW SEPARATION --- */
-  .student-work + .student-work {
-    border-top: 1px solid rgba(255,255,255,0.06);
+  .detail-item + .detail-item {
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
   }
 
-  /* --- PROJECT TITLE (CORE BODY ELEMENT) --- */
-  .project-title {
-    background:
-      linear-gradient(
-        to right,
-        rgba(var(--color-meta), 0.10),
-        rgba(var(--color-meta), 0.035) 60%,
-        rgba(var(--color-meta), 0)
-      );
+  .item-title {
+    background: linear-gradient(
+      to right,
+      rgba(var(--color-meta), 0.10),
+      rgba(var(--color-meta), 0.035) 60%,
+      rgba(var(--color-meta), 0)
+    );
   }
 
-  /* --- ICON BACKING (important for visual anchoring) --- */
-  .project-title::before {
+  .item-title::before {
     border: 1px solid rgba(var(--color-meta), 0.28);
     background-color: rgba(var(--color-meta), 0.12);
   }
 
-  /* --- META TEXT (slightly stronger readability) --- */
-  .project-meta .status {
+  // Icon badges: boost all variants so they pop against dark card surfaces
+  .item-icon-paper::before,
+  [data-icon="paper"]::before {
+    border-color: rgba(var(--color-resolution), 0.60);
+    background-color: rgba(var(--color-resolution), 0.22);
+  }
+
+  .item-icon-presentation::before,
+  [data-icon="presentation"]::before {
+    border-color: rgba(var(--color-action), 0.65);
+    background-color: rgba(var(--color-action), 0.24);
+  }
+
+  .item-icon-library::before,
+  [data-icon="library"]::before {
+    border-color: rgba(var(--color-info), 0.60);
+    background-color: rgba(var(--color-info), 0.22);
+  }
+
+  .item-level-undergrad::before {
+    border-color: rgba(var(--color-info), 0.55);
+    background-color: rgba(var(--color-info), 0.20);
+  }
+
+  .item-level-grad::before {
+    border-color: rgba(var(--color-meta), 0.55);
+    background-color: rgba(var(--color-meta), 0.28);
+  }
+
+  // Presentation list icons
+  .presentation-item::before {
+    border-color: rgba(var(--color-action), 0.65);
+    background-color: rgba(var(--color-action), 0.24);
+  }
+
+  .item-meta .status {
     opacity: 0.9;
   }
 
@@ -1451,25 +326,561 @@ section {
       rgba(var(--color-meta), 0.20),
       rgba(var(--color-meta), 0.10)
     );
-
-    border: 1px solid rgba(255,255,255,0.06);
+    border: 1px solid rgba(255, 255, 255, 0.06);
   }
 
+  // sidebar: use card-bg as base so it reads as a lifted surface against paper-bg
+  .sidebar {
+    background: var(--card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    box-shadow:
+      0 8px 24px rgba(0, 0, 0, 0.45),
+      inset 0 1px 0 rgba(255, 255, 255, 0.05);
 
+    a {
+      color: var(--ink);
+
+      &:hover { background: rgba(var(--color-info), 0.18); }
+      &.active { background: rgba(var(--color-action), 0.28); color: var(--ink); }
+    }
+  }
+
+  // fancy-quote: warm tinted card with enough body to read as a distinct surface
+  blockquote[data-type="fancy-quote"] {
+    background: linear-gradient(
+      to bottom right,
+      rgba(var(--color-info), 0.16),
+      rgba(var(--color-action), 0.12)
+    );
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-left: 1.5px solid rgba(var(--color-action), 0.55);
+    box-shadow:
+      0 4px 16px rgba(0, 0, 0, 0.30),
+      inset 0 1px 0 rgba(255, 255, 255, 0.05);
+
+    // opening quote mark
+    &::before {
+      color: rgba(var(--color-action), 0.50);
+    }
+
+    // attribution line
+    > p:last-child {
+      color: var(--muted);
+    }
+  }
 }
 
 
-.student-projects {
-  padding: 0.4rem 0.75rem 0.5rem;
+// =========================================
+//   BASE ELEMENTS
+// =========================================
+
+html {
+  background:
+    radial-gradient(ellipse at 30% 0%, rgba(102, 126, 234, 0.07) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 100%, rgba(51, 34, 136, 0.05) 0%, transparent 55%),
+    var(--paper-bg);
+  height: 100%;
 }
 
-.students-past .student-projects {
-  padding: 0.2rem 0.65rem 0.3rem;
+body {
+  margin: 0;
+  padding: 40px 0;
+  font-family: var(--font-sans);
+  line-height: 1.65;
+  color: var(--ink);
 }
 
-.student-card > .student-outcome {
-  padding: 0.3rem 0.75rem;
+p, ol {
+  margin: 0 0 0.9em;
 }
+
+ul {
+  margin: 0;
+  padding-left: 1.2em;
+}
+
+ul ul {
+  padding-left: 0;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-serif);
+  margin-top: 0;
+}
+
+h3 {
+  color: var(--c-resolution);
+  margin-top: 1em;
+  margin-bottom: 0.4em;
+}
+
+a {
+  color: var(--c-info);
+  text-decoration: none;
+
+  &:hover { text-decoration: underline; }
+}
+
+img {
+  max-width: 100%;
+  border-radius: $radius-lg;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+blockquote {
+  margin: 0.8em 0;
+  padding: 0.5em 0.8em;
+  border-left: 3px solid var(--c-action);
+  border-radius: $radius-md;
+  background: rgba(var(--color-action), 0.08);
+  font-style: normal;
+
+  p { margin: 0; }
+}
+
+li blockquote {
+  margin: 0 2em;
+  font-size: 0.85em;
+}
+
+pre {
+  padding: 1em;
+  border-radius: $radius-lg;
+  background: var(--code-background);
+  color: #eee;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+  overflow-x: auto;
+}
+
+code,
+pre {
+  --code-normal:   #dddddd;
+  --code-comment:  #a0a0a0;
+  --code-keyword:  #ff79c6;
+  --code-string:   #50fa7b;
+
+  padding: 0.2em 0.4em;
+  border-radius: $radius-sm;
+  background-color: var(--code-background);
+  color: var(--code-normal);
+}
+
+
+// =========================================
+//   LAYOUT
+// =========================================
+
+.wrapper {
+  width: 720px;
+  margin: 0 auto;
+  background: var(--card-bg);
+  border-radius: $radius-2xl;
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.1),
+    0 2px 6px rgba(0, 0, 0, 0.06);
+  box-sizing: border-box;
+}
+
+header {
+  padding: 1.2rem var(--content-pad);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  border-left: 4px solid var(--doc-accent);
+  background: rgba(var(--color-info), 0.12);
+  border-radius: $radius-xl $radius-xl 0 0;
+
+  h1 {
+    font-family: var(--font-serif);
+    font-size: 1.7rem;
+    margin: 0;
+    color: color-mix(in srgb, var(--c-meta) 70%, white);
+  }
+
+  p { margin: 0.2em 0 0; color: var(--muted); }
+
+  ul {
+    position: absolute;
+    top: 18px;
+    right: 20px;
+    display: flex;
+    gap: 6px;
+    list-style: none;
+    padding: 6px;
+    margin: 0;
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(6px);
+    border-radius: $radius-lg;
+
+    li { margin: 0; }
+
+    a {
+      display: block;
+      padding: 6px 10px;
+      font-size: 12px;
+      border-radius: $radius-md;
+      color: var(--ink);
+      transition: $transition-fast;
+
+      &:hover { background: rgba(var(--color-info), 0.15); }
+    }
+  }
+}
+
+section {
+  padding-top: 0;
+  padding-bottom: var(--content-pad);
+  border-left: 4px solid var(--doc-accent);
+  background: rgba(var(--color-info), 0.10);
+  border-radius: 0 0 $radius-xl $radius-xl;
+
+  // Default padding for direct children (except first h1)
+  > *:not(h1:first-child) {
+    margin-top: 1rem;
+    padding-left: var(--content-pad);
+    padding-right: var(--content-pad);
+  }
+
+  ul { margin: 0 0 0 var(--content-pad); }
+}
+
+footer {
+  width: 740px;
+  margin: 20px auto;
+  padding: 10px;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.main-content {
+  position: relative;
+
+  > h1:first-of-type {
+    margin: 0;
+    padding: 0.15em 0.4em;
+    font-family: var(--font-serif);
+    font-weight: 600;
+    background: rgba(var(--color-info), 0.20);
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
+
+
+// =========================================
+//   SIDEBAR
+// =========================================
+
+.sidebar {
+  position: sticky;
+  top: 20px;
+  float: left;
+  margin-left: -230px;
+  width: 220px;
+  padding: 0;
+  border-radius: $radius-xl;
+  background: rgba(var(--color-meta), 0.08);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  z-index: 5;
+
+  h3 {
+    margin-top: 0;
+    padding: 0 0 0 0.5em;
+    font-size: 0.95rem;
+    color: var(--muted);
+    background: rgba(var(--color-meta), 0.12);
+    border-radius: $radius-xl $radius-xl 0 0;
+  }
+
+  a {
+    display: block;
+    padding: 4px 8px;
+    line-height: 1.3;
+    border-radius: $radius-md;
+    font-size: 0.9rem;
+    color: var(--ink);
+
+    &:hover { background: rgba(var(--color-info), 0.12); }
+    &.active { background: rgba(var(--color-action), 0.18); color: #000; }
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+}
+
+
+// =========================================
+//   HEADINGS & TYPOGRAPHIC LANDMARKS
+// =========================================
+
+h2,
+.collapsible-title {
+  margin: 16px 0 0;
+  padding: 3.6px 22.4px;
+  font-family: var(--font-serif);
+  font-weight: 600;
+  background-image: var(--info-surface);
+  line-height: 39.6px;
+  font-size: 24px;
+}
+
+a h2 {
+  border-left: 1px solid var(--c-info);
+  border-top-left-radius: 10px;
+  padding-left: 0.5rem;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+p.post-meta {
+  border-left: 1px solid var(--c-info);
+  border-bottom-left-radius: 10px;
+  padding-left: 0.5em;
+  background-image: linear-gradient(
+    to right,
+    rgba(var(--color-info), 0.06) 0%,
+    rgba(var(--color-info), 0.04) 65%,
+    rgba(var(--color-info), 0.01) 85%,
+    rgba(var(--color-info), 0) 100%
+  );
+}
+
+h3.post-subtitle {
+  margin: 0;
+  padding: 0 0 0 0.5rem;
+  color: var(--ink);
+  font-family: var(--font-serif);
+  font-weight: 400;
+  background-image: linear-gradient(to right, rgba(var(--color-info), 0.12), rgba(var(--color-info), 0));
+  border-left: 1px solid var(--c-info);
+  width: 60%;
+}
+
+p.post-description {
+  margin: 0;
+  padding: 0.5rem 0 0.5rem 0.5rem;
+  border-left: 1px solid var(--c-info);
+  width: 90%;
+}
+
+section > div.post-preview {
+  padding-left: 0;
+  padding-right: 0;
+  margin-top: 0.5rem;
+  margin-left: 0.5rem;
+}
+
+
+// =========================================
+//   FANCY QUOTE HERO
+// =========================================
+
+blockquote[data-type="fancy-quote"] {
+  position: relative;
+  margin: 1rem;
+  padding-top: 1.4rem;
+  border-radius: $radius-2xl;
+  background: linear-gradient(
+    to bottom right,
+    rgba(var(--color-info), 0.10),
+    rgba(var(--color-action), 0.08)
+  );
+  border-left: 1.5px solid rgba(var(--color-action), 0.3);
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  line-height: 1.7;
+
+  // Opening decorative quote mark
+  &::before {
+    content: "\201C";
+    position: absolute;
+    top: -20px;
+    left: 2px;
+    font-size: 4rem;
+    color: rgba(var(--color-action), 0.25);
+  }
+
+  // Main quote text
+  > p:first-child {
+    margin: 0;
+    font-weight: 500;
+  }
+
+  // Author / attribution
+  > p:last-child {
+    font-size: 0.85rem;
+    color: var(--muted);
+    font-style: italic;
+    text-align: right;
+  }
+
+  p { margin: 0; }
+}
+
+
+// =========================================
+//   INLINE CALLOUTS (icon-bracket style)
+//   Excludes fancy-quote variant
+// =========================================
+
+blockquote[data-type]:not([data-type="fancy-quote"]) {
+  position: relative;
+  margin: 0 0 0.3em;
+  padding: 0.1em 0.75em 0.1em 2.3em;
+  border: none;
+  background: none;
+  width: fit-content;
+  line-height: 1.35;
+  font-size: 0.95em;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0.4em;
+    top: 50%;
+    transform: translateY(-48%);
+    width: 1.3em;
+    height: 1.3em;
+    background: var(--icon) no-repeat center / 70%;
+    border: 1.5px solid rgba(var(--color-info), 0.25);
+    background-color: rgba(var(--color-info), 0.06);
+    border-radius: $radius-sm;
+    opacity: 0.9;
+  }
+
+  p {
+    display: inline;
+    margin: 0;
+  }
+}
+
+blockquote[data-type="description"] {
+  &::before {
+    --icon: var(--icon-book-open);
+    font-size: 1.1em;
+    filter: opacity(0.7);
+  }
+
+  p { margin: 0; }
+}
+
+// Nested description callout (e.g. inside course lists)
+li blockquote[data-type="description"] {
+  margin: 0.05em 0 0.25em 2em;
+  padding: 0.08em 0.6em 0.08em 2.4em;
+  font-size: 0.85em;
+  line-height: 1.3;
+  letter-spacing: 0.015em;
+  color: var(--muted);
+}
+
+
+// =========================================
+//   PROFILE PANEL
+// =========================================
+
+.profile-panel {
+  float: right;
+  width: 280px;
+  margin: 0 0 0 var(--content-pad);
+  padding: var(--content-pad) 0 var(--content-pad) var(--content-pad);
+  background: rgba(var(--color-meta), 0.06);
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+
+  h3 {
+    margin: 0;
+    padding: 0.5em 0.8em 0;
+    font-family: var(--font-serif);
+    font-weight: 600;
+    background: var(--profile-name-bg);
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+    color: var(--profile-name-color);
+  }
+}
+
+.profile-image {
+  width: 100%;
+  display: block;
+  border-top-left-radius: $radius-lg;
+  margin-bottom: -0.75rem;
+}
+
+.profile-title {
+  margin: 0 0 0.5em;
+  padding: 0 1em;
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: 0.9rem;
+  background: var(--profile-title-bg);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  border-bottom-left-radius: $radius-lg;
+  border-bottom-right-radius: $radius-lg;
+}
+
+.profile-section {
+  margin: 1em 0 0;
+  padding: 0;
+  font-size: 0.9rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: $radius-xl;
+
+  h4 {
+    margin: 0;
+    padding: 0 0 0 0.5em;
+    font-size: 0.95rem;
+    color: var(--muted);
+    background: rgba(var(--color-meta), 0.12);
+    border-radius: $radius-xl $radius-xl 0 0;
+  }
+
+  blockquote {
+    margin: 0;
+    border-radius: 0;
+    background: rgba(var(--color-meta), 0.06);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.06);
+    padding: 0 0.5em;
+  }
+
+  > blockquote:first-of-type {
+    font-family: var(--font-serif);
+    font-weight: 600;
+  }
+
+  > blockquote:last-of-type {
+    font-family: var(--font-serif);
+    font-weight: 600;
+    border-radius: 0 0 $radius-xl $radius-xl;
+  }
+}
+
+blockquote .broad {
+  display: block;
+  font-weight: 600;
+}
+
+blockquote .details {
+  display: block;
+  font-weight: 400;
+  font-size: 0.8rem;
+  padding: 0 0.5em;
+}
+
+
+// =========================================
+//   INLINE TEXT HELPERS
+// =========================================
 
 .authors {
   display: inline;
@@ -1489,7 +900,7 @@ section {
 .short-work-title {
   display: inline;
   margin-top: 0.15rem;
-  font-size: .9em;
+  font-size: 0.9em;
   font-style: normal;
 }
 
@@ -1498,4 +909,582 @@ section {
   font-size: 0.9em;
   color: var(--muted);
   font-style: italic;
+}
+
+
+// =========================================
+//   DETAIL CARD SYSTEM
+//
+//   Generic card for records, papers,
+//   teaching entries, student projects, etc.
+//
+//   Variants:
+//     .detail-card              — standard density
+//     .detail-card.detail-card--compact — condensed
+//
+//   Typical structure:
+//     .detail-card
+//       .detail-header
+//       .detail-subheader   (optional — e.g. placement, status)
+//       .detail-body
+//         .detail-item
+//           .item-meta
+//             .item-type
+//             .status
+//           .item-title[data-icon="paper|presentation|library"]
+// =========================================
+
+// ---- Base card ----
+
+.detail-card {
+  margin: 0.7rem 0;
+  padding: 0;
+  background: rgba(var(--color-meta), 0.05);
+  border-radius: $radius-xl;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-left: 2px solid rgba(var(--color-meta), 0.25);
+  box-shadow:
+    0 6px 16px rgba(0, 0, 0, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  overflow: hidden;
+  transition: box-shadow $transition-fast;
+
+  &:hover {
+    box-shadow:
+      0 2.5px 6px rgba(0, 0, 0, 0.08),
+      inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  }
+}
+
+// ---- Header ----
+
+.detail-header {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0.45rem $density-full-pad;
+  background: var(--detail-header-bg);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.detail-name {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--ink);
+}
+
+.detail-status {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+// ---- Outcome strip (e.g. placement, publication venue) ----
+
+.detail-subheader {
+  padding: 0.3rem $density-full-pad;
+  margin: 0;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 0.8rem;
+  color: color-mix(in srgb, var(--c-resolution) 70%, var(--ink));
+  background: linear-gradient(
+    to right,
+    rgba(var(--color-resolution), 0.12),
+    rgba(var(--color-resolution), 0.04) 60%,
+    rgba(var(--color-resolution), 0)
+  );
+  border-bottom: var(--meta-border-subtle);
+}
+
+// ---- Body / item container ----
+
+.detail-body {
+  padding: 0.4rem $density-full-pad 0.5rem;
+}
+
+// ---- Individual item row ----
+
+.detail-item {
+  margin: 0.25rem 0 0.35rem;
+  padding-left: 0.3rem;
+  padding-top: 0.25rem;
+
+  + .detail-item {
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    margin-top: 0.35rem;
+    padding-top: 0.35rem;
+  }
+}
+
+// ---- Item meta strip (type pill + status) ----
+
+.item-meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35em;
+  margin-bottom: 0.05rem;
+}
+
+// Add --split to stretch item-meta full-width and push .meta-right to the far edge
+.item-meta--split {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+// Unstyled left-side text wrapper inside .item-title flex row
+.item-label {
+  flex: 1 1 0;           // grow to fill, allow wrapping, never force pills off
+  min-width: 0;          // allow text to wrap rather than overflow
+}
+
+// Right-aligned pill group — works in both split and plain inline-flex contexts
+.meta-right {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35em;
+  margin-left: auto;
+  align-self: center;    // stay centered against wrapped text
+  flex-shrink: 0;        // never compress pills into the title text
+}
+
+.item-type {
+  font-size: 0.66em;
+  padding: 0.03em 0.4em;
+  border-radius: 999px;
+  background: rgba(var(--color-meta), 0.05);
+  border: 1px solid rgba(var(--color-meta), 0.12);
+  color: rgba(var(--ink), 0.5);
+}
+
+// Info-tinted pill for dates and temporal metadata
+.item-date {
+  font-size: 0.66em;
+  padding: 0.03em 0.4em;
+  border-radius: 999px;
+  background: rgba(var(--color-info), 0.06);
+  border: 1px solid rgba(var(--color-info), 0.18);
+  color: rgba(var(--ink), 0.6);
+}
+
+.item-meta .status {
+  font-size: 0.72em;
+  color: var(--muted);
+  opacity: 0.75;
+}
+
+// ---- Item title (with icon) ----
+
+.item-title {
+  --icon: var(--icon-paper); // default icon
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.4em;
+  padding: 0.15em 0.6em 0.15em 1.8em;
+  margin-left: 0.2em;
+  font-size: 0.95em;
+  font-weight: 500;
+  font-style: italic;
+  line-height: 1.4;
+  color: var(--ink);
+  border-radius: $radius-md;
+  background: linear-gradient(
+    to right,
+    rgba(var(--color-meta), 0.06),
+    rgba(var(--color-meta), 0.015) 60%,
+    rgba(var(--color-meta), 0)
+  );
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.2em;
+    width: 1.25em;
+    height: 1.25em;
+    background: var(--icon) no-repeat center / 70%;
+    border: 1px solid rgba(var(--color-meta), 0.18);
+    background-color: rgba(var(--color-meta), 0.035);
+    border-radius: $radius-sm;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(var(--color-info), 0.22);
+
+    &:hover { border-bottom-color: rgba(var(--color-info), 0.55); }
+  }
+
+  p {
+    display: inline;
+    margin: 0;
+  }
+}
+
+
+// ---- Icon + tint modifiers ----
+// Applied as data-icon="paper|presentation|library"
+// or as utility classes .item-icon-paper etc.
+//
+// Each sets --icon, an accent border-left, and a matching bg tint.
+
+@mixin item-icon-variant($icon-var, $color-var, $alpha-bg: 0.10, $alpha-border: 0.45) {
+  border-left-color: rgba(var($color-var), $alpha-border);
+  background: linear-gradient(
+    to right,
+    rgba(var($color-var), $alpha-bg),
+    rgba(var($color-var), calc($alpha-bg * 0.3)) 60%,
+    rgba(var($color-var), 0)
+  );
+
+  &::before {
+    --icon: var($icon-var);
+    background: var(--icon) no-repeat center / 70%;
+    border-color: rgba(var($color-var), calc($alpha-border * 0.75));
+    background-color: rgba(var($color-var), $alpha-bg);
+  }
+}
+
+.item-icon-paper,
+[data-icon="paper"] {
+  @include item-icon-variant(--icon-paper, --color-resolution);
+}
+
+.item-icon-presentation,
+[data-icon="presentation"] {
+  @include item-icon-variant(--icon-presentation, --color-action, 0.12, 0.5);
+}
+
+.item-icon-library,
+[data-icon="library"] {
+  @include item-icon-variant(--icon-library, --color-info, 0.10, 0.45);
+}
+
+
+// ---- Level modifiers (for courses / academic levels) ----
+
+.item-level-undergrad {
+  border-left-color: rgba(var(--color-info), 0.35);
+  background: linear-gradient(
+    to right,
+    rgba(var(--color-info), 0.08),
+    rgba(var(--color-info), 0.02) 60%,
+    rgba(var(--color-info), 0)
+  );
+
+  &::before {
+    --icon: var(--icon-book-open);
+    background: var(--icon-book-open) no-repeat center / 70%;
+    border-color: rgba(var(--color-info), 0.38);
+    background-color: rgba(var(--color-info), 0.10);
+  }
+}
+
+.item-level-grad {
+  font-weight: 600;
+  border-left-color: rgba(var(--color-meta), 0.5);
+  background: linear-gradient(
+    to right,
+    rgba(var(--color-meta), 0.12),
+    rgba(var(--color-meta), 0.03) 60%,
+    rgba(var(--color-meta), 0)
+  );
+
+  &::before {
+    --icon: var(--icon-library);
+    background: var(--icon-library) no-repeat center / 70%;
+    border-color: rgba(var(--color-meta), 0.40);
+    background-color: rgba(var(--color-meta), 0.12);
+  }
+}
+
+.course-level-label {
+  font-size: 0.65em;
+  margin-left: 0.4em;
+  padding: 0.05em 0.35em;
+  border-radius: 999px;
+  background: rgba(var(--color-meta), 0.08);
+  border: 1px solid rgba(var(--color-meta), 0.18);
+  color: rgba(var(--ink), 0.6);
+}
+
+.course-description {
+  margin: 0.1em 0 0 1.4em;
+  font-size: 0.8rem;
+  line-height: 1.35;
+  color: var(--muted);
+  font-style: normal;
+  max-width: 85%;
+}
+
+
+// ---- Compact variant ----
+
+.detail-card--compact {
+  margin: 0.4rem 0;
+  background: rgba(var(--color-meta), 0.035);
+  border-left: 2px solid rgba(var(--color-meta), 0.25);
+  box-shadow: none;
+
+  .detail-header {
+    padding: 0.05rem $density-compact-pad;
+    background: var(--detail-header-bg-compact);
+  }
+
+  .detail-name {
+    font-size: 0.95rem;
+  }
+
+  .detail-status {
+    font-size: 0.75rem;
+    opacity: 0.85;
+  }
+
+  .detail-body {
+    padding: 0.2rem $density-compact-pad 0.3rem;
+  }
+
+  .detail-item {
+    padding-left: 0.75rem;
+    margin: 0.2rem 0 0.25rem;
+
+    + .detail-item {
+      margin-top: 0.25rem;
+      padding-top: 0.25rem;
+    }
+  }
+
+  .item-type {
+    font-size: 0.6em;
+    padding: 0.02em 0.35em;
+    background: rgba(var(--color-meta), 0.04);
+    border: 1px solid rgba(var(--color-meta), 0.10);
+    color: rgba(var(--ink), 0.5);
+  }
+
+  // Only scale sizing — background and icon colors are owned by .item-icon-* variants
+  .item-title {
+    font-size: 0.9em;
+    padding-left: 1.9em;
+
+    &::before {
+      width: 1.15em;
+      height: 1.15em;
+    }
+  }
+
+  // Fallback tint only when no icon variant class is present
+  .item-title:not([class*="item-icon-"]):not([class*="item-level-"]) {
+    background: linear-gradient(
+      to right,
+      rgba(var(--color-meta), 0.04),
+      rgba(var(--color-meta), 0.01) 60%,
+      rgba(var(--color-meta), 0)
+    );
+
+    &::before {
+      border: 1px solid rgba(var(--color-meta), 0.15);
+      background-color: rgba(var(--color-meta), 0.03);
+    }
+  }
+
+  .detail-subheader {
+    padding: 0.2rem $density-compact-pad 0.05rem;
+  }
+}
+
+
+// =========================================
+//   COLLAPSIBLE DETAIL GROUP
+//   (e.g. past students, older records)
+// =========================================
+
+.detail-group-collapsible {
+  margin-top: 1rem;
+
+  summary {
+    cursor: pointer;
+    margin-left: calc(-1 * var(--content-pad));
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--c-resolution);
+    list-style: none;
+    padding: 0.35rem 0.6rem;
+    border-top-right-radius: $radius-lg;
+    border-bottom-right-radius: $radius-lg;
+    background: var(--meta-surface-soft);
+    width: fit-content;
+
+    &::before {
+      content: "▸";
+      display: inline-block;
+      margin-right: 0.4em;
+      transition: transform $transition-mid;
+      color: rgba(var(--color-meta), 0.8);
+    }
+
+    &::-webkit-details-marker { display: none; }
+  }
+
+  &[open] summary::before {
+    transform: rotate(90deg);
+  }
+}
+
+
+// =========================================
+//   COLLAPSIBLE H2 TITLES
+// =========================================
+
+summary.collapsible-title {
+  position: relative;
+  transform: translateX(calc(-1 * var(--content-pad)));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  list-style: none;
+  margin-right: 0;
+
+  &::-webkit-details-marker { display: none; }
+
+  // Chevron arrow
+  &::after {
+    content: "";
+    width: 0.45em;
+    height: 0.45em;
+    border-right: 2px solid var(--c-info);
+    border-bottom: 2px solid var(--c-info);
+    transform: rotate(45deg);
+    transform-origin: center;
+    transition: transform $transition-mid;
+    margin-left: auto;
+    opacity: 0.7;
+  }
+}
+
+details[open] > summary.collapsible-title::after {
+  transform: rotate(135deg);
+}
+
+
+// =========================================
+//   PRESENTATIONS LIST
+// =========================================
+
+.presentations-list {
+  position: relative;
+  margin-left: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.presentation-item {
+  position: relative;
+  margin: 0.75rem 0;
+  padding-left: 1.8rem;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: -0.35rem;
+    top: 0.45rem;
+    width: 1.25em;
+    height: 1.25em;
+    background: var(--icon-speech) no-repeat center / 70%;
+    border: 1px solid rgba(var(--color-action), 0.40);
+    background-color: rgba(var(--color-action), 0.12);
+    border-radius: 5px;
+  }
+}
+
+.presentation-entry {
+  display: block;
+  padding: 0.35rem 0 0.45rem;
+
+  // No icon via .item-title system
+  &::before { content: none !important; }
+
+  strong {
+    display: block;
+    margin: 0;
+    font-size: 1em;
+    line-height: 1.35;
+    font-style: italic;
+  }
+}
+
+.presentation-meta {
+  display: block;
+  margin-top: 0.15rem;
+  font-size: 0.9em;
+  color: var(--muted);
+}
+
+.presentation-date {
+  margin-left: 0.4em;
+  font-size: 0.85em;
+  color: #777;
+}
+
+// Presentation icon sub-types
+.presentation-type-keynote::before {
+  --icon: var(--icon-presentation);
+  background-image: var(--icon-presentation);
+}
+
+.presentation-type-seminar::before {
+  --icon: var(--icon-speech);
+  background-image: var(--icon-speech);
+}
+
+
+// =========================================
+//   RESPONSIVE
+// =========================================
+
+@media (max-width: 980px) {
+  .wrapper {
+    width: 100%;
+    border-radius: 0;
+  }
+
+  .sidebar {
+    position: static;
+    float: none;
+    margin: 0;
+    width: auto;
+    border-radius: 0;
+    background: rgba(var(--color-meta), 0.04);
+    backdrop-filter: none;
+    box-shadow: none;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-left: 4px solid rgba(var(--color-meta), 0.25);
+    padding: 0;
+
+    h3 {
+      font-size: 0.85rem;
+      padding: 0.3rem 0.6rem;
+      border-radius: 0;
+      background: rgba(var(--color-meta), 0.08);
+      color: var(--muted);
+    }
+
+    a {
+      padding: 5px 10px;
+      font-size: 0.85rem;
+    }
+  }
+}
+
+@media (max-width: 740px) {
+  body { padding: 0; }
+  section { padding: 1rem; }
 }
