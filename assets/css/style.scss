@@ -34,16 +34,18 @@ $density-compact-pad: 0.65rem;
 
 :root {
   // Raw color channels (used with rgba())
-  --color-info:       102, 126, 234;
-  --color-action:     230, 159, 0;
-  --color-resolution: 0, 158, 115;
-  --color-meta:       51, 34, 136;
+  --color-info:            102, 126, 234;
+  --color-action:          230, 159, 0;
+  --color-resolution:      0, 158, 115;
+  --color-resolution-text: 0, 158, 115; /* contrast-safe text variant for resolution color */
+  --color-meta:            51, 34, 136;
 
   // Semantic aliases (rgb() wrappers)
   --c-info:       rgb(var(--color-info));
   --c-action:     rgb(var(--color-action));
   --c-resolution: rgb(var(--color-resolution));
   --c-meta:       rgb(var(--color-meta));
+  --c-resolution-text: rgb(var(--color-resolution-text));  // contrast-safe for text on white
 
   // Surface / text
   --doc-accent: var(--c-info);
@@ -51,6 +53,7 @@ $density-compact-pad: 0.65rem;
   --card-bg:    #ffffff;
   --ink:        #333333;
   --muted:      #555;
+  --muted-subtle: #646464;
 
   // Spacing
   --content-pad: 1.4rem;
@@ -119,264 +122,6 @@ $density-compact-pad: 0.65rem;
   );
 }
 
-
-// =========================================
-//   DARK MODE
-// =========================================
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --paper-bg: #1a1d2b;
-    --card-bg:  #23263a;
-    --ink:      #e6eaf2;
-    --muted:    #a8b0c5;
-
-    --color-info:       86, 180, 233;
-    --color-action:     184, 112, 70;
-    --color-resolution: 80, 196, 45;
-    --color-meta:       108, 117, 125;
-
-    --code-background: #151822;
-
-    --meta-border-subtle: 1px solid rgba(255, 255, 255, 0.06);
-
-    // Detail header backgrounds flip to dark-safe values
-    --detail-header-bg:         rgba(var(--color-meta), 0.32);
-    --detail-header-bg-compact: rgba(var(--color-meta), 0.26);
-
-    // Profile panel headers
-    --profile-name-bg:    rgba(var(--color-meta), 0.32);
-    --profile-title-bg:   rgba(var(--color-meta), 0.22);
-    --profile-name-color: var(--ink);
-
-    --meta-surface-strong: linear-gradient(
-      to right,
-      rgba(var(--color-meta), 0.26),
-      rgba(var(--color-meta), 0.14) 55%,
-      rgba(var(--color-meta), 0.06) 70%,
-      rgba(var(--color-meta), 0)
-    );
-
-    --meta-surface-soft: linear-gradient(
-      to right,
-      rgba(var(--color-meta), 0.18),
-      rgba(var(--color-meta), 0.08) 55%,
-      rgba(var(--color-meta), 0.03) 70%,
-      rgba(var(--color-meta), 0)
-    );
-
-    --info-surface: linear-gradient(
-      to right,
-      rgba(var(--color-info), 0.18),
-      rgba(var(--color-info), 0.10),
-      rgba(var(--color-info), 0.04),
-      rgba(var(--color-info), 0)
-    );
-  }
-
-  // ---- Structural dark adjustments ----
-
-  .wrapper,
-  .sidebar,
-  .detail-card,
-  .profile-panel {
-    border-color: rgba(255, 255, 255, 0.06) !important;
-  }
-
-  header {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  }
-
-  header ul {
-    background: rgba(30, 34, 54, 0.7);
-  }
-
-  section {
-    background: rgba(var(--color-info), 0.15);
-  }
-
-  h2,
-  .collapsible-title {
-    background-image: var(--info-surface);
-  }
-
-  img {
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6);
-  }
-
-  // ---- Component dark adjustments ----
-
-  // profile-panel h3 and profile-title handled by custom properties above
-  .sidebar h3 {
-    background: var(--meta-surface-strong);
-    border-bottom: var(--meta-border-subtle);
-    color: color-mix(in srgb, var(--ink) 92%, var(--c-meta));
-  }
-
-
-  // detail-header bg handled by --detail-header-bg custom property above
-  .profile-section h4 {
-    background: rgba(var(--color-meta), 0.32);
-    border-bottom: var(--meta-border-subtle);
-  }
-
-  .detail-card--compact {
-    background: rgba(var(--color-meta), 0.06);
-    border-left: 2px solid rgba(var(--color-meta), 0.35);
-  }
-
-  .detail-card--compact .detail-item + .detail-item {
-    border-top: 1px solid rgba(255, 255, 255, 0.04);
-  }
-
-  // item-type gets slightly stronger tint in dark compact cards
-  .detail-card--compact .item-type {
-    background: rgba(var(--color-meta), 0.08);
-    border: 1px solid rgba(var(--color-meta), 0.18);
-  }
-
-  // item-date: boost opacity slightly in dark mode for legibility
-  .item-date {
-    background: rgba(var(--color-info), 0.10);
-    border: 1px solid rgba(var(--color-info), 0.28);
-    color: rgba(var(--ink), 0.75);
-  }
-
-  // item-title icon/bg handled by .item-icon-* dark mode rules below — no override here
-
-  .detail-subheader {
-    color: color-mix(in srgb, var(--c-resolution) 75%, white);
-    background: linear-gradient(
-      to right,
-      rgba(var(--color-resolution), 0.18),
-      rgba(var(--color-resolution), 0.07) 60%,
-      rgba(var(--color-resolution), 0)
-    );
-    border-bottom: var(--meta-border-subtle);
-  }
-
-  .detail-body {
-    background: linear-gradient(
-      to bottom,
-      rgba(var(--color-meta), 0.04),
-      rgba(var(--color-meta), 0.02)
-    );
-  }
-
-  .detail-item + .detail-item {
-    border-top: 1px solid rgba(255, 255, 255, 0.06);
-  }
-
-  .item-title {
-    background: linear-gradient(
-      to right,
-      rgba(var(--color-meta), 0.10),
-      rgba(var(--color-meta), 0.035) 60%,
-      rgba(var(--color-meta), 0)
-    );
-  }
-
-  .item-title::before {
-    border: 1px solid rgba(var(--color-meta), 0.28);
-    background-color: rgba(var(--color-meta), 0.12);
-  }
-
-  // Icon badges: boost all variants so they pop against dark card surfaces
-  .item-icon-paper::before,
-  [data-icon="paper"]::before {
-    border-color: rgba(var(--color-resolution), 0.60);
-    background-color: rgba(var(--color-resolution), 0.22);
-  }
-
-  .item-icon-settings::before,
-  [data-icon="settings"]::before {
-    border-color: rgba(var(--color-resolution), 0.60);
-    background-color: rgba(var(--color-resolution), 0.22);
-  }
-
-  .item-icon-presentation::before,
-  [data-icon="presentation"]::before {
-    border-color: rgba(var(--color-action), 0.65);
-    background-color: rgba(var(--color-action), 0.24);
-  }
-
-  .item-icon-library::before,
-  [data-icon="library"]::before {
-    border-color: rgba(var(--color-info), 0.60);
-    background-color: rgba(var(--color-info), 0.22);
-  }
-
-  .item-level-undergrad::before {
-    border-color: rgba(var(--color-info), 0.55);
-    background-color: rgba(var(--color-info), 0.20);
-  }
-
-  .item-level-grad::before {
-    border-color: rgba(var(--color-meta), 0.55);
-    background-color: rgba(var(--color-meta), 0.28);
-  }
-
-  // Presentation list icons
-  .presentation-item::before {
-    border-color: rgba(var(--color-action), 0.65);
-    background-color: rgba(var(--color-action), 0.24);
-  }
-
-  .item-meta .status {
-    opacity: 0.9;
-  }
-
-  .profile-panel {
-    background: linear-gradient(
-      to bottom,
-      rgba(var(--color-meta), 0.20),
-      rgba(var(--color-meta), 0.10)
-    );
-    border: 1px solid rgba(255, 255, 255, 0.06);
-  }
-
-  // sidebar: use card-bg as base so it reads as a lifted surface against paper-bg
-  .sidebar {
-    background: var(--card-bg);
-    border: 1px solid rgba(255, 255, 255, 0.10);
-    box-shadow:
-      0 8px 24px rgba(0, 0, 0, 0.45),
-      inset 0 1px 0 rgba(255, 255, 255, 0.05);
-
-    a {
-      color: var(--ink);
-
-      &:hover { background: rgba(var(--color-info), 0.18); }
-      &.active { background: rgba(var(--color-action), 0.28); color: var(--ink); }
-    }
-  }
-
-  // fancy-quote: warm tinted card with enough body to read as a distinct surface
-  blockquote[data-type="fancy-quote"] {
-    background: linear-gradient(
-      to bottom right,
-      rgba(var(--color-info), 0.16),
-      rgba(var(--color-action), 0.12)
-    );
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-left: 1.5px solid rgba(var(--color-action), 0.55);
-    box-shadow:
-      0 4px 16px rgba(0, 0, 0, 0.30),
-      inset 0 1px 0 rgba(255, 255, 255, 0.05);
-
-    // opening quote mark
-    &::before {
-      color: rgba(var(--color-action), 0.50);
-    }
-
-    // attribution line
-    > p:last-child {
-      color: var(--muted);
-    }
-  }
-}
-
-
 // =========================================
 //   BASE ELEMENTS
 // =========================================
@@ -386,6 +131,7 @@ html {
     radial-gradient(ellipse at 30% 0%, rgba(102, 126, 234, 0.07) 0%, transparent 60%),
     radial-gradient(ellipse at 80% 100%, rgba(51, 34, 136, 0.05) 0%, transparent 55%),
     var(--paper-bg);
+  background-attachment: fixed;
   height: 100%;
 }
 
@@ -416,16 +162,22 @@ h1, h2, h3, h4 {
 }
 
 h3 {
-  color: var(--c-resolution);
+  color: var(--c-resolution-text); /* var(--c-resolution); */
   margin-top: 1em;
   margin-bottom: 0.4em;
 }
 
 a {
   color: var(--c-info);
-  text-decoration: none;
+  text-decoration: underline dotted;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(var(--color-info), 0.55);
+  text-decoration-thickness: 1px;
 
-  &:hover { text-decoration: underline; }
+  &:hover {
+    text-decoration-style: solid;
+    text-decoration-color: rgba(var(--color-info), 1);
+  }
 }
 
 img {
@@ -612,6 +364,7 @@ footer {
     border-radius: $radius-md;
     font-size: 0.9rem;
     color: var(--ink);
+    text-decoration: none;
 
     &:hover { background: rgba(var(--color-info), 0.12); }
     &.active { background: rgba(var(--color-action), 0.18); color: #000; }
@@ -733,6 +486,12 @@ blockquote[data-type="fancy-quote"] {
   p { margin: 0; }
 }
 
+@media (prefers-color-scheme: dark) {
+  // opening quote mark
+  blockquote[data-type="fancy-quote"]::before {
+    color: rgba(var(--color-action), 0.82);
+  }
+}
 
 // =========================================
 //   INLINE CALLOUTS (icon-bracket style)
@@ -993,8 +752,8 @@ blockquote .details {
   margin: 0;
   width: 100%;
   box-sizing: border-box;
-  font-size: 0.8rem;
-  color: color-mix(in srgb, var(--c-resolution) 70%, var(--ink));
+  font-size: 0.9rem;
+  color: color-mix(in srgb, var(--c-resolution) 80%, var(--ink));
   background: linear-gradient(
     to right,
     rgba(var(--color-resolution), 0.12),
@@ -1063,7 +822,7 @@ blockquote .details {
   border-radius: 999px;
   background: rgba(var(--color-meta), 0.05);
   border: 1px solid rgba(var(--color-meta), 0.12);
-  color: rgba(var(--ink), 0.75); // was 0.5 in light mode, but boost for better contrast against tinted card bg
+  color: var(--muted);
 }
 
 // Info-tinted pill for dates and temporal metadata
@@ -1073,13 +832,12 @@ blockquote .details {
   border-radius: 999px;
   background: rgba(var(--color-info), 0.06);
   border: 1px solid rgba(var(--color-info), 0.18);
-  color: rgba(var(--ink), 0.6);
+  color: var(--muted-subtle);
 }
 
 .item-meta .status {
   font-size: 0.72em;
-  color: var(--muted);
-  opacity: 0.75;
+  color: var(--muted-subtle);
 }
 
 // ---- Item title (with icon) ----
@@ -1121,10 +879,15 @@ blockquote .details {
 
   a {
     color: inherit;
-    text-decoration: none;
-    border-bottom: 1px solid rgba(var(--color-info), 0.22);
+    text-decoration: underline dotted;
+    text-underline-offset: 3px;
+    text-decoration-color: rgba(var(--color-info), 0.40);
+    text-decoration-thickness: 1px;
 
-    &:hover { border-bottom-color: rgba(var(--color-info), 0.55); }
+    &:hover {
+      text-decoration-style: solid;
+      text-decoration-color: rgba(var(--color-info), 0.80);
+    }
   }
 
   p {
@@ -1293,7 +1056,7 @@ blockquote .details {
     padding: 0.02em 0.35em;
     background: rgba(var(--color-meta), 0.04);
     border: 1px solid rgba(var(--color-meta), 0.10);
-    color: rgba(var(--ink), 0.75);
+    color: var(--muted);
   }
 
   // Only scale sizing — background and icon colors are owned by .item-icon-* variants
@@ -1459,7 +1222,7 @@ details[open] > summary.collapsible-title::after {
 .presentation-date {
   margin-left: 0.4em;
   font-size: 0.85em;
-  color: #777;
+  color: var(--muted-subtle);
 }
 
 // Presentation icon sub-types
@@ -1517,9 +1280,275 @@ details[open] > summary.collapsible-title::after {
   section { padding: 1rem; }
 }
 
+/*
 :focus-visible {
-  outline: 2px solid #fff;
-  box-shadow:
-    0 0 0 2px #000,
-    0 0 0 5px rgba(var(--color-action), 0.6);
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 4px var(--card-bg);
+} */
+
+:focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 6px rgba(var(--color-info), 0.15);
+}
+
+// =========================================
+//   DARK MODE
+// =========================================
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper-bg: #1a1d2b;
+    --card-bg:  #23263a;
+    --ink:      #e6eaf2;
+    --muted:    #a8b0c5;
+    --muted-subtle: #9aa3b8;
+
+    --color-info:       86, 180, 233;
+    --color-action:     184, 112, 70;
+    --color-resolution: 80, 196, 45;
+    --color-meta:       108, 117, 125;
+
+    --code-background: #151822;
+
+    --meta-border-subtle: 1px solid rgba(255, 255, 255, 0.06);
+
+    // Detail header backgrounds flip to dark-safe values
+    --detail-header-bg:         rgba(var(--color-meta), 0.32);
+    --detail-header-bg-compact: rgba(var(--color-meta), 0.26);
+
+    // Profile panel headers
+    --profile-name-bg:    rgba(var(--color-meta), 0.32);
+    --profile-title-bg:   rgba(var(--color-meta), 0.22);
+    --profile-name-color: var(--ink);
+
+    --meta-surface-strong: linear-gradient(
+      to right,
+      rgba(var(--color-meta), 0.26),
+      rgba(var(--color-meta), 0.14) 55%,
+      rgba(var(--color-meta), 0.06) 70%,
+      rgba(var(--color-meta), 0)
+    );
+
+    --meta-surface-soft: linear-gradient(
+      to right,
+      rgba(var(--color-meta), 0.18),
+      rgba(var(--color-meta), 0.08) 55%,
+      rgba(var(--color-meta), 0.03) 70%,
+      rgba(var(--color-meta), 0)
+    );
+
+    --info-surface: linear-gradient(
+      to right,
+      rgba(var(--color-info), 0.18),
+      rgba(var(--color-info), 0.10),
+      rgba(var(--color-info), 0.04),
+      rgba(var(--color-info), 0)
+    );
+  }
+
+  // ---- Structural dark adjustments ----
+
+  html {
+    background:
+      radial-gradient(ellipse at 30% 0%, rgba(86, 180, 233, 0.06) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 100%, rgba(108, 117, 125, 0.08) 0%, transparent 55%),
+      var(--paper-bg);
+    background-attachment: fixed;
+  }
+
+  .wrapper,
+  .sidebar,
+  .detail-card,
+  .profile-panel {
+    border-color: rgba(255, 255, 255, 0.06) !important;
+  }
+
+  header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  header ul {
+    background: rgba(30, 34, 54, 0.7);
+  }
+
+  section {
+    background: rgba(var(--color-info), 0.15);
+  }
+
+  h2,
+  .collapsible-title {
+    background-image: var(--info-surface);
+  }
+
+  img {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6);
+  }
+
+  // ---- Component dark adjustments ----
+
+  // profile-panel h3 and profile-title handled by custom properties above
+  .sidebar h3 {
+    background: var(--meta-surface-strong);
+    border-bottom: var(--meta-border-subtle);
+    color: color-mix(in srgb, var(--ink) 92%, var(--c-meta));
+  }
+
+
+  // detail-header bg handled by --detail-header-bg custom property above
+  .profile-section h4 {
+    background: rgba(var(--color-meta), 0.32);
+    border-bottom: var(--meta-border-subtle);
+  }
+
+  .detail-card--compact {
+    background: rgba(var(--color-meta), 0.06);
+    border-left: 2px solid rgba(var(--color-meta), 0.35);
+  }
+
+  .detail-card--compact .detail-item + .detail-item {
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
+  }
+
+  // item-type gets slightly stronger tint in dark compact cards
+  .detail-card--compact .item-type {
+    background: rgba(var(--color-meta), 0.08);
+    border: 1px solid rgba(var(--color-meta), 0.18);
+  }
+
+  // item-date: boost opacity slightly in dark mode for legibility
+  .item-date {
+    background: rgba(var(--color-info), 0.10);
+    border: 1px solid rgba(var(--color-info), 0.28);
+    color: rgba(var(--ink), 0.75);
+  }
+
+  // item-title icon/bg handled by .item-icon-* dark mode rules below — no override here
+
+  .detail-subheader {
+    color: color-mix(in srgb, var(--c-resolution) 60%, var(--ink));
+    background: linear-gradient(
+      to right,
+      rgba(var(--color-resolution), 0.18),
+      rgba(var(--color-resolution), 0.07) 60%,
+      rgba(var(--color-resolution), 0)
+    );
+    border-bottom: var(--meta-border-subtle);
+  }
+
+  .detail-body {
+    background: linear-gradient(
+      to bottom,
+      rgba(var(--color-meta), 0.04),
+      rgba(var(--color-meta), 0.02)
+    );
+  }
+
+  .detail-item + .detail-item {
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .item-title {
+    background: linear-gradient(
+      to right,
+      rgba(var(--color-meta), 0.10),
+      rgba(var(--color-meta), 0.035) 60%,
+      rgba(var(--color-meta), 0)
+    );
+  }
+
+  .item-title::before {
+    border: 1px solid rgba(var(--color-meta), 0.28);
+    background-color: rgba(var(--color-meta), 0.12);
+  }
+
+  // Icon badges: boost all variants so they pop against dark card surfaces
+  .item-icon-paper::before,
+  [data-icon="paper"]::before {
+    border-color: rgba(var(--color-resolution), 0.60);
+    background-color: rgba(var(--color-resolution), 0.22);
+  }
+
+  .item-icon-settings::before,
+  [data-icon="settings"]::before {
+    border-color: rgba(var(--color-resolution), 0.60);
+    background-color: rgba(var(--color-resolution), 0.22);
+  }
+
+  .item-icon-presentation::before,
+  [data-icon="presentation"]::before {
+    border-color: rgba(var(--color-action), 0.65);
+    background-color: rgba(var(--color-action), 0.24);
+  }
+
+  .item-icon-library::before,
+  [data-icon="library"]::before {
+    border-color: rgba(var(--color-info), 0.60);
+    background-color: rgba(var(--color-info), 0.22);
+  }
+
+  .item-level-undergrad::before {
+    border-color: rgba(var(--color-info), 0.55);
+    background-color: rgba(var(--color-info), 0.20);
+  }
+
+  .item-level-grad::before {
+    border-color: rgba(var(--color-meta), 0.55);
+    background-color: rgba(var(--color-meta), 0.28);
+  }
+
+  // Presentation list icons
+  .presentation-item::before {
+    border-color: rgba(var(--color-action), 0.65);
+    background-color: rgba(var(--color-action), 0.24);
+  }
+
+  .item-meta .status {
+    opacity: 0.9;
+  }
+
+  .profile-panel {
+    background: linear-gradient(
+      to bottom,
+      rgba(var(--color-meta), 0.20),
+      rgba(var(--color-meta), 0.10)
+    );
+    border: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  // sidebar: use card-bg as base so it reads as a lifted surface against paper-bg
+  .sidebar {
+    background: var(--card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    box-shadow:
+      0 8px 24px rgba(0, 0, 0, 0.45),
+      inset 0 1px 0 rgba(255, 255, 255, 0.05);
+
+    a {
+      color: var(--ink);
+
+      &:hover { background: rgba(var(--color-info), 0.18); }
+      &.active { background: rgba(var(--color-action), 0.28); color: var(--ink); }
+    }
+  }
+
+  // fancy-quote: warm tinted card with enough body to read as a distinct surface
+  blockquote[data-type="fancy-quote"] {
+    background: linear-gradient(
+      to bottom right,
+      rgba(var(--color-info), 0.16),
+      rgba(var(--color-action), 0.12)
+    );
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-left: 1.5px solid rgba(var(--color-action), 0.55);
+    box-shadow:
+      0 4px 16px rgba(0, 0, 0, 0.30),
+      inset 0 1px 0 rgba(255, 255, 255, 0.05);
+
+    // attribution line
+    > p:last-child {
+      color: var(--muted);
+    }
+  }
 }
