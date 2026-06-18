@@ -1,0 +1,112 @@
+<details class="collapsible-h2">
+  <summary class="collapsible-title">Open Educational Resource Development</summary>
+
+  <div class="detail-cards">
+    {% for project in site.data.oer-dev %}
+    <div class="detail-card">
+
+      <div class="detail-header">
+        <span class="detail-name">{{ project.name }}</span>
+        <span class="detail-status">{{ project.status }}</span>
+      </div>
+
+      <div class="detail-subheader">
+        {{ project.role }} <small>({{ project.start-date | date: "%B %Y" }} - {% if project.end-date == "Present" or project.end-date == nil %}Present{% else %}{{ project.end-date | date: "%B %Y" }}{% endif %})</small>
+      </div>
+
+
+<div class="detail-body">
+
+  <!-- Description -->
+  <div class="detail-item">
+    <div style="margin-left: 0.3rem; max-width: 90%; font-size: 0.9rem; color: var(--muted);">
+      <strong>Description</strong>: {{ project.description }}
+    </div>
+  </div>
+
+  <!-- Meta: technologies + links -->
+  <div class="detail-item">
+    <div class="item-meta item-meta--split">
+
+      <!-- Technologies (left) -->
+      <div class="item-meta">
+        <span class="authors">Technologies:</span>
+        {% for tech in project.technologies %}
+          <span class="item-type">{{ tech }}</span>
+        {% endfor %}
+      </div>
+
+      <!-- Links (right) -->
+      {% if project.link %}
+      <div class="meta-right">
+        {% for target in project.link %}
+          <span class="item-type">
+            <a href="{{ target.url }}">{{ target.name }}</a>
+          </span>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="detail-item">
+  <!-- Responsibilities -->
+  {% if project.responsibilities %}
+    <span class="authors">Project Responsibilities:</span>
+    {% for task in project.responsibilities %}
+    <div class="detail-item">
+
+      <div class="item-title item-icon-settings" aria-label="Task responsibility">
+        <span class="item-label">
+          {{ task }}
+        </span>
+      </div>
+
+    </div>
+    {% endfor %}
+  {% endif %}
+</div>
+</div>
+<!--
+      <div class="detail-body">
+        <p>{{ project.description }}</p>
+        {% if project.technologies %}
+          <p><strong>Technologies Used:</strong> {{ project.technologies | join: ", " }}</p>
+        {% endif %}
+        {% if project.link %}
+          <p><strong>Links:</strong>
+            {% for target in project.link %}
+              <a href="{{ target.url }}">{{ target.name }}</a>{% unless forloop.last %}, {% endunless %}
+            {% endfor %}
+          </p>
+        {% endif %}
+      </div>
+<!--
+      <div class="detail-body">
+        <div class="detail-item">
+
+          <div class="item-title item-icon-paper">
+            <span class="item-label">
+              <span class="authors">{{ article.authors }}.</span>
+              <span class="short-work-title">{{ article.title }}.</span>
+              <span class="journal-name">{{ article.journal }}</span>{% if article.volume %}<span class="authors">, {{ article.volume }}</span>{% if article.number %}<span class="authors-bf">({{ article.number }})</span>{% endif %}{% endif %}{% if article.pages %}<span class="authors">:{{ article.pages }}</span>{% endif %}<span class="authors">, {{ article.year }}.</span>
+            </span>
+          </div>
+
+          <div style="margin-left: 35px;">
+            <span class="authors">Access:</span>
+            {% for target in article.link %}
+              <span class="item-type item-meta">
+                <a href="{{ target.url }}">{{ target.name }}</a>
+              </span>
+            {% endfor %}
+          </div>
+
+        </div>
+      </div>
+-->
+    </div>
+    {% endfor %}
+  </div>
+
+</details>

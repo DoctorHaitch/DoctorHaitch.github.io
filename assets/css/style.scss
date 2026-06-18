@@ -1,7 +1,6 @@
 ---
 ---
 
-/* @import "rouge-base16-dark"; */
 @use "rouge-base16-dark" as *;
 
 // =========================================
@@ -51,7 +50,7 @@ $density-compact-pad: 0.65rem;
   --paper-bg:   #f7f8fb;
   --card-bg:    #ffffff;
   --ink:        #333333;
-  --muted:      #666;
+  --muted:      #555;
 
   // Spacing
   --content-pad: 1.4rem;
@@ -66,6 +65,7 @@ $density-compact-pad: 0.65rem;
   --icon-paper:         #{'url("/assets/icons/notebook-text.svg")'};
   --icon-library:       #{'url("/assets/icons/library.svg")'};
   --icon-speech:        #{'url("/assets/icons/speech.svg")'};
+  --icon-settings:      #{'url("/assets/icons/settings.svg")'};
 
   // Font references as CSS custom properties
   // (so HTML can reference --font-serif / --font-sans consistently)
@@ -284,6 +284,12 @@ $density-compact-pad: 0.65rem;
   // Icon badges: boost all variants so they pop against dark card surfaces
   .item-icon-paper::before,
   [data-icon="paper"]::before {
+    border-color: rgba(var(--color-resolution), 0.60);
+    background-color: rgba(var(--color-resolution), 0.22);
+  }
+
+  .item-icon-settings::before,
+  [data-icon="settings"]::before {
     border-color: rgba(var(--color-resolution), 0.60);
     background-color: rgba(var(--color-resolution), 0.22);
   }
@@ -1057,7 +1063,7 @@ blockquote .details {
   border-radius: 999px;
   background: rgba(var(--color-meta), 0.05);
   border: 1px solid rgba(var(--color-meta), 0.12);
-  color: rgba(var(--ink), 0.5);
+  color: rgba(var(--ink), 0.75); // was 0.5 in light mode, but boost for better contrast against tinted card bg
 }
 
 // Info-tinted pill for dates and temporal metadata
@@ -1134,6 +1140,7 @@ blockquote .details {
 //
 // Each sets --icon, an accent border-left, and a matching bg tint.
 
+/*
 @mixin item-icon-variant($icon-var, $color-var, $alpha-bg: 0.10, $alpha-border: 0.45) {
   border-left-color: rgba(var($color-var), $alpha-border);
   background: linear-gradient(
@@ -1150,10 +1157,31 @@ blockquote .details {
     background-color: rgba(var($color-var), $alpha-bg);
   }
 }
+*/
+@mixin item-icon-variant($icon-var, $color-var, $alpha-bg: 0.10, $alpha-border: 0.45) {
+  border-left-color: rgba(var($color-var), $alpha-border);
+  background: linear-gradient(
+    to right,
+    rgba(var($color-var), $alpha-bg),
+    rgba(var($color-var), calc($alpha-bg * 0.3)) 60%,
+    rgba(var($color-var), 0)
+  );
+
+  &::before {
+    background: var(#{$icon-var}) no-repeat center / 70%;
+    border-color: rgba(var($color-var), calc($alpha-border * 0.75));
+    background-color: rgba(var($color-var), $alpha-bg);
+  }
+}
 
 .item-icon-paper,
 [data-icon="paper"] {
   @include item-icon-variant(--icon-paper, --color-resolution);
+}
+
+.item-icon-settings,
+[data-icon="settings"] {
+  @include item-icon-variant(--icon-settings, --color-resolution);
 }
 
 .item-icon-presentation,
@@ -1265,7 +1293,7 @@ blockquote .details {
     padding: 0.02em 0.35em;
     background: rgba(var(--color-meta), 0.04);
     border: 1px solid rgba(var(--color-meta), 0.10);
-    color: rgba(var(--ink), 0.5);
+    color: rgba(var(--ink), 0.75);
   }
 
   // Only scale sizing — background and icon colors are owned by .item-icon-* variants
@@ -1487,4 +1515,11 @@ details[open] > summary.collapsible-title::after {
 @media (max-width: 740px) {
   body { padding: 0; }
   section { padding: 1rem; }
+}
+
+:focus-visible {
+  outline: 2px solid #fff;
+  box-shadow:
+    0 0 0 2px #000,
+    0 0 0 5px rgba(var(--color-action), 0.6);
 }

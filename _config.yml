@@ -6,6 +6,8 @@ github:
 
 plugins:
   - jekyll-seo-tag
+  - jekyll-paginate
+  - jekyll-sitemap
 
 paginate: 5          # posts per page (change as you like)
 paginate_path: "/blog/page:num/"

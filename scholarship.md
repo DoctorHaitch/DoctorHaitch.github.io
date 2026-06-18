@@ -40,16 +40,7 @@ profile: false
 <!-- ## Contribution to scholarly growth of students -->
 
 {% include students.html %}
-
-<details class="collapsible-h2" open> <!--  open -->
-  <summary class="collapsible-title">
-    Open Educational Resource Development
-  </summary>
-
-  <code>Coming Soon.</code>
-
-</details>
-
+{% include oer-dev.html %}
 {% include published.html %}
 {% include presentations.html %}
 

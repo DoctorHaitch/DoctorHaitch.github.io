@@ -1,0 +1,15 @@
+- name: "obsidian-doenet"
+  status: "Beta"
+  role: Creator and Lead Developer
+  description: "Community plugin for Obsidian.md that integrates DoenetML content into Markdown notes, allowing users to embed and interact with Doenet activities directly within their Obsidian workspace. Current central piece for creating my WCAG 2.2 compliant OER course content, with plans to expand its capabilities and user base."
+  start-date: "2026-05-01"
+  end-date: "present"
+  technologies: ["Obsidian.md", "DoenetML", "JavaScript", "TypeScript", "Node.js"]
+  responsibilities:
+    - "Designed and developed the Obsidian-DoenetML plugin, enabling users to integrate Doenet content into their Obsidian Markdown notes seamlessly."
+    - "Implemented features such as embedding Doenet activities, running offline, remote fetch of Doenet content, and local caching for improved performance."
+    - "Currently missing documentation for submission to the Obsidian plugin marketplace, but the plugin is functional and available on GitHub for users to try out."
+    - "Currently managing the project on GitHub."
+  link: 
+    - name: "github repo"
+      url: "https://github.com/DoctorHaitch/obsidian-doenet"
