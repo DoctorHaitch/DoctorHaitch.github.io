@@ -26,7 +26,7 @@
         
         {% include sidebar.html %}
 
-        <section class="main-content">
+        <section class="main-content" role="main">
           {% if page.profile != false and site.data.profile %}
           {% assign p = page.profile | default: site.data.profile %}
 
