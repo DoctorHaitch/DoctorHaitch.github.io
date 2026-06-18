@@ -9,7 +9,7 @@
     - "Designed and developed the Obsidian-DoenetML plugin, enabling users to integrate Doenet content into their Obsidian Markdown notes seamlessly."
     - "Implemented features such as embedding Doenet activities, running offline, remote fetch of Doenet content, and local caching for improved performance."
     - "Currently missing documentation for submission to the Obsidian plugin marketplace, but the plugin is functional and available on GitHub for users to try out."
-    - "Currently managing the project on GitHub."
+    - "Currently managing and maintaining the project on GitHub."
   link: 
     - name: "github repo"
       url: "https://github.com/DoctorHaitch/obsidian-doenet"
@@ -35,7 +35,7 @@
   end-date: "present"
   technologies: ["DoenetML", "JavaScript", "github"]
   responsibilities:
-    - "Attended bi-weekly meetings to provide guidance on the development and implementation of DoenetML and the prioritization of feature developments and bug fixes."
+    - "Attend bi-weekly meetings to provide guidance on the development and implementation of DoenetML and the prioritization of feature developments and bug fixes."
     - "Report bugs and issues encountered while using DoenetML to help improve the platform."
     - "Test new features and provide feedback to the development team to ensure DoenetML meets the needs of educators and learners."
     - "Collaborate with the development team to ensure DoenetML is accessible and user-friendly for educators and learners."
