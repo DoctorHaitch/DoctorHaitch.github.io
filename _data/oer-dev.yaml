@@ -13,3 +13,37 @@
   link: 
     - name: "github repo"
       url: "https://github.com/DoctorHaitch/obsidian-doenet"
+
+- name: "DoenetML"
+  status: "In Development"
+  role: Curriculum Editor
+  description: "DoenetML is a markup language designed for creating interactive, accessbile educational content, particularly in the context of open educational resources (OER). It allows educators to create rich, interactive activities that can be embedded in various platforms, including Obsidian.md through the Obsidian-DoenetML plugin. As an advisory board member, I provide guidance on the development and implementation of DoenetML to ensure it meets the needs of educators and learners."
+  start-date: "2026-01-01"
+  end-date: "present"
+  technologies: ["DoenetML"]
+  responsibilities:
+    - "Review submitted DoenetML content for inclusion in the DoenetML OER curated collection of educational activities, ensuring it meets quality and accessibility standards."
+  link: 
+    - name: "Doenet.org"
+      url: "https://beta.doenet.org"
+
+- name: "DoenetML"
+  status: "In Development"
+  role: Advisory Board Member
+  description: "DoenetML is a markup language designed for creating interactive, accessbile educational content, particularly in the context of open educational resources (OER). It allows educators to create rich, interactive activities that can be embedded in various platforms, including Obsidian.md through the Obsidian-DoenetML plugin. As an advisory board member, I provide guidance on the development and implementation of DoenetML to ensure it meets the needs of educators and learners."
+  start-date: "2021-05-01"
+  end-date: "present"
+  technologies: ["DoenetML", "JavaScript", "github"]
+  responsibilities:
+    - "Attended bi-weekly meetings to provide guidance on the development and implementation of DoenetML and the prioritization of feature developments and bug fixes."
+    - "Report bugs and issues encountered while using DoenetML to help improve the platform."
+    - "Test new features and provide feedback to the development team to ensure DoenetML meets the needs of educators and learners."
+    - "Collaborate with the development team to ensure DoenetML is accessible and user-friendly for educators and learners."
+  link: 
+    - name: "Doenet.org"
+      url: "https://beta.doenet.org"
+  support:
+    - name: "NSF Award #2449139"
+      url: "https://www.nsf.gov/awardsearch/show-award?AWD_ID=2449139"
+    - name: "NSF Award #1915363"
+      url: "https://www.nsf.gov/awardsearch/show-award?AWD_ID=1915363"
