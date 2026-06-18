@@ -1,6 +1,6 @@
 <details class="collapsible-h2"> <!--  open -->
   <summary class="collapsible-title">
-    Contribution to scholarly growth of students
+    Contribution to Scholarly Growth of Students
   </summary>
 
   <details open class="detail-group-collapsible">
@@ -36,15 +36,20 @@
 
             {% if t contains "presentation" or t contains "talk" %}
               {% assign icon_class = "item-icon-presentation" %}
+              {% assign sr_word = "Presentation" %}
             {% elsif t contains "poster" %}
               {% assign icon_class = "item-icon-poster" %}
+              {% assign sr_word = "Poster" %}
             {% elsif t contains "paper" %}
               {% assign icon_class = "item-icon-paper" %}
+              {% assign sr_word = "Paper" %}
             {% else %}
               {% assign icon_class = "item-icon-paper" %}
+              {% assign sr_word = "Paper" %}
             {% endif %}
 
             <div class="item-title {{ icon_class }}" data-type="item-project">
+              <span class="sr-only">{{ sr_word }}:</span>
               {{ project.title | markdownify }}
             </div>
 

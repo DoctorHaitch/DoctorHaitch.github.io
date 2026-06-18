@@ -52,8 +52,12 @@ $density-compact-pad: 0.65rem;
   --paper-bg:   #f7f8fb;
   --card-bg:    #ffffff;
   --ink:        #333333;
-  --muted:      #555;
-  --muted-subtle: #646464;
+/*  --muted:      #555;
+  --muted-subtle: #646464; 
+  --muted-subtle: #4a4a4a; */
+  --muted: #444;
+  --muted-subtle: #555;
+
 
   // Spacing
   --content-pad: 1.4rem;
@@ -162,7 +166,7 @@ h1, h2, h3, h4 {
 }
 
 h3 {
-  color: var(--c-resolution-text); /* var(--c-resolution); */
+  color: color-mix(in srgb, var(--c-resolution-text), black 25%);
   margin-top: 1em;
   margin-bottom: 0.4em;
 }
@@ -560,6 +564,7 @@ blockquote[data-type]:not([data-type="fancy-quote"]) {
 blockquote[data-type="description"] {
   &::before {
     --icon: var(--icon-book-open);
+    pointer-events: none;
     font-size: 1.1em;
     filter: opacity(0.7);
   }
@@ -954,6 +959,7 @@ blockquote .details {
 
   &::before {
     background: var(#{$icon-var}) no-repeat center / 70%;
+    pointer-events: none;
     border-color: rgba(var($color-var), calc($alpha-border * 0.75));
     background-color: rgba(var($color-var), $alpha-bg);
   }
@@ -993,6 +999,7 @@ blockquote .details {
 
   &::before {
     --icon: var(--icon-book-open);
+    pointer-events: none;
     background: var(--icon-book-open) no-repeat center / 70%;
     border-color: rgba(var(--color-info), 0.38);
     background-color: rgba(var(--color-info), 0.10);
@@ -1010,6 +1017,7 @@ blockquote .details {
 
   &::before {
     --icon: var(--icon-library);
+    pointer-events: none;
     background: var(--icon-library) no-repeat center / 70%;
     border-color: rgba(var(--color-meta), 0.40);
     background-color: rgba(var(--color-meta), 0.12);
@@ -1211,6 +1219,7 @@ details[open] > summary.collapsible-title::after {
     width: 1.25em;
     height: 1.25em;
     background: var(--icon-speech) no-repeat center / 70%;
+    pointer-events: none;
     border: 1px solid rgba(var(--color-action), 0.40);
     background-color: rgba(var(--color-action), 0.12);
     border-radius: 5px;
@@ -1565,4 +1574,16 @@ details[open] > summary.collapsible-title::after {
       color: var(--muted);
     }
   }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  border: 0;
+  white-space: nowrap;
 }
