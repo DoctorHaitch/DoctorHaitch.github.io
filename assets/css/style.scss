@@ -1587,3 +1587,28 @@ details[open] > summary.collapsible-title::after {
   border: 0;
   white-space: nowrap;
 }
+
+
+@media print {
+  .sidebar,
+  .profile-panel,
+  footer {
+    display: none;
+  }
+  .content-area {
+    display: block;
+  }
+
+  .main-content {
+    width: 100%;
+  }
+
+
+  details:not([open]) > * {
+    display: block;
+  }
+
+  summary {
+    display: block;
+  }
+}
