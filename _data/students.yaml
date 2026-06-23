@@ -60,6 +60,7 @@ past:
 letters:
   - name: Nara Sheen
     supporting: PhD Application
+    semester: "Fall 2025"
     letter-recipients:
       - University of Colorado, Boulder
       - Michigan State University
@@ -79,4 +80,12 @@ letters:
       - Colorado State University
       - University of Victoria
       - Pennsylvania State University
-    outcome: Accepted to (blah)
+    outcome: "Accepted with funding to Pennsylvania State University for PhD in Mathematics, starting Fall 2026"
+
+  - name: Stephanie Rodgers Josefowski
+    supporting: Summer REU Application
+    semester: "Spring 2017"
+    date: "2017-02-21"
+    letter-recipients:
+      - "INBRE Summer Scholar's Program (University of Delaware)"
+    outcome: "Accepted with funding for research in Cognitive Neuropsychology for Summer 2017"

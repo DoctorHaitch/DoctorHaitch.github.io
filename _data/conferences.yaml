@@ -1,0 +1,99 @@
+- title: MathHappens Retreat
+  start_date: "2025-05-16"
+  end_date: "2025-05-18"
+  type: workshop
+  city: Albuquerque
+  location: "Alburquerque Doubletree Hotel - Copper Room"
+  state: NM
+
+- title: InterActivity 2025: Uplifting the Community: Reaching New Heights Together
+  start_date: "2025-05-14"
+  end_date: "2025-05-16"
+  type: conference
+  city: Albuquerque
+  location: Albuquerque Convention Center
+  state: NM
+
+- title: Graduate Student Combintorics Conference
+  start_date: "2017-04-07"
+  end_date: "2017-04-09"
+  type: conference
+  location: "Univeristy of Kansas, Lawrence"
+  city: Lawrence
+  state: KS
+
+
+# \noindent \textbf{CONFERENCE PARTICIPATION}
+
+# \vspace*{-1em}\par\noindent\rule{\textwidth}{0.4pt}
+
+# \noindent
+# \begin{longtable}{R{.11\textwidth} L{.84\textwidth}}
+#   Sep. 2024
+#     & \textit{NSF EngPLUS Midwest Regional Hub Retreat} (Chicago, IL)
+#     \vspace{.5em} \\
+#   Apr. 2024
+#     & \textit{Mathematical Association of America's North Central Sectional Spring Meeting} (U. of St. Thomas)
+#     \vspace{.5em} \\
+#   Apr. 2024
+#     & \textit{Developing Online Learning Experiments Using Doenet (2024)} at the IMA (U. of Minnesota, Twin Cities) 
+#      \vspace{.25em} \\
+#   Mar. 2023
+#     & \textit{Mathematical Association of America's North Central Sectional Spring Meeting} (Winona State U.)
+#     \vspace{.5em} \\
+#   Mar. 2023
+#     & \textit{University of Delaware's Winter Research Symposium} (U. of Delaware)
+#     \vspace{.5em} \\
+#   Jan. 2023
+#     & \textit{Joint Mathematics Meeting} (Boston, MA)
+#     \vspace{.25em} \\
+#   Aug. 2022
+#     & \textit{MAA-MathFEST} (Philadelphia, PA)
+#     \vspace{.25em} \\
+#   June 2022
+#     & \textit{Canadian Abstract Harmonic Analysis Symposium} (Banff International Research Station, Calgary)
+#     \vspace{.25em} \\
+#   May 2022
+#     & \textit{Developing Online Learning Experiments Using Doenet} at the IMA (U. of Minnesota, Twin Cities)
+#     \vspace{.25em} \\
+#   Oct. 2021
+#     & \textit{MAA-NCS Fall Meeting} (Virtual Meeting)
+#     \vspace{.25em} \\
+#   Jan. 2020
+#     & \textit{Joint Mathematics Meeting} (Denver, CO)
+#     \vspace{.25em} \\
+#   Oct. 2019
+#     & \textit{MAA Career's Conference and Section NExT Meeting} (Kutztown University)
+#     \vspace{.25em} \\
+#   Sep. 2019
+#     & \textit{Northeast Analysis Network} (U. of Connecticut)
+#     \vspace{.25em} \\
+#   Aug. 2019
+#     & \textit{Finite Geometry and Extremal Combinatorics} (U. of Delaware)
+#     \vspace{.25em} \\
+#   May 2019
+#     & \textit{DelMar Numerics Day} (U. of Maryland, College Park)
+#     \vspace{.25em} \\
+#   Apr. 2019
+#     & \textit{Graduate Student Forum} (U. of Delaware)
+#     \vspace{.5em} \\
+#   Nov. 2018
+#     & \textit{Mid-Atlantic Analysis Meeting} (Virginia Tech)
+#     \vspace{.5em} \\
+#   Sep. 2018
+#     & \textit{AMS Sectional Meeting} (U. of Delaware)
+#     \vspace{.5em} \\
+#   Sep. 2018
+#     & \textit{Northeast Analysis Network} (U. of Albany SUNY)
+#     \vspace{.5em} \\
+#   July 2018
+#     & \textit{Algebraic and Extremal Graph Theory} (U. of Delaware)
+#     \vspace{.5em} \\
+#   May 2018
+#     & \textit{DelMar Numerics Day} (U. of Delaware)
+#     \vspace{.5em} \\
+#   Apr. 2017
+#     & \textit{Workshop on Information-Theoretic Inequalities} (U. of Delaware)
+#     \vspace{.5em} \\
+
+# \end{longtable}

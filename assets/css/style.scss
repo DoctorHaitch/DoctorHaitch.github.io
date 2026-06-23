@@ -55,7 +55,7 @@ $density-compact-pad: 0.65rem;
 /*  --muted:      #555;
   --muted-subtle: #646464; 
   --muted-subtle: #4a4a4a; */
-  --muted: #444;
+  --muted: #3a3a3a;
   --muted-subtle: #555;
 
 
@@ -119,10 +119,10 @@ $density-compact-pad: 0.65rem;
   // Reusable info-tinted gradient (used for h2, section backgrounds, etc.)
   --info-surface: linear-gradient(
     to right,
-    rgba(var(--color-info), 0.12) 0%,
-    rgba(var(--color-info), 0.08) 55%,
-    rgba(var(--color-info), 0.04) 65%,
-    rgba(var(--color-info), 0) 75%
+    rgba(var(--color-info), 0.22) 0%,
+    rgba(var(--color-info), 0.16) 35%,
+    rgba(var(--color-info), 0.08) 85%,
+    rgba(var(--color-info), 0)
   );
 }
 
@@ -160,6 +160,7 @@ ul ul {
   padding-left: 0;
 }
 
+.site-title,
 h1, h2, h3, h4 {
   font-family: var(--font-serif);
   margin-top: 0;
@@ -251,6 +252,22 @@ header {
   border-left: 4px solid var(--doc-accent);
   background: rgba(var(--color-info), 0.12);
   border-radius: $radius-xl $radius-xl 0 0;
+
+  .site-title {
+    font-family: var(--font-serif);
+    font-size: 1.7rem;
+    margin: -.7rem 0;
+    padding: 0;
+    color: color-mix(in srgb, var(--c-meta) 90%, white);
+  }
+  .site-subtitle {
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    margin: 0;
+    padding:0;
+    color: color-mix(in srgb, var(--c-resolution) 100%, white);
+    /* color: color-mix(in srgb, var(--c-meta) 85%, white); */
+  }
 
   h1 {
     font-family: var(--font-serif);
@@ -405,6 +422,14 @@ footer {
 //   HEADINGS & TYPOGRAPHIC LANDMARKS
 // =========================================
 
+.post-title {
+  /* background-color: rgba(var(--color-info), 0.08); */
+  background-image: var(--info-surface);
+  width: fit-content;
+  border-right: 0px;
+  padding-right: 2px;
+}
+
 h2,
 .collapsible-title {
   margin: 16px 0 0;
@@ -427,11 +452,12 @@ p.post-meta {
   border-left: 1px solid var(--c-info);
   border-bottom-left-radius: 10px;
   padding-left: 0.5em;
+  width: fit-content;
   background-image: linear-gradient(
     to right,
-    rgba(var(--color-info), 0.06) 0%,
-    rgba(var(--color-info), 0.04) 65%,
-    rgba(var(--color-info), 0.01) 85%,
+    rgba(var(--color-info), 0.12) 0%,
+    rgba(var(--color-info), 0.08) 65%,
+    rgba(var(--color-info), 0.03) 85%,
     rgba(var(--color-info), 0) 100%
   );
 }

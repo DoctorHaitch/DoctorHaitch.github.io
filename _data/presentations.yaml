@@ -11,7 +11,7 @@
   date: "2024-11-15"
   type: "invited"    # invited | contributed | keynote | seminar
   event: "SLU's Math Colloquium"
-  event_type: "department colloquium"
+  event_type: "colloquium"
   institution: "St. Louis University"
   city: "St. Louis"
   state: "MO"
@@ -19,7 +19,7 @@
 - title: "A Friendly Introduction to Graph Signal Processing"
   date: "2024-04-20"
   type: "keynote"    # invited | contributed | keynote | seminar
-  event: "MAA Spring Sectional Meeting"
+  event: "MAA-NCS Spring Sectional Meeting"
   event_type: "conference"
   institution: "University of St. Thomas"
   city: "St. Paul"
