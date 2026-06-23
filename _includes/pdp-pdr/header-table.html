@@ -1,0 +1,75 @@
+<style>
+.center-table {
+  margin-left: auto;
+  margin-right: auto;
+  border-collapse: collapse; /* important for clean borders */
+}
+
+.center-table th,
+.center-table td {
+  border: 2px solid var(--ink);
+  padding: 8px;
+}
+
+.center-table th {
+  text-align: left;
+}
+</style>
+
+
+<div style="text-align: center;">
+  <img src="/imgs/wordmark-cset-new.png" alt="" role="presentation" aria-hidden="true">
+</div>
+
+<table class="center-table">
+  <caption>
+    Professional Development Report (PDR) <br> Summary Information for {{ page.academic_year }}
+  </caption>
+
+  <tbody>
+    <tr>
+      <th scope="row">Faculty Name</th>
+      <td> {{ page.faculty }} </td>
+    </tr>
+
+    <tr>
+      <th scope="row">Terminal Degree</th>
+      <td> {{ page.degree }} </td>
+    </tr>
+
+    <tr>
+      <th scope="row">Joining Date at MSU</th>
+      <td>{{ page.join_date }}</td>
+    </tr>
+
+    <tr>
+      <th scope="row">Appointment Type at Joining</th>
+      <td>{{ page.appt_type }}</td>
+    </tr>
+
+    <tr>
+      <th scope="row">Rank at Joining</th>
+      <td>{{ page.rank_at_join }}</td>
+    </tr>
+
+    <tr>
+      <th scope="row">Current Tenure Status</th>
+      <td>{{ page.current_status }}</td>
+    </tr>
+
+    <tr>
+      <th scope="row">Current Rank</th>
+      <td>{{ page.current_rank }}</td>
+    </tr>
+
+    <tr>
+      <th scope="row">PDP Period</th>
+      <td>{{ page.academic_year }}</td>
+    </tr>
+
+    <tr>
+      <th scope="row">Submission Date</th>
+      <td>{{ page.submission_date }}</td>
+    </tr>
+  </tbody>
+</table>

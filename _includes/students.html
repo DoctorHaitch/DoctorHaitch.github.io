@@ -1,10 +1,10 @@
 <details class="collapsible-h2"> <!--  open -->
-  <summary class="collapsible-title">
-    Contribution to scholarly growth of students
+  <summary class="collapsible-title" role="heading" aria-level="2">
+    Contribution to Scholarly Growth of Students
   </summary>
 
   <details open class="detail-group-collapsible">
-    <summary>Present Students</summary>
+    <summary role="heading" aria-level="3">Present Students</summary>
     <div class="detail-cards">
 
       {% for student in site.data.students.present %}
@@ -36,15 +36,20 @@
 
             {% if t contains "presentation" or t contains "talk" %}
               {% assign icon_class = "item-icon-presentation" %}
+              {% assign sr_word = "Presentation" %}
             {% elsif t contains "poster" %}
               {% assign icon_class = "item-icon-poster" %}
+              {% assign sr_word = "Poster" %}
             {% elsif t contains "paper" %}
               {% assign icon_class = "item-icon-paper" %}
+              {% assign sr_word = "Paper" %}
             {% else %}
               {% assign icon_class = "item-icon-paper" %}
+              {% assign sr_word = "Paper" %}
             {% endif %}
 
             <div class="item-title {{ icon_class }}" data-type="item-project">
+              <span class="sr-only">{{ sr_word }}:</span>
               {{ project.title | markdownify }}
             </div>
 
@@ -59,7 +64,7 @@
   </details>
 
   <details class="detail-group-collapsible">
-    <summary>Past Students</summary>
+    <summary role="heading" aria-level="3">Past Students</summary>
     <div class="detail-cards detail-cards--compact">
 
       {% for student in site.data.students.past %}

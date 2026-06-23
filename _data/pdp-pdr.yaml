@@ -1,0 +1,94 @@
+- name: "Teach six classes: 4 sections of Math122: Calculus II, Math605: Graphs and Algorithms, and Math170: Intro to Mathematical Software Programming"
+  academic_year: "2025-2026"
+  status: "Completed"
+  description: "I am responsible for teaching 6 classes during the 2025-2026 academic year. This includes 2 sections of Calculus II in both Fall and Spring semesters, a graduate course on Graphs and Algorithms in the Fall, and an introductory course on Mathematical Software Programming in the Spring. While I have taught Calculus II many times, Math170 is a new course for me and I will be developing all materials from scratch. Math605 will be significantly revised from prior versions as it has generally started at too high a level for our students, thus a significant amount of new introductory material will be developed for the first half of the semester."
+  goal_one: 
+    - "Add detailed description of work and evidence of excellence in teaching."
+  evidence:
+    - name: Student Feedback
+      url: "https://github.com/DoctorHaitch/accessible-math"
+    - name: Teaching Observation by Dr. Charles Krois
+      url: ""
+    - name: Course Syllabi
+      url: ""
+
+- name: Progress towards PDF/UA Digital Document Accessibility Compliance.
+  academic_year: "2025-2026"
+  status: "Significant Progress, Ongoing"
+  description: "In response to new federal digital accessibility requirements, I have undertaken a comprehensive effort to ensure that all PDF course resources for my courses are compliant with PDF/UA standards."
+  goal_one: 
+    - "Updated all PDF course resources to be compliant with PDF/UA standards, ensuring that all digital course materials are accessible to students with disabilities. This involved researching the requirements of PDF/UA compliance, implementing necessary changes to existing documents, and verifying compliance through testing and validation tools. These efforts were aimed at meeting new federal digital accessibility requirements and ensuring that all students have equal access to course materials."
+  goal_two: 
+    - "Researched, developed, and published guides on GitHub for creating PDF/UA-compliant documents in LaTeX, a platform widely used in scientific publishing and in the preparation of teaching materials for science courses. This work was undertaken to support compliance with new federal digital accessibility requirements and to ensure course materials meet evolving legal standards."
+  goal_five: 
+    - "Provided templates, supplementary guides, and practical tools to faculty and the broader community through my GitHub page. Initiated discussions with the library to expand access to these resources through workshops and tool development, with potential collaboration through CESR. These efforts directly support institutional Equity 2030 goals by improving accessibility and inclusion in digital learning and scholarly materials produced by our institution. I additionally plan to create a quickstart guide for faculty and students on Cornerstone to further facilitate the adoption of accessible document practices in our courses and research outputs."
+  evidence:
+    - name: GitHub Repository of LaTeX Accessibility Resources
+      url: "https://github.com/DoctorHaitch/accessible-math"
+    - name: Quickstart Guide on Cornerstone
+      url: ""
+    - name: Sample PDF/UA-Compliant Documents for Calculus II
+      url: ""
+
+- name: "Investigate Fullbright Scholars Grant"
+  status: "Significant Progress, Deemed Out of Scope"
+  academic_year: "2025-2026"
+  description: "I am investigating the possibility of applying for a Fullbright Scholars grant to support advancing my work in open educational resources (OER) or mathematical community outreach. This grant would provide an opportunity to collaborate with international experts in the field, conduct research on best practices for OER development and digital accessibility, and further develop resources and tools to support educators and learners globally. The application process involves researching the requirements and eligibility criteria for the Fullbright Scholars program, identifying potential host institutions and collaborators abroad, and preparing a compelling proposal that outlines the goals and impact of the proposed project."
+  goal_two: 
+    - "Add description of scholarly activity."
+  goal_three: 
+    - "Add description of workshop/information session attendance and learning about program."
+  evidence:
+    - name: Fullbright Scholars Program Information
+      url: "https://fulbrightscholars.org/"
+
+- name: "Provided mentorship to students."
+  status: "Ongoing"
+  academic_year: "2025-2026"
+  description: "Includes academic advising, project supervision, and career guidance. This mentorship has involved regular meetings with students to discuss their academic progress, providing feedback on their work, and offering support and resources to help them succeed in their studies and future careers. This frequently includes providing letters of support for scholarships, internships, and graduate school applications. I have also supervised student research projects, guiding them through the research process and helping them develop their skills in critical thinking, problem-solving, and effective communication of their findings."
+  goal_four: 
+    - "<strong>Academic Advising:</strong>"
+    - "<strong>Direct Project Supervision:</strong>"
+    - "<strong>Letters of Recommendation:</strong>"
+  evidence:
+    - name: Student Testimonials
+      url: ""
+    - name: Research Project Outcomes
+      url: ""
+
+- name: "Calculus Curriculum Review Sub-committee"
+  status: "Initial Progress, Deferred"
+  academic_year: "2025-2026"
+  description: "The Calculus Curriculum Review Sub-committee is responsible for evaluating and updating the institution’s calculus curriculum. Its work includes reviewing course structures, identifying areas for improvement, and developing recommendations to ensure the curriculum remains current, coherent, and aligned with best practices in mathematics education. The sub-committee collaborates with faculty and other stakeholders to gather input and support informed, evidence-based curriculum development."
+  goal_five: 
+    - "Volunteered for and was then elected chair for an Ad Hoc Committee to review the Calculus curriculum and textbook selection. The department identified this as a potentially high-impact review because of the large number of students enrolled in Calculus courses and the fact that the curriculum had not undergone comprehensive review in more than a decade. The committee's work was paused pending the departmental program review, which was anticipated for AY2026--2027 early in the academic year. One recommendation from the external program reviewers was to 'establish a multiyear schedule for reviewing the curricula of all departmental programs'. The committee's preliminary work positions the department to resume this review process as part of a broader, ongoing cycle of curricular assessment and improvement."
+    - "Developed planning materials and a departmental survey to identify and rank faculty priorities related to the Calculus curriculum review process. The survey instrument may also serve as a useful artifact for future curriculum review efforts."
+  evidence:
+    - name: Calculus Curriculum Review Sub-committee Meeting Minutes
+      url: ""
+    - name: Faculty Survey for Curriculum Review
+      url: "https://mnscu-my.sharepoint.com/:b:/r/personal/ye6366mb_minnstate_edu/Documents/00-Admin/Docs-PDP%20and%20PDR/2025-2026/Evidence/CurriculumReviewSurvey.pdf?csf=1&web=1&e=AKhVmv"
+
+# \goal[5]{Chaired and volunteered for an Ad Hoc Committee to review the Calculus curriculum and textbook selection. The department identified this as a potentially high-impact review because of the large number of students enrolled in Calculus courses and the fact that the curriculum had not undergone comprehensive review in more than a decade. The committee’s work was paused pending the departmental program review, which was anticipated for AY2026--2027 early in the academic year.
+# One recommendation from the external program reviewers was to ``establish a multiyear schedule for reviewing the curricula of all departmental programs."
+# The committee's preliminary work positions the department to resume this review process as part of a broader, ongoing cycle of curricular assessment and improvement.}
+
+######################
+#\begin{activity}{Cohost FriDEI weekly Discussions during Fall semester.}
+#\goal[3]{Preparation and facilitation of these discussions contributed significantly to my professional development by deepening my understanding of equity-focused pedagogy in mathematics. Reviewing planning materials, recurring themes included identity in mathematics (e.g., “who is a math person”), navigating power dynamics between instructors and students, and strategies for initiating difficult conversations. A particularly valuable aspect was engaging graduate students in their dual roles as both learners and instructors, which provided candid insight into current classroom challenges. A consistent thread across discussions was the tension between maintaining assessment rigor and implementing policies that promote meaningful learning opportunities and student growth.}
+#\goal[4]{These discussions benefited students through an equity-focused lens by fostering more inclusive teaching practices that recognize diverse student experiences and barriers to success. Conversations emphasized creating supportive classroom environments, incorporating flexibility and grace in assessment practices, and amplifying student voices, particularly those from underrepresented groups. Feedback from participating graduate students and faculty suggests these meetings encouraged reflection on teaching practices and contributed to more equitable and student-centered approaches in mathematics instruction alongside greater awareness of both visible and invisible challenges currently facing our students.}
+#\goal[5]{Co-hosted bi-weekly discussions centered on equitable teaching practices in mathematics courses with Dr. Marino Romero. This seminar brought together graduate students and faculty to address a gap in discipline-specific conversations around equity and inclusion in STEM, where adapting broader pedagogical strategies can be more challenging. Topics included professional identity, allyship, power dynamics, and grading practices, grounded in real classroom experiences. The series created a collaborative space for sharing strategies and reflecting on teaching. We plan to continue and expand this round-table discussion series in the coming academic year.}
+#\begin{evidence}
+#\evidenceitem{\href{https://mnscu-my.sharepoint.com/:b:/g/personal/ye6366mb_minnstate_edu/IQC71y8qnm3uSq-_Qodp64JQAUL8mX7axBBGgOevOOTm0fY?e=kep2uJ}{Shared planning notes.}
+#These provide a log of topics discussed, including identity in mathematics, grace in teaching, power dynamics, advocacy, and grading practices, as well as dates of meetings and brainstorming for future prompts.}
+#\end{evidence}
+#\end{activity}
+
+######################
+#\begin{activity}{Began Research Collaboration with Dr. Marino Romero.}
+#\goal[2]{Initiated a research collaboration with Dr. Marino Romero on a problem of mutual interest involving Wreath--Macdonald polynomials. We met regularly throughout the semester to design and implement code for computing specific inner products, building on some of Dr. Romero's previous work in this area, with the goal of developing computational tools to efficiently test hypotheses. A functional implementation will enable rapid exploration of conjectures and counterexamples, with potential connections to problems of interest in the physics community.
+#We have made meaningful progress in structuring the computational approach, while identifying a primary challenge in constructing and manipulating certain polynomials over fractional field elements within Sage. Addressing these issues requires both careful mathematical formulation and thoughtful software design. We are actively exploring multiple strategies to resolve these challenges and move toward a robust and extensible implementation.}
+#\begin{evidence}
+#\evidenceitem{\href{https://github.com/DoctorHaitch/WreathMacdonald}{GitHub repository containing current codebase and development progress.}}
+#\end{evidence}
+#\end{activity}
