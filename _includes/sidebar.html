@@ -1,8 +1,8 @@
-<aside class="sidebar">
+<nav class="sidebar" aria-label="Main Navigation">
   <div class="nav-header">Navigation</div>
   <ul>
     {% for item in site.data.navigation %}
       <li><a href="{{ item.url | relative_url }}">{{ item.title }}</a></li>
     {% endfor %}
   </ul>
-</aside>
+</nav>

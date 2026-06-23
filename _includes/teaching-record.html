@@ -1,5 +1,5 @@
-<details class="collapsible-h2" open role="heading" aria-level="2">
-  <summary class="collapsible-title">Current Courses</summary>
+<details class="collapsible-h2" open>
+  <summary class="collapsible-title" role="heading" aria-level="2">Current Courses</summary>
 
   {% for sem in site.data.teaching %}
   {% if sem.status == "current" %}
@@ -39,7 +39,7 @@
 </details>
 
 <details class="collapsible-h2">
-  <summary class="collapsible-title">Detailed Teaching Record</summary>
+  <summary class="collapsible-title" role="heading" aria-level="2">Detailed Teaching Record</summary>
 
   {% for sem in site.data.teaching %}
   {% if sem.status == "past" %}
