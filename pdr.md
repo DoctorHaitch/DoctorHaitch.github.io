@@ -13,7 +13,7 @@ academic_year: "2025-2026"
 submission_date: "TBD"
 profile: false
 ---
-# Kris Hollingsworth, PDR AY {{ page.academic_year }}
+## Kris Hollingsworth, PDR AY {{ page.academic_year }}
 
 <style>
 @media print {
