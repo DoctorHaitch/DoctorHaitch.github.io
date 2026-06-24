@@ -6,7 +6,7 @@
   location: "Alburquerque Doubletree Hotel - Copper Room"
   state: NM
 
-- title: InterActivity 2025: Uplifting the Community: Reaching New Heights Together
+- title: "InterActivity 2025: Uplifting the Community: Reaching New Heights Together"
   start_date: "2025-05-14"
   end_date: "2025-05-16"
   type: conference
@@ -14,11 +14,11 @@
   location: Albuquerque Convention Center
   state: NM
 
-- title: Graduate Student Combintorics Conference
+- title: "Graduate Student Combinatorics Conference"
   start_date: "2017-04-07"
   end_date: "2017-04-09"
   type: conference
-  location: "Univeristy of Kansas, Lawrence"
+  location: "University of Kansas, Lawrence"
   city: Lawrence
   state: KS
 
