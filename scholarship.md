@@ -35,7 +35,7 @@ profile:
 
 profile: false
 ---
-# Scholarly Activity
+## Scholarly Activity
 
 <!-- ## Contribution to scholarly growth of students -->
 

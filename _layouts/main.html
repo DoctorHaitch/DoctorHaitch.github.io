@@ -26,7 +26,8 @@
         
         {% include sidebar.html %}
 
-        <section class="main-content" role="main">
+        <!-- <section class="main-content" role="main"> -->
+        <main class="main-content" role="main">
           {% if page.profile != false and site.data.profile %}
           {% assign p = page.profile | default: site.data.profile %}
 
@@ -58,25 +59,10 @@
                 </div>
               {% endfor %}
             {% endif %}
-
-            <!-- 
-
-            {% if p.seminars %}
-              <div class="profile-section">
-                <h4>Seminars and Discussions</h4>
-                {% for item in p.seminars.items %}
-                  <blockquote>
-                    <span class="broad">{{ item.name }}</span>
-                    <span class="details">{{ item.details }}</span>
-                  </blockquote>
-                {% endfor %}
-              </div>
-            {% endif %}
-            -->
           </aside>
           {% endif %}
           {{ content }}
-        </section>
+        </main>
 
 
       </div>

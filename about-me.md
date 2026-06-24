@@ -3,7 +3,7 @@ layout: main
 title: About Me
 ---
 
-# About Me
+## About Me
 
 I am a mathematician, assistant professor, and coffee enthusiast at Minnesota State University, Mankato. My research interests include abstract harmonic analysis and frame theory, with a particular focus on representations of high-dimensional data.
 
