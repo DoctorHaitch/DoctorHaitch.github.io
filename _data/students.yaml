@@ -89,3 +89,11 @@ letters:
     letter-recipients:
       - "INBRE Summer Scholar's Program (University of Delaware)"
     outcome: "Accepted with funding for research in Cognitive Neuropsychology for Summer 2017"
+  
+  - name: Andrew Crossman
+    supporting: DoD SMART Scholarship-for-Service Program
+    semester: Fall 2016
+    date: "2016-10-30"
+    letter-recipients:
+      - "DoD SMART Scholarship-for-Service Program" 
+  

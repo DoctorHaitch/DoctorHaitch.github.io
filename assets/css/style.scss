@@ -48,14 +48,11 @@ $density-compact-pad: 0.65rem;
   --c-resolution-text: rgb(var(--color-resolution-text));  // contrast-safe for text on white
 
   // Surface / text
-  --doc-accent: var(--c-info);
-  --paper-bg:   #f7f8fb;
-  --card-bg:    #ffffff;
-  --ink:        #333333;
-/*  --muted:      #555;
-  --muted-subtle: #646464; 
-  --muted-subtle: #4a4a4a; */
-  --muted: #3a3a3a;
+  --doc-accent:   var(--c-info);
+  --paper-bg:     #f7f8fb;
+  --card-bg:      #ffffff;
+  --ink:          #333333;
+  --muted:        #3a3a3a;
   --muted-subtle: #555;
 
 
@@ -64,6 +61,7 @@ $density-compact-pad: 0.65rem;
 
   // Code
   --code-background: #1c1f26;
+  --surface-background: #eef2fd;
 
   // Icon references (Lucide SVGs)
   --icon-book-open:     #{'url("/assets/icons/book-open.svg")'};
@@ -90,6 +88,34 @@ $density-compact-pad: 0.65rem;
   --profile-name-color: #444444;
 }
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper-bg: #1a1d2b;
+    --card-bg:  #23263a;
+    --ink:      #e6eaf2;
+    --muted:    #a8b0c5;
+    --muted-subtle: #9aa3b8;
+
+    --color-info:       86, 180, 233;
+    --color-action:     184, 112, 70;
+    --color-resolution: 80, 196, 45;
+    --color-meta:       108, 117, 125;
+
+    --code-background: #151822;
+    --surface-background: #2a3b54;
+
+    --meta-border-subtle: 1px solid rgba(255, 255, 255, 0.06);
+
+    // Detail header backgrounds flip to dark-safe values
+    --detail-header-bg:         rgba(var(--color-meta), 0.32);
+    --detail-header-bg-compact: rgba(var(--color-meta), 0.26);
+
+    // Profile panel headers
+    --profile-name-bg:    rgba(var(--color-meta), 0.32);
+    --profile-title-bg:   rgba(var(--color-meta), 0.22);
+    --profile-name-color: var(--ink);
+  }
+}
 
 // =========================================
 //   META SURFACE SYSTEM
@@ -119,11 +145,39 @@ $density-compact-pad: 0.65rem;
   // Reusable info-tinted gradient (used for h2, section backgrounds, etc.)
   --info-surface: linear-gradient(
     to right,
-    rgba(var(--color-info), 0.22) 0%,
-    rgba(var(--color-info), 0.16) 35%,
+    rgba(var(--color-info), 0.16) 0%,
+    rgba(var(--color-info), 0.12) 35%,
     rgba(var(--color-info), 0.08) 85%,
     rgba(var(--color-info), 0)
   );
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --meta-surface-strong: linear-gradient(
+      to right,
+      rgba(var(--color-meta), 0.26),
+      rgba(var(--color-meta), 0.14) 55%,
+      rgba(var(--color-meta), 0.06) 70%,
+      rgba(var(--color-meta), 0)
+    );
+
+    --meta-surface-soft: linear-gradient(
+      to right,
+      rgba(var(--color-meta), 0.18),
+      rgba(var(--color-meta), 0.08) 55%,
+      rgba(var(--color-meta), 0.03) 70%,
+      rgba(var(--color-meta), 0)
+    );
+
+    --info-surface: linear-gradient(
+      to right,
+      rgba(var(--color-info), 0.18),
+      rgba(var(--color-info), 0.10),
+      rgba(var(--color-info), 0.04),
+      rgba(var(--color-info), 0)
+    );
+  }
 }
 
 // =========================================
@@ -254,6 +308,7 @@ header {
   border-radius: $radius-xl $radius-xl 0 0;
 
   .site-title {
+    background: var(--surface-background);
     font-family: var(--font-serif);
     font-size: 1.7rem;
     margin: -.7rem 0;
@@ -262,6 +317,7 @@ header {
   }
   .site-subtitle {
     font-family: var(--font-serif);
+    background: var(--surface-background);
     font-size: 1.1rem;
     margin: 0;
     padding:0;
@@ -423,7 +479,7 @@ footer {
 // =========================================
 
 .post-title {
-  /* background-color: rgba(var(--color-info), 0.08); */
+  background: var(--surface-background);
   background-image: var(--info-surface);
   width: fit-content;
   border-right: 0px;
@@ -449,6 +505,7 @@ a h2 {
 }
 
 p.post-meta {
+  background: var(--surface-background);
   border-left: 1px solid var(--c-info);
   border-bottom-left-radius: 10px;
   padding-left: 0.5em;
@@ -1198,6 +1255,7 @@ summary.collapsible-title {
   cursor: pointer;
   list-style: none;
   margin-right: 0;
+  background: var(--surface-background);
 
   &::-webkit-details-marker { display: none; }
 
@@ -1346,59 +1404,8 @@ details[open] > summary.collapsible-title::after {
 //   DARK MODE
 // =========================================
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --paper-bg: #1a1d2b;
-    --card-bg:  #23263a;
-    --ink:      #e6eaf2;
-    --muted:    #a8b0c5;
-    --muted-subtle: #9aa3b8;
-
-    --color-info:       86, 180, 233;
-    --color-action:     184, 112, 70;
-    --color-resolution: 80, 196, 45;
-    --color-meta:       108, 117, 125;
-
-    --code-background: #151822;
-
-    --meta-border-subtle: 1px solid rgba(255, 255, 255, 0.06);
-
-    // Detail header backgrounds flip to dark-safe values
-    --detail-header-bg:         rgba(var(--color-meta), 0.32);
-    --detail-header-bg-compact: rgba(var(--color-meta), 0.26);
-
-    // Profile panel headers
-    --profile-name-bg:    rgba(var(--color-meta), 0.32);
-    --profile-title-bg:   rgba(var(--color-meta), 0.22);
-    --profile-name-color: var(--ink);
-
-    --meta-surface-strong: linear-gradient(
-      to right,
-      rgba(var(--color-meta), 0.26),
-      rgba(var(--color-meta), 0.14) 55%,
-      rgba(var(--color-meta), 0.06) 70%,
-      rgba(var(--color-meta), 0)
-    );
-
-    --meta-surface-soft: linear-gradient(
-      to right,
-      rgba(var(--color-meta), 0.18),
-      rgba(var(--color-meta), 0.08) 55%,
-      rgba(var(--color-meta), 0.03) 70%,
-      rgba(var(--color-meta), 0)
-    );
-
-    --info-surface: linear-gradient(
-      to right,
-      rgba(var(--color-info), 0.18),
-      rgba(var(--color-info), 0.10),
-      rgba(var(--color-info), 0.04),
-      rgba(var(--color-info), 0)
-    );
-  }
-
   // ---- Structural dark adjustments ----
-
+@media (prefers-color-scheme: dark) {
   html {
     background:
       radial-gradient(ellipse at 30% 0%, rgba(86, 180, 233, 0.06) 0%, transparent 60%),
