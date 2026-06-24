@@ -93,7 +93,7 @@ $density-compact-pad: 0.65rem;
     --paper-bg: #1a1d2b;
     --card-bg:  #23263a;
     --ink:      #e6eaf2;
-    --muted:    #a8b0c5;
+    --muted:    #b3bbcf;
     --muted-subtle: #9aa3b8;
 
     --color-info:       86, 180, 233;
@@ -439,6 +439,7 @@ footer {
     font-size: 0.95rem;
 
     color: var(--c-resolution-text);  // ✅ restore heading color
+    color: color-mix(in srgb, var(--c-meta) 75%, white);
     background: rgba(var(--color-meta), 0.12);
 
     border-radius: $radius-xl $radius-xl 0 0;
@@ -1137,7 +1138,6 @@ blockquote .details {
 
   .detail-status {
     font-size: 0.75rem;
-    opacity: 0.85;
   }
 
   .detail-body {

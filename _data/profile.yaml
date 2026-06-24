@@ -2,7 +2,9 @@ title: "Prof. Kris Hollingsworth"
 subtitle: "Assistant Professor"
 institution: "Minnesota State University, Mankato"
 
-image: /imgs/kgh-w-gemma.jpg
+image:
+  url: "/imgs/kgh-w-gemma.jpg"
+  desc: "Prof. Kris Hollingsworth with his dog, Gemma standing in a forested area in front of a waterfall."
 
 blocks:
   - title: "Contact"
