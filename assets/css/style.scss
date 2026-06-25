@@ -1,4 +1,4 @@
----
+--- 
 ---
 
 @use "rouge-base16-dark" as *;
@@ -7,25 +7,23 @@
 //   SCSS VARIABLES
 // =========================================
 
-$font-sans:  'Atkinson Hyperlegible', sans-serif;
+$font-sans: 'Atkinson Hyperlegible', sans-serif;
 $font-serif: 'Roboto Serif', serif;
 
 // Shared transition
 $transition-fast: 0.15s ease;
-$transition-mid:  0.2s ease;
+$transition-mid: 0.2s ease;
 
 // Border radius scale
-$radius-sm:   4px;
-$radius-md:   6px;
-$radius-lg:   8px;
-$radius-xl:  12px;
+$radius-sm: 4px;
+$radius-md: 6px;
+$radius-lg: 8px;
+$radius-xl: 12px;
 $radius-2xl: 14px;
 
 // Card density toggle amounts — used by compact variant
-$density-full-pad:    0.75rem;
+$density-full-pad: 0.75rem;
 $density-compact-pad: 0.65rem;
-
-
 
 
 // =========================================
@@ -33,27 +31,52 @@ $density-compact-pad: 0.65rem;
 // =========================================
 
 :root {
+  color-scheme: light dark;
   // Raw color channels (used with rgba())
-  --color-info:            102, 126, 234;
-  --color-action:          230, 159, 0;
-  --color-resolution:      0, 158, 115;
-  --color-resolution-text: 0, 158, 115; /* contrast-safe text variant for resolution color */
-  --color-meta:            51, 34, 136;
+  --color-info: 102, 126, 234;
+  --color-info-text: 70, 92, 200;
+  --color-info-text: 45, 68, 180;
+  --color-action: 175, 120, 50; // copper-amber
+  --color-resolution: 0, 158, 115;
+  --color-resolution-text: 0, 110, 85;
+  --color-resolution-text: 0, 80, 60;
+  /* contrast-safe text variant for resolution color */
+  --color-meta: 51, 34, 136;
 
   // Semantic aliases (rgb() wrappers)
-  --c-info:       rgb(var(--color-info));
-  --c-action:     rgb(var(--color-action));
+  --c-info: rgb(var(--color-info));
+  --c-info-text: rgb(var(--color-info-text));
+  --c-info-text-strong: color-mix(in srgb, var(--c-info-text) 75%, var(--ink));
+  --c-action: rgb(var(--color-action));
   --c-resolution: rgb(var(--color-resolution));
-  --c-meta:       rgb(var(--color-meta));
-  --c-resolution-text: rgb(var(--color-resolution-text));  // contrast-safe for text on white
+  --c-meta: rgb(var(--color-meta));
+  --c-resolution-text: rgb(var(--color-resolution-text)); // contrast-safe for text on white
 
+  --action-soft: color-mix(in srgb, var(--c-action) 25%, white);
   // Surface / text
-  --doc-accent:   var(--c-info);
-  --paper-bg:     #f7f8fb;
-  --card-bg:      #ffffff;
-  --ink:          #333333;
-  --muted:        #3a3a3a;
-  --muted-subtle: #555;
+  --doc-accent: var(--c-info);
+  --paper-bg: #dde2ee;
+  --card-bg: #f0f2f8;
+  --ink: #2c3040; // primary text
+  --ink-soft: #4a5166; // secondary
+  --ink-subtle: #6b7288; // tertiary
+
+  --ink-soft:   #3f455a;  // ← noticeable bump darker
+  --ink-subtle: #5a6076;  // ← tightened but still tertiary
+
+
+  --ink-soft:   #3a4156;  // slightly darker than before
+  --ink-subtle: #4a5166;  // ✅ now passes AA
+
+
+  --muted: var(--ink-soft);
+  --muted-subtle: var(--ink-subtle);
+
+  --surface-bg-resolved: var(--paper-bg);
+
+  // Site Headings
+  --header-title-color: color-mix(in srgb, var(--c-meta) 55%, var(--ink-subtle));
+  --header-subtitle-color: color-mix(in srgb, var(--c-resolution) 50%, var(--ink));
 
 
   // Spacing
@@ -64,55 +87,78 @@ $density-compact-pad: 0.65rem;
   --surface-background: #eef2fd;
 
   // Icon references (Lucide SVGs)
-  --icon-book-open:     #{'url("/assets/icons/book-open.svg")'};
-  --icon-presentation:  #{'url("/assets/icons/presentation.svg")'};
+  --icon-book-open: #{'url("/assets/icons/book-open.svg")'};
+  --icon-presentation: #{'url("/assets/icons/presentation.svg")'};
   --icon-notebook-text: #{'url("/assets/icons/notebook-text.svg")'};
-  --icon-paper:         #{'url("/assets/icons/notebook-text.svg")'};
-  --icon-library:       #{'url("/assets/icons/library.svg")'};
-  --icon-speech:        #{'url("/assets/icons/speech.svg")'};
-  --icon-settings:      #{'url("/assets/icons/settings.svg")'};
+  --icon-paper: #{'url("/assets/icons/notebook-text.svg")'};
+  --icon-library: #{'url("/assets/icons/library.svg")'};
+  --icon-speech: #{'url("/assets/icons/speech.svg")'};
+  --icon-settings: #{'url("/assets/icons/settings.svg")'};
 
   // Font references as CSS custom properties
   // (so HTML can reference --font-serif / --font-sans consistently)
-  --font-sans:  #{$font-sans};
+  --font-sans: #{$font-sans};
   --font-serif: #{$font-serif};
 
   // Detail card header backgrounds — defined here so dark mode can override
   // without fighting color-mix(..., white) hardcodes in component rules
-  --detail-header-bg:         color-mix(in srgb, var(--c-meta) 18%, white);
-  --detail-header-bg-compact: color-mix(in srgb, var(--c-meta) 14%, white);
+
+  --detail-header-bg: color-mix(in srgb, var(--c-meta) 28%, white);
+  --detail-header-bg-compact: color-mix(in srgb, var(--c-meta) 22%, white);
 
   // Profile panel header backgrounds
-  --profile-name-bg:    color-mix(in srgb, var(--c-meta) 22%, white);
-  --profile-title-bg:   color-mix(in srgb, var(--c-meta) 22%, white);
+  --profile-name-bg: linear-gradient(to bottom,
+      color-mix(in srgb, var(--c-meta) 28%, white),
+      color-mix(in srgb, var(--c-meta) 22%, white));
+  --profile-title-bg: color-mix(in srgb, var(--c-meta) 22%, white);
   --profile-name-color: #444444;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --paper-bg: #1a1d2b;
-    --card-bg:  #23263a;
-    --ink:      #e6eaf2;
-    --muted:    #b3bbcf;
-    --muted-subtle: #9aa3b8;
+    --card-bg: #23263a;
 
-    --color-info:       86, 180, 233;
-    --color-action:     184, 112, 70;
+    --surface-bg-resolved: var(--paper-bg);
+
+    --ink: #e6eaf2;
+    --ink-soft: #b8c0d4;
+    --ink-subtle: #9aa3bd;
+
+    --muted: var(--ink-soft);
+    --muted-subtle: var(--ink-subtle);
+
+    --color-info: 86, 180, 233;
+    --color-info-text: 120, 205, 245;
+
+    --color-action: 184, 112, 70;
     --color-resolution: 80, 196, 45;
-    --color-meta:       108, 117, 125;
+    --color-resolution-text: 0, 158, 115;
+
+    --color-meta: 108, 117, 125;
+
+    --c-info-text: color-mix(in srgb, var(--c-info) 90%, white);
+    --c-resolution-text: rgb(var(--color-resolution-text));
+    /* contrast-safe text variant for resolution color */
 
     --code-background: #151822;
     --surface-background: #2a3b54;
-
     --meta-border-subtle: 1px solid rgba(255, 255, 255, 0.06);
 
     // Detail header backgrounds flip to dark-safe values
-    --detail-header-bg:         rgba(var(--color-meta), 0.32);
+    --detail-header-bg: rgba(var(--color-meta), 0.32);
     --detail-header-bg-compact: rgba(var(--color-meta), 0.26);
 
+    // Site headings flip to lighter variants for dark mode
+    --header-title-color: color-mix(in srgb, var(--c-meta) 60%, white);
+    --header-subtitle-color: color-mix(in srgb, var(--c-resolution) 85%, white);
+
     // Profile panel headers
-    --profile-name-bg:    rgba(var(--color-meta), 0.32);
-    --profile-title-bg:   rgba(var(--color-meta), 0.22);
+    /* --profile-name-bg:    rgba(var(--color-meta), 0.32); */
+    --profile-name-bg: linear-gradient(to bottom,
+        rgba(var(--color-meta), 0.85),
+        rgba(var(--color-meta), 0.22));
+    --profile-title-bg: rgba(var(--color-meta), 0.22);
     --profile-name-color: var(--ink);
   }
 }
@@ -124,59 +170,47 @@ $density-compact-pad: 0.65rem;
 // =========================================
 
 :root {
-  --meta-surface-strong: linear-gradient(
-    to right,
-    rgba(var(--color-meta), 0.22),
-    rgba(var(--color-meta), 0.10) 55%,
-    rgba(var(--color-meta), 0.04) 70%,
-    rgba(var(--color-meta), 0)
-  );
+  --meta-surface-strong: linear-gradient(to right,
+      rgba(var(--color-meta), 0.22),
+      rgba(var(--color-meta), 0.10) 55%,
+      rgba(var(--color-meta), 0.04) 70%,
+      rgba(var(--color-meta), 0));
 
-  --meta-surface-soft: linear-gradient(
-    to right,
-    rgba(var(--color-meta), 0.14),
-    rgba(var(--color-meta), 0.06) 55%,
-    rgba(var(--color-meta), 0.02) 70%,
-    rgba(var(--color-meta), 0)
-  );
+  --meta-surface-soft: linear-gradient(to right,
+      rgba(var(--color-meta), 0.14),
+      rgba(var(--color-meta), 0.06) 55%,
+      rgba(var(--color-meta), 0.02) 70%,
+      rgba(var(--color-meta), 0));
 
   --meta-border-subtle: 1px solid rgba(0, 0, 0, 0.06);
 
   // Reusable info-tinted gradient (used for h2, section backgrounds, etc.)
-  --info-surface: linear-gradient(
-    to right,
-    rgba(var(--color-info), 0.16) 0%,
-    rgba(var(--color-info), 0.12) 35%,
-    rgba(var(--color-info), 0.08) 85%,
-    rgba(var(--color-info), 0)
-  );
+  --info-surface: linear-gradient(to right,
+      rgba(var(--color-info), 0.12) 0%,
+      rgba(var(--color-info), 0.10) 35%,
+      rgba(var(--color-info), 0.08) 55%,
+      rgba(var(--color-info), 0));
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --meta-surface-strong: linear-gradient(
-      to right,
-      rgba(var(--color-meta), 0.26),
-      rgba(var(--color-meta), 0.14) 55%,
-      rgba(var(--color-meta), 0.06) 70%,
-      rgba(var(--color-meta), 0)
-    );
+    --meta-surface-strong: linear-gradient(to right,
+        rgba(var(--color-meta), 0.26),
+        rgba(var(--color-meta), 0.14) 55%,
+        rgba(var(--color-meta), 0.06) 70%,
+        rgba(var(--color-meta), 0));
 
-    --meta-surface-soft: linear-gradient(
-      to right,
-      rgba(var(--color-meta), 0.18),
-      rgba(var(--color-meta), 0.08) 55%,
-      rgba(var(--color-meta), 0.03) 70%,
-      rgba(var(--color-meta), 0)
-    );
+    --meta-surface-soft: linear-gradient(to right,
+        rgba(var(--color-meta), 0.18),
+        rgba(var(--color-meta), 0.08) 55%,
+        rgba(var(--color-meta), 0.03) 70%,
+        rgba(var(--color-meta), 0));
 
-    --info-surface: linear-gradient(
-      to right,
-      rgba(var(--color-info), 0.18),
-      rgba(var(--color-info), 0.10),
-      rgba(var(--color-info), 0.04),
-      rgba(var(--color-info), 0)
-    );
+    --info-surface: linear-gradient(to right,
+        rgba(var(--color-info), 0.18),
+        rgba(var(--color-info), 0.10),
+        rgba(var(--color-info), 0.04),
+        rgba(var(--color-info), 0));
   }
 }
 
@@ -199,9 +233,12 @@ body {
   font-family: var(--font-sans);
   line-height: 1.65;
   color: var(--ink);
+  /* background-color: transparent; // add this — makes checkers trace up to html */
+  background-color: var(--paper-bg); 
 }
 
-p, ol {
+p,
+ol {
   margin: 0 0 0.9em;
 }
 
@@ -215,19 +252,24 @@ ul ul {
 }
 
 .site-title,
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   font-family: var(--font-serif);
   margin-top: 0;
 }
 
 h3 {
-  color: color-mix(in srgb, var(--c-resolution-text), black 25%);
+  /* color: var(--c-resolution-text); */
+  color: color-mix(in srgb, var(--c-resolution) 60%, var(--ink-subtle));
+  text-shadow: 0 0.4px 0 rgba(0,0,0,0.25);
   margin-top: 1em;
   margin-bottom: 0.4em;
 }
 
 a {
-  color: var(--c-info);
+  color: var(--c-info-text);
   text-decoration: underline dotted;
   text-underline-offset: 3px;
   text-decoration-color: rgba(var(--color-info), 0.55);
@@ -253,7 +295,9 @@ blockquote {
   background: rgba(var(--color-action), 0.08);
   font-style: normal;
 
-  p { margin: 0; }
+  p {
+    margin: 0;
+  }
 }
 
 li blockquote {
@@ -272,10 +316,10 @@ pre {
 
 code,
 pre {
-  --code-normal:   #dddddd;
-  --code-comment:  #a0a0a0;
-  --code-keyword:  #ff79c6;
-  --code-string:   #50fa7b;
+  --code-normal: #dddddd;
+  --code-comment: #a0a0a0;
+  --code-keyword: #ff79c6;
+  --code-string: #50fa7b;
 
   padding: 0.2em 0.4em;
   border-radius: $radius-sm;
@@ -292,7 +336,7 @@ pre {
   max-width: 750px;
   width: 100%;
   margin: 0 auto;
-  background: var(--card-bg);
+  background: transparent;
   border-radius: $radius-2xl;
   box-shadow:
     0 10px 30px rgba(0, 0, 0, 0.1),
@@ -302,9 +346,13 @@ pre {
 
 header {
   padding: 1.2rem var(--content-pad);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  /* border-bottom: 1px solid rgba(0, 0, 0, 0.08); */
   border-left: 4px solid var(--doc-accent);
   background: rgba(var(--color-info), 0.12);
+  background: linear-gradient(to bottom,
+      rgba(var(--color-info), 0.12),
+      rgba(var(--color-info), 0.10));
+
   border-radius: $radius-xl $radius-xl 0 0;
 
   .site-title {
@@ -313,14 +361,17 @@ header {
     margin: -.7rem 0;
     padding: 0;
     font-weight: 400;
-    color: color-mix(in srgb, var(--c-meta) 90%, white);
+    color: var(--header-title-color);
+    font-variant: small-caps;
   }
+
   .site-subtitle {
     font-family: var(--font-serif);
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     margin: 0;
-    padding:0;
-    color: color-mix(in srgb, var(--c-resolution) 100%, white);
+    padding: 0;
+    color: var(--header-subtitle-color);
+    font-variant: petite-caps;
     /* color: color-mix(in srgb, var(--c-meta) 85%, white); */
   }
 
@@ -331,7 +382,10 @@ header {
     color: color-mix(in srgb, var(--c-meta) 70%, white);
   }
 
-  p { margin: 0.2em 0 0; color: var(--muted); }
+  p {
+    margin: 0.2em 0 0;
+    color: var(--muted);
+  }
 
   ul {
     position: absolute;
@@ -346,7 +400,9 @@ header {
     backdrop-filter: blur(6px);
     border-radius: $radius-lg;
 
-    li { margin: 0; }
+    li {
+      margin: 0;
+    }
 
     a {
       display: block;
@@ -356,7 +412,9 @@ header {
       color: var(--ink);
       transition: $transition-fast;
 
-      &:hover { background: rgba(var(--color-info), 0.15); }
+      &:hover {
+        background: rgba(var(--color-info), 0.15);
+      }
     }
   }
 }
@@ -368,29 +426,41 @@ header {
   background: rgba(var(--color-info), 0.10);
   border-radius: 0 0 $radius-xl $radius-xl;
 
-  // Default padding for direct children (except first h2)
-  > *:not(h2:first-child) {
+  ul {
+    margin: 0 0 0 var(--content-pad);
+  }
+}
+
+.main-content {
+
+  // spacing between elements
+  >*+* {
     margin-top: 1rem;
+  }
+
+  // horizontal padding
+  >* {
     padding-left: var(--content-pad);
     padding-right: var(--content-pad);
   }
-
-  ul { margin: 0 0 0 var(--content-pad); }
 }
 
 footer {
   max-width: 720px;
   width: 100%;
-  margin: 20px auto;
-  padding: 10px;
+  margin: 5px auto;
+  padding: 2px;
+  padding-bottom: 0px;
   color: var(--muted);
   font-size: 0.85rem;
+  text-align: right;
+  position: relative;
 }
 
 .main-content {
   position: relative;
 
-  > h2:first-of-type {
+  >h2:first-of-type {
     margin: 0;
     padding: 0.15em 0.4em;
     font-family: var(--font-serif);
@@ -398,7 +468,7 @@ footer {
     background: rgba(var(--color-info), 0.20);
     border-top: 1px solid rgba(0, 0, 0, 0.06);
     border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-    font-size: 2rem;      // 👈 mimic your old h1 size
+    font-size: 2rem; // 👈 mimic your old h1 size
     line-height: 1.3;
     color: var(--ink);
   }
@@ -433,15 +503,10 @@ footer {
   .nav-header {
     margin-top: 0;
     padding: 0 0 0 0.5em;
-
-    font-family: var(--font-serif);   // ✅ restore serif heading look
-    font-weight: 600;                 // ✅ matches heading weight better
+    font-family: var(--font-serif); // ✅ restore serif heading look
+    font-weight: 600; // ✅ matches heading weight better
     font-size: 0.95rem;
-
-    color: var(--c-resolution-text);  // ✅ restore heading color
-    color: color-mix(in srgb, var(--c-meta) 75%, white);
     background: rgba(var(--color-meta), 0.12);
-
     border-radius: $radius-xl $radius-xl 0 0;
   }
 
@@ -454,14 +519,29 @@ footer {
     color: var(--ink);
     text-decoration: none;
 
-    &:hover { background: rgba(var(--color-info), 0.12); }
-    &.active { background: rgba(var(--color-action), 0.18); color: #000; }
+    &:hover {
+      background: rgba(var(--color-info), 0.12);
+    }
+
+    &.active {
+      background: rgba(var(--color-action), 0.18);
+      color: #000;
+    }
   }
 
   ul {
     margin: 0;
     padding: 0;
     list-style: none;
+  }
+
+  .sidebar li {
+    padding: 6px 0; // expand vertical hit area
+  }
+
+  .sidebar a {
+    display: block;
+    padding: 4px 10px; // your original compact look
   }
 }
 
@@ -471,11 +551,19 @@ footer {
 // =========================================
 
 .post-title {
-  background: var(--surface-background);
+  margin: 0;
   background-image: var(--info-surface);
+  border-left: 1px solid var(--c-info);
   width: fit-content;
   border-right: 0px;
   padding-right: 2px;
+  padding-left: 0.5rem;
+  padding-top: 0;
+  padding-bottom: 0;
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: 24px;
+  border-top-left-radius: 10px;
 }
 
 h2,
@@ -488,7 +576,7 @@ h2,
   font-size: 24px;
 }
 
-a h2 {
+a .post-title {
   border-left: 1px solid var(--c-info);
   border-top-left-radius: 10px;
   padding-left: 0.5rem;
@@ -497,18 +585,15 @@ a h2 {
 }
 
 p.post-meta {
-  background: var(--surface-background);
   border-left: 1px solid var(--c-info);
   border-bottom-left-radius: 10px;
   padding-left: 0.5em;
   width: fit-content;
-  background-image: linear-gradient(
-    to right,
-    rgba(var(--color-info), 0.12) 0%,
-    rgba(var(--color-info), 0.08) 65%,
-    rgba(var(--color-info), 0.03) 85%,
-    rgba(var(--color-info), 0) 100%
-  );
+  background-image: linear-gradient(to right,
+      rgba(var(--color-info), 0.12) 0%,
+      rgba(var(--color-info), 0.08) 65%,
+      rgba(var(--color-info), 0.03) 85%,
+      rgba(var(--color-info), 0) 100%);
 }
 
 h3.post-subtitle {
@@ -529,7 +614,7 @@ p.post-description {
   width: 90%;
 }
 
-section > div.post-preview {
+section>div.post-preview {
   padding-left: 0;
   padding-right: 0;
   margin-top: 0.5rem;
@@ -543,47 +628,69 @@ section > div.post-preview {
 
 blockquote[data-type="fancy-quote"] {
   position: relative;
-  margin: 1rem;
+  margin: 0.5rem 0 1.2rem; // tighter top, more bottom separation
+  max-width: 92%;
   padding-top: 1.4rem;
   border-radius: $radius-2xl;
-  background: linear-gradient(
-    to bottom right,
-    rgba(var(--color-info), 0.10),
-    rgba(var(--color-action), 0.08)
-  );
-  border-left: 1.5px solid rgba(var(--color-action), 0.3);
-  font-family: var(--font-serif);
-  font-size: 1.2rem;
-  line-height: 1.7;
 
-  /*
-  // Opening decorative quote mark
-  &::before {
-    content: "\201C" / "";
-    position: absolute;
-    top: -20px;
-    left: 2px;
-    font-size: 4rem;
-    color: rgba(var(--color-action), 0.25);
-  }
-  */
+  /* 
+background: linear-gradient(
+  to bottom right,
+  rgba(var(--color-info), 0.07),
+  rgba(var(--color-action), 0.06)
+);
+background: linear-gradient(
+      to top right,
+      rgba(var(--color-action), 0.10),
+      rgba(var(--color-action), 0.06)
+    ); */
+
+    /*
+  background: linear-gradient(160deg,
+      rgba(var(--color-action), 0.09),
+      transparent 65%); */
+    background: linear-gradient(160deg,
+      rgba(var(--color-action), 0.16),
+      rgba(var(--color-action), 0.05) 60%,
+      transparent 75%);
+
+
+  border-left: 1.5px solid rgba(var(--color-action), 0.7);
+  border-left: 2px solid rgba(var(--color-action), 0.9);
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  font-weight: 450;
+  color: var(--ink-soft);
+  color: color-mix(in srgb, var(--ink) 85%, var(--c-action));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35);
 
   // Main quote text
-  > p:first-child {
+  >p:first-child {
     margin: 0;
     font-weight: 500;
   }
 
   // Author / attribution
-  > p:last-child {
+  >p:last-child {
     font-size: 0.85rem;
-    color: var(--muted);
-    font-style: italic;
+    color: var(--ink-subtle);
     text-align: right;
   }
 
-  p { margin: 0; }
+  p {
+    margin: 0;
+  }
 }
+
+blockquote cite {
+  font-style: italic;
+}
+
+.main-content>blockquote[data-type="fancy-quote"]:first-of-type {
+  margin-left: 0.4rem;
+}
+
 
 .quote-mark {
   position: absolute;
@@ -594,9 +701,10 @@ blockquote[data-type="fancy-quote"] {
 }
 
 @media (prefers-color-scheme: dark) {
+
   // opening quote mark
   .quote-mark {
-    color: rgba(var(--color-action), 0.82);
+    color: rgba(var(--color-action), 0.52);
   }
 }
 
@@ -644,7 +752,9 @@ blockquote[data-type="description"] {
     filter: opacity(0.7);
   }
 
-  p { margin: 0; }
+  p {
+    margin: 0;
+  }
 }
 
 // Nested description callout (e.g. inside course lists)
@@ -665,13 +775,17 @@ li blockquote[data-type="description"] {
 .profile-panel {
   float: right;
   width: 280px;
-  margin: 0 0 0 var(--content-pad);
+  margin: var(--content-pad) 0 0 var(--content-pad);
   padding: var(--content-pad) 0 var(--content-pad) var(--content-pad);
-  background: rgba(var(--color-meta), 0.06);
+  background: rgba(var(--color-meta), 0.04);
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
 
-  h3 {
+  a {
+    color: var(--c-info-text-strong);
+  }
+
+  h2 {
     margin: 0;
     padding: 0.5em 0.8em 0;
     font-family: var(--font-serif);
@@ -679,6 +793,37 @@ li blockquote[data-type="description"] {
     background: var(--profile-name-bg);
     border-top: 1px solid rgba(0, 0, 0, 0.06);
     color: var(--profile-name-color);
+    font-size: 1.15rem; // match old h3 feel
+    line-height: 1.3rem;
+  }
+
+  img+h2 {
+    margin-top: 0.5em;
+  }
+
+  .details {
+    margin: 2px 0; // 👈 try this first
+  }
+
+  .details a:hover {
+    background: rgba(var(--color-info), 0.10);
+    color: var(--c-info);
+  }
+
+  .details a {
+    position: relative;
+    display: block;
+
+    padding: 0px 4px 0px 12px; // 👈 left padding creates indent space
+    border-radius: $radius-sm;
+
+    text-indent: -8px; // 👈 pulls first line back
+  }
+
+  .details a::before {
+    content: "";
+    position: absolute;
+    inset: -4px 0; // expand vertically only
   }
 }
 
@@ -696,6 +841,7 @@ li blockquote[data-type="description"] {
   font-weight: 600;
   font-size: 0.9rem;
   background: var(--profile-title-bg);
+  
   border-bottom: 1px solid rgba(0, 0, 0, 0.06);
   border-bottom-left-radius: $radius-lg;
   border-bottom-right-radius: $radius-lg;
@@ -709,7 +855,7 @@ li blockquote[data-type="description"] {
   border-bottom: 1px solid rgba(0, 0, 0, 0.06);
   border-radius: $radius-xl;
 
-  h4 {
+  h3 {
     margin: 0;
     padding: 0 0 0 0.5em;
     font-size: 0.95rem;
@@ -726,7 +872,7 @@ li blockquote[data-type="description"] {
     padding: 0 0.5em;
   }
 
-  > blockquote:last-of-type {
+  >blockquote:last-of-type {
     border-radius: 0 0 $radius-xl $radius-xl;
   }
 }
@@ -735,13 +881,15 @@ blockquote .broad {
   display: block;
   font-family: var(--font-serif);
   font-weight: 600;
+  color: var(--ink);
 }
 
 blockquote .details {
   display: block;
   font-weight: 400;
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   padding: 0 0.5em;
+  color: var(--ink-soft);
 }
 
 
@@ -856,12 +1004,11 @@ blockquote .details {
   box-sizing: border-box;
   font-size: 0.9rem;
   color: color-mix(in srgb, var(--c-resolution) 80%, var(--ink));
-  background: linear-gradient(
-    to right,
-    rgba(var(--color-resolution), 0.12),
-    rgba(var(--color-resolution), 0.04) 60%,
-    rgba(var(--color-resolution), 0)
-  );
+  text-shadow: 0 0.2px 0 rgba(0,0,0,0.25);
+  background: linear-gradient(to right,
+      rgba(var(--color-resolution), 0.12),
+      rgba(var(--color-resolution), 0.04) 60%,
+      rgba(var(--color-resolution), 0));
   border-bottom: var(--meta-border-subtle);
 }
 
@@ -878,7 +1025,7 @@ blockquote .details {
   padding-left: 0.3rem;
   padding-top: 0.25rem;
 
-  + .detail-item {
+  +.detail-item {
     border-top: 1px solid rgba(0, 0, 0, 0.05);
     margin-top: 0.35rem;
     padding-top: 0.35rem;
@@ -904,8 +1051,8 @@ blockquote .details {
 
 // Unstyled left-side text wrapper inside .item-title flex row
 .item-label {
-  flex: 1 1 0;           // grow to fill, allow wrapping, never force pills off
-  min-width: 0;          // allow text to wrap rather than overflow
+  flex: 1 1 0; // grow to fill, allow wrapping, never force pills off
+  min-width: 0; // allow text to wrap rather than overflow
 }
 
 // Right-aligned pill group — works in both split and plain inline-flex contexts
@@ -914,22 +1061,22 @@ blockquote .details {
   align-items: center;
   gap: 0.35em;
   margin-left: auto;
-  align-self: center;    // stay centered against wrapped text
-  flex-shrink: 0;        // never compress pills into the title text
+  align-self: center; // stay centered against wrapped text
+  flex-shrink: 0; // never compress pills into the title text
 }
 
 .item-type {
-  font-size: 0.66em;
+  font-size: 0.75em;
   padding: 0.03em 0.4em;
   border-radius: 999px;
-  background: rgba(var(--color-meta), 0.05);
+  background: rgba(var(--color-action), 0.15);
   border: 1px solid rgba(var(--color-meta), 0.12);
   color: var(--muted);
 }
 
 // Info-tinted pill for dates and temporal metadata
 .item-date {
-  font-size: 0.66em;
+  font-size: 0.75em;
   padding: 0.03em 0.4em;
   border-radius: 999px;
   background: rgba(var(--color-info), 0.06);
@@ -939,10 +1086,14 @@ blockquote .details {
 
 .item-meta .status {
   font-size: 0.72em;
-  color: var(--muted-subtle);
+  color: var(--ink-soft);
 }
 
 // ---- Item title (with icon) ----
+
+.short-work-title {
+  font-style: italic;
+}
 
 .item-title {
   --icon: var(--icon-paper); // default icon
@@ -955,16 +1106,14 @@ blockquote .details {
   margin-left: 0.2em;
   font-size: 0.95em;
   font-weight: 500;
-  font-style: italic;
+  /* font-style: italic; */
   line-height: 1.4;
   color: var(--ink);
   border-radius: $radius-md;
-  background: linear-gradient(
-    to right,
-    rgba(var(--color-meta), 0.06),
-    rgba(var(--color-meta), 0.015) 60%,
-    rgba(var(--color-meta), 0)
-  );
+  background: linear-gradient(to right,
+      rgba(var(--color-meta), 0.06),
+      rgba(var(--color-meta), 0.015) 60%,
+      rgba(var(--color-meta), 0));
 
   &::before {
     content: "";
@@ -998,39 +1147,12 @@ blockquote .details {
   }
 }
 
-
-// ---- Icon + tint modifiers ----
-// Applied as data-icon="paper|presentation|library"
-// or as utility classes .item-icon-paper etc.
-//
-// Each sets --icon, an accent border-left, and a matching bg tint.
-
-/*
 @mixin item-icon-variant($icon-var, $color-var, $alpha-bg: 0.10, $alpha-border: 0.45) {
   border-left-color: rgba(var($color-var), $alpha-border);
-  background: linear-gradient(
-    to right,
-    rgba(var($color-var), $alpha-bg),
-    rgba(var($color-var), calc($alpha-bg * 0.3)) 60%,
-    rgba(var($color-var), 0)
-  );
-
-  &::before {
-    --icon: var($icon-var);
-    background: var(--icon) no-repeat center / 70%;
-    border-color: rgba(var($color-var), calc($alpha-border * 0.75));
-    background-color: rgba(var($color-var), $alpha-bg);
-  }
-}
-*/
-@mixin item-icon-variant($icon-var, $color-var, $alpha-bg: 0.10, $alpha-border: 0.45) {
-  border-left-color: rgba(var($color-var), $alpha-border);
-  background: linear-gradient(
-    to right,
-    rgba(var($color-var), $alpha-bg),
-    rgba(var($color-var), calc($alpha-bg * 0.3)) 60%,
-    rgba(var($color-var), 0)
-  );
+  background: linear-gradient(to right,
+      rgba(var($color-var), $alpha-bg),
+      rgba(var($color-var), calc($alpha-bg * 0.3)) 60%,
+      rgba(var($color-var), 0));
 
   &::before {
     background: var(#{$icon-var}) no-repeat center / 70%;
@@ -1065,12 +1187,10 @@ blockquote .details {
 
 .item-level-undergrad {
   border-left-color: rgba(var(--color-info), 0.35);
-  background: linear-gradient(
-    to right,
-    rgba(var(--color-info), 0.08),
-    rgba(var(--color-info), 0.02) 60%,
-    rgba(var(--color-info), 0)
-  );
+  background: linear-gradient(to right,
+      rgba(var(--color-info), 0.08),
+      rgba(var(--color-info), 0.02) 60%,
+      rgba(var(--color-info), 0));
 
   &::before {
     --icon: var(--icon-book-open);
@@ -1083,12 +1203,10 @@ blockquote .details {
 
 .item-level-grad {
   border-left-color: rgba(var(--color-meta), 0.5);
-  background: linear-gradient(
-    to right,
-    rgba(var(--color-meta), 0.12),
-    rgba(var(--color-meta), 0.03) 60%,
-    rgba(var(--color-meta), 0)
-  );
+  background: linear-gradient(to right,
+      rgba(var(--color-meta), 0.12),
+      rgba(var(--color-meta), 0.03) 60%,
+      rgba(var(--color-meta), 0));
 
   &::before {
     --icon: var(--icon-library);
@@ -1100,13 +1218,15 @@ blockquote .details {
 }
 
 .course-level-label {
-  font-size: 0.65em;
+  font-size: 0.75em;
   margin-left: 0.4em;
   padding: 0.05em 0.35em;
   border-radius: 999px;
-  background: rgba(var(--color-meta), 0.08);
+  background: rgba(var(--color-resolution), 0.13);
   border: 1px solid rgba(var(--color-meta), 0.18);
-  color: color-mix(in srgb, var(--ink) 75%, transparent);
+  color: var(--muted);
+
+  /* color: color-mix(in srgb, var(--ink) 75%, transparent); */
 }
 
 .course-description {
@@ -1148,16 +1268,16 @@ blockquote .details {
     padding-left: 0.75rem;
     margin: 0.2rem 0 0.25rem;
 
-    + .detail-item {
+    +.detail-item {
       margin-top: 0.25rem;
       padding-top: 0.25rem;
     }
   }
 
   .item-type {
-    font-size: 0.6em;
+    font-size: 0.75em;
     padding: 0.02em 0.35em;
-    background: rgba(var(--color-meta), 0.04);
+    /* background: rgba(var(--color-meta), 0.04); */
     border: 1px solid rgba(var(--color-meta), 0.10);
     color: var(--muted);
   }
@@ -1175,12 +1295,10 @@ blockquote .details {
 
   // Fallback tint only when no icon variant class is present
   .item-title:not([class*="item-icon-"]):not([class*="item-level-"]) {
-    background: linear-gradient(
-      to right,
-      rgba(var(--color-meta), 0.04),
-      rgba(var(--color-meta), 0.01) 60%,
-      rgba(var(--color-meta), 0)
-    );
+    background: linear-gradient(to right,
+        rgba(var(--color-meta), 0.04),
+        rgba(var(--color-meta), 0.01) 60%,
+        rgba(var(--color-meta), 0));
 
     &::before {
       border: 1px solid rgba(var(--color-meta), 0.15);
@@ -1202,6 +1320,11 @@ blockquote .details {
 .detail-group-collapsible {
   margin-top: 1rem;
 
+  summary > h4 {
+    all: unset;
+    display: inline;
+  }
+
   summary {
     cursor: pointer;
     margin-left: calc(-1 * var(--content-pad));
@@ -1209,6 +1332,7 @@ blockquote .details {
     font-weight: 600;
     margin-bottom: 0.5rem;
     color: var(--c-resolution);
+    text-shadow: 0 0.4px 0 rgba(0,0,0,0.25);
     list-style: none;
     padding: 0.35rem 0.6rem;
     border-top-right-radius: $radius-lg;
@@ -1224,7 +1348,9 @@ blockquote .details {
       color: rgba(var(--color-meta), 0.8);
     }
 
-    &::-webkit-details-marker { display: none; }
+    &::-webkit-details-marker {
+      display: none;
+    }
   }
 
   &[open] summary::before {
@@ -1248,7 +1374,9 @@ summary.collapsible-title {
   margin-right: 0;
   /* background: var(--surface-background); */
 
-  &::-webkit-details-marker { display: none; }
+  &::-webkit-details-marker {
+    display: none;
+  }
 
   // Chevron arrow
   &::after {
@@ -1263,9 +1391,14 @@ summary.collapsible-title {
     margin-left: auto;
     opacity: 0.7;
   }
+
+  >h3 {
+    all: unset;
+    display: inline;
+  }
 }
 
-details[open] > summary.collapsible-title::after {
+details[open]>summary.collapsible-title::after {
   transform: rotate(135deg);
 }
 
@@ -1306,7 +1439,9 @@ details[open] > summary.collapsible-title::after {
   padding: 0.35rem 0 0.45rem;
 
   // No icon via .item-title system
-  &::before { content: none !important; }
+  &::before {
+    content: none !important;
+  }
 
   strong {
     display: block;
@@ -1369,8 +1504,6 @@ details[open] > summary.collapsible-title::after {
       font-size: 0.85rem;
       padding: 0.3rem 0.6rem;
       border-radius: 0;
-      background: rgba(var(--color-meta), 0.08);
-      color: var(--muted);
     }
 
     a {
@@ -1381,8 +1514,13 @@ details[open] > summary.collapsible-title::after {
 }
 
 @media (max-width: 740px) {
-  body { padding: 0; }
-  section { padding: 1rem; }
+  body {
+    padding: 0;
+  }
+
+  section {
+    padding: 1rem;
+  }
 }
 
 :focus-visible {
@@ -1395,9 +1533,10 @@ details[open] > summary.collapsible-title::after {
 //   DARK MODE
 // =========================================
 
-  // ---- Structural dark adjustments ----
+// ---- Structural dark adjustments ----
 @media (prefers-color-scheme: dark) {
   html {
+    background-color: var(--surface-bg-resolved); // ✅ critical
     background:
       radial-gradient(ellipse at 30% 0%, rgba(86, 180, 233, 0.06) 0%, transparent 60%),
       radial-gradient(ellipse at 80% 100%, rgba(108, 117, 125, 0.08) 0%, transparent 55%),
@@ -1412,9 +1551,9 @@ details[open] > summary.collapsible-title::after {
     border-color: rgba(255, 255, 255, 0.06) !important;
   }
 
-  header {
+  /* header {
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  }
+  } */
 
   header ul {
     background: rgba(30, 34, 54, 0.7);
@@ -1424,7 +1563,7 @@ details[open] > summary.collapsible-title::after {
     background: rgba(var(--color-info), 0.15);
   }
 
-  h2,
+  main-content > h2,
   .collapsible-title {
     /* background: var(--surface-background); */
     background-image: var(--info-surface);
@@ -1437,11 +1576,12 @@ details[open] > summary.collapsible-title::after {
   // ---- Component dark adjustments ----
 
   // profile-panel h3 and profile-title handled by custom properties above
-  .sidebar h3 {
+  /*  .sidebar h3 {
     background: var(--meta-surface-strong);
     border-bottom: var(--meta-border-subtle);
     color: color-mix(in srgb, var(--ink) 92%, var(--c-meta));
   }
+*/
 
 
   // detail-header bg handled by --detail-header-bg custom property above
@@ -1455,13 +1595,12 @@ details[open] > summary.collapsible-title::after {
     border-left: 2px solid rgba(var(--color-meta), 0.35);
   }
 
-  .detail-card--compact .detail-item + .detail-item {
+  .detail-card--compact .detail-item+.detail-item {
     border-top: 1px solid rgba(255, 255, 255, 0.04);
   }
 
   // item-type gets slightly stronger tint in dark compact cards
   .detail-card--compact .item-type {
-    background: rgba(var(--color-meta), 0.08);
     border: 1px solid rgba(var(--color-meta), 0.18);
   }
 
@@ -1476,34 +1615,28 @@ details[open] > summary.collapsible-title::after {
 
   .detail-subheader {
     color: color-mix(in srgb, var(--c-resolution) 60%, var(--ink));
-    background: linear-gradient(
-      to right,
-      rgba(var(--color-resolution), 0.18),
-      rgba(var(--color-resolution), 0.07) 60%,
-      rgba(var(--color-resolution), 0)
-    );
+    background: linear-gradient(to right,
+        rgba(var(--color-resolution), 0.18),
+        rgba(var(--color-resolution), 0.07) 60%,
+        rgba(var(--color-resolution), 0));
     border-bottom: var(--meta-border-subtle);
   }
 
   .detail-body {
-    background: linear-gradient(
-      to bottom,
-      rgba(var(--color-meta), 0.04),
-      rgba(var(--color-meta), 0.02)
-    );
+    background: linear-gradient(to bottom,
+        rgba(var(--color-meta), 0.04),
+        rgba(var(--color-meta), 0.02));
   }
 
-  .detail-item + .detail-item {
+  .detail-item+.detail-item {
     border-top: 1px solid rgba(255, 255, 255, 0.06);
   }
 
   .item-title {
-    background: linear-gradient(
-      to right,
-      rgba(var(--color-meta), 0.10),
-      rgba(var(--color-meta), 0.035) 60%,
-      rgba(var(--color-meta), 0)
-    );
+    background: linear-gradient(to right,
+        rgba(var(--color-meta), 0.10),
+        rgba(var(--color-meta), 0.035) 60%,
+        rgba(var(--color-meta), 0));
   }
 
   .item-title::before {
@@ -1557,11 +1690,9 @@ details[open] > summary.collapsible-title::after {
   }
 
   .profile-panel {
-    background: linear-gradient(
-      to bottom,
-      rgba(var(--color-meta), 0.20),
-      rgba(var(--color-meta), 0.10)
-    );
+    background: linear-gradient(to bottom,
+        rgba(var(--color-meta), 0.20),
+        rgba(var(--color-meta), 0.10));
     border: 1px solid rgba(255, 255, 255, 0.06);
   }
 
@@ -1576,28 +1707,32 @@ details[open] > summary.collapsible-title::after {
     a {
       color: var(--ink);
 
-      &:hover { background: rgba(var(--color-info), 0.18); }
-      &.active { background: rgba(var(--color-action), 0.28); color: var(--ink); }
+      &:hover {
+        background: rgba(var(--color-info), 0.18);
+      }
+
+      &.active {
+        background: rgba(var(--color-action), 0.28);
+        color: var(--ink);
+      }
     }
   }
 
   // fancy-quote: warm tinted card with enough body to read as a distinct surface
   blockquote[data-type="fancy-quote"] {
-    background: linear-gradient(
-      to bottom right,
-      rgba(var(--color-info), 0.16),
-      rgba(var(--color-action), 0.12)
-    );
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-left: 1.5px solid rgba(var(--color-action), 0.55);
     box-shadow:
       0 4px 16px rgba(0, 0, 0, 0.30),
       inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  }
 
-    // attribution line
-    > p:last-child {
-      color: var(--muted);
-    }
+  .sidebar .nav-header {
+    color: color-mix(in srgb, var(--c-meta) 72%, white);
+  }
+
+  img {
+    filter: brightness(0.85) contrast(1.1);
   }
 }
 
@@ -1613,13 +1748,14 @@ details[open] > summary.collapsible-title::after {
   white-space: nowrap;
 }
 
-
 @media print {
+
   .sidebar,
   .profile-panel,
   footer {
     display: none;
   }
+
   .content-area {
     display: block;
   }
@@ -1628,8 +1764,7 @@ details[open] > summary.collapsible-title::after {
     width: 100%;
   }
 
-
-  details:not([open]) > * {
+  details:not([open])>* {
     display: block;
   }
 

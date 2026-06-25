@@ -1,5 +1,5 @@
-title: Kris Hollingsworth, PhD
-description: Accessibility doesn't need to look boring.
+title: "Kris Hollingsworth, PhD"
+description: "Accessibility doesn't need to look boring."
 
 github:
   is_project_page: false
@@ -11,3 +11,21 @@ plugins:
 
 paginate: 5          # posts per page (change as you like)
 paginate_path: "/blog/page:num/"
+
+
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      mathjax: true
+      layout: main
+      profile: false
+
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      mathjax: true
+      layout: main
+      profile: false

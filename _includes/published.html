@@ -1,5 +1,7 @@
 <details class="collapsible-h2">
-  <summary class="collapsible-title" role="heading" aria-level="3">Published Scholarship and Preprints</summary>
+  <summary class="collapsible-title">
+    <h3>Published Scholarship and Preprints</h3>
+  </summary>
 
   <div class="detail-cards">
     {% for article in site.data.publications.articles %}
@@ -21,16 +23,19 @@
             <span class="item-label">
               <span class="authors">{{ article.authors }}.</span>
               <span class="short-work-title">{{ article.title }}.</span>
-              <span class="journal-name">{{ article.journal }}</span>{% if article.volume %}<span class="authors">, {{ article.volume }}</span>{% if article.number %}<span class="authors-bf">({{ article.number }})</span>{% endif %}{% endif %}{% if article.pages %}<span class="authors">:{{ article.pages }}</span>{% endif %}<span class="authors">, {{ article.year }}.</span>
+              <span class="journal-name">{{ article.journal }}</span>{% if article.volume %}<span class="authors">, {{
+                article.volume }}</span>{% if article.number %}<span class="authors-bf">({{ article.number }})</span>{%
+                endif %}{% endif %}{% if article.pages %}<span class="authors">:{{ article.pages }}</span>{% endif %}<span
+                class="authors">, {{ article.year }}.</span>
             </span>
           </div>
 
           <div style="margin-left: 35px;">
             <span class="authors">Access:</span>
             {% for target in article.link %}
-              <span class="item-type item-meta">
-                <a href="{{ target.url }}">{{ target.name }}</a>
-              </span>
+            <span class="item-type item-meta">
+              <a href="{{ target.url }}">{{ target.name }}</a>
+            </span>
             {% endfor %}
           </div>
 

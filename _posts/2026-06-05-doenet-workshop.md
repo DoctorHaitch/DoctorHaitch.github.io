@@ -1,26 +1,26 @@
 ---
-layout: main
 author: Kris Hollingsworth
 title: "Doenet Workshop 2026 Show and Tell"
 subtitle: false
 date: 2026-06-05
 description: "Demonstration of tools from the Doenet 2026 Community Workshop."
 excerpt: "Overview of my Show and Tell from the end of the Doenet 2026 Community Workshop and some general notes about the workshop. Includes a quick demonstration of accessibility and Doenet tools, including a Python CVD Simulator, the Doenet Spreadsheet component as a work-around for advanced mathematical formulas, and a scaffolded proof for students to complete which reformats and constructs itself as students provide each step. They can transcribe it to have a neat, final version in their notes."
-profile: false
 ---
 
-# [Doenet](https://beta.doenet.org) Workshop 2026 Show and Tell
+## [Doenet](https://beta.doenet.org) Workshop 2026 Show and Tell
 
+- You can find the [full list of Show and Tell presentations](https://community.doenet.org/t/2026-doenet-workshop-final-day-show-and-tell/135) on the [Doenet Community page](https://community.doenet.org/).
 
-
-<blockquote data-type="fancy-quote">
+<blockquote data-type="fancy-quote" aria-describedby="main-heading">
   <span class="quote-mark" aria-hidden="true">“</span>
-
   <p>Fences are a trick. Fences don’t keep people out, they trick people into keeping themselves out.</p>
-  <p>— Joey Comeau, Author</p>
+  <p>—
+    <cite>Joey Comeau</cite>,
+    Author
+  </p>
 </blockquote>
 
-You can find the [full list of Show and Tell presentations](https://community.doenet.org/t/2026-doenet-workshop-final-day-show-and-tell/135) on the [Doenet Community page](https://community.doenet.org/).
+Provided here is a summary of the resources I shared during the final day's "Show and Tell".
 
 ## [`accessible-math`](https://github.com/DoctorHaitch/accessible-math) Resources Github Repo
 

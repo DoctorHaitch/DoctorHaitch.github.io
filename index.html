@@ -1,7 +1,6 @@
 ---
 layout: main
 title: Blog
-hide-breadcrumbs: true
 profile: false
 ---
 
@@ -11,14 +10,14 @@ profile: false
 
 <div class="post-preview">
   <a href="{{ post.url | prepend: site.baseurl }}">
-    <h2 class="post-title">
+    <h3 class="post-title">
       {{ post.title }}
-    </h2>
+    </h3>
 
     {% if post.subtitle %}
-      <h3 class="post-subtitle">
+      <h4 class="post-subtitle">
         {{ post.subtitle }}
-      </h3>
+      </h4>
     {% endif %}
   </a>
   {% if post.excerpt %}
