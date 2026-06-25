@@ -38,3 +38,8 @@ This is very convenient as it directly adds a tab into the DevTools you are like
 ### SiteImprove Browser Extension
 
 Much stricter than Axe DevTools, the [SiteImprove Browser Extension](https://www.siteimprove.com/why-siteimprove/integrations/browser-extensions/) gives another resource for checking full page compliance directly in your browser. This one also triggers numerous false-negatives if using "fancy" CSS designs, but once again, balancing the aesthetic with guarenteed WCAG AAA compliance leads to an overall better design. I'd recommend solving all the problems identified by Axe DevTools first, and then moving on to the excruciating process of "technically correct" with SiteImprove afterwards.
+
+### Web Accessibility Evaluation Tools
+
+[WAVE](https://wave.webaim.org/)
+Let's you check an url (with nice overlays of the navigation elements for screen-readers displayed as overlays!) as well as a browser extension I haven't tried out yet.
