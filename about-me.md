@@ -1,8 +1,46 @@
 ---
-layout: main
 title: About Me
----
+profile:
+  title: "Prof. Kris Hollingsworth"
+  subtitle: "Assistant Professor"
+  institution: "Minnesota State University, Mankato"
 
+  image:
+    url: "/imgs/kgh-w-gemma.jpg"
+    desc: "Prof. Kris Hollingsworth with his dog, Gemma standing in a forested area in front of a waterfall."
+
+  blocks:
+    - title: "Contact"
+      items:
+        - name: "Email"
+          details: "kristopher.hollingsworth@mnsu.edu"
+        - name: "Office"
+          details: "Wissink Hall 253"
+        - name: "Phone"
+          details: "(507) 389-6506"
+
+    - title: "Schedule: Fall 2026"
+      items:
+        - name: "Office Hours"
+          details: "TBD"
+        - name: "Math122-01: Calculus II"
+          details: "MTRF 8:00-8:50"
+        - name: "Math122-02: Calculus II"
+          details: "MTRF 9:00-9:50"
+        - name: "Math417/517: Real Analysis"
+          details: "MTRF 9:00-9:50"
+
+    - title: "Seminars and Discussions"
+      items:
+        - name: "TBD"
+          details: "TBD"
+
+    - title: "Research Interests"
+      items:
+        - name: "Frame Theory"
+        - name: "Wavelet Theory"
+        - name: "Computational Algebra"
+---
 ## About Me
 
 I am a mathematician, assistant professor, and coffee enthusiast at Minnesota State University, Mankato. My research interests include abstract harmonic analysis and frame theory, with a particular focus on representations of high-dimensional data.

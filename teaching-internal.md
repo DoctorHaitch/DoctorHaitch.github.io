@@ -1,7 +1,5 @@
 ---
-layout: main
 title: Demonstrated Ability to Teach Effectively
-profile: false
 ---
 
 # Demonstrated Ability to Teach Effectively

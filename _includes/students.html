@@ -1,10 +1,12 @@
-<details class="collapsible-h2"> <!--  open -->
-  <summary class="collapsible-title" role="heading" aria-level="3">
-    Contribution to Scholarly Growth of Students
+<details class="collapsible-section"> <!--  open -->
+  <summary class="collapsible-title">
+    <h3>Contribution to Scholarly Growth of Students</h3>
   </summary>
 
   <details open class="detail-group-collapsible">
-    <summary role="heading" aria-level="4">Present Students</summary>
+    <summary>
+      <h4>Present Students</h4>
+    </summary>
     <div class="detail-cards">
 
       {% for student in site.data.students.present %}
@@ -28,29 +30,34 @@
             <div class="item-meta">
               <span class="item-type">{{ project.type }}</span>
               {% if project.status %}
-                <span class="status">{{ project.status }}</span>
+              <span class="status">{{ project.status }}</span>
               {% endif %}
             </div>
 
             {% assign t = project.type | downcase %}
+            {% assign title_class = "" %}
 
             {% if t contains "presentation" or t contains "talk" %}
-              {% assign icon_class = "item-icon-presentation" %}
-              {% assign sr_word = "Presentation" %}
+            {% assign icon_class = "item-icon-presentation" %}
+            {% assign sr_word = "Presentation" %}
             {% elsif t contains "poster" %}
-              {% assign icon_class = "item-icon-poster" %}
-              {% assign sr_word = "Poster" %}
+            {% assign icon_class = "item-icon-poster" %}
+            {% assign sr_word = "Poster" %}
             {% elsif t contains "paper" %}
-              {% assign icon_class = "item-icon-paper" %}
-              {% assign sr_word = "Paper" %}
+            {% assign icon_class = "item-icon-paper" %}
+            {% assign sr_word = "Paper" %}
+            {% assign title_class = "short-work-title" %}
             {% else %}
-              {% assign icon_class = "item-icon-paper" %}
-              {% assign sr_word = "Paper" %}
+            {% assign icon_class = "item-icon-paper" %}
+            {% assign sr_word = "Paper" %}
+            {% assign title_class = "short-work-title" %}
             {% endif %}
 
             <div class="item-title {{ icon_class }}" data-type="item-project">
               <span class="sr-only">{{ sr_word }}:</span>
-              {{ project.title | markdownify }}
+              <span class="{{ title_class }}">
+                {{ project.title }}
+              </span>
             </div>
 
           </div>
@@ -64,7 +71,9 @@
   </details>
 
   <details class="detail-group-collapsible">
-    <summary role="heading" aria-level="4">Past Students</summary>
+    <summary>
+      <h4>Past Students</h4>
+    </summary>
     <div class="detail-cards detail-cards--compact">
 
       {% for student in site.data.students.past %}
@@ -75,38 +84,58 @@
           <span class="detail-status">
             {{ student.level }}
             {% if student.university %}
-              — {{ student.university }}
+            — {{ student.university }}
             {% endif %}
           </span>
         </div>
 
         {% if student.current-status %}
-          <div class="detail-subheader">
-            Graduated: {{ student.graduated }}<br/>
-            Current: {{ student.current-status }}
-          </div>
+        <div class="detail-subheader">
+          Graduated: {{ student.graduated }}<br />
+          Current: {{ student.current-status }}
+        </div>
         {% endif %}
 
         <div class="detail-body">
           {% for project in student.projects %}
 
-            {% assign t = project.type | downcase %}
-            {% if t contains "presentation" or t contains "talk" %}
-              {% assign icon_class = "item-icon-presentation" %}
-            {% elsif t contains "paper" %}
-              {% assign icon_class = "item-icon-paper" %}
-            {% else %}
-              {% assign icon_class = "item-icon-paper" %}
-            {% endif %}
+          {% assign t = project.type | downcase %}
+          {% assign title_class = "" %}
 
-            <div class="detail-item">
-              <div class="item-meta">
-                <span class="item-type">{{ project.type }}</span>
-              </div>
-              <div class="item-title {{ icon_class }}">
-                {{ project.title | markdownify }}
-              </div>
+          {% if t contains "presentation" or t contains "talk" %}
+          {% assign icon_class = "item-icon-presentation" %}
+          {% assign sr_word = "Presentation" %}
+          {% elsif t contains "poster" %}
+          {% assign icon_class = "item-icon-poster" %}
+          {% assign sr_word = "Poster" %}
+          {% elsif t contains "paper" %}
+          {% assign icon_class = "item-icon-paper" %}
+          {% assign sr_word = "Paper" %}
+          {% assign title_class = "short-work-title" %}
+          {% else %}
+          {% assign icon_class = "item-icon-paper" %}
+          {% assign sr_word = "Paper" %}
+          {% assign title_class = "short-work-title" %}
+          {% endif %}
+
+          <div class="detail-item">
+            <div class="item-meta">
+              <span class="item-type">{{ project.type }}</span>
             </div>
+            <div class="item-title {{ icon_class }}">
+              <span class="sr-only">{{ sr_word }}:</span>
+
+              {% if project.url %}
+              <a href="{{ project.url }}" class="{{ title_class }}">
+                {{ project.title }}
+              </a>
+              {% else %}
+              <span class="{{ title_class }}">
+                {{ project.title }}
+              </span>
+              {% endif %}
+            </div>
+          </div>
 
           {% endfor %}
         </div>

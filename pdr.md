@@ -1,6 +1,6 @@
 ---
-layout: main
 type: "Report"
+title: Professional Development Document
 title_prefix: "Kris Hollingsworth, Professional Development"
 faculty: "Kris Hollingsworth"
 degree: "Ph.D."
@@ -11,7 +11,6 @@ current_status: "Probationary"
 current_rank: "Assistant Professor"
 academic_year: "2025-2026"
 submission_date: "TBD"
-profile: false
 ---
 ## Kris Hollingsworth, PDR AY {{ page.academic_year }}
 

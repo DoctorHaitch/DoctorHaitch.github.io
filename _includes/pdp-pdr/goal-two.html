@@ -1,42 +1,45 @@
-<details class="collapsible-h2" open>
-  <summary class="collapsible-title" role="heading" aria-level="2">Criterion Two: Scholarly, Creative Achievement and Research</summary>
+<details class="collapsible-section" open>
+  <summary class="collapsible-title">
+    <h3>Criterion Two: Scholarly, Creative Achievement and Research</h3>
+  </summary>
 
   <div class="detail-cards">
     {% for activity in site.data.pdp-pdr %}
     {% if activity.academic_year == page.academic_year and activity.goal_two %}
-      <div class="detail-card">
-        <div class="detail-header">
-          <span class="detail-name">{{ activity.name }}</span>
-        </div>
-        <div class="detail-subheader">
-          <span class="detail-status">{{ activity.status }}</span>
+    <div class="detail-card">
+      <div class="detail-header">
+        <span class="detail-name">{{ activity.name }}</span>
+      </div>
+      <div class="detail-subheader">
+        <span class="detail-status">{{ activity.status }}</span>
+      </div>
+
+      <div class="detail-body">
+
+        <!-- Description -->
+        <div class="detail-item">
+          <div style="margin-left: 0.3rem; max-width: 90%; font-size: 0.9rem; color: var(--muted);">
+            <strong>Description</strong>: {{ activity.description }}
+          </div>
         </div>
 
-        <div class="detail-body">
-
-          <!-- Description -->
+        <!-- Goal Area Progress Report -->
+        <div class="detail-item">
+          <span class="authors"><strong>Activity Report:</strong></span>
+          {% for report in activity.goal_two %}
           <div class="detail-item">
-            <div style="margin-left: 0.3rem; max-width: 90%; font-size: 0.9rem; color: var(--muted);">
-              <strong>Description</strong>: {{ activity.description }}
+            <span class="sr-only">Goal Area Two Activity Report: </span>
+            <div class="item-title item-icon-settings">
+              <span class="item-label">
+                {{ report }}
+              </span>
             </div>
           </div>
-
-          <!-- Goal Area Progress Report -->
-          <div class="detail-item">
-            <span class="authors"><strong>Activity Report:</strong></span>
-            {% for report in activity.goal_two %}
-              <div class="detail-item">
-                <div class="item-title item-icon-settings" aria-label="Goal Area Two Activity Report">
-                  <span class="item-label">
-                    {{ report }}
-                  </span>
-                </div>
-              </div>
-            {% endfor %}
-          </div>
+          {% endfor %}
         </div>
       </div>
+    </div>
     {% endif %}
-    {% endfor %}  
+    {% endfor %}
   </div>
 </details>

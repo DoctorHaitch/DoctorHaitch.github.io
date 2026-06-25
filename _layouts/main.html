@@ -1,74 +1,83 @@
 <!doctype html>
 <html lang="{{ site.lang | default: "en-US" }}">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    {% seo %}
-    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Roboto+Serif:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    {% include head-custom.html %}
+  {% seo %}
+  <link
+    href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Roboto+Serif:wght@400;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  </head>
-  <body>
-    <div class="wrapper">
-      <header {% unless site.description or site.github.project_tagline %} class="without-description" {% endunless %}>
-        <h1 class="site-title">{{ site.title | default: site.github.repository_name }}</h1>
-        {% if site.description or site.github.project_tagline %}
-          <p class="site-subtitle">{{ site.description | default: site.github.project_tagline }}</p>
-        {% endif %}
-      </header>
+  {% if page.mathjax %}
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  {% endif %}
+
+  {% include head-custom.html %}
+
+</head>
+
+<body>
+  <div class="wrapper">
+    <header {% unless site.description or site.github.project_tagline %} class="without-description" {% endunless %}>
+      <h1 class="site-title">{{ site.title | default: site.github.repository_name }}</h1>
+      {% if site.description or site.github.project_tagline %}
+      <p class="site-subtitle">{{ site.description | default: site.github.project_tagline }}</p>
+      {% endif %}
+    </header>
 
 
-      <div class="content-area">
+    <div class="content-area">
 
-        {% include sidebar.html %}
+      {% include sidebar.html %}
 
-        <main class="main-content">
-          <h1 class="sr-only"> {{ page.title }} </h1>
-          
-          {% if page.profile != false and site.data.profile %}
-          {% assign p = page.profile | default: site.data.profile %}
+      <main class="main-content">
+        <h1 class="sr-only"> {{ page.title }} </h1>
 
-          <aside class="profile-panel">
-            {% if p.image %}
-              <img alt="{{ p.image.desc }}" src="{{ p.image.url | relative_url }}" class="profile-image">
-            {% endif %}
+        {% if page.profile != false %}
+        {% assign p = page.profile | default: site.data.profile %}
 
-            {% if p.title %}
-              <h3>{{ p.title }}</h3>
-            {% endif %}
-
-            {% if p.subtitle %}
-              <p class="profile-title">{{ p.subtitle }}</p>
-            {% endif %}
-
-            {% if p.blocks %}
-              {% for block in p.blocks %}
-                <div class="profile-section">
-                  <h4>{{ block.title }}</h4>
-                  {% for item in block.items %}
-                    <blockquote>
-                      <span class="broad">{{ item.name }}</span>
-                      {% for line in item.details %}
-                        <span class="details">{{ line | markdownify }}</span>
-                      {% endfor %}
-                    </blockquote>
-                  {% endfor %}
-                </div>
-              {% endfor %}
-            {% endif %}
-          </aside>
+        <aside class="profile-panel">
+          {% if p.image %}
+          <img alt="{{ p.image.desc }}" src="{{ p.image.url | relative_url }}" class="profile-image">
           {% endif %}
-          {{ content }}
-        </main>
 
-      </div>
+          {% if p.title %}
+          <h2>{{ p.title }}</h2>
+          {% endif %}
+
+          {% if p.subtitle %}
+          <p class="profile-title">{{ p.subtitle }}</p>
+          {% endif %}
+
+          {% if p.blocks %}
+          {% for block in p.blocks %}
+          <div class="profile-section">
+            <h3>{{ block.title }}</h3>
+            {% for item in block.items %}
+            <blockquote>
+              <span class="broad">{{ item.name }}</span>
+              {% for line in item.details %}
+              <span class="details">{{ line | markdownify }}</span>
+              {% endfor %}
+            </blockquote>
+            {% endfor %}
+          </div>
+          {% endfor %}
+          {% endif %}
+        </aside>
+        {% endif %}
+        {{ content }}
+      </main>
+
     </div>
-    <footer>
-      <p>Hosted on GitHub Pages &mdash; Original Theme by Me.</p>
-    </footer>
-  </body>
+  </div>
+  <footer>
+    <p>Hosted on GitHub Pages &mdash; Original WCAG 2.2 AA compliant theme by Me.</p>
+  </footer>
+</body>
+
 </html>
