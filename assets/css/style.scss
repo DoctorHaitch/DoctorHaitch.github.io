@@ -34,11 +34,9 @@ $density-compact-pad: 0.65rem;
   color-scheme: light dark;
   // Raw color channels (used with rgba())
   --color-info: 102, 126, 234;
-  --color-info-text: 70, 92, 200;
   --color-info-text: 45, 68, 180;
   --color-action: 175, 120, 50; // copper-amber
   --color-resolution: 0, 158, 115;
-  --color-resolution-text: 0, 110, 85;
   --color-resolution-text: 0, 80, 60;
   /* contrast-safe text variant for resolution color */
   --color-meta: 51, 34, 136;
@@ -72,11 +70,9 @@ $density-compact-pad: 0.65rem;
   --muted: var(--ink-soft);
   --muted-subtle: var(--ink-subtle);
 
-  --surface-bg-resolved: var(--paper-bg);
-
   // Site Headings
   --header-title-color: color-mix(in srgb, var(--c-meta) 55%, var(--ink-subtle));
-  --header-subtitle-color: color-mix(in srgb, var(--c-resolution) 50%, var(--ink));
+  --header-subtitle-color: color-mix(in srgb, var(--c-resolution) 90%, var(--ink));
 
 
   // Spacing
@@ -219,12 +215,14 @@ $density-compact-pad: 0.65rem;
 // =========================================
 
 html {
-  background:
+  background-color: var(--paper-bg);
+  /* background:
     radial-gradient(ellipse at 30% 0%, rgba(102, 126, 234, 0.07) 0%, transparent 60%),
     radial-gradient(ellipse at 80% 100%, rgba(51, 34, 136, 0.05) 0%, transparent 55%),
-    var(--paper-bg);
+    var(--paper-bg); */
   background-attachment: fixed;
   height: 100%;
+
 }
 
 body {
@@ -233,8 +231,7 @@ body {
   font-family: var(--font-sans);
   line-height: 1.65;
   color: var(--ink);
-  /* background-color: transparent; // add this — makes checkers trace up to html */
-  background-color: var(--paper-bg); 
+  background-color: transparent; // add this — should make checkers trace up to html
 }
 
 p,
@@ -261,9 +258,8 @@ h4 {
 }
 
 h3 {
-  /* color: var(--c-resolution-text); */
-  color: color-mix(in srgb, var(--c-resolution) 60%, var(--ink-subtle));
-  text-shadow: 0 0.4px 0 rgba(0,0,0,0.25);
+  color: color-mix(in srgb, var(--c-resolution) 75%, var(--ink-soft));
+  text-shadow: 0 0.6px 0 rgba(0,0,0,0.25);
   margin-top: 1em;
   margin-bottom: 0.4em;
 }
@@ -348,9 +344,9 @@ header {
   padding: 1.2rem var(--content-pad);
   /* border-bottom: 1px solid rgba(0, 0, 0, 0.08); */
   border-left: 4px solid var(--doc-accent);
-  background: rgba(var(--color-info), 0.12);
+  /* background: rgba(var(--color-info), 0.10); */
   background: linear-gradient(to bottom,
-      rgba(var(--color-info), 0.12),
+      rgba(var(--color-info), 0.13),
       rgba(var(--color-info), 0.10));
 
   border-radius: $radius-xl $radius-xl 0 0;
@@ -371,6 +367,7 @@ header {
     margin: 0;
     padding: 0;
     color: var(--header-subtitle-color);
+    text-shadow: 0 0.2px 0 rgba(0,0,0,0.25);
     font-variant: petite-caps;
     /* color: color-mix(in srgb, var(--c-meta) 85%, white); */
   }
@@ -423,7 +420,7 @@ header {
   padding-top: 0;
   padding-bottom: var(--content-pad);
   border-left: 4px solid var(--doc-accent);
-  background: rgba(var(--color-info), 0.10);
+  background: rgba(var(--color-info), 0.09);
   border-radius: 0 0 $radius-xl $radius-xl;
 
   ul {
@@ -577,11 +574,9 @@ h2,
 }
 
 a .post-title {
-  border-left: 1px solid var(--c-info);
   border-top-left-radius: 10px;
-  padding-left: 0.5rem;
-  padding-top: 0;
-  padding-bottom: 0;
+  color: var(--c-info);
+  color: color-mix(in srgb, var(--c-resolution) 93%, var(--ink-soft));
 }
 
 p.post-meta {
@@ -612,6 +607,17 @@ p.post-description {
   padding: 0.5rem 0 0.5rem 0.5rem;
   border-left: 1px solid var(--c-info);
   width: 90%;
+}
+
+.post-tags {
+  margin: 0;
+  padding: 0rem 0 0rem 0rem;
+  text-align: right;
+  border-left: 1px solid var(--c-info);
+  width: 90%;
+  color: var(--ink-subtle);
+  line-height: 10px;
+  font-size: 12px;
 }
 
 section>div.post-preview {
@@ -915,8 +921,9 @@ blockquote .details {
 .short-work-title {
   display: inline;
   margin-top: 0.15rem;
-  font-size: 0.9em;
-  font-style: normal;
+  font-size: 0.95em;
+  /* font-style: normal; */
+  font-style: italic;
 }
 
 .journal-name {
@@ -951,6 +958,7 @@ blockquote .details {
 
 // ---- Base card ----
 
+/* 
 .detail-card {
   margin: 0.7rem 0;
   padding: 0;
@@ -970,6 +978,37 @@ blockquote .details {
       inset 0 1px 0 rgba(255, 255, 255, 0.5);
   }
 }
+*/
+
+.detail-card {
+  margin: 0.7rem 0;
+  padding: 0;
+  background: rgba(var(--color-meta), 0.05);
+  border-radius: $radius-xl;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-left: 2px solid rgba(var(--color-meta), 0.25);
+
+  box-shadow:
+    0 10px 24px rgba(0, 0, 0, 0.08),   // main lift
+    0 2px 6px rgba(0, 0, 0, 0.06),     // contact shadow
+    inset 0 1px 0 rgba(255, 255, 255, 0.45);
+
+  transition:
+    transform $transition-fast,
+    box-shadow $transition-fast;
+
+  overflow: hidden;
+
+  &:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+      0 16px 32px rgba(0, 0, 0, 0.12),  // deeper lift
+      0 6px 14px rgba(0, 0, 0, 0.08),
+      inset 0 1px 0 rgba(255, 255, 255, 0.55);
+  }
+}
+
 
 // ---- Header ----
 
@@ -1002,7 +1041,7 @@ blockquote .details {
   margin: 0;
   width: 100%;
   box-sizing: border-box;
-  font-size: 0.9rem;
+  font-size: 0.75rem;
   color: color-mix(in srgb, var(--c-resolution) 80%, var(--ink));
   text-shadow: 0 0.2px 0 rgba(0,0,0,0.25);
   background: linear-gradient(to right,
@@ -1066,17 +1105,28 @@ blockquote .details {
 }
 
 .item-type {
-  font-size: 0.75em;
+  font-size: 9.5px;
   padding: 0.03em 0.4em;
   border-radius: 999px;
-  background: rgba(var(--color-action), 0.15);
-  border: 1px solid rgba(var(--color-meta), 0.12);
+  background: rgba(var(--color-action), 0.08);
+  border: 1px solid rgba(var(--color-action), 0.4);
   color: var(--muted);
+}
+
+.item-type a {
+  display: block;
+  border-radius: 999px;
+  transition: background 0.15s ease;
+  border: 1px transparent solid;
+}
+
+.item-type a:hover {
+  background: rgba(var(--color-meta), 0.12);
 }
 
 // Info-tinted pill for dates and temporal metadata
 .item-date {
-  font-size: 0.75em;
+  font-size: 9.5px;
   padding: 0.03em 0.4em;
   border-radius: 999px;
   background: rgba(var(--color-info), 0.06);
@@ -1084,16 +1134,12 @@ blockquote .details {
   color: var(--muted-subtle);
 }
 
-.item-meta .status {
+.status {
   font-size: 0.72em;
   color: var(--ink-soft);
 }
 
 // ---- Item title (with icon) ----
-
-.short-work-title {
-  font-style: italic;
-}
 
 .item-title {
   --icon: var(--icon-paper); // default icon
@@ -1218,7 +1264,7 @@ blockquote .details {
 }
 
 .course-level-label {
-  font-size: 0.75em;
+  font-size: 9px;
   margin-left: 0.4em;
   padding: 0.05em 0.35em;
   border-radius: 999px;
@@ -1252,6 +1298,11 @@ blockquote .details {
     background: var(--detail-header-bg-compact);
   }
 
+  .item-type {
+    font-size: 9px;
+    padding: 0.02em 0.35em;
+  }
+
   .detail-name {
     font-size: 0.95rem;
   }
@@ -1272,14 +1323,6 @@ blockquote .details {
       margin-top: 0.25rem;
       padding-top: 0.25rem;
     }
-  }
-
-  .item-type {
-    font-size: 0.75em;
-    padding: 0.02em 0.35em;
-    /* background: rgba(var(--color-meta), 0.04); */
-    border: 1px solid rgba(var(--color-meta), 0.10);
-    color: var(--muted);
   }
 
   // Only scale sizing — background and icon colors are owned by .item-icon-* variants
@@ -1323,6 +1366,10 @@ blockquote .details {
   summary > h4 {
     all: unset;
     display: inline;
+    font-weight: 500;
+    font-family: var(--font-serif);
+    text-shadow: 0.75px 0.75px 1px rgba(0,0,0,0.25);
+    font-size: 1.3rem;
   }
 
   summary {
@@ -1536,11 +1583,13 @@ details[open]>summary.collapsible-title::after {
 // ---- Structural dark adjustments ----
 @media (prefers-color-scheme: dark) {
   html {
-    background-color: var(--surface-bg-resolved); // ✅ critical
+    /* background-color: var(--surface-bg-resolved); // ✅ critical */
+    /* background-color: var(--paper-bg);  */
     background:
       radial-gradient(ellipse at 30% 0%, rgba(86, 180, 233, 0.06) 0%, transparent 60%),
       radial-gradient(ellipse at 80% 100%, rgba(108, 117, 125, 0.08) 0%, transparent 55%),
       var(--paper-bg);
+    height: 100%;
     background-attachment: fixed;
   }
 
@@ -1725,6 +1774,7 @@ details[open]>summary.collapsible-title::after {
     box-shadow:
       0 4px 16px rgba(0, 0, 0, 0.30),
       inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    text-shadow: 0 0.2px 0 rgba(0, 0, 0, 0.25);
   }
 
   .sidebar .nav-header {

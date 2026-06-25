@@ -17,6 +17,13 @@
           <span class="detail-status">
             {{ student.level }}
           </span>
+          {% if student.main_project %}
+          <div class="meta-right">
+            <span class="item-meta">
+              <span class="item-type">{{student.main_project}}</span>
+            </span>
+          </div>
+          {% endif %}
         </div>
 
         <div class="detail-subheader">
@@ -26,13 +33,6 @@
         <div class="detail-body">
           {% for project in student.projects %}
           <div class="detail-item">
-
-            <div class="item-meta">
-              <span class="item-type">{{ project.type }}</span>
-              {% if project.status %}
-              <span class="status">{{ project.status }}</span>
-              {% endif %}
-            </div>
 
             {% assign t = project.type | downcase %}
             {% assign title_class = "" %}
@@ -58,6 +58,9 @@
               <span class="{{ title_class }}">
                 {{ project.title }}
               </span>
+              {% if project.status %}
+                <span class="status">({{ project.status }})</span>
+              {% endif %}
             </div>
 
           </div>
@@ -87,6 +90,13 @@
             — {{ student.university }}
             {% endif %}
           </span>
+          {% if student.main_project %}
+          <div class="meta-right">
+            <span class="item-meta">
+              <span class="item-type">{{student.main_project}}</span>
+            </span>
+          </div>
+          {% endif %}
         </div>
 
         {% if student.current-status %}
@@ -119,9 +129,6 @@
           {% endif %}
 
           <div class="detail-item">
-            <div class="item-meta">
-              <span class="item-type">{{ project.type }}</span>
-            </div>
             <div class="item-title {{ icon_class }}">
               <span class="sr-only">{{ sr_word }}:</span>
 

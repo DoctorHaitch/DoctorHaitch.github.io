@@ -26,6 +26,13 @@ profile: false
     </p>
   {% endif %}
 
+  <p class="post-tags">
+    <strong>Tags:</strong>
+    {% for tag in post.tags %}
+      <span class="item-type">{{ tag }}</span>
+      <!-- <a class="item-type" href="/tag/{{ tag | slugify }}">{{ tag }}</a> -->
+    {% endfor %}
+  </p>
 
   <p class="post-meta">
     Posted by
