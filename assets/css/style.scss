@@ -55,14 +55,8 @@ $density-compact-pad: 0.65rem;
   --doc-accent: var(--c-info);
   --paper-bg: #dde2ee;
   --card-bg: #f0f2f8;
+
   --ink: #2c3040; // primary text
-  --ink-soft: #4a5166; // secondary
-  --ink-subtle: #6b7288; // tertiary
-
-  --ink-soft:   #3f455a;  // ← noticeable bump darker
-  --ink-subtle: #5a6076;  // ← tightened but still tertiary
-
-
   --ink-soft:   #3a4156;  // slightly darker than before
   --ink-subtle: #4a5166;  // ✅ now passes AA
 
@@ -579,7 +573,14 @@ a .post-title {
   color: color-mix(in srgb, var(--c-resolution) 93%, var(--ink-soft));
 }
 
-p.post-meta {
+.post-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.post-meta {
   border-left: 1px solid var(--c-info);
   border-bottom-left-radius: 10px;
   padding-left: 0.5em;
@@ -589,6 +590,23 @@ p.post-meta {
       rgba(var(--color-info), 0.08) 65%,
       rgba(var(--color-info), 0.03) 85%,
       rgba(var(--color-info), 0) 100%);
+  margin: 0;
+  padding-top: 0;
+}
+
+.post-tags {
+  margin: 0;
+  padding: 0rem 7.5% 0rem 0rem;
+  text-align: right;
+  width: auto;
+  color: var(--ink-subtle);
+  line-height: 10px;
+  font-size: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.3rem;
+  max-width: 50%; /* ✅ prevents it from taking over */
 }
 
 h3.post-subtitle {
@@ -607,17 +625,6 @@ p.post-description {
   padding: 0.5rem 0 0.5rem 0.5rem;
   border-left: 1px solid var(--c-info);
   width: 90%;
-}
-
-.post-tags {
-  margin: 0;
-  padding: 0rem 0 0rem 0rem;
-  text-align: right;
-  border-left: 1px solid var(--c-info);
-  width: 90%;
-  color: var(--ink-subtle);
-  line-height: 10px;
-  font-size: 12px;
 }
 
 section>div.post-preview {
