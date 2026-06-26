@@ -3,6 +3,7 @@ present:
     university: Minnesota State University, Mankato
     level: Master's Student
     expected: Summer 2026
+    main_project: "Alternate Plan Paper"
     projects:
       - type: Alternate Plan Paper
         title: Tiling Systems for High Dimensional Data
@@ -14,6 +15,7 @@ past:
     current-status: Graduate Student (EE) at Minnesota State University, Mankato
     level: Undergraduate Student
     graduated: Spring 2026
+    main_project: "Capstone Project"
     projects:
       - type: Capstone Project
         title: "Graph-Theoretic and Linear Optimization Approaches to Boolean Logic Minimization"
@@ -24,6 +26,7 @@ past:
     current-status: Ph.D. Student at University of Kansas
     level: Master's Student
     graduated: Summer 2025
+    main_project: "Master's Thesis"
     projects:
       - type: Master's Thesis
         title: "Spectral Theory and the Gelfand Transform"
@@ -34,6 +37,7 @@ past:
     current-status: Predictive Analytics Analyst at Salt River Project
     level: Master's Student
     graduated: Spring 2024
+    main_project: "Alternate Plan Paper"
     projects:
       - type: Alternate Plan Paper
         title: "Topics in Frame Theory: Frames of Translates"
@@ -47,6 +51,7 @@ past:
     current-status: Process Engineer at Air Products
     level: Undergraduate Student
     graduated: Spring 2021
+    main_project: "Summer GEMs REU"
     projects:
       - type: Research Poster Presentation
         title: "TODO: Add title here."
@@ -54,6 +59,7 @@ past:
   - name: Nathaniel Kim
     university: University of Delaware
     current-status: N/A
+    main_project: "Summer GEMs REU"
     level: Undergraduate Student
     graduated: N/A
     projects:
@@ -101,3 +107,9 @@ letters:
     letter-recipients:
       - "DoD SMART Scholarship-for-Service Program" 
   
+  - name: Caitlin Markus
+    supporting: "Undergraduate Transfer"
+    semester: "Fall 2016"
+    date: "2016-02-12"
+    letter-recipients:
+      - Common Application

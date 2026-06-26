@@ -25,17 +25,24 @@ profile: false
       {{ post.excerpt }}
     </p>
   {% endif %}
-
-
-  <p class="post-meta">
-    Posted by
-    {% if post.author %}
-      {{ post.author }}
-    {% else %}
-      {{ site.title }}
-    {% endif %}
-    on {{ post.date | date: "%B %-d, %Y" }}
-  </p>
+  <div class="post-info">
+    <p class="post-meta">
+      Posted by
+      {% if post.author %}
+        {{ post.author }}
+      {% else %}
+        {{ site.title }}
+      {% endif %}
+      on {{ post.date | date: "%B %-d, %Y" }}
+    </p>
+    <p class="post-tags">
+      <strong>Tags:</strong>
+      {% for tag in post.tags %}
+        <span class="item-type">{{ tag }}</span>
+        <!-- <a class="item-type" href="/tag/{{ tag | slugify }}">{{ tag }}</a> -->
+      {% endfor %}
+    </p>
+  </div>
 </div>
 
 <hr>
