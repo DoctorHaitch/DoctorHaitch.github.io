@@ -163,8 +163,8 @@ header, footer {
 
 .content-area {
   max-width: 750px;
-  margin: 0 auto;
-  padding: .25rem 2rem;
+  margin:  0 auto;
+  padding: .25rem 2.75rem;
 
   background: var(--paper-bg);
   border-radius: 12px;
@@ -785,7 +785,7 @@ mark>span.glossary:hover {
   /* background-color: color-mix(in srgb, rgb(var(--popup-color)) 25%, white); */
   background-color: color-mix(in srgb,
       rgb(var(--popup-color)) 25%,
-      var(--background-primary));
+      var(--paper-bg));
 
 
   /* card styling */
