@@ -1,3 +1,16 @@
+- title: "Doenet Community Workshop Reunion/Follow-up"
+  start_date: "2026-06-23"
+  type: workshop
+  location: Remote (Virtual)
+
+- title: "Doenet Community Workshop 2026"
+  start_date: "2026-05-31"
+  end_date: "2026-06-05"
+  type: workshop
+  city: Minneapolis
+  state: MN
+  location: Institute for Mathematics and its Applications (IMA)
+
 - title: MathHappens Retreat
   start_date: "2025-05-16"
   end_date: "2025-05-18"
