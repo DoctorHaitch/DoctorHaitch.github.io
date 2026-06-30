@@ -1,0 +1,8 @@
+reading_groups:
+  - topic: "Foundations of Differential Geometry"
+    semester: "Fall 2018"
+    books: 
+      - title: "Introduction to Smooth Manifolds"
+        author: "John M. Lee"
+    outcome: "Covered the first three chapters of the introductory book."
+
