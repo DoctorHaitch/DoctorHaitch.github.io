@@ -2,10 +2,10 @@
 <html lang="en-US">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Class 10: (7.1) Area Between Curves</title>
-    <link rel="stylesheet" href="/assets/css/Calc2.css?v=3">
-  <link rel="modulepreload"
+    <link rel="stylesheet" href="/assets/css/Calc2.css">
+    <link rel="modulepreload"
       href="https://cdn.jsdelivr.net/npm/@doenet/standalone@latest/doenet-standalone.js">
 </head>
 
@@ -53,6 +53,7 @@
   <iframe id="doenet-frame-1" srcdoc="<!DOCTYPE html>
   <html><head>
   <meta charset=&quot;utf-8&quot;>
+  <link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/@doenet/standalone@latest/style.css&quot;>
   <style>
     .dots::after {
       content: &quot;&quot;;
@@ -89,12 +90,10 @@
     min-height: 9em;
   }
 
-  <!--
   @import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&amp;family=Atkinson+Hyperlegible+Mono&amp;family=STIX+Two+Text&amp;display=swap');
-  -->
 
   html, body {
-    font-family: 'Atkinson Hyperlegible', Arial, sans-serif;
+    font-family: 'Atkinson Hyperlegible', Arial, sans-serif !important; 
     margin: 0 !important;
     padding: 0 !important;
     height: auto !important;
@@ -193,9 +192,6 @@
 
   <script type=&quot;module&quot;>
   const CDN=&quot;https://&quot;+&quot;cdn.jsdelivr.net/npm/@doenet/standalone@latest/&quot;;
-  const lnk=document.createElement(&quot;link&quot;);
-  lnk.rel=&quot;stylesheet&quot;;lnk.href=CDN+&quot;style.css&quot;;
-  document.head.appendChild(lnk);
   import(CDN+&quot;doenet-standalone.js&quot;).then(({renderDoenetViewerToContainer})=>{
     function decode(s){
       const b=atob(s),u=new Uint8Array(b.length);
@@ -278,8 +274,8 @@
   <summary class="callout-title"><h2>Exercise: Back to Riemann Sums</h2></summary>
   <div class="callout-content">
   <ol type="1">
-  <li>Draw a <span class="glossary-anchor"><mark><span class="glossary"
-  data-type="definition">Riemann sum</span></mark><span
+  <li>Draw a <span
+  class="glossary-anchor"><mark><button class="glossary" data-type="definition">Riemann sum</button></mark><span
   class="glossary-popup" data-type="definition"><span
   class="glossary-popup-title">Riemann sum</span><span
   class="glossary-popup-body">A <mark>Riemann sum</mark> is a method for
@@ -309,6 +305,7 @@
   <iframe id="doenet-frame-2" srcdoc="<!DOCTYPE html>
   <html><head>
   <meta charset=&quot;utf-8&quot;>
+  <link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/@doenet/standalone@latest/style.css&quot;>
   <style>
     .dots::after {
       content: &quot;&quot;;
@@ -345,12 +342,10 @@
     min-height: 9em;
   }
 
-  <!--
   @import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&amp;family=Atkinson+Hyperlegible+Mono&amp;family=STIX+Two+Text&amp;display=swap');
-  -->
 
   html, body {
-    font-family: 'Atkinson Hyperlegible', Arial, sans-serif;
+    font-family: 'Atkinson Hyperlegible', Arial, sans-serif !important; 
     margin: 0 !important;
     padding: 0 !important;
     height: auto !important;
@@ -449,9 +444,6 @@
 
   <script type=&quot;module&quot;>
   const CDN=&quot;https://&quot;+&quot;cdn.jsdelivr.net/npm/@doenet/standalone@latest/&quot;;
-  const lnk=document.createElement(&quot;link&quot;);
-  lnk.rel=&quot;stylesheet&quot;;lnk.href=CDN+&quot;style.css&quot;;
-  document.head.appendChild(lnk);
   import(CDN+&quot;doenet-standalone.js&quot;).then(({renderDoenetViewerToContainer})=>{
     function decode(s){
       const b=atob(s),u=new Uint8Array(b.length);
@@ -612,6 +604,7 @@
   <iframe id="doenet-frame-3" srcdoc="<!DOCTYPE html>
   <html><head>
   <meta charset=&quot;utf-8&quot;>
+  <link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/@doenet/standalone@latest/style.css&quot;>
   <style>
     .dots::after {
       content: &quot;&quot;;
@@ -648,12 +641,10 @@
     min-height: 9em;
   }
 
-  <!--
   @import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&amp;family=Atkinson+Hyperlegible+Mono&amp;family=STIX+Two+Text&amp;display=swap');
-  -->
 
   html, body {
-    font-family: 'Atkinson Hyperlegible', Arial, sans-serif;
+    font-family: 'Atkinson Hyperlegible', Arial, sans-serif !important; 
     margin: 0 !important;
     padding: 0 !important;
     height: auto !important;
@@ -752,9 +743,6 @@
 
   <script type=&quot;module&quot;>
   const CDN=&quot;https://&quot;+&quot;cdn.jsdelivr.net/npm/@doenet/standalone@latest/&quot;;
-  const lnk=document.createElement(&quot;link&quot;);
-  lnk.rel=&quot;stylesheet&quot;;lnk.href=CDN+&quot;style.css&quot;;
-  document.head.appendChild(lnk);
   import(CDN+&quot;doenet-standalone.js&quot;).then(({renderDoenetViewerToContainer})=>{
     function decode(s){
       const b=atob(s),u=new Uint8Array(b.length);
@@ -882,6 +870,7 @@
   <iframe id="doenet-frame-4" srcdoc="<!DOCTYPE html>
   <html><head>
   <meta charset=&quot;utf-8&quot;>
+  <link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/@doenet/standalone@latest/style.css&quot;>
   <style>
     .dots::after {
       content: &quot;&quot;;
@@ -918,12 +907,10 @@
     min-height: 9em;
   }
 
-  <!--
   @import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&amp;family=Atkinson+Hyperlegible+Mono&amp;family=STIX+Two+Text&amp;display=swap');
-  -->
 
   html, body {
-    font-family: 'Atkinson Hyperlegible', Arial, sans-serif;
+    font-family: 'Atkinson Hyperlegible', Arial, sans-serif !important; 
     margin: 0 !important;
     padding: 0 !important;
     height: auto !important;
@@ -1022,9 +1009,6 @@
 
   <script type=&quot;module&quot;>
   const CDN=&quot;https://&quot;+&quot;cdn.jsdelivr.net/npm/@doenet/standalone@latest/&quot;;
-  const lnk=document.createElement(&quot;link&quot;);
-  lnk.rel=&quot;stylesheet&quot;;lnk.href=CDN+&quot;style.css&quot;;
-  document.head.appendChild(lnk);
   import(CDN+&quot;doenet-standalone.js&quot;).then(({renderDoenetViewerToContainer})=>{
     function decode(s){
       const b=atob(s),u=new Uint8Array(b.length);
@@ -1129,6 +1113,7 @@
   <iframe id="doenet-frame-5" srcdoc="<!DOCTYPE html>
   <html><head>
   <meta charset=&quot;utf-8&quot;>
+  <link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/@doenet/standalone@latest/style.css&quot;>
   <style>
     .dots::after {
       content: &quot;&quot;;
@@ -1165,12 +1150,10 @@
     min-height: 9em;
   }
 
-  <!--
   @import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&amp;family=Atkinson+Hyperlegible+Mono&amp;family=STIX+Two+Text&amp;display=swap');
-  -->
 
   html, body {
-    font-family: 'Atkinson Hyperlegible', Arial, sans-serif;
+    font-family: 'Atkinson Hyperlegible', Arial, sans-serif !important; 
     margin: 0 !important;
     padding: 0 !important;
     height: auto !important;
@@ -1269,9 +1252,6 @@
 
   <script type=&quot;module&quot;>
   const CDN=&quot;https://&quot;+&quot;cdn.jsdelivr.net/npm/@doenet/standalone@latest/&quot;;
-  const lnk=document.createElement(&quot;link&quot;);
-  lnk.rel=&quot;stylesheet&quot;;lnk.href=CDN+&quot;style.css&quot;;
-  document.head.appendChild(lnk);
   import(CDN+&quot;doenet-standalone.js&quot;).then(({renderDoenetViewerToContainer})=>{
     function decode(s){
       const b=atob(s),u=new Uint8Array(b.length);
@@ -1353,6 +1333,7 @@
   <iframe id="doenet-frame-6" srcdoc="<!DOCTYPE html>
   <html><head>
   <meta charset=&quot;utf-8&quot;>
+  <link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/@doenet/standalone@latest/style.css&quot;>
   <style>
     .dots::after {
       content: &quot;&quot;;
@@ -1389,12 +1370,10 @@
     min-height: 9em;
   }
 
-  <!--
   @import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&amp;family=Atkinson+Hyperlegible+Mono&amp;family=STIX+Two+Text&amp;display=swap');
-  -->
 
   html, body {
-    font-family: 'Atkinson Hyperlegible', Arial, sans-serif;
+    font-family: 'Atkinson Hyperlegible', Arial, sans-serif !important; 
     margin: 0 !important;
     padding: 0 !important;
     height: auto !important;
@@ -1493,9 +1472,6 @@
 
   <script type=&quot;module&quot;>
   const CDN=&quot;https://&quot;+&quot;cdn.jsdelivr.net/npm/@doenet/standalone@latest/&quot;;
-  const lnk=document.createElement(&quot;link&quot;);
-  lnk.rel=&quot;stylesheet&quot;;lnk.href=CDN+&quot;style.css&quot;;
-  document.head.appendChild(lnk);
   import(CDN+&quot;doenet-standalone.js&quot;).then(({renderDoenetViewerToContainer})=>{
     function decode(s){
       const b=atob(s),u=new Uint8Array(b.length);
@@ -1606,6 +1582,7 @@
   <iframe id="doenet-frame-7" srcdoc="<!DOCTYPE html>
   <html><head>
   <meta charset=&quot;utf-8&quot;>
+  <link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/@doenet/standalone@latest/style.css&quot;>
   <style>
     .dots::after {
       content: &quot;&quot;;
@@ -1642,12 +1619,10 @@
     min-height: 9em;
   }
 
-  <!--
   @import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&amp;family=Atkinson+Hyperlegible+Mono&amp;family=STIX+Two+Text&amp;display=swap');
-  -->
 
   html, body {
-    font-family: 'Atkinson Hyperlegible', Arial, sans-serif;
+    font-family: 'Atkinson Hyperlegible', Arial, sans-serif !important; 
     margin: 0 !important;
     padding: 0 !important;
     height: auto !important;
@@ -1746,9 +1721,6 @@
 
   <script type=&quot;module&quot;>
   const CDN=&quot;https://&quot;+&quot;cdn.jsdelivr.net/npm/@doenet/standalone@latest/&quot;;
-  const lnk=document.createElement(&quot;link&quot;);
-  lnk.rel=&quot;stylesheet&quot;;lnk.href=CDN+&quot;style.css&quot;;
-  document.head.appendChild(lnk);
   import(CDN+&quot;doenet-standalone.js&quot;).then(({renderDoenetViewerToContainer})=>{
     function decode(s){
       const b=atob(s),u=new Uint8Array(b.length);
@@ -1849,6 +1821,7 @@
   <iframe id="doenet-frame-8" srcdoc="<!DOCTYPE html>
   <html><head>
   <meta charset=&quot;utf-8&quot;>
+  <link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/@doenet/standalone@latest/style.css&quot;>
   <style>
     .dots::after {
       content: &quot;&quot;;
@@ -1885,12 +1858,10 @@
     min-height: 9em;
   }
 
-  <!--
   @import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&amp;family=Atkinson+Hyperlegible+Mono&amp;family=STIX+Two+Text&amp;display=swap');
-  -->
 
   html, body {
-    font-family: 'Atkinson Hyperlegible', Arial, sans-serif;
+    font-family: 'Atkinson Hyperlegible', Arial, sans-serif !important; 
     margin: 0 !important;
     padding: 0 !important;
     height: auto !important;
@@ -1989,9 +1960,6 @@
 
   <script type=&quot;module&quot;>
   const CDN=&quot;https://&quot;+&quot;cdn.jsdelivr.net/npm/@doenet/standalone@latest/&quot;;
-  const lnk=document.createElement(&quot;link&quot;);
-  lnk.rel=&quot;stylesheet&quot;;lnk.href=CDN+&quot;style.css&quot;;
-  document.head.appendChild(lnk);
   import(CDN+&quot;doenet-standalone.js&quot;).then(({renderDoenetViewerToContainer})=>{
     function decode(s){
       const b=atob(s),u=new Uint8Array(b.length);
@@ -2078,7 +2046,7 @@
     <div class="footer-line">
       <div>Written in <a href="https://obsidian.md/">Obsidian Markdown Editor</a></div>
       <div>HTML Generated by <a href="https://pandoc.org/">Pandoc</a></div>
-      <div>Last Updated: June 29, 2026</div><br/>
+      <div>Last Updated: June 30, 2026</div><br/>
       <div>Visit my <a href="https://github.com/DoctorHaitch/LaTeX_Accessibility">GitHub</a> for more information on creating accessible mathematics.</div>
     </div>
   </footer>
@@ -2099,7 +2067,7 @@ window.addEventListener("message", (e) => {
   if (!frame) return;
 
   // const newHeight = Math.ceil(doenetHeight) + 6;
-  const newHeight = Math.ceil(doenetHeight)+2;
+  const newHeight = Math.ceil(doenetHeight)+10;
 
   const lastHeight = iframeHeights.get(frameId) || 0;
 
