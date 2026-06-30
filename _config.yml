@@ -1,6 +1,9 @@
 title: "Kris Hollingsworth, PhD"
 description: "Accessibility doesn't need to look boring."
 
+url: "http://192.168.1.159:4000"
+baseurl: ""
+
 github:
   is_project_page: false
 
@@ -11,7 +14,6 @@ plugins:
 
 paginate: 5          # posts per page (change as you like)
 paginate_path: "/blog/page:num/"
-
 
 defaults:
   - scope:
