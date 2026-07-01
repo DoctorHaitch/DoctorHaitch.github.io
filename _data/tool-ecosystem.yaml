@@ -1,0 +1,159 @@
+# ##############
+# Schema Details
+# ##############
+# Categories: Authoring, Format Conversion, Activity Creation, Hosting/Deployment, Student Data Collection
+# Within each category, the following fields are used:
+# title: The name of the tool or software.
+# status: The current development or release status of the tool (e.g., Stable, In Development, Beta).
+# subtitle: A brief description or tagline for the tool.
+# description: A more detailed explanation of the tool's purpose, features, and use cases.
+#       Is markdownified.
+# subblocks: A list of subcategories or specific aspects of the tool, each containing:
+#   block_title: The title of the subcategory or aspect.
+#   details: A list of specific details, features, or components related to the subcategory
+#       is NOT markdownified, use html tags.
+# ##############
+
+last_updated: 2026-07-01
+
+authoring:
+  - title: "Markdown" 
+    status: "Stable"
+    subtitle: "A lightweight markup language for creating formatted text using a plain-text editor."  # (Was role)
+    description: |
+      Markdown is a lightweight markup language designed to make writing structured, readable documents in plain text both simple and portable. For content authors—especially mathematicians building accessible materials—it offers a low-friction way to write headings, lists, emphasis, links, and basic structure without needing to work directly in HTML. The resulting text can be converted cleanly into a wide range of formats, making it well-suited for lecture notes, course websites, and computational notebooks where clarity and accessibility matter.
+
+      Originally created by John Gruber in 2004 (with contributions from Aaron Swartz), Markdown was motivated by the idea that writers should be able to focus on content rather than formatting syntax. It has since become a de facto standard for technical writing and documentation, with widespread use in platforms like GitHub, Jupyter notebooks, static site generators such as Jekyll, and academic workflows that rely on reproducible, version-controlled materials.
+
+      In mathematical and accessibility-focused contexts, Markdown is especially useful because it integrates naturally with tools like LaTeX math rendering, screen-reader–friendly HTML output, and modern publishing pipelines. It serves as a bridge between informal drafting and structured, accessible presentation—making it a practical foundation for building inclusive digital mathematics content.
+    subblocks:
+      - block_title: "Tutorials and Resources"
+        details:
+          - '<a href="https://www.markdowntutorial.com" target="_blank">MarkdownTutorial.com</a> is an interactive tutorial that guides users through the basics of Markdown syntax, including headings, lists, links, and code blocks.'
+      - block_title: "Authoring Software"
+        details:
+          - '<a href="https://obsidian.md" target="_blank">Obsidian</a>: A powerful knowledge management and note-taking application that uses Markdown as its primary format. It allows users to create interconnected notes, visualize relationships between ideas, and manage large collections of Markdown documents efficiently.'
+          - '<a href="https://quarto.org" target="_blank">Quarto</a>: An open source technical publishing system for creating beautiful articles, websites, blogs, books, slides, and more. Supports Python, R, Julia, and JavaScript.'
+
+  - title: "PreTeXt"
+    status: "Stable"
+    subtitle: "A markup language for authoring accessible mathematical content."
+    description: |
+      PreTeXt is a markup language designed to facilitate the creation of high-quality, accessible mathematical content. It allows authors to write structured documents that can be easily converted into multiple formats, including HTML, PDF, and ePub, while ensuring that the content remains accessible to all users, including those using assistive technologies.
+
+      PreTeXt emphasizes semantic markup, which means that mathematical expressions and structures are represented in a way that conveys their meaning rather than just their appearance. This approach enhances accessibility and usability, making it easier for screen readers and other assistive tools to interpret the content correctly.
+
+      The PreTeXt ecosystem includes tools for authoring, validating, and publishing documents. Authors can focus on the content itself without worrying about the complexities of formatting or accessibility compliance. The resulting documents are not only visually appealing but also adhere to best practices in accessibility and usability.
+
+      Overall, PreTeXt provides a powerful framework for creating educational materials in mathematics and related fields, supporting both authors and learners in achieving a more inclusive learning experience.
+    subblocks:
+      - block_title: "Tutorials and Resources"
+        details:
+          - '<a href="https://pretextbook.org" target="_blank">PreTeXt Authoring Tools</a>: A suite of tools for creating and managing PreTeXt documents, including editors, validators, and converters.'
+      - block_title: "Deployment Options"
+        details:
+          - '<a href="https://pretextbook.org/doc/guide/html/tutorial-install.html" target="_blank">Local PreTeXt Deployment (ptx)</a>: Installation and setup instructions for running PreTeXt on a local machine.'
+          - '<a href="https://github.com/pretextbook/pretext-codespace" target="_blank">PreTeXt GitHub Codespace</a>: A cloud-based environment for authoring and compiling PreTeXt documents without the need for local installation.'
+          - '<a href="https://pretext.plus/" target="_blank">PreTeXt Plus</a>: A service that supports the authoring and sharing of PreTeXt documents using only a web browser. Supports graded LMS content through SCORM integration.'
+  - title: "PreFigure"
+    status: "Stable"
+    subtitle: "A markup language for authoring accessible mathematical content."
+    description: |
+      PreFigure is a markup language designed to facilitate the creation of high-quality, accessible mathematical diagrams.
+
+      It describes itself as "PreFigure is to figures what PreTeXt is to text," emphasizing its focus on creating structured, semantically meaningful figures that can be easily integrated into educational or research materials. PreFigure allows authors to define mathematical diagrams in a way that is both human-readable and machine-interpretable, ensuring that the resulting figures are accessible to all users, including those using assistive technologies.
+    subblocks:
+      - block_title: "Tutorials and Resources"
+        details:
+          - '<a href="https://prefigure.org" target="_blank">PreFigure Authoring Tools</a>: A suite of tools for creating and managing PreFigure documents, including editors, validators, and converters.'
+          - '<a href="https://github.com/davidaustinm/prefigure" target="_blank">PreFigure GitHub Repository</a>: The official repository for PreFigure, containing source code, documentation, and examples.'
+  - title: "LaTeX"
+    status: "Stable"
+    subtitle: "A typesetting system used for creating high-quality documents, particularly in academia and scientific publishing."
+    description: |
+      The industry standard for mathematical typesetting for many years.
+    subblocks:
+      - block_title: "Tutorials and Resources"
+        details:
+          - '<a href="https://www.latex-project.org/help/documentation/" target="_blank">LaTeX Documentation</a>: Official documentation and guides for using LaTeX, including tutorials, reference manuals, and best practices.'
+          - '<a href="https://www.overleaf.com/learn" target="_blank">Overleaf Learn</a>: A collection of tutorials and resources for learning LaTeX, including templates, examples, and tips for effective document preparation.'
+          - '<a href="https://typst.app/" target="_blank">Typst</a>: A modern typesetting system that aims to provide a more user-friendly and intuitive experience compared to traditional LaTeX, while still supporting high-quality mathematical typesetting.'
+  - title: "HTML5"
+    status: "Stable"
+    subtitle: "The basic building block of the web, HTML5 is a markup language used for structuring and presenting content on the World Wide Web."
+    description: |
+      HTML5 is a markup language used for structuring and presenting content on the World Wide Web.
+
+      Many of the authoring options generate structured, accessible HTML5 content.
+
+format_conversion:
+  - title: '<a href="https://pandoc.org/" target="_blank">Pandoc</a>'
+    status: "Stable"
+    subblocks:
+      - block_title: "Notes"
+        details:
+          - "For Markdown->HTML, LaTeX, or other formats."
+  - title: '<a href="https://www.w3.org/Style/XSL/" target="_blank">XSL</a>'
+    status: "Stable"
+    subblocks:
+      - block_title: "Notes"
+        details:
+          - "For XML->XML, html, or plaintext."
+          - "Used by PreTeXt (with Python and other tools)."
+  - title: '<a href="https://pretextbook.org/" target="_blank">PreTeXt</a>'
+    status: "Stable"
+    subblocks:
+      - block_title: "Notes"
+        details:
+          - "For PreTeXt->HTML, LaTeX, or other formats."
+          - "PreTeXt.plus supports Markdown and LaTeX input to convert to pretext."
+  - title: '<a href="https://unifiedjs.com/" target="_blank">Unified.js</a>'
+    status: "Stable"
+
+activity_creation:
+  - title: '<a href="https://doenet.org/" target="_blank">DoenetML</a>'
+    status: "In Development (Beta)"
+    subtitle: "A markup language for creating interactive, accessible educational content."
+  - title: '<a href="https://openwebwork.org/" target="_blank">WebWorK</a>'
+    status: "Stable"
+    subtitle: "WeBWorK is an open-source online homework system for math and science courses."
+  - title: '<a href="https://www.myopenmath.com/" target="_blank">MyOpenMath</a>'
+    status: "Stable"
+  - title: '<a href="https://www.numbas.org.uk/" target="_blank">Numbas</a>'
+    status: "Stable"
+  - title: '<a href="https://stack-assessment.org/" target="_blank">STACK</a>'
+    status: "Stable"
+
+hosting_deployment:
+  - title: '<a href="https://runestone.academy/" target="_blank">Runestone Academy</a>'
+    status: "Stable"
+  - title: '<a href="https://docs.github.com/en/pages" target="_blank">GitHub Pages</a>'
+    status: "Stable"
+  - title: '<a href="https://pretext.plus/" target="_blank">PreTeXt Plus</a>'
+    status: "Stable"
+  - title: '<a href="https://qubeshub.org/" target="_blank">QUBES Hub</a>'
+    status: "Stable"
+  - title: "Your School's Learning Management System (LMS)"
+    subblocks:
+      - block_title: "Notes"
+        details:
+          - "Can embed HTML5 content, including DoenetML, PreTeXt, and other formats."
+          - "Graded content can be delivered through SCORM, LTI integration, or custom API's provided by your LMS."
+
+student_data_collection:
+  - title: '<a href="https://runestone.academy/" target="_blank">Runestone Academy</a>'
+    status: "Stable"
+  - title: '<a href="https://doenet.org/" target="_blank">Doenet.org</a>'
+    status: "In Development"
+  - title: '<a href="https://scorm.com/" target="_blank">SCORM</a>'
+    status: "Stable"
+    description: |
+      SCORM (Sharable Content Object Reference Model) is a set of technical standards for e-learning software products. It defines how online learning content and Learning Management Systems (LMS) communicate with each other, enabling the tracking of learner progress, completion status, and assessment results. SCORM-compliant content can be easily shared and reused across different LMS platforms, making it a widely adopted standard in the e-learning industry.
+  - title: '<a href="https://www.imsglobal.org/lti/" target="_blank">LTI</a>'
+    status: "Stable"
+    description: |
+      LTI (Learning Tools Interoperability) is a standard developed by IMS Global Learning Consortium that allows seamless integration of external learning tools and applications into Learning Management Systems (LMS). It enables educators to connect various educational resources, such as interactive content, assessments, and simulations, directly within their LMS environment. LTI facilitates single sign-on (SSO) for users, ensuring a smooth user experience while maintaining data security and privacy.
+  - title: '<a href="https://cssplice.org/" target="_blank">CSSplice</a>'
+    status: "Stable"
+    description: |
+      CSSplice (Standards, Protocols, and Learning Infrastructure for Computing Education) is a web-based platform that allows educators to create and manage interactive, accessible educational content. It provides tools for authoring, deploying, and tracking student engagement with learning materials. CSSplice supports various content formats, including HTML5, and integrates with Learning Management Systems (LMS) through standards like SCORM and LTI.

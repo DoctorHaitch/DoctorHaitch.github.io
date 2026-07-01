@@ -1,0 +1,76 @@
+<nav class="toc" aria-labelledby="toc-heading">
+  <h3 id="toc-heading" class="toc-title">Table of Contents</h3>
+
+  <ul>
+    <li>
+      <a href="#authoring-languages">Authoring Languages</a>
+      <ul>
+        {% for language in site.data.tool-ecosystem.authoring %}
+        <li>
+          <a href="#{{ language.title | slugify }}">
+            {{ language.title }}
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </li>
+
+    <li>
+      <a href="#format-conversion-tools">Format Conversion Tools</a>
+      <ul>
+        {% for tool in site.data.tool-ecosystem.format_conversion %}
+        <li>
+          <a href="#{{ tool.title | slugify }}">
+            {{ tool.title }}
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </li>
+
+    <li>
+      <a href="#interactive-activities-or-exercises">
+        Interactive Activities and Exercises
+      </a>
+      <ul>
+        {% for creator in site.data.tool-ecosystem.activity_creation %}
+        <li>
+          <a href="#{{ creator.title | slugify }}">
+            {{ creator.title }}
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </li>
+
+    <li>
+      <a href="#hosting-and-deployment-tools">
+        Hosting and Deployment Tools
+      </a>
+      <ul>
+        {% for tool in site.data.tool-ecosystem.hosting_deployment %}
+        <li>
+          <a href="#{{ tool.title | slugify }}">
+            {{ tool.title }}
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </li>
+
+    <li>
+      <a href="#student-data-collection">
+        Student Data Collection
+      </a>
+      <ul>
+        {% for tool in site.data.tool-ecosystem.student_data_collection %}
+        <li>
+          <a href="#{{ tool.title | slugify }}">
+            {{ tool.title }}
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </li>
+  </ul>
+</nav>

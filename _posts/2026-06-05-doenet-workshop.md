@@ -3,6 +3,7 @@ author: Kris Hollingsworth
 title: "Doenet Workshop 2026 Show and Tell"
 subtitle: false
 date: 2026-06-05
+pinned: false
 description: "Demonstration of tools from the Doenet 2026 Community Workshop."
 excerpt: "Overview of my Show and Tell from the end of the Doenet 2026 Community Workshop and some general notes about the workshop. Includes a quick demonstration of accessibility and Doenet tools, including a Python CVD Simulator, the Doenet Spreadsheet component as a work-around for advanced mathematical formulas, and a scaffolded proof for students to complete which reformats and constructs itself as students provide each step. They can transcribe it to have a neat, final version in their notes."
 tags: ["doenet", "workshop", "notes-to-self"]
