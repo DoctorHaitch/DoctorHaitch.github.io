@@ -1,0 +1,56 @@
+{% assign title = include.title %}
+{% assign block_open = include.open | default: false %}
+
+<details class="collapsible-section" {% if block_open %}open{% endif %}>
+  {% if title %}
+  <summary class="collapsible-title" id="{{ title | slugify }}">
+    <h3>{{ title }}</h3>
+  </summary>
+  {% endif %}
+
+  <div class="detail-cards">
+    {% for card in include.source %}
+    <div class="detail-card">
+
+      <div class="detail-header" id="{{ card.title | slugify }}">
+        <span class="detail-name">{{ card.title }}</span>
+        <span class="detail-status">{{ card.status }}</span>
+      </div>
+
+      {% if card.subtitle %}
+      <div class="detail-subheader">
+        {{ card.subtitle }}
+      </div>
+      {% endif %}
+
+
+      <div class="detail-body">
+
+        <div class="detail-item">
+          <div style="margin-left: 0.3rem; max-width: 90%; font-size: 0.9rem; color: var(--muted);">
+            <strong>Description</strong>: {{ card.description | markdownify }}
+          </div>
+        </div>
+
+        {% if card.subblocks %}
+          {% for subblock in card.subblocks %}
+          <div class="detail-item">
+            <span class="authors"><strong>{{ subblock.block_title }}:</strong></span>
+            {% for detail in subblock.details %}
+            <div class="detail-item">
+              <div class="item-title item-icon-settings">
+                <span class="item-label">
+                  {{ detail }}
+                </span>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+          {% endfor %}
+        {% endif %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+</details>
