@@ -434,13 +434,13 @@ mark {
 }
 
 /* Remove base mark styling when it contains a glossary */
-mark:has(> span.glossary) {
+mark:has(> .glossary) {
   background: none !important;
   border-bottom: none !important;
 }
 
 /* Target glossary span instead of internal link like in Obsidian CSS */
-mark>span.glossary {
+mark>.glossary {
   cursor: help;
   text-decoration: none !important;
   background: rgba(var(--callout-information), 0.25) !important;
@@ -449,7 +449,7 @@ mark>span.glossary {
 }
 
 /* Hover effect */
-mark>span.glossary:hover {
+mark>.glossary:hover {
   border-bottom: 2px solid rgba(var(--callout-information), 1);
 }
 

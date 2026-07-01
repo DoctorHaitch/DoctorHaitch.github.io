@@ -3,6 +3,7 @@ author: Kris Hollingsworth
 title: "Review of DoenetML VSCode Extension"
 subtitle: false
 date: 2026-06-26
+pinned: false
 description: "A review and first impressions of the VSCode DoenetML Extension."
 excerpt: "A review and first impressions of the VSCode DoenetML Extension, an excellent addition to both DoenetML and VSCode workflows for creating accessible mathematical content for students and public outreach."
 mathjax: true

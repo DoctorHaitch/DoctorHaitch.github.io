@@ -1,12 +1,12 @@
 ---
 author: Kris Hollingsworth
-title: "Website Accessibility Tools"
+title: "Mathematics Accessibility Tools"
 subtitle: false
-date: 2026-06-24
-description: "Collection of free, effective WCAG accessibility tools."
-excerpt: "With the looming federal mandate for digital document accessibility for educators, this post collects a number of tools available for checking your web-based materials for compliance. Automated checkers are a great start to ensuring document compliance, but some of the subtle issues are also discussed which I uncovered while designing this website."
+date: 2026-06-30
+description: "Inventory of free tools for creating accessible mathematics."
+excerpt: "Will write this soon"
 mathjax: true
-tags: ["accessibility", "web-dev", "visual design", "tools"]
+tags: ["accessibility", "teaching", "mathematics", "tools"]
 ---
 
 <!--
@@ -19,10 +19,10 @@ bngivens@cpp.edu
 
 <blockquote data-type="fancy-quote" aria-describedby="main-heading">
   <span class="quote-mark" aria-hidden="true">“</span>
-  <p>Inclusion is not a strategy to help people fit into the systems and structures which exist in our societies. It is about transforming those systems and structures to make it better for everyone.</p>
+  <p>Go down deep enough into anything and you will find mathematics.</p>
   <p>—
-    <cite>Diane Richler</cite>,
-    former chair of the International Disability Alliance
+    <cite>Charles S. Schlicter</cite>,
+    (attributed) former Dean UW-Madison.
   </p>
 </blockquote>
 
