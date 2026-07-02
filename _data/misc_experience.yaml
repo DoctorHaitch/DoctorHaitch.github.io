@@ -1,8 +1,22 @@
 reading_groups:
   - topic: "Foundations of Differential Geometry"
     semester: "Fall 2018"
-    books: 
+    materials: 
       - title: "Introduction to Smooth Manifolds"
+        type: "Book"
         author: "John M. Lee"
     outcome: "Covered the first three chapters of the introductory book."
-
+  - topic: "Analysis"
+    semester: "Fall 2018"
+    materials:
+      - title: "Remarks on Inner Functions and Optimal Approximants"
+        type: "Article"
+        link: "https://arxiv.org/pdf/1707.06166"
+        author: "Catherine Bénéteau, Matthew Fleeman, Dmitry Khavinson, Daniel Seco, Alan Sola"
+      - title: "Beurling-Fourier algebras on Lie groups and their spectra"
+        type: "Article"
+        link: "https://arxiv.org/abs/1808.05914"
+        author: "Mahya Ghandehari, Hun Hee Lee, Jean Ludwig, Nico Spronk, Lyudmila Turowska"
+      - title: "Eigenvalue Problems for PDEs: A Modified Interior Transmission Problem"
+        type: "Notes"
+        author: "Sam Cogar"
