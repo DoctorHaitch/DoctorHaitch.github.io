@@ -113,3 +113,10 @@ letters:
     date: "2016-02-12"
     letter-recipients:
       - Common Application
+  
+  - name: Harrison Muller
+    supporting: "Calculus Tutor"
+    semester: "Spring 2021"
+    date: "2020-12-07"
+    letter-recipients:
+      - University of Delaware, Office of Academic Enrichment

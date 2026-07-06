@@ -1,8 +1,64 @@
-
-
 - name: LaTeX Writing Workshop
-  description: "A workshop on using LaTeX for writing research papers, theses, and presentations. Emphasis placed on typesetting complex mathematics and proper citations using BibTeX."
+  description: "A bi-weekly workshop on using LaTeX for writing research papers, theses, and presentations. Emphasis placed on typesetting complex mathematics and proper citations using BibTeX."
   sponsor: University of Delaware, Department of Mathematics
   leader: Dr. Francisco-Javier Sayas
   semester: Fall 2015
+  display: false
+
+- name: Advising Panel for the University of Delaware Student Chapter of SIAM
+  description: "Information on graduate school, research, and choosing a research advisor and mentor. Specific attention given to first years preparing for UNIDEL and GEMS summer research programs."
+  sponsor: University of Delaware, AWM and SIAM Student Chapters.
+  semester: Fall 2017
+  date: 2017-10-20
+  display: false
+
+- name: Networking Event at Longwood Gardens
+  description: "Professional networking event for students and faculty in the Department of Mathematics at the University of Delaware."
+  sponsor: University of Delaware, SIAM Student Chapter
+  semester: Fall 2017
+  date: 2017-12-02
+  display: false
+
+- name: Networking Breakfast at the University of Delaware
+  description: "Professional networking event for students and faculty in the Department of Mathematics at the University of Delaware."
+  sponsor: University of Delaware, SIAM Student Chapter
+  semester: Fall 2017
+  date: 2017-10-27
+  display: false
+
+- name: Networking Brunch at the University of Delaware
+  description: "Professional networking event for students and faculty in the Department of Mathematics at the University of Delaware."
+  sponsor: University of Delaware, AWM Student Chapter
+  semester: Fall 2017
+  date: 2017-12-08
+  display: false
+
+- name: New Faculty Speaker Series
+  description: "A series of talks by new faculty in the Department of Mathematics at the University of Delaware."
+  sponsor: University of Delaware, SIAM Student Chapter
+  semester: Fall 2017
+  speakers:
+    - name: Dr. Connie Liaw
+      title: "Assistant Professor, University of Delaware"
+      date: 2017-10-09
+  display: false
+
+- name: Alumni Speaker Series
+  description: "A series of talks by former students of the Department of Mathematics at the University of Delaware."
+  sponsor: University of Delaware, SIAM Student Chapter
+  semester: Fall 2017-Spring 2018
+  speakers:
+    - name: Dr. Jake Rezac
+      title: "Postdoctoral Researcher, NIST--Colorado"
+      date: 2017-12-05
+    - name: Dr. Ryan Evans
+      title: "Postdoctoral Researcher, NIST--Gaithersburg"
+      date: 2018-04-13
+  display: false
+
+- name: "Working During a Global Pandemic: Time Management Strategies"
+  description: "A panel discussion on time management strategies for students and faculty during the COVID-19 pandemic."
+  sponsor: University of Delaware
+  semester: Spring 2020
+  date: 2020-04-23
   display: false
