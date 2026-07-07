@@ -35,6 +35,16 @@
   city: Lawrence
   state: KS
 
+- title: "MAA MathFest 2022"
+  start_date: "2022-08-03"
+  end_date: "2022-08-06"
+  type: conference
+  location: "Philadelphia Marriott Downtown"
+  city: Philadelphia
+  state: PA
+  notes: "Project NExT (New Experiences in Teaching) Workshop: Red Dots '22"
+
+
 
 # \noindent \textbf{CONFERENCE PARTICIPATION}
 
@@ -59,9 +69,6 @@
 #     \vspace{.5em} \\
 #   Jan. 2023
 #     & \textit{Joint Mathematics Meeting} (Boston, MA)
-#     \vspace{.25em} \\
-#   Aug. 2022
-#     & \textit{MAA-MathFEST} (Philadelphia, PA)
 #     \vspace{.25em} \\
 #   June 2022
 #     & \textit{Canadian Abstract Harmonic Analysis Symposium} (Banff International Research Station, Calgary)

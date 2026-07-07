@@ -1,0 +1,27 @@
+---
+layout: main
+---
+
+<h2>{{ page.title }}</h2>
+
+<br/>
+{% assign current_tag = page.autopage.display_name %}
+{% assign tag_posts = site.tags[current_tag] %}
+<ul>
+{% for post in tag_posts %}
+  <li>
+    <a href="{{ post.url }}">{{ post.title }}</a>
+    <small>{{ post.date | date: "%B %-d, %Y" }}</small>
+
+    {% if post.pinned %}
+      <strong style="color: var(--ink-subtle); font-size: smaller">(Pinned)</strong>
+    {% endif %}
+
+    <!--
+    {% if post.hidden %}
+      <strong>🙈 Hidden</strong>
+    {% endif %}
+    -->
+  </li>
+{% endfor %}
+</ul>

@@ -1,10 +1,10 @@
 ---
 author: Kris Hollingsworth
-title: "Website Accessibility Tools"
+title: "Checking Your Web Content for Accessibility"
 subtitle: false
 date: 2026-06-24
-description: "Collection of free, effective WCAG accessibility tools."
-excerpt: "With the looming federal mandate for digital document accessibility for educators, this post collects a number of tools available for checking your web-based materials for compliance. Automated checkers are a great start to ensuring document compliance, but some of the subtle issues are also discussed which I uncovered while designing this website."
+description: "Finding free, effective, and useful WCAG accessibility tools."
+excerpt: "With the looming federal mandate for digital document accessibility for educators, this post collects a number of tools available for checking your web-based materials for compliance. Automated checkers are a great start to basic document compliance, but some of their shortcomings I discovered during designing this site and my course notes are also discussed."
 mathjax: true
 tags: ["accessibility", "web-dev", "visual design", "tools"]
 ---

@@ -20,12 +20,21 @@ pagination:
   permalink: '/page:num/'
   filter: 'pinned == false'
   # Auto-page generation
-  autopages:
-    enabled: true
-    categories:
-      permalink: '/category/:tag/'
-    tags:
-      permalink: '/tag/:tag/'
+
+autopages:
+  enabled: true
+#    categories:
+#      permalink: '/category/:tag/'
+  tags:
+    layouts:
+      - autopage_tags.html
+    title: 'Posts tagged with ":tag"'
+    permalink: '/tag/:tag/'
+  collections:
+    enabled: false
+  categories:
+    enabled: false
+
 
 defaults:
   - scope:
