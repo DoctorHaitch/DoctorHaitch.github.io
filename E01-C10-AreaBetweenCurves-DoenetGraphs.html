@@ -82,7 +82,7 @@
       min-height:1em;
 
       opacity: 1;
-      transition: opacity .5s ease;
+      transition: opacity .75s ease;
     }
 
   .doenet-wrapper{
@@ -191,45 +191,27 @@
   </div>
 
   <script type=&quot;module&quot;>
-  const CDN=&quot;https://&quot;+&quot;cdn.jsdelivr.net/npm/@doenet/standalone@latest/&quot;;
-  import(CDN+&quot;doenet-standalone.js&quot;).then(({renderDoenetViewerToContainer})=>{
-    function decode(s){
-      const b=atob(s),u=new Uint8Array(b.length);
-      for(let i=0;i<b.length;i++)u[i]=b.charCodeAt(i);
-      return new TextDecoder().decode(u);
+  import {
+    renderDoenetViewerToContainer
+  } from &quot;https://cdn.jsdelivr.net/npm/@doenet/standalone@latest/doenet-standalone.js&quot;;
+
+  function decode(s) {
+    const raw = atob(s);
+
+    try {
+      return new TextDecoder(&quot;utf-8&quot;).decode(
+        Uint8Array.from(raw, c => c.charCodeAt(0))
+      );
+    } catch {
+      return raw;
     }
+  }
+
     const c=document.getElementById(&quot;app-1&quot;);
     const s=document.createElement(&quot;script&quot;);
     s.type=&quot;text/doenetml&quot;;
     s.textContent=decode(&quot;PCEtLSAlJSUlJSUlJSUlJSUlJSUlJSUlJSUlJSUlJSUlCiAgICAgJSUlJSUlJSUlJSUgQ29tbW9uIFZhcmlhYmxlcwolJSUlJSUlJSUlJSUlJSUlJSUlJSUlJSUlJSUlJSUlJSUgLS0+CjxzZXR1cD4KICA8bnVtYmVyIG5hbWU9ImEiPjI8L251bWJlcj4KICA8bnVtYmVyIG5hbWU9ImIiPjc8L251bWJlcj4KICA8c3R5bGVEZWZpbml0aW9uCiAgICBuYW1lPSJNR3JlZW5TdHlsZSIKICAgIHN0eWxlTnVtYmVyPSIxMCIKICAgIGxpbmVXaWR0aD0iMyIKICAgIGxpbmVTdHlsZT0ic29saWQiCiAgICBsaW5lQ29sb3I9IiMwMDdDNUEiCiAgICBsaW5lQ29sb3JXb3JkPSJHcmVlbiIKICAgIGZpbGxPcGFjaXR5PSIuMjgiCiAgICBmaWxsQ29sb3I9IiMwMDlFNzMiCiAgLz4KICA8c3R5bGVEZWZpbml0aW9uCiAgICBuYW1lPSJNQmx1ZVN0eWxlIgogICAgc3R5bGVOdW1iZXI9IjkiCiAgICBsaW5lV2lkdGg9IjMiCiAgICBsaW5lU3R5bGU9InNvbGlkIgogICAgbGluZUNvbG9yPSIjMkE3RjlFIgogICAgbGluZU9wYWNpdHk9Ii43NyIKICAgIGxpbmVDb2xvcldvcmQ9ImxpZ2h0IGJsdWUiCiAgICBmaWxsQ29sb3I9IiM3N0JCREQiCiAgLz4KICA8ZnVuY3Rpb24gbmFtZT0iZiIgc3R5bGVOdW1iZXI9IjEwIiBkb21haW49IlsyLDddIj4xLjUqc2luKHgpKzQ8L2Z1bmN0aW9uPgogIDxmdW5jdGlvbiBuYW1lPSJnIiBzdHlsZU51bWJlcj0iOSIgZG9tYWluPSJbMiw3XSI+MS8zKmNvcyh4KSs3PC9mdW5jdGlvbj4KICA8ZnVuY3Rpb24gc3R5bGVOdW1iZXI9IjEwIiBuYW1lPSJ6IiBkb21haW49IlsyLDddIj4wPC9mdW5jdGlvbj4KPC9zZXR1cD4KPCEtLSAlJSUlJSUlJSUlJSUlJSUlJSUlJSUlJSUlJSUlCiAgICAgJSUlJSUlJSUlJSUlJSUlJSUgRmlyc3QgUGxvdAolJSUlJSUlJSUlJSUlJSUlJSUlJSUlJSUlJSUlJSUlJSUgLS0+CjxleGVyY2lzZSBub0F1dG9UaXRsZT4KICA8Z3JhcGgKICAgIGZpeEF4ZXMKICAgIHdpZHRoPSI4MCUiCiAgICBzaG93Qm9yZGVyPSJmYWxzZSIKICAgIGFzcGVjdFJhdGlvPSIxLjc1IgogICAgZ3JpZD0idHJ1ZSIKICAgIHhtaW49IjEiCiAgICB4bWF4PSI4IgogICAgZGlzcGxheVhBeGlzVGlja0xhYmVscz0iZmFsc2UiCiAgICB5bWluPSItMSIKICAgIHltYXg9IjgiCiAgICBzaG93TmF2aWdhdGlvbj0iZmFsc2UiCiAgICBkZWNvcmF0aXZlCiAgPgogICAgPHNob3J0RGVzY3JpcHRpb24+CiAgICAgIEEgZnVuY3Rpb24gZih4KSBiZXR3ZWVuIHg9YSBhbmQgeD1iIHdpdGggdGhlIGFyZWEgYmV0d2VlbiBmKHgpIGFuZCB0aGUKICAgICAgeC1heGlzIHNoYWRlZCBpbiAkZi5zdHlsZURlc2NyaXB0aW9uLgogICAgPC9zaG9ydERlc2NyaXB0aW9uPgogICAgPGxpbmVTZWdtZW50IHN0eWxlTnVtYmVyPSIxMCIgZml4TG9jYXRpb24gZW5kcG9pbnRzPSIoJGEsJCRmKCRhKSkgKCRhLDApIiAvPgogICAgPGxpbmVTZWdtZW50CiAgICAgIHN0eWxlTnVtYmVyPSIxMCIKICAgICAgZml4TG9jYXRpb24KICAgICAgZW5kcG9pbnRzPSIoNywkJGYoNykpICg3LDApIgogICAgICBsYWJlbElzTmFtZQogICAgLz4KICAgIDxsYWJlbCBwb3NpdGlvbkZyb21BbmNob3I9InJpZ2h0IiBhbmNob3I9IigkYSwtMC41KSIgZml4TG9jYXRpb24+CiAgICAgIDxtPlxodWdlIGE8L20+CiAgICA8L2xhYmVsPgogICAgPGxhYmVsIGFuY2hvcj0iKCRiLC0wLjUpIiBmaXhMb2NhdGlvbj48bT5caHVnZSBiPC9tPjwvbGFiZWw+CiAgICA8bGFiZWwgZml4TG9jYXRpb24gYW5jaG9yPSIoKCRhKyRiKS8xLjksMy4yNSkiPjxtPlxodWdlIGYoeCk8L20+PC9sYWJlbD4KICAgIDxyZWdpb25CZXR3ZWVuQ3VydmVzIGhpZGU9ImZhbHNlIiBzdHlsZU51bWJlcj0iMTAiIGJvdW5kYXJ5VmFsdWVzPSIyIDciPgogICAgICAkZiAkegogICAgPC9yZWdpb25CZXR3ZWVuQ3VydmVzPgogIDwvZ3JhcGg+CiAgPHA+CiAgICA8YW5zd2VyPgogICAgICA8bGFiZWw+CiAgICAgICAgV3JpdGUgYW4gZXhwcmVzc2lvbiB0aGF0IHJlcHJlc2VudHMgdGhlICRmLnN0eWxlRGVzY3JpcHRpb24gc2hhZGVkIGFyZWE6CiAgICAgIDwvbGFiZWw+CiAgICAgIDxtPlxpbnRfYV5iIGYoeCkgZHg8L20+CiAgICA8L2Fuc3dlcj4KICA8L3A+CjwvZXhlcmNpc2U+CjwhLS0gJSUlJSUlJSUlJSUlJSUlJSUlJSUlJSUlJSUlJQogICAgICUlJSUlJSUlJSUlJSUlJSUgU2Vjb25kIFBsb3QKJSUlJSUlJSUlJSUlJSUlJSUlJSUlJSUlJSUlJSUlJSUlIC0tPgo8ZXhlcmNpc2Ugbm9BdXRvVGl0bGU+CiAgPGdyYXBoCiAgICBmaXhBeGVzCiAgICB3aWR0aD0iODAlIgogICAgc2hvd0JvcmRlcj0iZmFsc2UiCiAgICBhc3BlY3RSYXRpbz0iMS43NSIKICAgIGdyaWQ9InRydWUiCiAgICB4bWluPSIxIgogICAgeG1heD0iOCIKICAgIGRpc3BsYXlYQXhpc1RpY2tMYWJlbHM9ImZhbHNlIgogICAgeW1pbj0iLTEiCiAgICB5bWF4PSI4IgogICAgc2hvd05hdmlnYXRpb249ImZhbHNlIgogICAgZGVjb3JhdGl2ZQogID4KICAgIDxzaG9ydERlc2NyaXB0aW9uPgogICAgICBBIGZ1bmN0aW9uIGcoeCkgYmV0d2VlbiB4PWEgYW5kIHg9YiB3aXRoIHRoZSBhcmVhIGJldHdlZW4gZyh4KSBhbmQgdGhlCiAgICAgIHgtYXhpcyBzaGFkZWQgaW4gJGcuc3R5bGVEZXNjcmlwdGlvbi4KICAgIDwvc2hvcnREZXNjcmlwdGlvbj4KICAgIDxsaW5lU2VnbWVudCBzdHlsZU51bWJlcj0iOSIgZml4TG9jYXRpb24gZW5kcG9pbnRzPSIoJGEsJCRnKCRhKSkgKCRhLDApIiAvPgogICAgPGxpbmVTZWdtZW50CiAgICAgIHN0eWxlTnVtYmVyPSI5IgogICAgICBmaXhMb2NhdGlvbgogICAgICBlbmRwb2ludHM9Iig3LCQkZyg3KSkgKDcsMCkiCiAgICAgIGxhYmVsSXNOYW1lCiAgICAvPgogICAgPGxhYmVsIHBvc2l0aW9uRnJvbUFuY2hvcj0icmlnaHQiIGFuY2hvcj0iKCRhLC0wLjUpIiBmaXhMb2NhdGlvbj4KICAgICAgPG0+XGh1Z2UgYTwvbT4KICAgIDwvbGFiZWw+CiAgICA8bGFiZWwgYW5jaG9yPSIoJGIsLTAuNSkiIGZpeExvY2F0aW9uPjxtPlxodWdlIGI8L20+PC9sYWJlbD4KICAgIDxsYWJlbCBmaXhMb2NhdGlvbiBhbmNob3I9IigkYSswLjUsJCRnKCRhKSswLjUpIj48bT5caHVnZSBnKHgpPC9tPjwvbGFiZWw+CiAgICA8cmVnaW9uQmV0d2VlbkN1cnZlcyBoaWRlPSJmYWxzZSIgc3R5bGVOdW1iZXI9IjkiIGJvdW5kYXJ5VmFsdWVzPSIyIDciPgogICAgICAkZyAkegogICAgPC9yZWdpb25CZXR3ZWVuQ3VydmVzPgogIDwvZ3JhcGg+CiAgPHA+CiAgICA8YW5zd2VyPgogICAgICA8bGFiZWw+CiAgICAgICAgV3JpdGUgYW4gZXhwcmVzc2lvbiB0aGF0IHJlcHJlc2VudHMgdGhlICRnLnN0eWxlRGVzY3JpcHRpb24gc2hhZGVkIGFyZWE6CiAgICAgIDwvbGFiZWw+CiAgICAgIDxtPlxpbnRfYV5iIGcoeCkgZHg8L20+CiAgICA8L2Fuc3dlcj4KICA8L3A+CjwvZXhlcmNpc2U+CjwhLS0gJSUlJSUlJSUlJSUlJSUlJSUlJSUlJSUlJSUlJQogICAgICUlJSUlJSUlJSUlJSUlJSUlIFRoaXJkIFBsb3QKJSUlJSUlJSUlJSUlJSUlJSUlJSUlJSUlJSUlJSUlJSUlIC0tPgo8ZXhlcmNpc2Ugbm9BdXRvVGl0bGU+CiAgPGdyYXBoCiAgICBmaXhBeGVzCiAgICB3aWR0aD0iODAlIgogICAgc2hvd0JvcmRlcj0iZmFsc2UiCiAgICBhc3BlY3RSYXRpbz0iMS43NSIKICAgIGdyaWQ9InRydWUiCiAgICB4bWluPSIxIgogICAgeG1heD0iOCIKICAgIGRpc3BsYXlYQXhpc1RpY2tMYWJlbHM9ImZhbHNlIgogICAgeW1pbj0iLTEiCiAgICB5bWF4PSI4IgogICAgc2hvd05hdmlnYXRpb249ImZhbHNlIgogICAgZGVjb3JhdGl2ZQogID4KICAgIDxzaG9ydERlc2NyaXB0aW9uPgogICAgICBCb3RoIGZ1bmN0aW9ucyBmKHgpIGFuZCBnKHgpIGJldHdlZW4geD1hIGFuZCB4PWIgd2l0aCB0aGUgYXJlYSBiZXR3ZWVuCiAgICAgIGYoeCkgYW5kIHRoZSB4LWF4aXMgc2hhZGVkIGluICRmLnN0eWxlRGVzY3JpcHRpb24gYW5kIHRoZSBhcmVhIGJldHdlZW4KICAgICAgZyh4KSBhbmQgdGhlIHgtYXhpcyBzaGFkZWQgaW4gJGcuc3R5bGVEZXNjcmlwdGlvbi4KICAgIDwvc2hvcnREZXNjcmlwdGlvbj4KICAgIDxsaW5lU2VnbWVudCBzdHlsZU51bWJlcj0iOSIgZml4TG9jYXRpb24gZW5kcG9pbnRzPSIoJGEsJCRnKCRhKSkgKCRhLDApIiAvPgogICAgPGxpbmVTZWdtZW50CiAgICAgIHN0eWxlTnVtYmVyPSI5IgogICAgICBmaXhMb2NhdGlvbgogICAgICBlbmRwb2ludHM9Iig3LCQkZyg3KSkgKDcsMCkiCiAgICAgIGxhYmVsSXNOYW1lCiAgICAvPgogICAgPGxhYmVsIHBvc2l0aW9uRnJvbUFuY2hvcj0icmlnaHQiIGFuY2hvcj0iKCRhLC0wLjUpIiBmaXhMb2NhdGlvbj4KICAgICAgPG0+XGh1Z2UgYTwvbT4KICAgIDwvbGFiZWw+CiAgICA8bGFiZWwgYW5jaG9yPSIoJGIsLTAuNSkiIGZpeExvY2F0aW9uPjxtPlxodWdlIGI8L20+PC9sYWJlbD4KICAgIDxsYWJlbCBmaXhMb2NhdGlvbiBhbmNob3I9IigoJGErJGIpLzEuOSwzLjI1KSI+PG0+XGh1Z2UgZih4KTwvbT48L2xhYmVsPgogICAgPGxhYmVsIGZpeExvY2F0aW9uIGFuY2hvcj0iKCRhKzAuNSwkJGcoJGEpKzAuNSkiPjxtPlxodWdlIGcoeCk8L20+PC9sYWJlbD4KICAgIDxyZWdpb25CZXR3ZWVuQ3VydmVzIGhpZGU9ImZhbHNlIiBzdHlsZU51bWJlcj0iOSIgYm91bmRhcnlWYWx1ZXM9IjIgNyI+CiAgICAgICRnICR6CiAgICA8L3JlZ2lvbkJldHdlZW5DdXJ2ZXM+CiAgICA8cmVnaW9uQmV0d2VlbkN1cnZlcyBoaWRlPSJmYWxzZSIgc3R5bGVOdW1iZXI9IjEwIiBib3VuZGFyeVZhbHVlcz0iMiA3Ij4KICAgICAgJGYgJHoKICAgIDwvcmVnaW9uQmV0d2VlbkN1cnZlcz4KICA8L2dyYXBoPgogIDxwPgogICAgPGFuc3dlciBuYW1lPSJ0ZXN0Ij4KICAgICAgPGxhYmVsPgogICAgICAgIFdyaXRlIGEgbWF0aGVtYXRpY2FsIGV4cHJlc3Npb24gd2hpY2ggY2FsY3VsYXRlcyB0aGUgYXJlYSB3aGljaCBpcwogICAgICAgICRnLnN0eWxlRGVzY3JpcHRpb24sIGJ1dCBub3QgJGYuc3R5bGVEZXNjcmlwdGlvbi4KICAgICAgPC9sYWJlbD4KICAgICAgPGF3YXJkPgogICAgICAgIDxtPlxpbnRfe2F9XntifWdcbGVmdCh4XHJpZ2h0KWR4LVxpbnRfe2F9XntifWZcbGVmdCh4XHJpZ2h0KWR4PC9tPgogICAgICA8L2F3YXJkPgogICAgICA8YXdhcmQgY3JlZGl0PSIwIiBuYW1lPSJjb21iaW5lZE5vUGFyZW5zIj4KICAgICAgICA8bT5caW50X2FeYiBnKHgpLWYoeCkgZHg8L20+CiAgICAgIDwvYXdhcmQ+CiAgICAgIDxhd2FyZCBuYW1lPSJjb21iaW5lZCI+PG0+XGludF9hXmIgKGcoeCktZih4KSkgZHg8L20+PC9hd2FyZD4KICAgIDwvYW5zd2VyPgogIDwvcD4KICA8c2V0dXA+CiAgICA8Ym9vbGVhbiBuYW1lPSJCYWNrd2FyZHMiPgogICAgICAkdGVzdD08bT5caW50X2FeYiAoZih4KS1nKHgpKSBkeDwvbT4gb3IgJHRlc3Q9PG0+CiAgICAgICAgXGludF9hXmIgZih4KSBkeCAtIFxpbnRfYV5iIGcoeCkgZHgKICAgICAgPC9tPgogICAgPC9ib29sZWFuPgogIDwvc2V0dXA+CiAgPGZlZWRiYWNrIGNvbmRpdGlvbj0iJEJhY2t3YXJkcyI+CiAgICBDYXJlZnVsISBUaGlzIGlzIGFsbW9zdCB0aGUgY29ycmVjdCBhbnN3ZXIsIGJ1dCBsb29rIGJhY2sgYXQgdGhlCiAgICByZWxhdGlvbnNoaXAgYmV0d2VlbiB0aGUgdHdvIGFyZWFzIGNsb3NlbHkuIFdoaWNoIG9uZSBpcyB0aGUKICAgICRnLnN0eWxlRGVzY3JpcHRpb24gYXJlYT8KICA8L2ZlZWRiYWNrPgogIDxmZWVkYmFjayBjb25kaXRpb249IiRjb21iaW5lZE5vUGFyZW5zIj4KICAgIDxwPgogICAgICBOb3RlLCBmcm9tIHRoZSBkZWZpbml0aW9uIG9mIGludGVncmF0aW9uCiAgICAgIDxtZT4KICAgICAgICBcaW50X3thfV57Yn0gZih4KS1nKHgpIGR4ID0gXGxpbV97blx0b1xpbmZ0eX0gXHN1bV97aT0xfV5uIGYoeF9pKS1nKHhfaSkKICAgICAgICBcRGVsdGEgeCwKICAgICAgPC9tZT4KICAgICAgd2hpY2ggaXMgY2xvc2UsIGJ1dCBub3QgcXVpdGUgdGhlIGNvcnJlY3QgaW50ZWdyYWwhCiAgICA8L3A+CiAgPC9mZWVkYmFjaz4KICA8ZmVlZGJhY2sgY29uZGl0aW9uPSIkY29tYmluZWQiPgogICAgPHA+CiAgICAgIFdoaWxlIHlvdXIgYW5zd2VyIGlzIGNvcnJlY3QsIGl0IGlzIG5vdCBxdWl0ZSBpbiB0aGUgZm9ybSB3ZSB3b3VsZCBleHBlY3QKICAgICAgYmFzZWQgb24gdGhlIHF1ZXN0aW9uczoKICAgICAgPG1lPlxpbnRfe2F9XntifSBmKHgpXDtkeCAtIFxpbnRfe2F9XntifSBnKHgpIGR4LjwvbWU+IE1ha2Ugc3VyZSB5b3Uga25vdwogICAgICB3aHkgeW91ciBhbnN3ZXIgaXMgZXF1aXZhbGVudCB0byB0aGlzIG9uZSEKICAgIDwvcD4KICA8L2ZlZWRiYWNrPgo8L2V4ZXJjaXNlPg==&quot;);
     c.appendChild(s);
-
-    let loadingRemoved = false;
-    let removeTimer = null;
-
-    function removeLoading() {
-      if (loadingRemoved) return;
-      loadingRemoved = true;
-
-      const loading = document.getElementById(&quot;loading&quot;);
-      if (!loading) return;
-
-      const wrapper = document.querySelector(&quot;.doenet-wrapper&quot;);
-
-
-
-      requestAnimationFrame(() => {
-        loading.style.opacity = &quot;0&quot;;
-
-        setTimeout(() => {
-          if (wrapper) {
-            wrapper.style.minHeight = &quot;0&quot;;
-          }
-          loading.remove();
-        }, 750);
-      });
-    }
-
 
     renderDoenetViewerToContainer(c,null,{addVirtualKeyboard:false});
     // Baked-in id of the *outer* <iframe> element. We can't rely on
@@ -238,33 +220,46 @@
     // is always null. Embedding the id at build time avoids needing
     // allow-same-origin (which would break the isolation/sandboxing).
     const FRAME_ID=&quot;doenet-frame-1&quot;;
-    
-  let stableTimer = null;
 
-  function sendHeight(){
-    const h = document.body.scrollHeight;
+    function removeLoading() {
+      const loading = document.getElementById(&quot;loading&quot;);
+      const wrapper = document.querySelector(&quot;.doenet-wrapper&quot;);
 
-    parent.postMessage(
-      {
-        doenetHeight: h,
-        frameId: FRAME_ID
-      },
-      &quot;*&quot;
-    );
+      if (!loading) return;
 
-    clearTimeout(stableTimer);
+      loading.style.opacity = &quot;0&quot;;
 
-    stableTimer = setTimeout(() => {
-      removeLoading();
-    }, 500);
-  }
+      setTimeout(() => {
+        if (wrapper) {
+          wrapper.style.minHeight = &quot;0&quot;;
+        }
+      loading.remove();
+      }, 750);
+    }
+
+
+    let loaderRemoved = false;
+
+    function sendHeight(){
+      parent.postMessage(
+        {
+          doenetHeight: document.body.scrollHeight,
+          frameId: FRAME_ID
+        },
+        &quot;*&quot;
+      );
+
+      if (!loaderRemoved) {
+        loaderRemoved = true;
+        removeLoading();
+      }
+    }
 
     new ResizeObserver(sendHeight).observe(document.body);
     // Respond to the parent's fallback stabilization pings.
     window.addEventListener(&quot;message&quot;,(e)=>{
       if(e.data &amp;&amp; e.data.requestHeight) sendHeight();
     });
-  });
   </script></body></html>" style="width:100%;border:none;overflow:hidden;" class="doenet-frame" sandbox="allow-scripts allow-same-origin" loading="lazy"></iframe>
   </div>
   </details>
@@ -334,7 +329,7 @@
       min-height:1em;
 
       opacity: 1;
-      transition: opacity .5s ease;
+      transition: opacity .75s ease;
     }
 
   .doenet-wrapper{
@@ -443,45 +438,27 @@
   </div>
 
   <script type=&quot;module&quot;>
-  const CDN=&quot;https://&quot;+&quot;cdn.jsdelivr.net/npm/@doenet/standalone@latest/&quot;;
-  import(CDN+&quot;doenet-standalone.js&quot;).then(({renderDoenetViewerToContainer})=>{
-    function decode(s){
-      const b=atob(s),u=new Uint8Array(b.length);
-      for(let i=0;i<b.length;i++)u[i]=b.charCodeAt(i);
-      return new TextDecoder().decode(u);
+  import {
+    renderDoenetViewerToContainer
+  } from &quot;https://cdn.jsdelivr.net/npm/@doenet/standalone@latest/doenet-standalone.js&quot;;
+
+  function decode(s) {
+    const raw = atob(s);
+
+    try {
+      return new TextDecoder(&quot;utf-8&quot;).decode(
+        Uint8Array.from(raw, c => c.charCodeAt(0))
+      );
+    } catch {
+      return raw;
     }
+  }
+
     const c=document.getElementById(&quot;app-2&quot;);
     const s=document.createElement(&quot;script&quot;);
     s.type=&quot;text/doenetml&quot;;
     s.textContent=decode(&quot;PCEtLSAlJSUlJSUlJSUlJSUlJSUlJSUlJSUlJSUlJSUlCiAgICAgJSUlJSUlJSUlJSUgQ29tbW9uIFZhcmlhYmxlcwolJSUlJSUlJSUlJSUlJSUlJSUlJSUlJSUlJSUlJSUlJSUgLS0+CjxzZXR1cD4KICA8bnVtYmVyIG5hbWU9ImEiPjI8L251bWJlcj4KICA8bnVtYmVyIG5hbWU9ImIiPjc8L251bWJlcj4KICA8bnVtYmVyIG5hbWU9Ik11dGVkR3JlZW4iPjExNzczMzwvbnVtYmVyPgogIDxzdHlsZURlZmluaXRpb24KICAgIG5hbWU9Ik1HcmVlblN0eWxlIgogICAgc3R5bGVOdW1iZXI9IjEwIgogICAgbGluZVdpZHRoPSIzIgogICAgbGluZVN0eWxlPSJzb2xpZCIKICAgIGxpbmVDb2xvcj0iIyRNdXRlZEdyZWVuIgogICAgZmlsbENvbG9yPSIjJE11dGVkR3JlZW4iCiAgLz4KICA8bnVtYmVyIG5hbWU9Ik11dGVkSW5kaWdvIj4zMzIyODg8L251bWJlcj4KICA8ZnVuY3Rpb24gbmFtZT0iZiIgc3R5bGVOdW1iZXI9IjEwIiBkb21haW49IlsyLDddIj4xLjUqc2luKHgpKzQ8L2Z1bmN0aW9uPgogIDxmdW5jdGlvbiBuYW1lPSJnIiBzdHlsZU51bWJlcj0iOSIgZG9tYWluPSJbMiw3XSI+MS8zKmNvcyh4KSs3PC9mdW5jdGlvbj4KICA8ZnVuY3Rpb24gc3R5bGVOdW1iZXI9IjEwIiBuYW1lPSJ6IiBkb21haW49IlsyLDddIj4wPC9mdW5jdGlvbj4KPC9zZXR1cD4KPCEtLSAlJSUlJSUlJSUlJSUlJSUlJSUlJSUlJSUlJSUlCiAgICAgJSUlJSUlJSUlJSUlJSUlJSUgVGhpcmQgUGxvdAolJSUlJSUlJSUlJSUlJSUlJSUlJSUlJSUlJSUlJSUlJSUgLS0+CjxncmFwaAogIGZpeEF4ZXMKICB3aWR0aD0iODAlIgogIHNob3dCb3JkZXI9ImZhbHNlIgogIGFzcGVjdFJhdGlvPSIxLjc1IgogIGdyaWQ9InRydWUiCiAgeG1pbj0iMSIKICB4bWF4PSI4IgogIGRpc3BsYXlYQXhpc1RpY2tMYWJlbHM9ImZhbHNlIgogIHltaW49Ii0xIgogIHltYXg9IjkiCiAgc2hvd05hdmlnYXRpb249ImZhbHNlIgogIGRlY29yYXRpdmUKPgogIDxzaG9ydERlc2NyaXB0aW9uPgogICAgQm90aCBmdW5jdGlvbnMgZih4KSBhbmQgZyh4KSBiZXR3ZWVuIHg9YSBhbmQgeD1iIHdpdGggdGhlIGFyZWEgYmV0d2VlbiBmKHgpCiAgICBhbmQgdGhlIHgtYXhpcyBzaGFkZWQgaW4gZ3JlZW4gYW5kIHRoZSBhcmVhIGJldHdlZW4gZyh4KSBhbmQgdGhlIHgtYXhpcwogICAgc2hhZGVkIGluIGluZGlnby4KICA8L3Nob3J0RGVzY3JpcHRpb24+CiAgPGxpbmVTZWdtZW50IHN0eWxlTnVtYmVyPSI5IiBmaXhMb2NhdGlvbiBlbmRwb2ludHM9IigkYSwkJGcoJGEpKSAoJGEsMCkiIC8+CiAgPGxpbmVTZWdtZW50CiAgICBzdHlsZU51bWJlcj0iOSIKICAgIGZpeExvY2F0aW9uCiAgICBlbmRwb2ludHM9Iig3LCQkZyg3KSkgKDcsMCkiCiAgICBsYWJlbElzTmFtZQogIC8+CiAgPGxhYmVsIHBvc2l0aW9uRnJvbUFuY2hvcj0icmlnaHQiIGFuY2hvcj0iKCRhLC0wLjUpIiBmaXhMb2NhdGlvbj4KICAgIDxtPlxodWdlIGE8L20+CiAgPC9sYWJlbD4KICA8bGFiZWwgYW5jaG9yPSIoJGIsLTAuNSkiIGZpeExvY2F0aW9uPjxtPlxodWdlIGI8L20+PC9sYWJlbD4KICA8bGFiZWwgZml4TG9jYXRpb24gYW5jaG9yPSIoKCRhKyRiKS8xLjksMy4yNSkiPjxtPlxodWdlIGYoeCk8L20+PC9sYWJlbD4KICA8bGFiZWwgZml4TG9jYXRpb24gYW5jaG9yPSIoJGErMC41LCQkZygkYSkrMC41KSI+PG0+XGh1Z2UgZyh4KTwvbT48L2xhYmVsPgogIDxyZWdpb25CZXR3ZWVuQ3VydmVzIGhpZGU9ImZhbHNlIiBzdHlsZU51bWJlcj0iOSIgYm91bmRhcnlWYWx1ZXM9IjIgNyI+CiAgICAkZyAkegogIDwvcmVnaW9uQmV0d2VlbkN1cnZlcz4KICA8cmVnaW9uQmV0d2VlbkN1cnZlcyBoaWRlPSJmYWxzZSIgc3R5bGVOdW1iZXI9IjEwIiBib3VuZGFyeVZhbHVlcz0iMiA3Ij4KICAgICRmICR6CiAgPC9yZWdpb25CZXR3ZWVuQ3VydmVzPgogIDxyZXBlYXRGb3JTZXF1ZW5jZQogICAgbmFtZT0idGVzdCIKICAgIGZyb209IiRhIgogICAgdG89IiRiLSRkZWx0YVgiCiAgICBzdGVwPSIkZGVsdGFYIgogICAgdmFsdWVOYW1lPSJ2IgogID4KICAgIDxzZXR1cD4KICAgICAgPCEtLSBQcmV2ZW50IHdlaXJkIGRvbWFpbiByb3VuZC1vZmYgaXNzdWVzIHJpZ2h0IGVuZHBvaW50IC0tPgogICAgICA8bWF0aCBuYW1lPSJyaWdodFBvaW50IiBzaW1wbGlmeT5taW4oJHYrJGRlbHRhWCwkYik8L21hdGg+CiAgICAgIDxwb2ludCBuYW1lPSJ2MSIgbGFiZWxJc05hbWU+KCR2LCAkJGYoJHYpKTwvcG9pbnQ+CiAgICAgIDxwb2ludCBuYW1lPSJ2MiIgbGFiZWxJc05hbWU+KCRyaWdodFBvaW50LCAkJGcoJHJpZ2h0UG9pbnQtLjAwMSkpPC9wb2ludD4KICAgIDwvc2V0dXA+CiAgICA8cmVjdGFuZ2xlCiAgICAgIGhpZGU9Im5vdCgkc2hvd0JveGVzKSIKICAgICAgc3R5bGVOdW1iZXI9IjUiCiAgICAgIGZpbGxlZAogICAgICB2ZXJ0aWNlcz0iJHYxICR2MiIKICAgIC8+CiAgPC9yZXBlYXRGb3JTZXF1ZW5jZT4KPC9ncmFwaD4KPGJvb2xlYW5JbnB1dCBuYW1lPSJzaG93Qm94ZXMiPgogIDxsYWJlbD5TaG93IFJpZW1hbm4gc3VtIGFwcHJveGltYXRpb24uPC9sYWJlbD4KPC9ib29sZWFuSW5wdXQ+CjxzbGlkZXIKICBoaWRlPSJub3QoJHNob3dCb3hlcykiCiAgaW5pdGlhbFZhbHVlPSIzIgogIGZyb209IjEiCiAgdG89IjE1IgogIG5hbWU9InJlY3RzIgogIHNob3dUaWNrcz0iZmFsc2UiCj4KICA8bGFiZWw+TnVtYmVyIG9mIFJlY3RhbmdsZXM8L2xhYmVsPgo8L3NsaWRlcj4KPHNldHVwPgogIDxudW1iZXIgbmFtZT0iZGVsdGFYIj4oJGItJGEpLyRyZWN0czwvbnVtYmVyPgo8L3NldHVwPg==&quot;);
     c.appendChild(s);
-
-    let loadingRemoved = false;
-    let removeTimer = null;
-
-    function removeLoading() {
-      if (loadingRemoved) return;
-      loadingRemoved = true;
-
-      const loading = document.getElementById(&quot;loading&quot;);
-      if (!loading) return;
-
-      const wrapper = document.querySelector(&quot;.doenet-wrapper&quot;);
-
-
-
-      requestAnimationFrame(() => {
-        loading.style.opacity = &quot;0&quot;;
-
-        setTimeout(() => {
-          if (wrapper) {
-            wrapper.style.minHeight = &quot;0&quot;;
-          }
-          loading.remove();
-        }, 750);
-      });
-    }
-
 
     renderDoenetViewerToContainer(c,null,{addVirtualKeyboard:false});
     // Baked-in id of the *outer* <iframe> element. We can't rely on
@@ -490,33 +467,46 @@
     // is always null. Embedding the id at build time avoids needing
     // allow-same-origin (which would break the isolation/sandboxing).
     const FRAME_ID=&quot;doenet-frame-2&quot;;
-    
-  let stableTimer = null;
 
-  function sendHeight(){
-    const h = document.body.scrollHeight;
+    function removeLoading() {
+      const loading = document.getElementById(&quot;loading&quot;);
+      const wrapper = document.querySelector(&quot;.doenet-wrapper&quot;);
 
-    parent.postMessage(
-      {
-        doenetHeight: h,
-        frameId: FRAME_ID
-      },
-      &quot;*&quot;
-    );
+      if (!loading) return;
 
-    clearTimeout(stableTimer);
+      loading.style.opacity = &quot;0&quot;;
 
-    stableTimer = setTimeout(() => {
-      removeLoading();
-    }, 500);
-  }
+      setTimeout(() => {
+        if (wrapper) {
+          wrapper.style.minHeight = &quot;0&quot;;
+        }
+      loading.remove();
+      }, 750);
+    }
+
+
+    let loaderRemoved = false;
+
+    function sendHeight(){
+      parent.postMessage(
+        {
+          doenetHeight: document.body.scrollHeight,
+          frameId: FRAME_ID
+        },
+        &quot;*&quot;
+      );
+
+      if (!loaderRemoved) {
+        loaderRemoved = true;
+        removeLoading();
+      }
+    }
 
     new ResizeObserver(sendHeight).observe(document.body);
     // Respond to the parent's fallback stabilization pings.
     window.addEventListener(&quot;message&quot;,(e)=>{
       if(e.data &amp;&amp; e.data.requestHeight) sendHeight();
     });
-  });
   </script></body></html>" style="width:100%;border:none;overflow:hidden;" class="doenet-frame" sandbox="allow-scripts allow-same-origin" loading="lazy"></iframe>
   </div>
   </details>
@@ -633,7 +623,7 @@
       min-height:1em;
 
       opacity: 1;
-      transition: opacity .5s ease;
+      transition: opacity .75s ease;
     }
 
   .doenet-wrapper{
@@ -742,45 +732,27 @@
   </div>
 
   <script type=&quot;module&quot;>
-  const CDN=&quot;https://&quot;+&quot;cdn.jsdelivr.net/npm/@doenet/standalone@latest/&quot;;
-  import(CDN+&quot;doenet-standalone.js&quot;).then(({renderDoenetViewerToContainer})=>{
-    function decode(s){
-      const b=atob(s),u=new Uint8Array(b.length);
-      for(let i=0;i<b.length;i++)u[i]=b.charCodeAt(i);
-      return new TextDecoder().decode(u);
+  import {
+    renderDoenetViewerToContainer
+  } from &quot;https://cdn.jsdelivr.net/npm/@doenet/standalone@latest/doenet-standalone.js&quot;;
+
+  function decode(s) {
+    const raw = atob(s);
+
+    try {
+      return new TextDecoder(&quot;utf-8&quot;).decode(
+        Uint8Array.from(raw, c => c.charCodeAt(0))
+      );
+    } catch {
+      return raw;
     }
+  }
+
     const c=document.getElementById(&quot;app-3&quot;);
     const s=document.createElement(&quot;script&quot;);
     s.type=&quot;text/doenetml&quot;;
     s.textContent=decode(&quot;PHA+CiAgQ2hlY2sgeW91ciB3b3JrOiA8YW5zd2VyIG5hbWU9ImFucyIgdHlwZT0ibWF0aCI+CiAgICA8IS0tIDxtYXRoSW5wdXQgcHJlZmlsbExhdGV4PSJcaW50X2FeYiBmKHgpIGR4Ii8+IC0tPgogICAgPCEtLSBEZWJ1ZyBwcmVmaWxsCiAgICA8bWF0aElucHV0IHByZWZpbGxMYXRleD0iXGludF97X3stM319XnstMX1cc3FydHs0eCsxMn1keFwgK1wgXGludF97LTF9Xns1fVxsZWZ0KFxzcXJ0ezJ4KzZ9XCAteCsxXHJpZ2h0KVwgZHgiIC8+CiAgICAtLT4KICAgIDxzaG9ydERlc2NyaXB0aW9uPkVudGVyIGFuc3dlciB0byBjaGVjayB5b3VyIHdvcmsuPC9zaG9ydERlc2NyaXB0aW9uPgogICAgPGF3YXJkPgogICAgICA8bT5caW50X3stM31eey0xfTJcc3FydHsyeCs2fSBkeCArIFxpbnRfey0xfV41IFtcc3FydHsyeCs2fS0oeC0xKV0gZHg8L20+CiAgICA8L2F3YXJkPgogICAgPGF3YXJkPgogICAgICA8bT4KICAgICAgICBcaW50X3stM31eey0xfSBcc3FydHs0IHggKyAxMn1keCArIFxpbnRfey0xfV57NX0gXGxlZnQoXHNxcnR7MiB4ICsgNn0gLQogICAgICAgIHggKyAxXHJpZ2h0KWR4CiAgICAgIDwvbT4KICAgIDwvYXdhcmQ+CiAgPC9hbnN3ZXI+CjwvcD4KPHNldHVwPgogIDxtYXRjaGVzUGF0dGVybiBuYW1lPSJtaXNzaW5nSW50ZWdyYW5kIiBwYXR0ZXJuPSLiiKtfKCleKCkgZO+8vyI+CiAgICAkYW5zCiAgPC9tYXRjaGVzUGF0dGVybj4KICA8bWF0Y2hlc1BhdHRlcm4gbmFtZT0id3JvbmdWYXIiIHBhdHRlcm49IuKIq18oKV4oKSDvvL8gZHkiPiRhbnM8L21hdGNoZXNQYXR0ZXJuPgogIDxtYXRjaGVzUGF0dGVybiBuYW1lPSJvbmVJbnRlZ3JhbCIgcGF0dGVybj0i4oirXygpXigp77y/ZHgiPiRhbnM8L21hdGNoZXNQYXR0ZXJuPgogIDxtYXRjaGVzUGF0dGVybiBuYW1lPSJib3VuZHMiIHBhdHRlcm49IuKIq18oLTMpXigtMSnvvL9keCviiKtfKC0xKV4oNSnvvL9keCI+CiAgICAkYW5zCiAgPC9tYXRjaGVzUGF0dGVybj4KICA8bWF0Y2hlc1BhdHRlcm4gbmFtZT0idG90YWxCb3VuZHMiIHBhdHRlcm49IuKIq18oLTMpXig1Ke+8v2R4Ij4KICAgICRhbnMKICA8L21hdGNoZXNQYXR0ZXJuPgo8L3NldHVwPgo8ZmVlZGJhY2sgY29uZGl0aW9uPSIkbWlzc2luZ0ludGVncmFuZCI+CiAgWW91IHNlZW0gdG8gYmUgbWlzc2luZyBhbiBpbnRlZ3JhbmQuCjwvZmVlZGJhY2s+CjxmZWVkYmFjayBjb25kaXRpb249IiR3cm9uZ1ZhciI+CiAgWW91IGFwcGVhciB0byBiZSBqdW1waW5nIGFoZWFkISBUaGF0J3MgZ3JlYXQhIEJ1dCBoZXJlIHdlJ3JlIGxvb2tpbmcgZm9yCiAgaW50ZWdyYXRpb24gd2l0aCByZXNwZWN0IHRvIDxtPng8L20+Lgo8L2ZlZWRiYWNrPgo8ZmVlZGJhY2sgY29uZGl0aW9uPSIkb25lSW50ZWdyYWwgYW5kIG5vdCgkdG90YWxCb3VuZHMpIj4KICBZb3UgYXJlIGludGVncmF0aW5nIHdpdGggcmVzcGVjdCB0byB0aGUgcmlnaHQgdmFyaWFibGUsIGJ1dCB5b3UgbWlnaHQgd2FudCB0bwogIHJldmlzaXQgeW91ciBza2V0Y2ggb3IgdXNlIHRoZSB2aXN1YWwgYWlkIHRvIGluc3BlY3QgdGhlIHJlcHJlc2VudGF0aXZlIHNsaWNlCiAgbW9yZSBjbG9zZWx5LiBXaGF0IHNob3VsZCB0aGUgb3ZlcmFsbCBib3VuZHMgYmU/CjwvZmVlZGJhY2s+CjxmZWVkYmFjayBjb25kaXRpb249IiR0b3RhbEJvdW5kcyI+CiAgWW91IGhhdmUgdGhlIHJpZ2h0IG92ZXJhbGwgYm91bmRzIG9mIDxtPng9LTM8L20+IHRvIDxtPng9NTwvbT4sIGJ1dCBpcyB0aGVyZSBzb21ldGhpbmcKICBoYXBwZW5pbmcgaW4gdGhlIG1pZGRsZSB0aGF0IG1hdHRlcnMgdG8geW91ciBpbnRlZ3JhbmQ/CjwvZmVlZGJhY2s+CjxmZWVkYmFjayBjb25kaXRpb249IiRib3VuZHMgYW5kIG5vdCgkYW5zLmNyZWRpdEFjaGlldmVkKSI+CiAgWW91J3JlIGFsbW9zdCB0aGVyZSEgSnVzdCBiZSBhIGJpdCBtb3JlIGNhcmVmdWwgd2l0aCB0aGUgaW50ZWdyYW5kcywgdGhlIHJlc3QKICBvZiB0aGUgZXhwcmVzc2lvbiBpcyBjb3JyZWN0IQo8L2ZlZWRiYWNrPg==&quot;);
     c.appendChild(s);
-
-    let loadingRemoved = false;
-    let removeTimer = null;
-
-    function removeLoading() {
-      if (loadingRemoved) return;
-      loadingRemoved = true;
-
-      const loading = document.getElementById(&quot;loading&quot;);
-      if (!loading) return;
-
-      const wrapper = document.querySelector(&quot;.doenet-wrapper&quot;);
-
-
-
-      requestAnimationFrame(() => {
-        loading.style.opacity = &quot;0&quot;;
-
-        setTimeout(() => {
-          if (wrapper) {
-            wrapper.style.minHeight = &quot;0&quot;;
-          }
-          loading.remove();
-        }, 750);
-      });
-    }
-
 
     renderDoenetViewerToContainer(c,null,{addVirtualKeyboard:false});
     // Baked-in id of the *outer* <iframe> element. We can't rely on
@@ -789,33 +761,46 @@
     // is always null. Embedding the id at build time avoids needing
     // allow-same-origin (which would break the isolation/sandboxing).
     const FRAME_ID=&quot;doenet-frame-3&quot;;
-    
-  let stableTimer = null;
 
-  function sendHeight(){
-    const h = document.body.scrollHeight;
+    function removeLoading() {
+      const loading = document.getElementById(&quot;loading&quot;);
+      const wrapper = document.querySelector(&quot;.doenet-wrapper&quot;);
 
-    parent.postMessage(
-      {
-        doenetHeight: h,
-        frameId: FRAME_ID
-      },
-      &quot;*&quot;
-    );
+      if (!loading) return;
 
-    clearTimeout(stableTimer);
+      loading.style.opacity = &quot;0&quot;;
 
-    stableTimer = setTimeout(() => {
-      removeLoading();
-    }, 500);
-  }
+      setTimeout(() => {
+        if (wrapper) {
+          wrapper.style.minHeight = &quot;0&quot;;
+        }
+      loading.remove();
+      }, 750);
+    }
+
+
+    let loaderRemoved = false;
+
+    function sendHeight(){
+      parent.postMessage(
+        {
+          doenetHeight: document.body.scrollHeight,
+          frameId: FRAME_ID
+        },
+        &quot;*&quot;
+      );
+
+      if (!loaderRemoved) {
+        loaderRemoved = true;
+        removeLoading();
+      }
+    }
 
     new ResizeObserver(sendHeight).observe(document.body);
     // Respond to the parent's fallback stabilization pings.
     window.addEventListener(&quot;message&quot;,(e)=>{
       if(e.data &amp;&amp; e.data.requestHeight) sendHeight();
     });
-  });
   </script></body></html>" style="width:100%;border:none;overflow:hidden;" class="doenet-frame" sandbox="allow-scripts allow-same-origin" loading="lazy"></iframe>
   <div class="callout callout-warning" data-callout="warning">
   <div class="callout-title">
@@ -899,7 +884,7 @@
       min-height:1em;
 
       opacity: 1;
-      transition: opacity .5s ease;
+      transition: opacity .75s ease;
     }
 
   .doenet-wrapper{
@@ -1008,45 +993,27 @@
   </div>
 
   <script type=&quot;module&quot;>
-  const CDN=&quot;https://&quot;+&quot;cdn.jsdelivr.net/npm/@doenet/standalone@latest/&quot;;
-  import(CDN+&quot;doenet-standalone.js&quot;).then(({renderDoenetViewerToContainer})=>{
-    function decode(s){
-      const b=atob(s),u=new Uint8Array(b.length);
-      for(let i=0;i<b.length;i++)u[i]=b.charCodeAt(i);
-      return new TextDecoder().decode(u);
+  import {
+    renderDoenetViewerToContainer
+  } from &quot;https://cdn.jsdelivr.net/npm/@doenet/standalone@latest/doenet-standalone.js&quot;;
+
+  function decode(s) {
+    const raw = atob(s);
+
+    try {
+      return new TextDecoder(&quot;utf-8&quot;).decode(
+        Uint8Array.from(raw, c => c.charCodeAt(0))
+      );
+    } catch {
+      return raw;
     }
+  }
+
     const c=document.getElementById(&quot;app-4&quot;);
     const s=document.createElement(&quot;script&quot;);
     s.type=&quot;text/doenetml&quot;;
     s.textContent=decode(&quot;PCEtLSAlJSUlJSUlJSUlJSUlJSUlJSUlJSUlJSUlJSUlCiAgICAgJSUlJSUlJSUlJSUgQ29tbW9uIFZhcmlhYmxlcwolJSUlJSUlJSUlJSUlJSUlJSUlJSUlJSUlJSUlJSUlJSUgLS0+CjxzZXR1cD4KICA8bnVtYmVyIG5hbWU9ImEiPi0zPC9udW1iZXI+CiAgPG51bWJlciBuYW1lPSJiIj41PC9udW1iZXI+CiAgPG51bWJlciBuYW1lPSJNdXRlZEdyZWVuIj4xMTc3MzM8L251bWJlcj4KICA8c3R5bGVEZWZpbml0aW9uCiAgICBuYW1lPSJNR3JlZW5TdHlsZSIKICAgIHN0eWxlTnVtYmVyPSIxMCIKICAgIGxpbmVXaWR0aD0iMyIKICAgIGxpbmVTdHlsZT0ic29saWQiCiAgICBsaW5lQ29sb3I9IiMkTXV0ZWRHcmVlbiIKICAgIGZpbGxDb2xvcj0iIyRNdXRlZEdyZWVuIgogIC8+CiAgPG51bWJlciBuYW1lPSJNdXRlZEluZGlnbyI+MzMyMjg4PC9udW1iZXI+CiAgPGZ1bmN0aW9uIG5hbWU9ImYiIHN0eWxlTnVtYmVyPSIxMCIgZG9tYWluPSJbJGEtMSwkYisxXSI+eC0xPC9mdW5jdGlvbj4KICA8ZnVuY3Rpb24gbmFtZT0iZyIgc3R5bGVOdW1iZXI9IjkiIGRvbWFpbj0iWyRhLCRiKzFdIj5zcXJ0KDJ4KzYpPC9mdW5jdGlvbj4KICA8ZnVuY3Rpb24gbmFtZT0iaCIgc3R5bGVOdW1iZXI9IjkiIGRvbWFpbj0iWyRhLCRiXSI+LXNxcnQoMngrNik8L2Z1bmN0aW9uPgogIDxmdW5jdGlvbiBzdHlsZU51bWJlcj0iMTAiIG5hbWU9InoiIGRvbWFpbj0iWyRhLCRiXSI+MDwvZnVuY3Rpb24+Cjwvc2V0dXA+CjwhLS0gJSUlJSUlJSUlJSUlJSUlJSUlJSUlJSUlJSUlJQogICAgICUlJSUlJSUlJSUlJSUlJSUlIERyYXcgYSBHcmFwaAolJSUlJSUlJSUlJSUlJSUlJSUlJSUlJSUlJSUlJSUlJSUgLS0+CjxncmFwaAogIGZpeEF4ZXMKICB3aWR0aD0iODAlIgogIHNob3dCb3JkZXI9ImZhbHNlIgogIGFzcGVjdFJhdGlvPSIxLjc1IgogIGdyaWQ9InRydWUiCiAgeG1pbj0iJGEtMSIKICB4bWF4PSIkYisxIgogIGRpc3BsYXlYQXhpc1RpY2tMYWJlbHM9ImZhbHNlIgogIHltaW49Ii0zIgogIHltYXg9IjUiCiAgc2hvd05hdmlnYXRpb249ImZhbHNlIgogIGRlY29yYXRpdmUKPgogIDxzaG9ydERlc2NyaXB0aW9uPgogICAgVGhlIGdyYXBocyBvZiB5XjI9MngrNiBhbmQgeT14LTEgZnJvbSB4PS0zIHRvIHg9NSBhbmQgeT0tMiB0byB5PTQsIHNob3dpbmcKICAgIHRoZWlyIGludGVyc2VjdGlvbnMgYW5kIGFsbG93aW5nIGEgcmVwcmVzZW50YXRpdmUgdmVydGljYWwgc2xpY2UgdG8gYmUgZHJhd24KICAgIGFuZCBtb3ZlZCBob3Jpem9udGFsbHkuCiAgPC9zaG9ydERlc2NyaXB0aW9uPgogIDxsaW5lU2VnbWVudCBzdHlsZU51bWJlcj0iOSIgZml4TG9jYXRpb24gZW5kcG9pbnRzPSIoJGEsJCRnKCRhKSkgKCRhLDApIiAvPgogIDxsaW5lU2VnbWVudAogICAgc3R5bGVOdW1iZXI9IjkiCiAgICBmaXhMb2NhdGlvbgogICAgZW5kcG9pbnRzPSIoNywkJGcoNykpICg3LDApIgogICAgbGFiZWxJc05hbWUKICAvPgogICRmICRnICRoIDxudW1iZXIgaGlkZSBuYW1lPSJib3RMZWZ0Ij5tYXgoJCRoKCR4VmFsKSwkJGYoJHhWYWwpKTwvbnVtYmVyPgogIDxyZWN0YW5nbGUKICAgIGhpZGU9Im5vdCgkc2hvd1NsaWNlKSIKICAgIHN0eWxlTnVtYmVyPSI1IgogICAgZmlsbGVkCiAgICB2ZXJ0aWNlcz0iKCR4VmFsLCAkYm90TGVmdCkgKCR4VmFsKzAuMiwgJCRnKCR4VmFsKSkiCiAgLz4KPC9ncmFwaD4KPGJvb2xlYW5JbnB1dCBuYW1lPSJzaG93U2xpY2UiPgogIDxsYWJlbD5TaG93IHJlcHJlc2VudGF0aXZlIHNsaWNlLjwvbGFiZWw+CjwvYm9vbGVhbklucHV0Pgo8c2xpZGVyCiAgaW5pdGlhbFZhbHVlPSItMi44IgogIG5hbWU9InhWYWwiCiAgZnJvbT0iLTMiCiAgdG89IjQuOCIKICBzdGVwPSIwLjIiCiAgc2hvd1RpY2tzPSJmYWxzZSIKICBzaG93VmFsdWU9ImZhbHNlIgogIGhpZGU9Im5vdCgkc2hvd1NsaWNlKSIKLz4=&quot;);
     c.appendChild(s);
-
-    let loadingRemoved = false;
-    let removeTimer = null;
-
-    function removeLoading() {
-      if (loadingRemoved) return;
-      loadingRemoved = true;
-
-      const loading = document.getElementById(&quot;loading&quot;);
-      if (!loading) return;
-
-      const wrapper = document.querySelector(&quot;.doenet-wrapper&quot;);
-
-
-
-      requestAnimationFrame(() => {
-        loading.style.opacity = &quot;0&quot;;
-
-        setTimeout(() => {
-          if (wrapper) {
-            wrapper.style.minHeight = &quot;0&quot;;
-          }
-          loading.remove();
-        }, 750);
-      });
-    }
-
 
     renderDoenetViewerToContainer(c,null,{addVirtualKeyboard:false});
     // Baked-in id of the *outer* <iframe> element. We can't rely on
@@ -1055,33 +1022,46 @@
     // is always null. Embedding the id at build time avoids needing
     // allow-same-origin (which would break the isolation/sandboxing).
     const FRAME_ID=&quot;doenet-frame-4&quot;;
-    
-  let stableTimer = null;
 
-  function sendHeight(){
-    const h = document.body.scrollHeight;
+    function removeLoading() {
+      const loading = document.getElementById(&quot;loading&quot;);
+      const wrapper = document.querySelector(&quot;.doenet-wrapper&quot;);
 
-    parent.postMessage(
-      {
-        doenetHeight: h,
-        frameId: FRAME_ID
-      },
-      &quot;*&quot;
-    );
+      if (!loading) return;
 
-    clearTimeout(stableTimer);
+      loading.style.opacity = &quot;0&quot;;
 
-    stableTimer = setTimeout(() => {
-      removeLoading();
-    }, 500);
-  }
+      setTimeout(() => {
+        if (wrapper) {
+          wrapper.style.minHeight = &quot;0&quot;;
+        }
+      loading.remove();
+      }, 750);
+    }
+
+
+    let loaderRemoved = false;
+
+    function sendHeight(){
+      parent.postMessage(
+        {
+          doenetHeight: document.body.scrollHeight,
+          frameId: FRAME_ID
+        },
+        &quot;*&quot;
+      );
+
+      if (!loaderRemoved) {
+        loaderRemoved = true;
+        removeLoading();
+      }
+    }
 
     new ResizeObserver(sendHeight).observe(document.body);
     // Respond to the parent's fallback stabilization pings.
     window.addEventListener(&quot;message&quot;,(e)=>{
       if(e.data &amp;&amp; e.data.requestHeight) sendHeight();
     });
-  });
   </script></body></html>" style="width:100%;border:none;overflow:hidden;" class="doenet-frame" sandbox="allow-scripts allow-same-origin" loading="lazy"></iframe>
   <div class="callout callout-prompt" data-callout="prompt">
   <details open>
@@ -1142,7 +1122,7 @@
       min-height:1em;
 
       opacity: 1;
-      transition: opacity .5s ease;
+      transition: opacity .75s ease;
     }
 
   .doenet-wrapper{
@@ -1251,45 +1231,27 @@
   </div>
 
   <script type=&quot;module&quot;>
-  const CDN=&quot;https://&quot;+&quot;cdn.jsdelivr.net/npm/@doenet/standalone@latest/&quot;;
-  import(CDN+&quot;doenet-standalone.js&quot;).then(({renderDoenetViewerToContainer})=>{
-    function decode(s){
-      const b=atob(s),u=new Uint8Array(b.length);
-      for(let i=0;i<b.length;i++)u[i]=b.charCodeAt(i);
-      return new TextDecoder().decode(u);
+  import {
+    renderDoenetViewerToContainer
+  } from &quot;https://cdn.jsdelivr.net/npm/@doenet/standalone@latest/doenet-standalone.js&quot;;
+
+  function decode(s) {
+    const raw = atob(s);
+
+    try {
+      return new TextDecoder(&quot;utf-8&quot;).decode(
+        Uint8Array.from(raw, c => c.charCodeAt(0))
+      );
+    } catch {
+      return raw;
     }
+  }
+
     const c=document.getElementById(&quot;app-5&quot;);
     const s=document.createElement(&quot;script&quot;);
     s.type=&quot;text/doenetml&quot;;
     s.textContent=decode(&quot;PGFuc3dlcj48bWF0aElucHV0PjxsYWJlbD5DaGVjayB5b3VyIHdvcms6IDwvbGFiZWw+PC9tYXRoSW5wdXQ+Cjxhd2FyZD48bWF0aCBmb3JtYXQ9ImxhdGV4Ij5caW50X3stMn1eNCAoKHkrMSktKHleMi02KS8yKSBkeTwvbWF0aD48L2F3YXJkPgo8YXdhcmQgY3JlZGl0PSIwIiBuYW1lPSJtaXNzaW5nUGFyZW5zIj48bWF0aCBmb3JtYXQ9ImxhdGV4Ij5caW50X3stMn1eNCAoeSsxKS0oeV4yLTYpLzIgZHk8L21hdGg+PC9hd2FyZD48L2Fuc3dlcj4KPGZlZWRiYWNrIGNvbmRpdGlvbj0iJG1pc3NpbmdQYXJlbnMiPkFsbW9zdCB0aGVyZSEgSSB0aGluayB5b3UganVzdCBmb3Jnb3Qgc29tZSBwYXJlbnRoZXNlcyBzb21ld2hlcmUuPC9mZWVkYmFjaz4=&quot;);
     c.appendChild(s);
-
-    let loadingRemoved = false;
-    let removeTimer = null;
-
-    function removeLoading() {
-      if (loadingRemoved) return;
-      loadingRemoved = true;
-
-      const loading = document.getElementById(&quot;loading&quot;);
-      if (!loading) return;
-
-      const wrapper = document.querySelector(&quot;.doenet-wrapper&quot;);
-
-
-
-      requestAnimationFrame(() => {
-        loading.style.opacity = &quot;0&quot;;
-
-        setTimeout(() => {
-          if (wrapper) {
-            wrapper.style.minHeight = &quot;0&quot;;
-          }
-          loading.remove();
-        }, 750);
-      });
-    }
-
 
     renderDoenetViewerToContainer(c,null,{addVirtualKeyboard:false});
     // Baked-in id of the *outer* <iframe> element. We can't rely on
@@ -1298,33 +1260,46 @@
     // is always null. Embedding the id at build time avoids needing
     // allow-same-origin (which would break the isolation/sandboxing).
     const FRAME_ID=&quot;doenet-frame-5&quot;;
-    
-  let stableTimer = null;
 
-  function sendHeight(){
-    const h = document.body.scrollHeight;
+    function removeLoading() {
+      const loading = document.getElementById(&quot;loading&quot;);
+      const wrapper = document.querySelector(&quot;.doenet-wrapper&quot;);
 
-    parent.postMessage(
-      {
-        doenetHeight: h,
-        frameId: FRAME_ID
-      },
-      &quot;*&quot;
-    );
+      if (!loading) return;
 
-    clearTimeout(stableTimer);
+      loading.style.opacity = &quot;0&quot;;
 
-    stableTimer = setTimeout(() => {
-      removeLoading();
-    }, 500);
-  }
+      setTimeout(() => {
+        if (wrapper) {
+          wrapper.style.minHeight = &quot;0&quot;;
+        }
+      loading.remove();
+      }, 750);
+    }
+
+
+    let loaderRemoved = false;
+
+    function sendHeight(){
+      parent.postMessage(
+        {
+          doenetHeight: document.body.scrollHeight,
+          frameId: FRAME_ID
+        },
+        &quot;*&quot;
+      );
+
+      if (!loaderRemoved) {
+        loaderRemoved = true;
+        removeLoading();
+      }
+    }
 
     new ResizeObserver(sendHeight).observe(document.body);
     // Respond to the parent's fallback stabilization pings.
     window.addEventListener(&quot;message&quot;,(e)=>{
       if(e.data &amp;&amp; e.data.requestHeight) sendHeight();
     });
-  });
   </script></body></html>" style="width:100%;border:none;overflow:hidden;" class="doenet-frame" sandbox="allow-scripts allow-same-origin" loading="lazy"></iframe>
   <div class="callout callout-visual" data-callout="visual">
   <details>
@@ -1362,7 +1337,7 @@
       min-height:1em;
 
       opacity: 1;
-      transition: opacity .5s ease;
+      transition: opacity .75s ease;
     }
 
   .doenet-wrapper{
@@ -1471,45 +1446,27 @@
   </div>
 
   <script type=&quot;module&quot;>
-  const CDN=&quot;https://&quot;+&quot;cdn.jsdelivr.net/npm/@doenet/standalone@latest/&quot;;
-  import(CDN+&quot;doenet-standalone.js&quot;).then(({renderDoenetViewerToContainer})=>{
-    function decode(s){
-      const b=atob(s),u=new Uint8Array(b.length);
-      for(let i=0;i<b.length;i++)u[i]=b.charCodeAt(i);
-      return new TextDecoder().decode(u);
+  import {
+    renderDoenetViewerToContainer
+  } from &quot;https://cdn.jsdelivr.net/npm/@doenet/standalone@latest/doenet-standalone.js&quot;;
+
+  function decode(s) {
+    const raw = atob(s);
+
+    try {
+      return new TextDecoder(&quot;utf-8&quot;).decode(
+        Uint8Array.from(raw, c => c.charCodeAt(0))
+      );
+    } catch {
+      return raw;
     }
+  }
+
     const c=document.getElementById(&quot;app-6&quot;);
     const s=document.createElement(&quot;script&quot;);
     s.type=&quot;text/doenetml&quot;;
     s.textContent=decode(&quot;PCEtLSAlJSUlJSUlJSUlJSUlJSUlJSUlJSUlJSUlJSUlCiAgICAgJSUlJSUlJSUlJSUgQ29tbW9uIFZhcmlhYmxlcwolJSUlJSUlJSUlJSUlJSUlJSUlJSUlJSUlJSUlJSUlJSUgLS0+CjxzZXR1cD4KICA8bnVtYmVyIG5hbWU9ImEiPi0zPC9udW1iZXI+CiAgPG51bWJlciBuYW1lPSJiIj41PC9udW1iZXI+CiAgPG51bWJlciBuYW1lPSJNdXRlZEdyZWVuIj4xMTc3MzM8L251bWJlcj4KICA8c3R5bGVEZWZpbml0aW9uCiAgICBuYW1lPSJNR3JlZW5TdHlsZSIKICAgIHN0eWxlTnVtYmVyPSIxMCIKICAgIGxpbmVXaWR0aD0iMyIKICAgIGxpbmVTdHlsZT0ic29saWQiCiAgICBsaW5lQ29sb3I9IiMkTXV0ZWRHcmVlbiIKICAgIGZpbGxDb2xvcj0iIyRNdXRlZEdyZWVuIgogIC8+CiAgPG51bWJlciBuYW1lPSJNdXRlZEluZGlnbyI+MzMyMjg4PC9udW1iZXI+CiAgPGZ1bmN0aW9uIG5hbWU9ImYiIHN0eWxlTnVtYmVyPSIxMCIgZG9tYWluPSJbJGEtMSwkYisxXSI+eC0xPC9mdW5jdGlvbj4KICA8ZnVuY3Rpb24gbmFtZT0iZyIgc3R5bGVOdW1iZXI9IjkiIGRvbWFpbj0iWyRhLCRiKzFdIj5zcXJ0KDJ4KzYpPC9mdW5jdGlvbj4KICA8ZnVuY3Rpb24gbmFtZT0iaCIgc3R5bGVOdW1iZXI9IjkiIGRvbWFpbj0iWyRhLCRiXSI+LXNxcnQoMngrNik8L2Z1bmN0aW9uPgogIDxmdW5jdGlvbiBzdHlsZU51bWJlcj0iMTAiIG5hbWU9InoiIGRvbWFpbj0iWyRhLCRiXSI+MDwvZnVuY3Rpb24+CiAgPGZ1bmN0aW9uIG5hbWU9InAiIHZhcmlhYmxlPSJ5Ij4oeV4yLTYpLzI8L2Z1bmN0aW9uPgogIDxmdW5jdGlvbiBuYW1lPSJxIiB2YXJpYWJsZT0ieSI+eSsxPC9mdW5jdGlvbj4KPC9zZXR1cD4KPCEtLSAlJSUlJSUlJSUlJSUlJSUlJSUlJSUlJSUlJSUlCiAgICAgJSUlJSUlJSUlJSUlJSUlJSUgRHJhdyBhIEdyYXBoCiUlJSUlJSUlJSUlJSUlJSUlJSUlJSUlJSUlJSUlJSUlJSAtLT4KPGdyYXBoCiAgZml4QXhlcwogIHdpZHRoPSI4MCUiCiAgc2hvd0JvcmRlcj0iZmFsc2UiCiAgYXNwZWN0UmF0aW89IjEuNzUiCiAgZ3JpZD0idHJ1ZSIKICB4bWluPSIkYS0xIgogIHhtYXg9IiRiKzEiCiAgZGlzcGxheVhBeGlzVGlja0xhYmVscz0iZmFsc2UiCiAgeW1pbj0iLTMiCiAgeW1heD0iNSIKICBzaG93TmF2aWdhdGlvbj0iZmFsc2UiCiAgZGVjb3JhdGl2ZQo+CiAgPHNob3J0RGVzY3JpcHRpb24+CiAgICBUaGUgZ3JhcGhzIG9mIHleMj0yeCs2IGFuZCB5PXgtMSBmcm9tIHg9LTMgdG8geD01IGFuZCB5PS0yIHRvIHk9NCwgc2hvd2luZwogICAgdGhlaXIgaW50ZXJzZWN0aW9ucyBhbmQgYWxsb3dpbmcgYSByZXByZXNlbnRhdGl2ZSBob3Jpem9udGFsIHNsaWNlIHRvIGJlCiAgICBkcmF3biBhbmQgbW92ZWQgdmVydGljYWxseS4KICA8L3Nob3J0RGVzY3JpcHRpb24+CiAgPGxpbmVTZWdtZW50IHN0eWxlTnVtYmVyPSI5IiBmaXhMb2NhdGlvbiBlbmRwb2ludHM9IigkYSwkJGcoJGEpKSAoJGEsMCkiIC8+CiAgPGxpbmVTZWdtZW50CiAgICBzdHlsZU51bWJlcj0iOSIKICAgIGZpeExvY2F0aW9uCiAgICBlbmRwb2ludHM9Iig3LCQkZyg3KSkgKDcsMCkiCiAgICBsYWJlbElzTmFtZQogIC8+CiAgJGYgJGcgJGggPG51bWJlciBoaWRlIG5hbWU9ImxlZnRFbmRQb2ludCI+JCRwKCR5VmFsKTwvbnVtYmVyPgogIDxudW1iZXIgaGlkZSBuYW1lPSJyaWdodEVuZFBvaW50Ij4kJHEoJHlWYWwpPC9udW1iZXI+CiAgPCEtLQogIDxwb2ludCBoaWRlIG5hbWU9ImJvdExlZnQiPgogICAgICAoJGxlZnRFbmRQb2ludCwgJHlWYWwpCiAgPC9wb2ludD4KICA8cG9pbnQgaGlkZSBuYW1lPSJ0b3BSaWdodCI+CiAgICAoJHJpZ2h0RW5kUG9pbnQsICR5VmFsKy4yKQogIDwvcG9pbnQ+CiAgLS0+CiAgPHJlY3RhbmdsZQogICAgaGlkZT0ibm90KCRzaG93U2xpY2UpIgogICAgc3R5bGVOdW1iZXI9IjUiCiAgICBmaWxsZWQKICAgIHZlcnRpY2VzPSIoJGxlZnRFbmRQb2ludCwgJHlWYWwpICgkcmlnaHRFbmRQb2ludCwgJHlWYWwrLjIpIgogIC8+CjwvZ3JhcGg+Cjxib29sZWFuIG5hbWU9InNob3dTbGljZSIgaGlkZT50cnVlPC9ib29sZWFuPgo8c2xpZGVyCiAgaW5pdGlhbFZhbHVlPSItMC44IgogIG5hbWU9InlWYWwiCiAgZnJvbT0iLTIiCiAgdG89IjMuOCIKICBzdGVwPSIwLjIiCiAgc2hvd1RpY2tzPSJmYWxzZSIKICBzaG93VmFsdWU9ImZhbHNlIgogIGhpZGU9Im5vdCgkc2hvd1NsaWNlKSIKLz4=&quot;);
     c.appendChild(s);
-
-    let loadingRemoved = false;
-    let removeTimer = null;
-
-    function removeLoading() {
-      if (loadingRemoved) return;
-      loadingRemoved = true;
-
-      const loading = document.getElementById(&quot;loading&quot;);
-      if (!loading) return;
-
-      const wrapper = document.querySelector(&quot;.doenet-wrapper&quot;);
-
-
-
-      requestAnimationFrame(() => {
-        loading.style.opacity = &quot;0&quot;;
-
-        setTimeout(() => {
-          if (wrapper) {
-            wrapper.style.minHeight = &quot;0&quot;;
-          }
-          loading.remove();
-        }, 750);
-      });
-    }
-
 
     renderDoenetViewerToContainer(c,null,{addVirtualKeyboard:false});
     // Baked-in id of the *outer* <iframe> element. We can't rely on
@@ -1518,33 +1475,46 @@
     // is always null. Embedding the id at build time avoids needing
     // allow-same-origin (which would break the isolation/sandboxing).
     const FRAME_ID=&quot;doenet-frame-6&quot;;
-    
-  let stableTimer = null;
 
-  function sendHeight(){
-    const h = document.body.scrollHeight;
+    function removeLoading() {
+      const loading = document.getElementById(&quot;loading&quot;);
+      const wrapper = document.querySelector(&quot;.doenet-wrapper&quot;);
 
-    parent.postMessage(
-      {
-        doenetHeight: h,
-        frameId: FRAME_ID
-      },
-      &quot;*&quot;
-    );
+      if (!loading) return;
 
-    clearTimeout(stableTimer);
+      loading.style.opacity = &quot;0&quot;;
 
-    stableTimer = setTimeout(() => {
-      removeLoading();
-    }, 500);
-  }
+      setTimeout(() => {
+        if (wrapper) {
+          wrapper.style.minHeight = &quot;0&quot;;
+        }
+      loading.remove();
+      }, 750);
+    }
+
+
+    let loaderRemoved = false;
+
+    function sendHeight(){
+      parent.postMessage(
+        {
+          doenetHeight: document.body.scrollHeight,
+          frameId: FRAME_ID
+        },
+        &quot;*&quot;
+      );
+
+      if (!loaderRemoved) {
+        loaderRemoved = true;
+        removeLoading();
+      }
+    }
 
     new ResizeObserver(sendHeight).observe(document.body);
     // Respond to the parent's fallback stabilization pings.
     window.addEventListener(&quot;message&quot;,(e)=>{
       if(e.data &amp;&amp; e.data.requestHeight) sendHeight();
     });
-  });
   </script></body></html>" style="width:100%;border:none;overflow:hidden;" class="doenet-frame" sandbox="allow-scripts allow-same-origin" loading="lazy"></iframe>
   </div>
   </details>
@@ -1611,7 +1581,7 @@
       min-height:1em;
 
       opacity: 1;
-      transition: opacity .5s ease;
+      transition: opacity .75s ease;
     }
 
   .doenet-wrapper{
@@ -1720,45 +1690,27 @@
   </div>
 
   <script type=&quot;module&quot;>
-  const CDN=&quot;https://&quot;+&quot;cdn.jsdelivr.net/npm/@doenet/standalone@latest/&quot;;
-  import(CDN+&quot;doenet-standalone.js&quot;).then(({renderDoenetViewerToContainer})=>{
-    function decode(s){
-      const b=atob(s),u=new Uint8Array(b.length);
-      for(let i=0;i<b.length;i++)u[i]=b.charCodeAt(i);
-      return new TextDecoder().decode(u);
+  import {
+    renderDoenetViewerToContainer
+  } from &quot;https://cdn.jsdelivr.net/npm/@doenet/standalone@latest/doenet-standalone.js&quot;;
+
+  function decode(s) {
+    const raw = atob(s);
+
+    try {
+      return new TextDecoder(&quot;utf-8&quot;).decode(
+        Uint8Array.from(raw, c => c.charCodeAt(0))
+      );
+    } catch {
+      return raw;
     }
+  }
+
     const c=document.getElementById(&quot;app-7&quot;);
     const s=document.createElement(&quot;script&quot;);
     s.type=&quot;text/doenetml&quot;;
     s.textContent=decode(&quot;PHNldHVwPgogIDxzdHlsZURlZmluaXRpb24KICAgIG5hbWU9Ik1HcmVlblN0eWxlIgogICAgc3R5bGVOdW1iZXI9IjEwIgogICAgbGluZVdpZHRoPSI0LjAiCiAgICBsaW5lU3R5bGU9InNvbGlkIgogICAgbGluZUNvbG9yPSIjMDA3QzVBIgogICAgbGluZUNvbG9yV29yZD0iR3JlZW4iCiAgICBmaWxsT3BhY2l0eT0iLjI4IgogICAgZmlsbENvbG9yPSIjMDA5RTczIgogIC8+CiAgPHN0eWxlRGVmaW5pdGlvbgogICAgc3R5bGVOdW1iZXI9IjkiCiAgICBsaW5lQ29sb3I9IiM4QTZGMDgiCiAgICBsaW5lT3BhY2l0eT0iLjc0IgogICAgZmlsbE9wYWNpdHk9Ii4yNSIKICAgIGxpbmVXaWR0aD0iMyIKICAgIGZpbGxDb2xvcj0iI0I3OTUwQiIKICAgIGZpbGxDb2xvcldvcmQ9Ik11c3RhcmQiCiAgLz4KICA8c3R5bGVEZWZpbml0aW9uCiAgICBzdHlsZU51bWJlcj0iMyIKICAgIGxpbmVDb2xvcj0iIzNDN0ZBNiIKICAgIGxpbmVPcGFjaXR5PSIuOCIKICAgIGZpbGxDb2xvcj0iIzU0OTlDNyIKICAgIGZpbGxPcGFjaXR5PSIuMTUiCiAgICBmaWxsQ29sb3JXb3JkPSJTa3kgQmx1ZSIKICAvPgo8L3NldHVwPgo8Z3JhcGgKICB4TWluPSItMC41IgogIHhNYXg9IjIiCiAgeU1pbj0iLTAuNSIKICB5TWF4PSIxLjUiCiAgZml4QXhlcwogIHNob3dOYXZpZ2F0aW9uPSJmYWxzZSIKICBncmlkPSJwaS80IC41IgogIGRpc3BsYXlYQXhpc1RpY2tMYWJlbHM9ImZhbHNlIgogIGRpc3BsYXlZQXhpc1RpY2tMYWJlbHM9ImZhbHNlIgogIHhUaWNrU2NhbGVGYWN0b3I9InBpLzQiCiAgZGlzcGxheVhBeGlzVGlja3M9ImZhbHNlIgogIGRpc3BsYXlZQXhpc1RpY2tzPSJmYWxzZSIKPgogIDxzaG9ydERlc2NyaXB0aW9uPgogICAgUGxvdCBvZiBzaW4oeCkgYW5kIGNvcyh4KSBwbG90dGVkIGJldHdlZW4geD0tMS8yIGFuZCB4PTIgYW5kIHk9LTEvMiBhbmQKICAgIHk9My8yLiBUaGUgcmVnaW9uIGJldHdlZW4gdGhlIGN1cnZlcyBmcm9tIHg9MCB0byB4PXBpLzIgaXMgc2hhZGVkLgogIDwvc2hvcnREZXNjcmlwdGlvbj4KICA8cmVnaW9uQmV0d2VlbkN1cnZlcyBzdHlsZU51bWJlcj0iMyIgYm91bmRhcnlWYWx1ZXM9IjAgcGkvMiI+CiAgICAkZyAkZgogIDwvcmVnaW9uQmV0d2VlbkN1cnZlcz4KICA8ZnVuY3Rpb24gbmFtZT0iZiIgc3R5bGVOdW1iZXI9IjkiIGRvbWFpbj0iWy0xLDRdIj5zaW4oeCk8L2Z1bmN0aW9uPgogIDxsYWJlbCBmaXhlZCBhbmNob3I9IihwaS8yLDEuMSkiPjxtPlxsYXJnZVxzaW4oeCk8L20+PC9sYWJlbD4KICA8ZnVuY3Rpb24gbmFtZT0iZyIgc3R5bGVOdW1iZXI9IjEwIiBkb21haW49IlstMSw0XSI+Y29zKHgpPC9mdW5jdGlvbj4KICA8bGFiZWwgZml4ZWQgYW5jaG9yPSIoMCwxLjEpIj48bT5cbGFyZ2VcY29zKHgpPC9tPjwvbGFiZWw+CjwvZ3JhcGg+&quot;);
     c.appendChild(s);
-
-    let loadingRemoved = false;
-    let removeTimer = null;
-
-    function removeLoading() {
-      if (loadingRemoved) return;
-      loadingRemoved = true;
-
-      const loading = document.getElementById(&quot;loading&quot;);
-      if (!loading) return;
-
-      const wrapper = document.querySelector(&quot;.doenet-wrapper&quot;);
-
-
-
-      requestAnimationFrame(() => {
-        loading.style.opacity = &quot;0&quot;;
-
-        setTimeout(() => {
-          if (wrapper) {
-            wrapper.style.minHeight = &quot;0&quot;;
-          }
-          loading.remove();
-        }, 750);
-      });
-    }
-
 
     renderDoenetViewerToContainer(c,null,{addVirtualKeyboard:false});
     // Baked-in id of the *outer* <iframe> element. We can't rely on
@@ -1767,33 +1719,46 @@
     // is always null. Embedding the id at build time avoids needing
     // allow-same-origin (which would break the isolation/sandboxing).
     const FRAME_ID=&quot;doenet-frame-7&quot;;
-    
-  let stableTimer = null;
 
-  function sendHeight(){
-    const h = document.body.scrollHeight;
+    function removeLoading() {
+      const loading = document.getElementById(&quot;loading&quot;);
+      const wrapper = document.querySelector(&quot;.doenet-wrapper&quot;);
 
-    parent.postMessage(
-      {
-        doenetHeight: h,
-        frameId: FRAME_ID
-      },
-      &quot;*&quot;
-    );
+      if (!loading) return;
 
-    clearTimeout(stableTimer);
+      loading.style.opacity = &quot;0&quot;;
 
-    stableTimer = setTimeout(() => {
-      removeLoading();
-    }, 500);
-  }
+      setTimeout(() => {
+        if (wrapper) {
+          wrapper.style.minHeight = &quot;0&quot;;
+        }
+      loading.remove();
+      }, 750);
+    }
+
+
+    let loaderRemoved = false;
+
+    function sendHeight(){
+      parent.postMessage(
+        {
+          doenetHeight: document.body.scrollHeight,
+          frameId: FRAME_ID
+        },
+        &quot;*&quot;
+      );
+
+      if (!loaderRemoved) {
+        loaderRemoved = true;
+        removeLoading();
+      }
+    }
 
     new ResizeObserver(sendHeight).observe(document.body);
     // Respond to the parent's fallback stabilization pings.
     window.addEventListener(&quot;message&quot;,(e)=>{
       if(e.data &amp;&amp; e.data.requestHeight) sendHeight();
     });
-  });
   </script></body></html>" style="width:100%;border:none;overflow:hidden;" class="doenet-frame" sandbox="allow-scripts allow-same-origin" loading="lazy"></iframe>
   </div>
   </details>
@@ -1850,7 +1815,7 @@
       min-height:1em;
 
       opacity: 1;
-      transition: opacity .5s ease;
+      transition: opacity .75s ease;
     }
 
   .doenet-wrapper{
@@ -1959,45 +1924,27 @@
   </div>
 
   <script type=&quot;module&quot;>
-  const CDN=&quot;https://&quot;+&quot;cdn.jsdelivr.net/npm/@doenet/standalone@latest/&quot;;
-  import(CDN+&quot;doenet-standalone.js&quot;).then(({renderDoenetViewerToContainer})=>{
-    function decode(s){
-      const b=atob(s),u=new Uint8Array(b.length);
-      for(let i=0;i<b.length;i++)u[i]=b.charCodeAt(i);
-      return new TextDecoder().decode(u);
+  import {
+    renderDoenetViewerToContainer
+  } from &quot;https://cdn.jsdelivr.net/npm/@doenet/standalone@latest/doenet-standalone.js&quot;;
+
+  function decode(s) {
+    const raw = atob(s);
+
+    try {
+      return new TextDecoder(&quot;utf-8&quot;).decode(
+        Uint8Array.from(raw, c => c.charCodeAt(0))
+      );
+    } catch {
+      return raw;
     }
+  }
+
     const c=document.getElementById(&quot;app-8&quot;);
     const s=document.createElement(&quot;script&quot;);
     s.type=&quot;text/doenetml&quot;;
     s.textContent=decode(&quot;PGFuc3dlcj48bWF0aElucHV0PjxsYWJlbD5DaGVjayB5b3VyIHdvcms6IDwvbGFiZWw+PC9tYXRoSW5wdXQ+CjxtYXRoPjIoc3FydCgyKS0xKTwvbWF0aD48L2Fuc3dlcj4=&quot;);
     c.appendChild(s);
-
-    let loadingRemoved = false;
-    let removeTimer = null;
-
-    function removeLoading() {
-      if (loadingRemoved) return;
-      loadingRemoved = true;
-
-      const loading = document.getElementById(&quot;loading&quot;);
-      if (!loading) return;
-
-      const wrapper = document.querySelector(&quot;.doenet-wrapper&quot;);
-
-
-
-      requestAnimationFrame(() => {
-        loading.style.opacity = &quot;0&quot;;
-
-        setTimeout(() => {
-          if (wrapper) {
-            wrapper.style.minHeight = &quot;0&quot;;
-          }
-          loading.remove();
-        }, 750);
-      });
-    }
-
 
     renderDoenetViewerToContainer(c,null,{addVirtualKeyboard:false});
     // Baked-in id of the *outer* <iframe> element. We can't rely on
@@ -2006,33 +1953,46 @@
     // is always null. Embedding the id at build time avoids needing
     // allow-same-origin (which would break the isolation/sandboxing).
     const FRAME_ID=&quot;doenet-frame-8&quot;;
-    
-  let stableTimer = null;
 
-  function sendHeight(){
-    const h = document.body.scrollHeight;
+    function removeLoading() {
+      const loading = document.getElementById(&quot;loading&quot;);
+      const wrapper = document.querySelector(&quot;.doenet-wrapper&quot;);
 
-    parent.postMessage(
-      {
-        doenetHeight: h,
-        frameId: FRAME_ID
-      },
-      &quot;*&quot;
-    );
+      if (!loading) return;
 
-    clearTimeout(stableTimer);
+      loading.style.opacity = &quot;0&quot;;
 
-    stableTimer = setTimeout(() => {
-      removeLoading();
-    }, 500);
-  }
+      setTimeout(() => {
+        if (wrapper) {
+          wrapper.style.minHeight = &quot;0&quot;;
+        }
+      loading.remove();
+      }, 750);
+    }
+
+
+    let loaderRemoved = false;
+
+    function sendHeight(){
+      parent.postMessage(
+        {
+          doenetHeight: document.body.scrollHeight,
+          frameId: FRAME_ID
+        },
+        &quot;*&quot;
+      );
+
+      if (!loaderRemoved) {
+        loaderRemoved = true;
+        removeLoading();
+      }
+    }
 
     new ResizeObserver(sendHeight).observe(document.body);
     // Respond to the parent's fallback stabilization pings.
     window.addEventListener(&quot;message&quot;,(e)=>{
       if(e.data &amp;&amp; e.data.requestHeight) sendHeight();
     });
-  });
   </script></body></html>" style="width:100%;border:none;overflow:hidden;" class="doenet-frame" sandbox="allow-scripts allow-same-origin" loading="lazy"></iframe>
   </div>
   </details>
@@ -2046,7 +2006,7 @@
     <div class="footer-line">
       <div>Written in <a href="https://obsidian.md/">Obsidian Markdown Editor</a></div>
       <div>HTML Generated by <a href="https://pandoc.org/">Pandoc</a></div>
-      <div>Last Updated: June 30, 2026</div><br/>
+      <div>Last Updated: July 07, 2026</div><br/>
       <div>Visit my <a href="https://github.com/DoctorHaitch/LaTeX_Accessibility">GitHub</a> for more information on creating accessible mathematics.</div>
     </div>
   </footer>
