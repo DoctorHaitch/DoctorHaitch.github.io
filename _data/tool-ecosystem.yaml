@@ -157,3 +157,17 @@ student_data_collection:
     status: "Stable"
     description: |
       CSSplice (Standards, Protocols, and Learning Infrastructure for Computing Education) is a web-based platform that allows educators to create and manage interactive, accessible educational content. It provides tools for authoring, deploying, and tracking student engagement with learning materials. CSSplice supports various content formats, including HTML5, and integrates with Learning Management Systems (LMS) through standards like SCORM and LTI.
+
+accessibility_checkers:
+  - title: '<a href="https://www.siteimprove.com/why-siteimprove/integrations/browser-extensions/" target="_blank">SiteImprove Browser Extension</a>'
+    status: "Stable"
+    description: |
+      The SiteImprove Browser Extension is a tool that allows users to evaluate the accessibility of web content. It supports filtering issues by WCAG 2.2 conformance levels (A, AA, AAA), best practices, and WAI-ARIA guidelines. Excellent tool, although some likelihood of false positives, but catches many issues that axe DevTools misses. I use it as a second pass for accessibility testing after axe DevTools, but it is also incredibly easy to use, so I often use it to check other websites besides the one I am authoring.
+  - title: '<a href="https://www.deque.com/axe/devtools/extension/" target="_blank">axe DevTools Extension</a>'
+    status: "Stable"
+    description: |
+      This extension integrated into a new panel in your browser's developer tools, allowing you to run accessibility tests on web pages and applications. It provided detailed reports, seems to have few false positives, and is a good choice for identifying high-impact accessibility issues. I use it as my first pass for accessibility testing, and then use more stringent checkers for verification and to catch lower-impact technical issues.
+  - title: '<a href="https://wave.webaim.org/" target="_blank">WAVE</a>'
+    status: "Stable"
+    description: |
+      WAVE (Web Accessibility Evaluation Tool) is a free online tool that helps users evaluate the accessibility of web content. It provides visual feedback on potential accessibility issues and supports various web standards and guidelines. Gives good visual overlays of how screen-reader and keyboard navigation will "see" your website.

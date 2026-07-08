@@ -9,12 +9,6 @@ mathjax: true
 tags: ["accessibility", "web-dev", "visual design", "tools"]
 ---
 
-<!--
-Berit N. Givens
-bngivens@cpp.edu
-(Interested in general accessibility tools for mathematics -- send tool roundup).
--->
-
 ## Website Accessibility Tools
 
 <blockquote data-type="fancy-quote" aria-describedby="main-heading">

@@ -12,7 +12,7 @@
     {% for card in include.source %}
     <div class="detail-card">
 
-      <div class="detail-header" id="{{ card.title | slugify }}">
+      <div class="detail-header" id="{{ card.title | strip_html | slugify }}">
         <span class="detail-name">{{ card.title }}</span>
         <span class="detail-status">{{ card.status }}</span>
       </div>

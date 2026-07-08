@@ -7,8 +7,8 @@
       <ul>
         {% for language in site.data.tool-ecosystem.authoring %}
         <li>
-          <a href="#{{ language.title | slugify }}">
-            {{ language.title }}
+          <a href="#{{ language.title | strip_html | slugify }}">
+            {{ language.title | strip_html }}
           </a>
         </li>
         {% endfor %}
@@ -20,8 +20,8 @@
       <ul>
         {% for tool in site.data.tool-ecosystem.format_conversion %}
         <li>
-          <a href="#{{ tool.title | slugify }}">
-            {{ tool.title }}
+          <a href="#{{ tool.title | strip_html | slugify }}">
+            {{ tool.title | strip_html }}
           </a>
         </li>
         {% endfor %}
@@ -35,8 +35,23 @@
       <ul>
         {% for creator in site.data.tool-ecosystem.activity_creation %}
         <li>
-          <a href="#{{ creator.title | slugify }}">
-            {{ creator.title }}
+          <a href="#{{ creator.title | strip_html | slugify }}">
+            {{ creator.title | strip_html }}
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </li>
+
+        <li>
+      <a href="#hosting-and-deployment-tools">
+        Hosting and Deployment Tools
+      </a>
+      <ul>
+        {% for tool in site.data.tool-ecosystem.hosting_deployment %}
+        <li>
+          <a href="#{{ tool.title | strip_html | slugify }}">
+            {{ tool.title | strip_html }}
           </a>
         </li>
         {% endfor %}
@@ -44,14 +59,14 @@
     </li>
 
     <li>
-      <a href="#hosting-and-deployment-tools">
-        Hosting and Deployment Tools
+      <a href="#tools-to-check-accessibility-standards">
+        Tools to Check Accessibility Standards
       </a>
       <ul>
-        {% for tool in site.data.tool-ecosystem.hosting_deployment %}
+        {% for tool in site.data.tool-ecosystem.accessibility_checkers %}
         <li>
-          <a href="#{{ tool.title | slugify }}">
-            {{ tool.title }}
+          <a href="#{{ tool.title | strip_html | slugify }}">
+            {{ tool.title | strip_html }}
           </a>
         </li>
         {% endfor %}
@@ -65,8 +80,8 @@
       <ul>
         {% for tool in site.data.tool-ecosystem.student_data_collection %}
         <li>
-          <a href="#{{ tool.title | slugify }}">
-            {{ tool.title }}
+          <a href="#{{ tool.title | strip_html | slugify }}">
+            {{ tool.title | strip_html }}
           </a>
         </li>
         {% endfor %}
