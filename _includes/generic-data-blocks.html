@@ -8,11 +8,17 @@
   </summary>
   {% endif %}
 
-  <div class="detail-cards">
-    {% for card in include.source %}
-    <div class="detail-card">
+  {% if include.source.intro %}
+    {{ include.source.intro | markdownify | replace: '<p>', '<p class="intro">'}}
+  {% endif %}
 
-      <div class="detail-header" id="{{ card.title | slugify }}">
+  <div class="detail-cards">
+    {% assign visible_blocks = include.source.blocks | where_exp: "block", "block.hidden != true" %}
+
+    {% for card in visible_blocks %}
+    <div class="detail-card detail-card--compact">
+
+      <div class="detail-header" id="{{ card.title | strip_html | slugify }}">
         <span class="detail-name">{{ card.title }}</span>
         <span class="detail-status">{{ card.status }}</span>
       </div>
@@ -26,11 +32,13 @@
 
       <div class="detail-body">
 
+      {% if card.description %}
         <div class="detail-item">
           <div style="margin-left: 0.3rem; max-width: 90%; font-size: 0.9rem; color: var(--muted);">
             <strong>Description</strong>: {{ card.description | markdownify }}
           </div>
         </div>
+      {% endif %}
 
         {% if card.subblocks %}
           {% for subblock in card.subblocks %}

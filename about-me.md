@@ -55,6 +55,9 @@ Current projects include:
 - Developing interactive course notes and educational resources through the [Obsidian plugin](https://github.com/DoctorHaitch/obsidian-doenet) I wrote (currently in beta).
 - Expanding my collection of teaching materials, including interactive lecture notes and resources for courses I have taught.
 
+{% include generic-data-blocks.html source=site.data.positions.education title="Education" %}
+
+{% include generic-data-blocks.html source=site.data.positions.work title="Work History" %}
 
 {% comment %}
 

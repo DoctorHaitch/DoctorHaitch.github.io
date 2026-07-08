@@ -1101,7 +1101,9 @@ li blockquote[data-type="description"] {
   }
 
   a {
-    color: inherit;
+    /* color: inherit; */
+    color: color-mix(in srgb, var(--c-info) 80%, var(--ink-soft));
+    text-shadow: 0 0.1px 0 rgba(0,0,0,0.25);
     text-decoration: underline dotted;
     text-underline-offset: 3px;
     text-decoration-color: rgba(var(--color-info), 0.40);
@@ -1379,6 +1381,14 @@ summary.collapsible-title {
 
 details[open]>summary.collapsible-title::after {
   transform: rotate(135deg);
+}
+
+.collapsible-section .intro {
+  display: block;
+  margin-left: var(--content-pad);
+  margin-right: calc(2 * var(--content-pad));
+  margin-bottom: calc(0.5 * var(--content-pad));
+  margin-top: calc(0.5 * var(--content-pad));
 }
 
 // =========================================
@@ -1796,6 +1806,10 @@ blockquote .details {
 
   .item-meta .status {
     opacity: 0.9;
+  }
+
+  .item-title a {
+    color: rgba(var(--color-info), 0.90);
   }
 
   .profile-panel {

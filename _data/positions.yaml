@@ -1,98 +1,113 @@
-work: 
-  - company: Minnesota State University, Mankato
-    position: Assistant Professor, Department of Mathematics and Statistics
-    city: Mankato, MN
-    dates: 2022-Present
-    current: true
+work:
+  blocks:
+    - title: Assistant Professor, Department of Mathematics and Statistics
+      subtitle: 2022-Present (Mankato, MN)
+      status: Minnesota State University, Mankato 
+      hidden: false
+      description: "Teaching graduate and undergraduate courses in mathematics (24 credits per year). Advising undergraduate and graduate students. Develop OER resources for mathematics courses. Serve on departmental and university committees. Conduct research and train graduate students."
 
-  - company: MathHappens Foundation
-    position: Mankato, MN Math Room Coordinator
-    city: Austin, TX
-    dates: 2023-2026
-    current: false
+    - title: Math Room Coordinator (Mankato, Minnesota)
+      status: MathHappens Foundation
+      subtitle: 2023-2026 (Austin, TX)
+      description: "Coordinate schedules, hiring, and training for the Math Room located at the Children's Museum of Southern Minnesota. Create a space for children and their families to experience joyful, hands-on mathematics activities. Continues as a self-sustaining, student-led program."
+      hidden: false
 
-  - company: University of Minnesota
-    position: MathCEP Assistant Professor, School of Mathematics
-    city: Minneapolis, MN
-    dates: 2020-2022
-    current: false
+    - title: MathCEP Assistant Professor, School of Mathematics
+      status: University of Minnesota, Twin Cities
+      subtitle: 2020-2022 (Minneapolis, MN)
+      description: "Teach and coordinate courses for the MathCEP program and Mathematics department. Primarily taught and coordinated courses for the University of Minnesota's Talented Youth Mathematics Program (UMTYMP)."
+      hidden: false
 
-  - company: North Arkansas College, Learning Resources Center
-    position: Tutor (Pre-college Mathematics, Calculus, English Composition, Oral Communication)
-    city: Harrison, AR
-    dates: 2014-2015
-    current: false
+    - title: Adjunct Instructor
+      status: North Arkansas College
+      subtitle: Spring 2015 (Green Forest, AR)
+      description: "Instructor for ART1303: Photography I. Half the semester was focused on the technical aspects of photography: camera operation, exposure, and lighting. The other half of the semester was focused on the artistic aspects of photography: composition, color theory, and visual storytelling. Included historical study of technical development and famous examples."
+      hidden: false
 
-  - company: University of Central Arkansas, Disability Services
-    position: Classroom Assistant
-    city: Conway, AR
-    dates: 2013
+    - title: Learning Resources Center Tutor
+      status: North Arkansas College
+      subtitle: 2014-2015 (Harrison, AR)
+      description: "Tutor students in pre-college mathematics, calculus, English composition, and oral communication. Assist students with study skills and time management."
+      hidden: false
 
-  - company: University of Central Arkansas, Dept. of Mathematics
-    position: Grader for Calculus I and II
-    city: Conway, AR
-    dates: 2013
+    - title: Classroom Assistant, Disability Services
+      status: University of Central Arkansas
+      subtitle: 2013 (Conway, AR)
+      description: "Assisted students with disabilities in the classroom. Helped students with note-taking, test-taking, and other accommodations."
+      hidden: false
 
-  - company: North Arkansas College, Workstudy Program
-    position: Studio Assistant, Art Department
-    city: Harrison, AR
-    dates: 2011-2012
-    current: false
+    - title: Federal Work-Study Program, Department of Mathematics
+      status: University of Central Arkansas
+      subtitle: 2013 (Conway, AR)
+      description: "Graded assignments and exams for Calculus I and II courses."
+      hidden: false
 
-  - company: North Arkansas College, TRIO Student Support Services
-    position: Mathematics Tutor
-    city: Harrison, AR
-    dates: 2010-2011
-    current: false
+    - title: Federal Work-Study Program, Art Department
+      status: North Arkansas College
+      subtitle: 2011-2012 (Harrison, AR)
+      description: "Assisted in studio art classes, including painting, drawing, ceramics, and print-making. Maintained studio equipment and supplies. Helped students with technical aspects of their work and use of equipment."
+      hidden: false
 
-  - company: North Arkansas College, Disability Services
-    position: Classroom Assistant and Tutor for Blind Students, Intro to Programming
-    city: Harrison, AR
-    dates: 2010
-    current: false
-  
-  - company: Trianglehead Photography
-    position: Owner/Operator
-    city: Harrison, AR
-    dates: 2007-2009
-    current: false
+    - title: Tutor, TRIO Student Support Services
+      status: North Arkansas College
+      subtitle: 2010-2011 (Harrison, AR)
+      description: "Tutored students in college algebra, trigonometry, and Calculus. Assisted students with study skills and time management."
+      hidden: false
 
-  - company: Konaware, Inc.
-    position: Application Engineer, IT Systems Administrator
-    city: Harrison, AR \& Fayetteville, AR
-    dates: 2005-2007
-    current: false
+    - title: Classroom Assistant and Tutor, Disability Services
+      status: North Arkansas College
+      subtitle: 2010 (Harrison, AR)
+      description: "Assisted blind student in the classroom for Intro to Programming. Helped students with note-taking, test-taking, and other accommodations."
+      hidden: false
 
-  - company: Advanced Computer Services
-    position: Computer Programmer, IT Systems Administrator
-    city: Harrison, AR
-    dates: 2003-2005
-    current: false
+    - title: Small Business Owner/Operator
+      status: Trianglehead Photography
+      subtitle: 2007-2009 (Harrison, AR)
+      description: "Operated a small photography business, providing portrait and event photography services. Managed all aspects of the business, including marketing, client relations, and financial management."
+      hidden: false
+
+    - title: Application Engineer and IT Systems Administrator
+      status: Konaware, Inc.
+      subtitle: 2005-2007 (Harrison, AR - Fayetteville, AR - Menlo Park, CA)
+      description: "Developed and maintained software applications for clients. Services focused on fleet and technician management. Products were used by General Electric Service, Wal-mart, and FedEx Freight, among others.  Provided IT support and system administration for the Arkansas division of the company."
+      hidden: false
+
+    - title: Computer Programmer and IT Systems Administrator
+      status: Advanced Computer Services
+      subtitle: 2002-2005 (Harrison, AR)
+      description: "Developed and maintained custom software applications for clients. Services focused on accounting packages and management for small municipal governments. Provided IT support and system administration for the company."
+      hidden: false
+
+    - title: Courtesy Clerk and Stocker
+      status: Edwards Grocery
+      subtitle: 2000-2002 (Harrison, AR)
+      hidden: true
 
 education:
-  - university: University of Delaware
-    city: Newark, DE
-    degree: PhD, Mathematics
-    year: 2020
-    thesis: "Discrete Frames for High-Dimensional Data: Constructions on Regular and Irregular Domains"
-    advisors: Mahya Ghandehari and Dominique Guillot
+  blocks:
+    - title: PhD, Mathematics
+      status: University of Delaware (Newark, DE)
+      subtitle: Awarded Summer 2020 
+      description: "Training in harmonic analysis, functional analysis, and combinatorics (extremal graph theory and combinatorial optimization)."
+      subblocks:
+        - block_title: "Dissertation"
+          details:
+            - '<a href="https://drive.google.com/file/d/1U-i64IYLAZDWczmB6nXD2rhej-5uC6gJ/view?usp=drive_link" target="_blank">Discrete Frames for High-Dimensional Data: Constructions on Regular and Irregular Domains</a>'
+        - block_title: "Advisors"
+          details:
+            - <a href="https://sites.google.com/site/mahyaghandeharipage/home" target="_blank">Mahya Ghandehari</a>
+            - <a href="https://dominiqueguillot.github.io/" target="_blank">Dominique Guillot</a>
 
-  - university: University of Delaware
-    city: Newark, DE
-    degree: MS, Mathematics
-    year: 2017
+    - title: MS, Mathematics
+      status: University of Delaware (Newark, DE)
+      subtitle: Awarded Spring 2017
 
-  - university: University of Central Arkansas
-    city: Conway, AR
-    degree: BA, Mathematics
-    meta: summa cum laude
-    year: 2014
-    minor: Studio Art
+    - title: BA, Mathematics
+      status: University of Central Arkansas (Conway, AR)
+      subtitle: Awarded Spring 2014
+      description: "Graduated summa cum laude with a minor in Studio Art. Awarded Outstanding Graduate in Mathematics."
 
-  - university: North Arkansas College
-    city: Harrison, AR
-    degree: AA, General Education
-    meta:
-      - summa cum laude
-      - student commencement speaker
-    year: 2012
+    - title: AA, General Education
+      status: North Arkansas College (Harrison, AR)
+      subtitle: Awarded Spring 2012
+      description: "Graduated summa cum laude. Served as student commencement speaker."

@@ -31,4 +31,5 @@ My markdown often included embedded manipulatives from the activity creation sec
 {% include generic-data-blocks.html source=site.data.tool-ecosystem.format_conversion title="Format Conversion Tools" %}
 {% include generic-data-blocks.html source=site.data.tool-ecosystem.activity_creation title="Interactive Activities or Exercises" %}
 {% include generic-data-blocks.html source=site.data.tool-ecosystem.hosting_deployment title="Hosting and Deployment Tools" %}
+{% include generic-data-blocks.html source=site.data.tool-ecosystem.accessibility_checkers title="Tools to Check Accessibility Standards" %}
 {% include generic-data-blocks.html source=site.data.tool-ecosystem.student_data_collection title="Student Data Collection" %}
