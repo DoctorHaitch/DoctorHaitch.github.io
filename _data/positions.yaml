@@ -54,35 +54,33 @@ work:
       description: "Tutored students in college algebra, trigonometry, and Calculus. Assisted students with study skills and time management."
       hidden: false
 
-  # - company: North Arkansas College, Disability Services
-  #   position: Classroom Assistant and Tutor for Blind Students, Intro to Programming
-  #   city: Harrison, AR
-  #   dates: 2010
-  #   current: false
-  
-  # - company: Trianglehead Photography
-  #   position: Owner/Operator
-  #   city: Harrison, AR
-  #   dates: 2007-2009
-  #   current: false
+    - title: Classroom Assistant and Tutor, Disability Services
+      status: North Arkansas College
+      subtitle: 2010 (Harrison, AR)
+      description: "Assisted blind student in the classroom for Intro to Programming. Helped students with note-taking, test-taking, and other accommodations."
+      hidden: false
 
-  # - company: Konaware, Inc.
-  #   position: Application Engineer, IT Systems Administrator
-  #   city: Harrison, AR \& Fayetteville, AR
-  #   dates: 2005-2007
-  #   current: false
+    - title: Small Business Owner/Operator
+      status: Trianglehead Photography
+      subtitle: 2007-2009 (Harrison, AR)
+      description: "Operated a small photography business, providing portrait and event photography services. Managed all aspects of the business, including marketing, client relations, and financial management."
+      hidden: false
 
-  # - company: Advanced Computer Services
-  #   position: Computer Programmer, IT Systems Administrator
-  #   city: Harrison, AR
-  #   dates: 2002-2005
-  #   current: false
+    - title: Application Engineer and IT Systems Administrator
+      status: Konaware, Inc.
+      subtitle: 2005-2007 (Harrison, AR \& Fayetteville, AR)
+      description: "Developed and maintained software applications for clients. Provided IT support and system administration for the company."
+      hidden: false
 
-  # - company: Edwards Grocery
-  #   position: Courtesy Clerk and Stocker
-  #   city: Harrison, AR
-  #   dates: 2000-2002
-  #   current: false
+    - title: Computer Programmer and IT Systems Administrator
+      status: Advanced Computer Services
+      subtitle: 2002-2005 (Harrison, AR)
+      description: "Developed and maintained custom software applications for clients. Services focused on accounting packages and management for small municipal governments. Provided IT support and system administration for the company."
+      hidden: false
+
+    - title: Courtesy Clerk and Stocker
+      status: Edwards Grocery
+      subtitle: 2000-2002 (Harrison, AR)
 
 education:
   blocks:
@@ -103,20 +101,12 @@ education:
       status: University of Delaware (Newark, DE)
       subtitle: Awarded Spring 2017
 
-    - title: MS, Mathematics, University of Delaware (Newark, DE)
-      subtitle: Awarded Spring 2017
+    - title: BA, Mathematics
+      status: University of Central Arkansas (Conway, AR)
+      subtitle: Awarded Spring 2014
+      description: "Graduated summa cum laude with a minor in Studio Art. Awarded Outstanding Graduate in Mathematics."
 
-  # - university: University of Central Arkansas
-  #   city: Conway, AR
-  #   degree: BA, Mathematics
-  #   meta: summa cum laude
-  #   year: 2014
-  #   minor: Studio Art
-
-  # - university: North Arkansas College
-  #   city: Harrison, AR
-  #   degree: AA, General Education
-  #   meta:
-  #     - summa cum laude
-  #     - student commencement speaker
-  #   year: 2012
+    - title: AA, General Education
+      status: North Arkansas College (Harrison, AR)
+      subtitle: Awarded Spring 2012
+      description: "Graduated summa cum laude. Served as student commencement speaker."
