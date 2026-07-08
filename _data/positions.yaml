@@ -68,8 +68,8 @@ work:
 
     - title: Application Engineer and IT Systems Administrator
       status: Konaware, Inc.
-      subtitle: 2005-2007 (Harrison, AR \& Fayetteville, AR)
-      description: "Developed and maintained software applications for clients. Provided IT support and system administration for the company."
+      subtitle: 2005-2007 (Harrison, AR - Fayetteville, AR - Menlo Park, CA)
+      description: "Developed and maintained software applications for clients. Services focused on fleet and technician management. Products were used by General Electric Service, Wal-mart, and FedEx Freight, among others.  Provided IT support and system administration for the Arkansas division of the company."
       hidden: false
 
     - title: Computer Programmer and IT Systems Administrator
@@ -81,6 +81,7 @@ work:
     - title: Courtesy Clerk and Stocker
       status: Edwards Grocery
       subtitle: 2000-2002 (Harrison, AR)
+      hidden: true
 
 education:
   blocks:
