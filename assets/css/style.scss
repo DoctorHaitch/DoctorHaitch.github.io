@@ -1383,6 +1383,14 @@ details[open]>summary.collapsible-title::after {
   transform: rotate(135deg);
 }
 
+.collapsible-section .intro {
+  display: block;
+  margin-left: var(--content-pad);
+  margin-right: calc(2 * var(--content-pad));
+  margin-bottom: calc(0.5 * var(--content-pad));
+  margin-top: calc(0.5 * var(--content-pad));
+}
+
 // =========================================
 //   PROFILE PANEL
 // =========================================

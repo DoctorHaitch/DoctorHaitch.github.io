@@ -8,8 +8,12 @@
   </summary>
   {% endif %}
 
+  {% if include.source.intro %}
+    {{ include.source.intro | markdownify | replace: '<p>', '<p class="intro">'}}
+  {% endif %}
+
   <div class="detail-cards">
-    {% for card in include.source %}
+    {% for card in include.source.blocks %}
     <div class="detail-card">
 
       <div class="detail-header" id="{{ card.title | strip_html | slugify }}">

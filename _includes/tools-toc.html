@@ -5,7 +5,7 @@
     <li>
       <a href="#authoring-languages">Authoring Languages</a>
       <ul>
-        {% for language in site.data.tool-ecosystem.authoring %}
+        {% for language in site.data.tool-ecosystem.authoring.blocks %}
         <li>
           <a href="#{{ language.title | strip_html | slugify }}">
             {{ language.title | strip_html }}
@@ -18,7 +18,7 @@
     <li>
       <a href="#format-conversion-tools">Format Conversion Tools</a>
       <ul>
-        {% for tool in site.data.tool-ecosystem.format_conversion %}
+        {% for tool in site.data.tool-ecosystem.format_conversion.blocks %}
         <li>
           <a href="#{{ tool.title | strip_html | slugify }}">
             {{ tool.title | strip_html }}
@@ -33,7 +33,7 @@
         Interactive Activities and Exercises
       </a>
       <ul>
-        {% for creator in site.data.tool-ecosystem.activity_creation %}
+        {% for creator in site.data.tool-ecosystem.activity_creation.blocks %}
         <li>
           <a href="#{{ creator.title | strip_html | slugify }}">
             {{ creator.title | strip_html }}
@@ -48,7 +48,7 @@
         Hosting and Deployment Tools
       </a>
       <ul>
-        {% for tool in site.data.tool-ecosystem.hosting_deployment %}
+        {% for tool in site.data.tool-ecosystem.hosting_deployment.blocks %}
         <li>
           <a href="#{{ tool.title | strip_html | slugify }}">
             {{ tool.title | strip_html }}
@@ -63,7 +63,7 @@
         Tools to Check Accessibility Standards
       </a>
       <ul>
-        {% for tool in site.data.tool-ecosystem.accessibility_checkers %}
+        {% for tool in site.data.tool-ecosystem.accessibility_checkers.blocks %}
         <li>
           <a href="#{{ tool.title | strip_html | slugify }}">
             {{ tool.title | strip_html }}
@@ -78,7 +78,7 @@
         Student Data Collection
       </a>
       <ul>
-        {% for tool in site.data.tool-ecosystem.student_data_collection %}
+        {% for tool in site.data.tool-ecosystem.student_data_collection.blocks %}
         <li>
           <a href="#{{ tool.title | strip_html | slugify }}">
             {{ tool.title | strip_html }}
