@@ -1255,12 +1255,13 @@ html {
     height: 4px;
   }
 
-.callout-content {
-  overflow-x: auto;
-}
-.callout {
-  max-width: 100%;
-}
+  .callout-content {
+    overflow-x: auto;
+  }
+  .callout {
+    max-width: 100%;
+  }
+
   math {
     font-size: 0.95em;
   }
@@ -1317,20 +1318,14 @@ and vertically to consume content */
 }
 
 
-/* Overall
-Estimated WCAG 2.2 AA readiness: 90–95%.
-The remaining gap is much more about keyboard interaction and focus management for
-glossary popups than layout or mobile responsiveness. If you make glossary terms
-keyboard-focusable and expose the popup content through keyboard interaction, I'd
-be comfortable calling this an exceptionally accessible calculus site. */
+.callout {
+  overflow: visible;
+}
 
-/* 
-Terminal 1:
-For iPhone Testing:
-bundle exec jekyll build --watch
+.callout-title {
+  overflow: hidden;
+}
 
-then use Python as local server:
-
-cd _site
-python3 -m http.server 4000
-*/
+.glossary-popup {
+  z-index: 10000;
+}
