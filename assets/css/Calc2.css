@@ -1317,7 +1317,6 @@ and vertically to consume content */
   }
 }
 
-
 .callout {
   overflow: visible;
 }
@@ -1328,4 +1327,20 @@ and vertically to consume content */
 
 .glossary-popup {
   z-index: 10000;
+}
+
+table, th, td {
+  border: 1px solid var(--ink-soft);
+  border-collapse: collapse;
+}
+
+table {
+  width: 100%;
+  margin: 1em 0;
+}
+
+h4 img {
+  display: inline;
+  margin-right: 0.3em;
+  vertical-align: middle;
 }
