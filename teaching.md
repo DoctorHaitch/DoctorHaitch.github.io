@@ -11,8 +11,8 @@ profile:
     items:
       - name: "Calculus II"
         details:
-          - "[Area Between Curves](/course-notes/E01-C10-AreaBetweenCurves-DoenetGraphs.html)"
-          - "[Integration by Parts](/course-notes/E02-C17-IntegrationByParts.html)"
+          - "[Area Between Curves](/assets/sample-teaching/10-lecture-area_between_curves.html)"
+          - "[Integration by Parts](/assets/sample-teaching/17-lecture-integration_by_parts.html)"
   - title: "Assignments"
     items:
       - name: Mathematical Cryptology

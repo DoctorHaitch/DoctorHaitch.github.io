@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Atkinson+Hyperlegible+Mono&family=STIX+Two+Text&display=swap');
-
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap');
 
 /* =========================================
@@ -38,9 +37,9 @@ html {
 
   --color-info-text: 45, 68, 180;
   --c-info-text: rgb(var(--color-info-text));
-  --ink: #2c3040; // primary text
-  --ink-soft:   #3a4156;  // slightly darker than before
-  --ink-subtle: #4a5166;  // ✅ now passes AA
+  --ink: #2c3040;         /* primary text */
+  --ink-soft:   #3a4156;  /* slightly darker than before */
+  --ink-subtle: #4a5166;  /* ✅ now passes AA */
 }
 
 
@@ -351,6 +350,22 @@ li:has(input[type="checkbox"]) {
   text-shadow: 0 0.4px 0 rgba(0, 0, 0, 0.25);
   font-size: 1.2rem;
 }
+/* headings inherit the container styling */
+.callout-title h1,
+.callout-title h2,
+.callout-title h3,
+.callout-title h4,
+.callout-title h5,
+.callout-title h6 {
+  margin: 0;
+  padding: 0;
+
+  font: inherit;
+  color: inherit;
+  text-shadow: inherit;
+
+  display: inline;
+}
 
 .callout-title::before {
   content: "";
@@ -527,22 +542,20 @@ mark>.glossary:hover {
 
 }
 
-@media (prefers-color-scheme: dark) {
-  --background-primary: #1A1D2B;
-  --background-secondary: #161925;
-  --background-tertiary: #202336;
-
-  --callout-title-text: #dddddd;
-
-  background: var(--background-primary);
-}
-
 /* =========================================
    DARK MODE GLOSSARY POPUP FIX
    ========================================= */
 
 /* Standalone system dark mode */
 @media (prefers-color-scheme: dark) {
+  :root {
+    --background-primary: #1A1D2B;
+    --background-secondary: #161925;
+    --background-tertiary: #202336;
+
+    --callout-title-text: #dddddd;
+  }
+  
   .glossary-popup {
     background-color: var(--background-primary);
 
@@ -1255,12 +1268,13 @@ html {
     height: 4px;
   }
 
-.callout-content {
-  overflow-x: auto;
-}
-.callout {
-  max-width: 100%;
-}
+  .callout-content {
+    overflow-x: auto;
+  }
+  .callout {
+    max-width: 100%;
+  }
+
   math {
     font-size: 0.95em;
   }
@@ -1316,21 +1330,30 @@ and vertically to consume content */
   }
 }
 
+.callout {
+  overflow: visible;
+}
 
-/* Overall
-Estimated WCAG 2.2 AA readiness: 90–95%.
-The remaining gap is much more about keyboard interaction and focus management for
-glossary popups than layout or mobile responsiveness. If you make glossary terms
-keyboard-focusable and expose the popup content through keyboard interaction, I'd
-be comfortable calling this an exceptionally accessible calculus site. */
+.callout-title {
+  overflow: hidden;
+}
 
-/* 
-Terminal 1:
-For iPhone Testing:
-bundle exec jekyll build --watch
+.glossary-popup {
+  z-index: 10000;
+}
 
-then use Python as local server:
+table, th, td {
+  border: 1px solid var(--ink-soft);
+  border-collapse: collapse;
+}
 
-cd _site
-python3 -m http.server 4000
-*/
+table {
+  width: 100%;
+  margin: 1em 0;
+}
+
+h4 img {
+  display: inline;
+  margin-right: 0.3em;
+  vertical-align: middle;
+}
