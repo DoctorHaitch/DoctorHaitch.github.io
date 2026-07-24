@@ -48,20 +48,20 @@ past:
 
   - name: Paige Skrip (née Shumskas)
     university: University of Delaware
-    current-status: Process Engineer at Air Products
+    current-status: Process Engineer at Honeywell
     level: Undergraduate Student
     graduated: Spring 2021
-    main_project: "Summer GEMs REU"
+    main_project: "Summer Groups Exploring Mathematics (GEMs) REU"
     projects:
       - type: Research Poster Presentation
         title: "TODO: Add title here."
 
   - name: Nathaniel Kim
     university: University of Delaware
-    current-status: N/A
-    main_project: "Summer GEMs REU"
+    current-status: Secondary Mathematics Teacher at The School District of Philadelphia
+    main_project: "Summer Groups Exploring Mathematics (GEMs) REU"
     level: Undergraduate Student
-    graduated: N/A
+    graduated: Spring 2017
     projects:
       - type: Research Poster Presentation
         title: "TODO: Add title here."
@@ -112,11 +112,11 @@ letters:
     semester: "Fall 2016"
     date: "2016-02-12"
     letter-recipients:
-      - Common Application
+      - "Common Application"
   
   - name: Harrison Muller
     supporting: "Calculus Tutor"
     semester: "Spring 2021"
     date: "2020-12-07"
     letter-recipients:
-      - University of Delaware, Office of Academic Enrichment
+      - "University of Delaware, Office of Academic Enrichment"

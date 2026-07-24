@@ -8,3 +8,4 @@
 local-test.sh
 /assets/css/style-*.scss
 /vendor
+/m122
