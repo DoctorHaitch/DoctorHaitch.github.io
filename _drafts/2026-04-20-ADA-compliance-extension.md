@@ -9,6 +9,17 @@ mathjax: true
 tags: ["accessibility", "web-dev", "education"]
 ---
 
+## ADA Digital Document Compliance
+
+<blockquote data-type="fancy-quote" aria-describedby="main-heading">
+  <span class="quote-mark" aria-hidden="true">“</span>
+  <p>Any observed statistical regularity will tend to collapse once pressure is placed upon it for control purposes.</p>
+  <p>—
+    <cite>Goodhart's law</cite>,
+    1975 Economics Paper
+  </p>
+</blockquote>
+
 Over the past few weeks, instructors were scrambling to meet the new [ADA web content and document accessibility rule](https://www.ada.gov/resources/2024-03-08-web-rule/). Currently, I am an assistant professor at Minnesota State University, Mankato, which serves a population of 50,000+ and is considered an instrumentality of the state; therefore we were expected to meet these requirements by the April 20th, 2026 deadline, while entitities serving less than 50,000 had an additional year. A few days ago, the DOJ extended both deadlines by one additional year.
 
 The overwhelming sense from talking with educators both at my own institution and elsewhere was one of relief. The DOJ has stated that it "overestimated the capabilities" of covered entities to comply in time. However, based on my observations and discussions with other instructors, I'm not sure an additional year will have a significant impact, especially in the complicated space of STEM education where technical diagrams, mathematical equations, and similar content present additional challenges.
