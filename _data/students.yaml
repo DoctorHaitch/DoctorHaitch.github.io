@@ -34,6 +34,7 @@ past:
 
   - name: Hunter Wilmes
     university: Minnesota State University, Mankato
+    linkedin: "https://www.linkedin.com/in/hunter-wilmes/"
     current-status: Predictive Analytics Analyst at Salt River Project
     level: Master's Student
     graduated: Spring 2024
@@ -47,6 +48,7 @@ past:
         url: "/assets/student-projects/2024-hunter-wilmes-presentation.pdf"
 
   - name: Paige Skrip (née Shumskas)
+    linkedin: "https://www.linkedin.com/in/paige-s-9b48a6126/"
     university: University of Delaware
     current-status: Process Engineer at Honeywell
     level: Undergraduate Student
@@ -58,6 +60,7 @@ past:
 
   - name: Nathaniel Kim
     university: University of Delaware
+    linkedin: "https://www.linkedin.com/in/nathaniel-kim-a6b18b109/"
     current-status: Secondary Mathematics Teacher at The School District of Philadelphia
     main_project: "Summer Groups Exploring Mathematics (GEMs) REU"
     level: Undergraduate Student

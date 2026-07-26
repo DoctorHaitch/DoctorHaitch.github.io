@@ -72,10 +72,6 @@ $density-compact-pad: 0.65rem;
   // Spacing
   --content-pad: 1.4rem;
 
-  // Code
-  --code-background: #1c1f26;
-  --surface-background: #eef2fd;
-
   // Icon references (Lucide SVGs)
   --icon-book-open: #{'url("/assets/icons/book-open.svg")'};
   --icon-presentation: #{'url("/assets/icons/presentation.svg")'};
@@ -102,6 +98,32 @@ $density-compact-pad: 0.65rem;
       color-mix(in srgb, var(--c-meta) 22%, white));
   --profile-title-bg: color-mix(in srgb, var(--c-meta) 22%, white);
   --profile-name-color: #444444;
+
+}
+
+/* ==========================================================
+   Mermaid Diagrams
+   Matches site card/surface system rather than code blocks
+   ========================================================== */
+
+:root {
+  --diagram-fill: color-mix(
+    in srgb,
+    var(--card-bg) 90%,
+    rgba(var(--color-info), 0.08)
+  );
+
+  --diagram-stroke: rgba(var(--color-info), 0.60);
+
+  --diagram-text: var(--ink);
+
+  --diagram-line: var(--ink-soft);
+
+  --diagram-label-fill: var(--card-bg);
+  --diagram-label-text: var(--ink-soft);
+
+  --diagram-cluster-fill: rgba(var(--color-meta), 0.05);
+  --diagram-cluster-stroke: rgba(var(--color-meta), 0.25);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -131,8 +153,6 @@ $density-compact-pad: 0.65rem;
     --c-resolution-text: rgb(var(--color-resolution-text));
     /* contrast-safe text variant for resolution color */
 
-    --code-background: #151822;
-    --surface-background: #2a3b54;
     --meta-border-subtle: 1px solid rgba(255, 255, 255, 0.06);
 
     // Detail header backgrounds flip to dark-safe values
@@ -350,24 +370,39 @@ li blockquote {
   font-size: 0.85em;
 }
 
+/* Default code block */
 pre {
   margin: 0 var(--content-pad);
-  padding: 0.25em 1em;  // ✅ put spacing here instead
+  padding: 0.25em 1em;
   border-radius: $radius-lg;
-  background: var(--code-background);
+  background: var(--code-bg);
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05);
   overflow-x: auto;
+  border: 1px solid color-mix(
+    in srgb,
+    var(--code-normal) 75%,
+    transparent
+  );
+}
+
+/* If preceded by a code-title heading,
+   flatten only the top corners */
+h3:has(> code) + .highlighter-rouge pre,
+h4:has(> code) + .highlighter-rouge pre,
+h5:has(> code) + .highlighter-rouge pre,
+h6:has(> code) + .highlighter-rouge pre,
+h3:has(> code) + pre,
+h4:has(> code) + pre,
+h5:has(> code) + pre,
+h6:has(> code) + pre {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
 }
 
 code,
 pre {
-  --code-normal: #dddddd;
-  --code-comment: #a0a0a0;
-  --code-keyword: #ff79c6;
-  --code-string: #50fa7b;
-
   border-radius: $radius-sm;
-  background-color: var(--code-background);
+  background-color: var(--code-bg);
   color: var(--code-normal);
 }
 
@@ -381,7 +416,61 @@ pre code {
   font-size:small;
 }
 
+/* Header immediately before a code block */
+h3:has(> code) + .highlight,
+h4:has(> code) + .highlight,
+h5:has(> code) + .highlight,
+h6:has(> code) + .highlight,
+h3:has(> code) + pre,
+h4:has(> code) + pre,
+h5:has(> code) + pre,
+h6:has(> code) + pre
+{
+  margin-top: 0;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0; 
+}
 
+/* The title bar */ 
+h3:has(> code),
+h4:has(> code),
+h5:has(> code),
+h6:has(> code)
+{
+  margin: 1rem var(--content-pad) 0;
+  padding: 0.45rem 1rem;
+  background: color-mix( in srgb, var(--code-bg) 85%, var(--code-normal) );
+  color: var(--code-normal);
+  border: 1px solid color-mix( in srgb, var(--code-normal) 75%, transparent );
+  border-bottom: none;
+  border-top-left-radius: $radius-lg;
+  border-top-right-radius: $radius-lg;
+  font-size: 0.9rem;
+  font-weight: 600;
+  font-family: var(--font-sans);
+  display: flex;
+  align-items: center; 
+} 
+/* Remove inline-code styling */
+h3:has(> code) code,
+h4:has(> code) code,
+h5:has(> code) code,
+h6:has(> code) code
+{
+  background: none;
+  padding: 0;
+   border: 0;
+    color: inherit;
+    font-size: inherit;
+    font-family: var(--font-mono, monospace); 
+}
+
+h3:has(> code) + .highlighter-rouge,
+h4:has(> code) + .highlighter-rouge,
+h5:has(> code) + .highlighter-rouge,
+h6:has(> code) + .highlighter-rouge {
+  margin-top: 0 !important;
+}
 // =========================================
 //   LAYOUT
 // =========================================
@@ -495,14 +584,21 @@ header {
 
   // horizontal padding
   > p,
-  > ul,
-  > ol,
   > h2,
   > h3,
   > h4,
   > blockquote {
     padding-left: var(--content-pad);
     padding-right: var(--content-pad);
+  }
+  > ul,
+  > ol {
+    padding-right: var(--content-pad);
+
+  }
+  ol li::marker,
+  ul li::marker {
+    color: var(--code-number);
   }
 }
 
@@ -1978,4 +2074,171 @@ blockquote .details {
   .toc > ul {
     columns: 1;
   }
+}
+
+/* ==========================================================
+   Mermaid Diagrams
+   ========================================================== */
+
+
+/* ==========================================================
+   Container
+   ========================================================== */
+
+.mermaid {
+  margin: 1.5rem var(--content-pad);
+  overflow-x: auto;
+  text-align: center;
+  background: transparent;
+}
+
+.mermaid svg {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ==========================================================
+   Typography
+   ========================================================== */
+
+.mermaid text,
+.mermaid .nodeLabel,
+.mermaid .edgeLabel,
+.mermaid .cluster-label {
+  font-family: var(--font-sans) !important;
+  fill: var(--diagram-text);
+}
+
+/* ==========================================================
+   Standard Nodes
+   ========================================================== */
+
+.mermaid .node rect,
+.mermaid .node polygon,
+.mermaid .node ellipse,
+.mermaid .node path {
+  fill: var(--diagram-fill);
+  stroke: var(--diagram-stroke);
+  stroke-width: 1.5px;
+}
+
+.mermaid .nodeLabel,
+.mermaid .node text,
+.mermaid span.nodeLabel {
+  fill: var(--diagram-text);
+  color: var(--diagram-text);
+}
+
+/* ==========================================================
+   Edges / Connections
+   ========================================================== */
+
+   /*
+.mermaid .edgePath path,
+.mermaid .flowchart-link {
+  stroke: var(--diagram-line);
+  stroke-width: 2.75px;
+}
+
+.mermaid marker path {
+  fill: var(--diagram-line);
+  stroke: var(--diagram-line);
+} */
+
+
+/* ==========================================================
+   Edge Labels
+   ========================================================== */
+
+.mermaid .edgeLabel {
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.mermaid .edgeLabel rect {
+  fill: var(--diagram-label-fill);
+  stroke: rgba(var(--color-meta), 0.18);
+  stroke-width: 1px;
+  opacity: 1;
+}
+
+.mermaid .edgeLabel text {
+  fill: var(--diagram-label-text);
+}
+
+/* ==========================================================
+   Subgraphs / Clusters
+   ========================================================== */
+
+.mermaid .cluster rect {
+  fill: var(--diagram-cluster-fill);
+  stroke: var(--diagram-cluster-stroke);
+  stroke-width: 1.5px;
+}
+
+.mermaid .cluster text,
+.mermaid .cluster-label text {
+  fill: var(--ink-soft);
+}
+
+/* ==========================================================
+   Edges / Connections
+   ========================================================== */
+
+.mermaid .edgePath .path,
+.mermaid .flowchart-link {
+  stroke: var(--diagram-line) !important;
+  stroke-width: 1.5px !important;
+}
+
+.mermaid marker path {
+  fill: var(--diagram-line) !important;
+  stroke: var(--diagram-line) !important;
+}
+
+/* ==========================================================
+   Semantic Classes
+   Apply in Mermaid source:
+   
+   classDef artifact;
+   classDef process;
+
+   class Jinja2,data,static,W artifact;
+   class Preprocess,M,N,O process;
+   ========================================================== */
+
+/* Documents / Outputs / Data */
+
+.mermaid .artifact rect,
+.mermaid .artifact path,
+.mermaid .artifact polygon,
+.mermaid .artifact ellipse {
+  stroke: rgba(var(--color-resolution), 0.75);
+  fill: color-mix(
+    in srgb,
+    rgba(var(--color-resolution), 0.12),
+    var(--card-bg)
+  );
+}
+
+/* Transformations / Processes */
+
+.mermaid .process rect,
+.mermaid .process path,
+.mermaid .process polygon,
+.mermaid .process ellipse {
+  stroke: rgba(var(--color-info), 0.75);
+  fill: color-mix(
+    in srgb,
+    rgba(var(--color-info), 0.12),
+    var(--card-bg)
+  );
+}
+
+.mermaid .flowchartTitleText {
+  font-family: var(--font-serif) !important;
+  font-size: 1.2rem !important;
+  font-weight: 400 !important;
+  color: var(--ink) !important;
+  fill: var(--ink) !important;
 }

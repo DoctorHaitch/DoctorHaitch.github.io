@@ -19,6 +19,8 @@ pagination:
   per_page: 5
   permalink: '/page:num/'
   filter: 'pinned == false'
+  sort_field: 'date'
+  sort_reverse: true
   # Auto-page generation
 
 autopages:
