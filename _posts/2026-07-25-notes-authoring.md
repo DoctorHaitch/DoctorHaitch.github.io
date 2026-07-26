@@ -1,6 +1,6 @@
 ---
 author: Kris Hollingsworth
-title: "Accessible Authoring Pipelines and my Workflow for Fall 2026"
+title: "Accessible Authoring Pipelines and My Workflow for Fall 2026"
 subtitle: false
 date: 2026-07-26
 pinned: false
@@ -13,7 +13,7 @@ mathjax: false
 tags: ["accessibility", "tools"]
 ---
 
-## Accessible Authoring Pipelines and my Workflow for Fall 2026
+## {{page.title}}
 
 <nav class="toc" aria-labelledby="toc-heading">
   <ul>
