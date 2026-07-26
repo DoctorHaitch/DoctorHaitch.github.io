@@ -13,7 +13,7 @@ mathjax: false
 tags: ["accessibility", "tools"]
 ---
 
-## My Workflow for Fall 2026 Course Notes
+## Accessible Authoring Pipelines and my Workflow for Fall 2026
 
 <nav class="toc" aria-labelledby="toc-heading">
   <ul>
