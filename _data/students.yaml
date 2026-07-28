@@ -1,3 +1,19 @@
+mentees:
+  intro: Participation in Mentorship Programs.
+  blocks:
+    - title: "Mathematics Graduate Peer Mentoring Progra" 
+      status: "Sponsored by AWM"
+      subtitle: "University of Delaware"  # (Was role)
+      description: |
+        The Mathematics Graduate Peer Mentoring Program is a mentorship program sponsored by the Association for Women in Mathematics (AWM) at the University of Delaware. The program pairs senior graduate students (past quals) with incoming graduate students helping them navigate their academic journey, providing advice on coursework and research opportunities, and offering support in their personal and professional growth. I joined this program in the Fall of 2018 and mentored two incoming graduate students.
+      subblocks:
+        - block_title: "<a href="https://www.linkedin.com/in/kevin-weatherwalks/">Kevin Weatherwalks</a>"
+          details: |
+            Kevin completed his Master's degree in Mathematics at the University of Delaware in Spring 2019. After graduation, Kevin completed Lambda School's Data Science Certificate and went on to work as a full-time Data Engineer at Cognizant in Pheonix, Arizona.
+        - block_title: "<a href="https://www.linkedin.com/in/danielbrumley90/">Daniel Brumley</a>"
+          details: |
+            Daniel completed his Master's degree in Mathematics at the University of Delaware in Spring 2019. After graduation, Daniel worked as an Associate Data Engineer at Love's Travel Stops and Country Stores in Oklahoma City, Oklahoma. He is currently a Senior Sofware Data Engineer at Renaissance Learning.
+
 present:
   - name: Brian Larson
     university: Minnesota State University, Mankato
