@@ -501,6 +501,22 @@ mark>.glossary:hover {
   border-bottom: 2px solid rgba(var(--callout-information), 1);
 }
 
+.glossary {
+  position: relative;
+}
+
+.glossary::before {
+  content: "";
+  position: absolute;
+
+  width: 45px;
+  height: 45px;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 
 /* =========================================
    GLOSSARY EMBEDS
@@ -1410,6 +1426,9 @@ h4 img {
   top: 0.25rem;
   right: 0.25rem;
 
+  height: 28px;
+  width: 28px;
+
   padding: 0.2rem 0.45rem;
 
   border: 1px solid var(--ink-soft);
@@ -1434,4 +1453,18 @@ h4 img {
 
 .popup-close:active {
   transform: scale(0.95);
+}
+
+.popup-close::before {
+  content: "";
+  position: absolute;
+  inset: 50%;
+  width: 45px;
+  height: 45px;
+  transform: translate(-50%, -50%);
+}
+
+/* Hides any table header that contains entirely empty cells */
+thead:has(> tr > th:empty) { 
+  display: none; 
 }
