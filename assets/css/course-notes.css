@@ -1464,8 +1464,6 @@ h4 img {
   transform: translate(-50%, -50%);
 }
 
-
-
 /* Hides any table header that contains entirely empty cells */
 thead:has(> tr > th:empty) { 
   display: none; 
