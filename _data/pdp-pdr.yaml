@@ -3,92 +3,243 @@
   status: "Completed"
   description: "I am responsible for teaching 6 classes during the 2025-2026 academic year. This includes 2 sections of Calculus II in both Fall and Spring semesters, a graduate course on Graphs and Algorithms in the Fall, and an introductory course on Mathematical Software Programming in the Spring. While I have taught Calculus II many times, Math170 is a new course for me and I will be developing all materials from scratch. Math605 will be significantly revised from prior versions as it has generally started at too high a level for our students, thus a significant amount of new introductory material will be developed for the first half of the semester."
   goal_one: 
-    - "Add detailed description of work and evidence of excellence in teaching."
-  evidence:
-    - name: Student Feedback
-      url: "https://github.com/DoctorHaitch/accessible-math"
-    - name: Teaching Observation by Dr. Charles Krois
-      url: ""
-    - name: Course Syllabi
-      url: ""
+    - > 
+      In Math 122, I feel that the Fall semester was much more successful than the Spring semester.
+      Unfortunately, several assessments that have traditionally been successful in promoting student
+      learning were much less effective with the increased usage of AI tools. In particular, allowing students
+      to revise and resubmit their work was much less effective than in previous semesters, as students were able
+      to use AI tools to generate solutions that they could then submit without fully understanding the material.
+      I am currently exploring alternative assessment strategies that will be more effective in promoting student
+      learning in this new environment.
 
-- name: "Progress towards PDF/UA Digital Document Accessibility Compliance."
-  academic_year: "2025-2026"
-  status: "Significant Progress, Ongoing"
-  description: "In response to new federal digital accessibility requirements, I have undertaken a comprehensive effort to ensure that all PDF course resources for my courses are compliant with PDF/UA standards."
-  goal_one: 
-    - "Updated all PDF course resources to be compliant with PDF/UA standards, ensuring that all digital course materials are accessible to students with disabilities. This involved researching the requirements of PDF/UA compliance, implementing necessary changes to existing documents, and verifying compliance through testing and validation tools. These efforts were aimed at meeting new federal digital accessibility requirements and ensuring that all students have equal access to course materials."
-  goal_two: 
-    - "Researched, developed, and published guides on GitHub for creating PDF/UA-compliant documents in LaTeX, a platform widely used in scientific publishing and in the preparation of teaching materials for science courses. This work was undertaken to support compliance with new federal digital accessibility requirements and to ensure course materials meet evolving legal standards."
-  goal_five: 
-    - "Provided templates, supplementary guides, and practical tools to faculty and the broader community through my GitHub page. Initiated discussions with the library to expand access to these resources through workshops and tool development, with potential collaboration through CESR. These efforts directly support institutional Equity 2030 goals by improving accessibility and inclusion in digital learning and scholarly materials produced by our institution. I additionally plan to create a quickstart guide for faculty and students on Cornerstone to further facilitate the adoption of accessible document practices in our courses and research outputs."
-  evidence:
-    - name: GitHub Repository of LaTeX Accessibility Resources
-      url: "https://github.com/DoctorHaitch/accessible-math"
-    - name: Quickstart Guide on Cornerstone
-      url: ""
-    - name: Sample PDF/UA-Compliant Documents for Calculus II
-      url: ""
-
-- name: "Investigate Fullbright Scholars Grant"
-  status: "Significant Progress, Deemed Out of Scope"
-  academic_year: "2025-2026"
-  description: "I am investigating the possibility of applying for a Fullbright Scholars grant to support advancing my work in open educational resources (OER) or mathematical community outreach. This grant would provide an opportunity to collaborate with international experts in the field, conduct research on best practices for OER development and digital accessibility, and further develop resources and tools to support educators and learners globally. The application process involves researching the requirements and eligibility criteria for the Fullbright Scholars program, identifying potential host institutions and collaborators abroad, and preparing a compelling proposal that outlines the goals and impact of the proposed project."
-  goal_two: 
-    - "Add description of scholarly activity."
-  goal_three: 
-    - "Add description of workshop/information session attendance and learning about program."
-  evidence:
-    - name: Fullbright Scholars Program Information
-      url: "https://fulbrightscholars.org/"
-
-- name: "Provided mentorship to students."
-  status: "Ongoing"
-  academic_year: "2025-2026"
-  description: "Includes academic advising, project supervision, and career guidance. This mentorship has involved regular meetings with students to discuss their academic progress, providing feedback on their work, and offering support and resources to help them succeed in their studies and future careers. This frequently includes providing letters of support for scholarships, internships, and graduate school applications. I have also supervised student research projects, guiding them through the research process and helping them develop their skills in critical thinking, problem-solving, and effective communication of their findings."
+      Additionally, please see the attached letter of observation by Dr. Charles Krois, which provides a detailed assessment
+      of one class session during the Fall semester and subsequent discussion.
+    - > 
+      In Math 170, I developed all course materials from scratch, including lectures, assignments, and assessments.
+      This course introduced students to programming concepts and techniques using MatLAB, as the only commercial
+      computer algebra system that the university currently licenses. We focused on using computational aids to solve
+      mathematical problems and looked at their mathematical bases. We covered all the core programming concepts,
+      including variables, functions, conditional logic, loops, recursion and its relationship to induction, debugging strategies,
+      and some classical problems such as the Collatz conjecture and the Josephus problem. We discussed trade-offs in various
+      programming approaches and the importance of writing clear, maintainable code.
+    - >
+      In Math 605, I revised the course to include more introductory material and to focus on developing students' understanding
+      of the fundamental concepts in graph theory and algorithms before moving to the main topics, as we have no graph-theoretic
+      background requirements for the course. This included developing new lectures, assignments, and assessments that focused on
+      the basics of graph theory, including definitions, properties, and basic algorithms. This appeared to significantly
+      improve the understanding and outcomes for students in the course, and will be a focus of future iterations of the course.
+  goal_three:
+    - > 
+      I continue to invite at least one external faculty member to observe my classes and provide feedback to improve my
+      teaching effectiveness and strategies. This year, Dr. Charles Krois observed one of my Math 122 classes and provided
+      detailed feedback on my teaching methods.
+      I have incorporated several of his suggestions for this upcoming year. In particular, I've incorporated a more structured
+      approach to announcements and reminders as part of the new lecture notes that will also be provided to students in D2L
+      as part of the Digital Document Accessibility Compliance efforts noted elsewhere in this report. I have also added
+      a universal first self-assessment report to address the issue noted in his letter. Further revisions to self-assessment
+      and revision will be made in the 2026-2027 academic year as a result of the observations regarding AI usage and the
+      effectiveness of the self-assessment and revision process noted in my self-evaluation.
   goal_four: 
-    - "<strong>Academic Advising:</strong>"
-    - "<strong>Direct Project Supervision:</strong>"
-    - "<strong>Letters of Recommendation:</strong>"
-  evidence:
-    - name: Student Testimonials
-      url: ""
-    - name: Research Project Outcomes
-      url: ""
+    - >
+      In Math 122, students were required to complete creative final projects. These challenged students to apply their knowledge
+      in novel ways, fostering deeper understanding and engagement with the course material. This semester, students created
+      scrapbooks of their learning, which included reflections on their understanding of key concepts, connections to real-world
+      applications, and scraps of their course assessments. A group of students collaborated on a rap battle project, where they wrote
+      and performed a rap that creatively explained mathematical concepts covered in the course. These students not only collaborated in 
+      the class, but also brought in film students from Bethany college to assist with the filming and production.
+    # - > Ooops. This was Functional Analysis, not 605.
+    #   In Math 605, I implemented a flipped classroom model where students engaged with lecture materials and readings outside of class,
+    #   beginning about 2/3rds of the way through the semester after students had the opportunity to develop a strong base from a more
+    #   traditional course format given it was novel material and core topics for most students in the course. 
+    #   Students then collaborated outside of class and presented sections of the lecture in class as their primary assessment.
+    #   This approach aimed to enhance student engagement and understanding of complex concepts by providing opportunities for
+    #   active learning and peer-to-peer instruction, as well as developing students skills in communication, collaboration,
+    #   and critical thinking.
+    - >
+      In Math 605, I developed several final presentation projects. Students had the option to implement and present a computer
+      program that demonstrated their understanding of the course material or take a final exam. The course split exactly
+      50-50 between these two options. Both options were highly successful in promoting student learning and engagement, with
+      students demonstrating a strong understanding of the course material and the ability to apply it in novel ways.
+      The final presentations were particularly effective in allowing students to showcase their understanding of the
+      course material and their ability to communicate complex ideas effectively, even for those who struggled with
+      written presentations of their work.
+    - >
+      In both Math122 and Math605, students were required to keep a journal logging their learning and course engagement,
+      with specific practice exercises also assigned to be maintained in this document. This journal was intended to encourage 
+      students to reflect on their learning, identify areas of strength and weakness, as well as practice course material.
+    - >
+      In Math 170, students designed and executed their own final project, along with an accompanying report and presentation.
+      This project required students to apply the programming concepts and techniques they had learned throughout the course
+      to solve a mathematical problem of their choice. Students were encouraged to explore topics that interested them.
+      This semester, students developed problems related to Fourier Analysis, Number Theory, Calculus, Computational Complexity,
+      Biological Math Modeling, Matrix Theory, and others. Students were required to present their projects to the class,
+      demonstrating their understanding of the programming concepts and techniques they had learned, as well as their ability
+      to communicate their explorations effectively. These projects were scaffolded with numerous check-ings and feedback sessions
+      throughout the last half of the semester to ensure students were on track and to provide guidance, mentorship, and support
+      as needed.
+      
+      One student in particular went on to continue working on data analysis projects in MatLAB and reached out
+      for additional mentorship and guidance on their project.
 
-- name: "Calculus Curriculum Review Sub-committee"
-  status: "Initial Progress, Deferred"
+  evidence:
+    - name: 'Student Feedback from Math122: Calculus II, Spring'
+      url: "https://mnscu-my.sharepoint.com/:b:/g/personal/ye6366mb_minnstate_edu/IQDdxOoYcJIkRqvT4Yi2TCpkAVKWlbN8AQkVg_pJxnRabck?e=Jo2fL7"
+    - name: 'Student Feedback from Math122: Calculus II, Fall'
+      url: ""
+    - name: 'Student Self-Reflections on Study Habits, Math122: Fall'
+      url: ""
+    - name: Teaching Observation by Dr. Charles Krois
+      url: "https://mnscu-my.sharepoint.com/:b:/g/personal/ye6366mb_minnstate_edu/IQAsKZ5Vxi1jT70Fe64j-7NRAQPFzGG4K--Fv1QfiRAKffA?e=HrvA9c"
+    - name: Sample Student Project (Rap Battle, Calculus II)
+      url: "https://mnscu-my.sharepoint.com/:v:/g/personal/ye6366mb_minnstate_edu/IQDxV2hH97QWSrSnock-3CgrAfmg5VaEFiW8Pw-P-7XGYwA"
+    - name: Sample Student Report and Presentation (Fourier Analysis, Math170)
+      url: "https://mnscu-my.sharepoint.com/:b:/g/personal/ye6366mb_minnstate_edu/IQCZ2siqcvI4RbC2NOaKenjrAUetRHijl9_mBHwMW0KB8VY?e=EEeAg1"
+    - name: Student Email Reaching Out for Additional Mentorship (Math170)
+      url: "https://mnscu-my.sharepoint.com/:b:/g/personal/ye6366mb_minnstate_edu/IQD_5fUjuGP-R5yQ9BO_Am4fAeAVBTkeWaHAveatSRODbu0?e=vZNhw0"
+    - name: Sample Student Project (SDP Max-Cut, Math605)
+      url: "https://mnscu-my.sharepoint.com/:b:/g/personal/ye6366mb_minnstate_edu/IQAXXOK8qY3DQLcgsG_vo0S3AT1cH66bgzm6PV99phwqRoA?e=OdH3OG"
+
+- name: "Serve on Departmental Committee for Student Advancement"
+  status: "Completed"
   academic_year: "2025-2026"
-  description: "The Calculus Curriculum Review Sub-committee is responsible for evaluating and updating the institution’s calculus curriculum. Its work includes reviewing course structures, identifying areas for improvement, and developing recommendations to ensure the curriculum remains current, coherent, and aligned with best practices in mathematics education. The sub-committee collaborates with faculty and other stakeholders to gather input and support informed, evidence-based curriculum development."
-  goal_five: 
-    - "Volunteered for and was then elected chair for an Ad Hoc Committee to review the Calculus curriculum and textbook selection. The department identified this as a potentially high-impact review because of the large number of students enrolled in Calculus courses and the fact that the curriculum had not undergone comprehensive review in more than a decade. The committee's work was paused pending the departmental program review, which was anticipated for AY2026--2027 early in the academic year. One recommendation from the external program reviewers was to 'establish a multiyear schedule for reviewing the curricula of all departmental programs'. The committee's preliminary work positions the department to resume this review process as part of a broader, ongoing cycle of curricular assessment and improvement."
-    - "Developed planning materials and a departmental survey to identify and rank faculty priorities related to the Calculus curriculum review process. The survey instrument may also serve as a useful artifact for future curriculum review efforts."
+  description: |
+    I served on the Departmental Committee for Student Advancement, which is responsible for
+    reviewing and making recommendations regarding student memberships to professional organizations,
+    scholarships, and other academic opportunities. This committee plays a crucial role in supporting
+    student success and development by
+    ensuring that students have access to valuable resources and opportunities that enhance their
+    academic and professional growth.
+  goal_four:
+    - >
+      Nominated numerous students for membership in professional organizations like the Association for Women in Mathematics (AWM).
+    - >
+      Reviewed and scored student scholarship applications, providing feedback and recommendations 
+      on which students should be awarded scholarships based on their academic achievements, leadership qualities,
+      and potential contributions.
+  goal_five:
+    - > 
+      Collaborated with other committee members via email to achieve consensus on student nominations and scholarship awards.
+      This involved discussing the merits of candidates, considering their academic records, extracurricular involvement, and
+      personal statements, and making informed decisions that align with the department's goals for student advancement.
+
+      Additionally I identified and raised some concerns regarding the new scholarship review process.
   evidence:
-    - name: Calculus Curriculum Review Sub-committee Meeting Minutes
+    - name: Committee Sample Correspondence and Discussion
+      url: "https://mnscu-my.sharepoint.com/:b:/g/personal/ye6366mb_minnstate_edu/IQBGawUSisUDTqJusYoNqyCrARiAmH1VL-B-cVQA0K51Thw?e=kDSxps"
+    - name: Evidence of Completed Scholarship Review
+      url: "https://mnscu-my.sharepoint.com/:i:/g/personal/ye6366mb_minnstate_edu/IQCBBvvu-i8aSbrOf_wSEdgBAfKaG7By9FYydMdMbY07G68?e=myrxfV"
+
+- name: "Revise Comprehensive Exam Syllabus for Analysis"
+  status: "Completed"
+  academic_year: "2025-2026"
+  description: >
+    Collaborated with Dr. Wook Kim and Dr. Ke Zhu to update the Comprehensive Exam Syllabus for Analysis. This revision
+    aimed to ensure that the syllabus reflects current best practices in mathematical education, aligns with the department's
+    learning objectives, and provides clear guidance for students preparing for their comprehensive exams.
+  goal_five:
+    - > 
+      Worked with collaborators via email and shared documents to review the existing syllabus, identify areas for improvement,
+      and suggest and approve revisions.
+  evidence:
+    - name: Email Calling for Service
+      url: "https://mnscu-my.sharepoint.com/:b:/g/personal/ye6366mb_minnstate_edu/IQCHRzc6SfLoSrbU9fbtETPqAR2vNW43BA0nF4aP8p1diIk?e=z8AXVo"
+    - name: Revised Comprehensive Exam Syllabus for Analysis
+      url: "https://mnscu-my.sharepoint.com/:w:/g/personal/ye6366mb_minnstate_edu/IQDSx8FrkptIRqkSSsyr1NenAT_QIYHFGx2s4NoX2cF60XU?e=ZxOqnV"
+
+- name: "Supervise Student Alternate Plan Paper"
+  status: "Completed"
+  academic_year: "2025-2026"
+  description:
+  goal_two:
+  goal_four:
+    - 
+  evidence:
+    - name: Student Thesis Document
       url: ""
-    - name: Faculty Survey for Curriculum Review
-      url: "https://mnscu-my.sharepoint.com/:b:/r/personal/ye6366mb_minnstate_edu/Documents/00-Admin/Docs-PDP%20and%20PDR/2025-2026/Evidence/CurriculumReviewSurvey.pdf?csf=1&web=1&e=AKhVmv"
+    - name: Sample of Student Thesis Draft with Feedback (Digital Collaboration)
+      url: "https://mnscu-my.sharepoint.com/:i:/g/personal/ye6366mb_minnstate_edu/IQBpOwmmK0O5QbcHzmlUHDuDAVpJifnSi8q_--uWNqLP8Zc?e=eSj71N"
+    - name: Sample of Student Thesis Draft with Feedback (Marked Paper Copy)
+      url: ""
 
-# \goal[5]{Chaired and volunteered for an Ad Hoc Committee to review the Calculus curriculum and textbook selection. The department identified this as a potentially high-impact review because of the large number of students enrolled in Calculus courses and the fact that the curriculum had not undergone comprehensive review in more than a decade. The committee’s work was paused pending the departmental program review, which was anticipated for AY2026--2027 early in the academic year.
-# One recommendation from the external program reviewers was to ``establish a multiyear schedule for reviewing the curricula of all departmental programs."
-# The committee's preliminary work positions the department to resume this review process as part of a broader, ongoing cycle of curricular assessment and improvement.}
+# - name: "Investigate Fullbright Scholars Grant"
+#   status: "Significant Progress, Deemed Out of Scope"
+#   academic_year: "2025-2026"
+#   description: "I am investigating the possibility of applying for a Fullbright Scholars grant to support advancing my work in open educational resources (OER) or mathematical community outreach. This grant would provide an opportunity to collaborate with international experts in the field, conduct research on best practices for OER development and digital accessibility, and further develop resources and tools to support educators and learners globally. The application process involves researching the requirements and eligibility criteria for the Fullbright Scholars program, identifying potential host institutions and collaborators abroad, and preparing a compelling proposal that outlines the goals and impact of the proposed project."
+#   goal_two: 
+#     - "Add description of scholarly activity."
+#   goal_three: 
+#     - "Add description of workshop/information session attendance and learning about program."
+#   evidence:
+#     - name: Fullbright Scholars Program Information
+#       url: "https://fulbrightscholars.org/"
 
-######################
-#\begin{activity}{Cohost FriDEI weekly Discussions during Fall semester.}
-#\goal[3]{Preparation and facilitation of these discussions contributed significantly to my professional development by deepening my understanding of equity-focused pedagogy in mathematics. Reviewing planning materials, recurring themes included identity in mathematics (e.g., “who is a math person”), navigating power dynamics between instructors and students, and strategies for initiating difficult conversations. A particularly valuable aspect was engaging graduate students in their dual roles as both learners and instructors, which provided candid insight into current classroom challenges. A consistent thread across discussions was the tension between maintaining assessment rigor and implementing policies that promote meaningful learning opportunities and student growth.}
-#\goal[4]{These discussions benefited students through an equity-focused lens by fostering more inclusive teaching practices that recognize diverse student experiences and barriers to success. Conversations emphasized creating supportive classroom environments, incorporating flexibility and grace in assessment practices, and amplifying student voices, particularly those from underrepresented groups. Feedback from participating graduate students and faculty suggests these meetings encouraged reflection on teaching practices and contributed to more equitable and student-centered approaches in mathematics instruction alongside greater awareness of both visible and invisible challenges currently facing our students.}
-#\goal[5]{Co-hosted bi-weekly discussions centered on equitable teaching practices in mathematics courses with Dr. Marino Romero. This seminar brought together graduate students and faculty to address a gap in discipline-specific conversations around equity and inclusion in STEM, where adapting broader pedagogical strategies can be more challenging. Topics included professional identity, allyship, power dynamics, and grading practices, grounded in real classroom experiences. The series created a collaborative space for sharing strategies and reflecting on teaching. We plan to continue and expand this round-table discussion series in the coming academic year.}
-#\begin{evidence}
-#\evidenceitem{\href{https://mnscu-my.sharepoint.com/:b:/g/personal/ye6366mb_minnstate_edu/IQC71y8qnm3uSq-_Qodp64JQAUL8mX7axBBGgOevOOTm0fY?e=kep2uJ}{Shared planning notes.}
-#These provide a log of topics discussed, including identity in mathematics, grace in teaching, power dynamics, advocacy, and grading practices, as well as dates of meetings and brainstorming for future prompts.}
-#\end{evidence}
-#\end{activity}
 
-######################
-#\begin{activity}{Began Research Collaboration with Dr. Marino Romero.}
-#\goal[2]{Initiated a research collaboration with Dr. Marino Romero on a problem of mutual interest involving Wreath--Macdonald polynomials. We met regularly throughout the semester to design and implement code for computing specific inner products, building on some of Dr. Romero's previous work in this area, with the goal of developing computational tools to efficiently test hypotheses. A functional implementation will enable rapid exploration of conjectures and counterexamples, with potential connections to problems of interest in the physics community.
-#We have made meaningful progress in structuring the computational approach, while identifying a primary challenge in constructing and manipulating certain polynomials over fractional field elements within Sage. Addressing these issues requires both careful mathematical formulation and thoughtful software design. We are actively exploring multiple strategies to resolve these challenges and move toward a robust and extensible implementation.}
-#\begin{evidence}
-#\evidenceitem{\href{https://github.com/DoctorHaitch/WreathMacdonald}{GitHub repository containing current codebase and development progress.}}
-#\end{evidence}
-#\end{activity}
+# - name: "Calculus Curriculum Review Sub-committee"
+#   status: "Initial Progress, Deferred"
+#   academic_year: "2025-2026"
+#   description: "The Calculus Curriculum Review Sub-committee is responsible for evaluating and updating the institution’s calculus curriculum. Its work includes reviewing course structures, identifying areas for improvement, and developing recommendations to ensure the curriculum remains current, coherent, and aligned with best practices in mathematics education. The sub-committee collaborates with faculty and other stakeholders to gather input and support informed, evidence-based curriculum development."
+#   goal_five: 
+#     - "Volunteered for and was then elected chair for an Ad Hoc Committee to review the Calculus curriculum and textbook selection. The department identified this as a potentially high-impact review because of the large number of students enrolled in Calculus courses and the fact that the curriculum had not undergone comprehensive review in more than a decade. The committee's work was paused pending the departmental program review, which was anticipated for AY2026--2027 early in the academic year. One recommendation from the external program reviewers was to 'establish a multiyear schedule for reviewing the curricula of all departmental programs'. The committee's preliminary work positions the department to resume this review process as part of a broader, ongoing cycle of curricular assessment and improvement."
+#     - "Developed planning materials and a departmental survey to identify and rank faculty priorities related to the Calculus curriculum review process. The survey instrument may also serve as a useful artifact for future curriculum review efforts."
+#   evidence:
+#     - name: Calculus Curriculum Review Sub-committee Meeting Minutes
+#       url: ""
+#     - name: Faculty Survey for Curriculum Review
+#       url: "https://mnscu-my.sharepoint.com/:b:/r/personal/ye6366mb_minnstate_edu/Documents/00-Admin/Docs-PDP%20and%20PDR/2025-2026/Evidence/CurriculumReviewSurvey.pdf?csf=1&web=1&e=AKhVmv"
+
+# - name: "Progress towards PDF/UA Digital Document Accessibility Compliance."
+#   academic_year: "2025-2026"
+#   status: "Significant Progress, Ongoing"
+#   description: "In response to new federal digital accessibility requirements, I have undertaken a comprehensive effort to ensure that all PDF course resources for my courses are compliant with PDF/UA standards."
+#   goal_one: 
+#     - "Updated all PDF course resources to be compliant with PDF/UA standards, ensuring that all digital course materials are accessible to students with disabilities. This involved researching the requirements of PDF/UA compliance, implementing necessary changes to existing documents, and verifying compliance through testing and validation tools. These efforts were aimed at meeting new federal digital accessibility requirements and ensuring that all students have equal access to course materials."
+#   goal_two: 
+#     - "Researched, developed, and published guides on GitHub for creating PDF/UA-compliant documents in LaTeX, a platform widely used in scientific publishing and in the preparation of teaching materials for science courses. This work was undertaken to support compliance with new federal digital accessibility requirements and to ensure course materials meet evolving legal standards."
+#   goal_five: 
+#     - "Provided templates, supplementary guides, and practical tools to faculty and the broader community through my GitHub page. Initiated discussions with the library to expand access to these resources through workshops and tool development, with potential collaboration through CESR. These efforts directly support institutional Equity 2030 goals by improving accessibility and inclusion in digital learning and scholarly materials produced by our institution. I additionally plan to create a quickstart guide for faculty and students on Cornerstone to further facilitate the adoption of accessible document practices in our courses and research outputs."
+#   evidence:
+#     - name: GitHub Repository of LaTeX Accessibility Resources
+#       url: "https://github.com/DoctorHaitch/accessible-math"
+#     - name: Quickstart Guide on Cornerstone
+#       url: ""
+#     - name: Sample PDF/UA-Compliant Documents for Calculus II
+#       url: ""
+
+# - name: "Provided mentorship to students."
+#   status: "Ongoing"
+#   academic_year: "2025-2026"
+#   description: "Includes academic advising, project supervision, and career guidance. This mentorship has involved regular meetings with students to discuss their academic progress, providing feedback on their work, and offering support and resources to help them succeed in their studies and future careers. This frequently includes providing letters of support for scholarships, internships, and graduate school applications. I have also supervised student research projects, guiding them through the research process and helping them develop their skills in critical thinking, problem-solving, and effective communication of their findings."
+#   goal_four: 
+#     - "<strong>Academic Advising:</strong>"
+#     - "<strong>Direct Project Supervision:</strong>"
+#     - "<strong>Letters of Recommendation:</strong>"
+#   evidence:
+#     - name: Student Testimonials
+#       url: ""
+#     - name: Research Project Outcomes
+#       url: ""
+
+
+# # \goal[5]{Chaired and volunteered for an Ad Hoc Committee to review the Calculus curriculum and textbook selection. The department identified this as a potentially high-impact review because of the large number of students enrolled in Calculus courses and the fact that the curriculum had not undergone comprehensive review in more than a decade. The committee’s work was paused pending the departmental program review, which was anticipated for AY2026--2027 early in the academic year.
+# # One recommendation from the external program reviewers was to ``establish a multiyear schedule for reviewing the curricula of all departmental programs."
+# # The committee's preliminary work positions the department to resume this review process as part of a broader, ongoing cycle of curricular assessment and improvement.}
+
+# ######################
+# #\begin{activity}{Cohost FriDEI weekly Discussions during Fall semester.}
+# #\goal[3]{Preparation and facilitation of these discussions contributed significantly to my professional development by deepening my understanding of equity-focused pedagogy in mathematics. Reviewing planning materials, recurring themes included identity in mathematics (e.g., “who is a math person”), navigating power dynamics between instructors and students, and strategies for initiating difficult conversations. A particularly valuable aspect was engaging graduate students in their dual roles as both learners and instructors, which provided candid insight into current classroom challenges. A consistent thread across discussions was the tension between maintaining assessment rigor and implementing policies that promote meaningful learning opportunities and student growth.}
+# #\goal[4]{These discussions benefited students through an equity-focused lens by fostering more inclusive teaching practices that recognize diverse student experiences and barriers to success. Conversations emphasized creating supportive classroom environments, incorporating flexibility and grace in assessment practices, and amplifying student voices, particularly those from underrepresented groups. Feedback from participating graduate students and faculty suggests these meetings encouraged reflection on teaching practices and contributed to more equitable and student-centered approaches in mathematics instruction alongside greater awareness of both visible and invisible challenges currently facing our students.}
+# #\goal[5]{Co-hosted bi-weekly discussions centered on equitable teaching practices in mathematics courses with Dr. Marino Romero. This seminar brought together graduate students and faculty to address a gap in discipline-specific conversations around equity and inclusion in STEM, where adapting broader pedagogical strategies can be more challenging. Topics included professional identity, allyship, power dynamics, and grading practices, grounded in real classroom experiences. The series created a collaborative space for sharing strategies and reflecting on teaching. We plan to continue and expand this round-table discussion series in the coming academic year.}
+# #\begin{evidence}
+# #\evidenceitem{\href{https://mnscu-my.sharepoint.com/:b:/g/personal/ye6366mb_minnstate_edu/IQC71y8qnm3uSq-_Qodp64JQAUL8mX7axBBGgOevOOTm0fY?e=kep2uJ}{Shared planning notes.}
+# #These provide a log of topics discussed, including identity in mathematics, grace in teaching, power dynamics, advocacy, and grading practices, as well as dates of meetings and brainstorming for future prompts.}
+# #\end{evidence}
+# #\end{activity}
+
+# ######################
+# #\begin{activity}{Began Research Collaboration with Dr. Marino Romero.}
+# #\goal[2]{Initiated a research collaboration with Dr. Marino Romero on a problem of mutual interest involving Wreath--Macdonald polynomials. We met regularly throughout the semester to design and implement code for computing specific inner products, building on some of Dr. Romero's previous work in this area, with the goal of developing computational tools to efficiently test hypotheses. A functional implementation will enable rapid exploration of conjectures and counterexamples, with potential connections to problems of interest in the physics community.
+# #We have made meaningful progress in structuring the computational approach, while identifying a primary challenge in constructing and manipulating certain polynomials over fractional field elements within Sage. Addressing these issues requires both careful mathematical formulation and thoughtful software design. We are actively exploring multiple strategies to resolve these challenges and move toward a robust and extensible implementation.}
+# #\begin{evidence}
+# #\evidenceitem{\href{https://github.com/DoctorHaitch/WreathMacdonald}{GitHub repository containing current codebase and development progress.}}
+# #\end{evidence}
+# #\end{activity}
