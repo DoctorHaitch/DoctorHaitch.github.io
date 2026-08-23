@@ -85,9 +85,9 @@
     - name: 'Student Feedback from Math122: Calculus II, Spring'
       url: "https://mnscu-my.sharepoint.com/:b:/g/personal/ye6366mb_minnstate_edu/IQDdxOoYcJIkRqvT4Yi2TCpkAVKWlbN8AQkVg_pJxnRabck?e=Jo2fL7"
     - name: 'Student Feedback from Math122: Calculus II, Fall'
-      url: ""
+      url: "https://mnscu-my.sharepoint.com/:b:/g/personal/ye6366mb_minnstate_edu/IQAaSr4CHjDVTbJrP_jfyD5_AQDBbqMJ87Uky7qa6Uk3Bl4?e=jd9CU6"
     - name: 'Student Self-Reflections on Study Habits, Math122: Fall'
-      url: ""
+      url: "https://mnscu-my.sharepoint.com/:b:/g/personal/ye6366mb_minnstate_edu/IQDho2fRjKlwQL9cwMx-GTY1AemUfkXKLazlW2ACZ9cgBsg?e=giYxdO"
     - name: Teaching Observation by Dr. Charles Krois
       url: "https://mnscu-my.sharepoint.com/:b:/g/personal/ye6366mb_minnstate_edu/IQAsKZ5Vxi1jT70Fe64j-7NRAQPFzGG4K--Fv1QfiRAKffA?e=HrvA9c"
     - name: Sample Student Project (Rap Battle, Calculus II)
@@ -149,17 +149,31 @@
 - name: "Supervise Student Alternate Plan Paper"
   status: "Completed"
   academic_year: "2025-2026"
-  description:
+  description: "Supervised a student in the development of their alternate plan paper, providing guidance and feedback throughout the process."
   goal_two:
+    - > 
+      Trained student in research methods for mathematics, including literature review, problem formulation,
+      and mathematical writing. This involved providing guidance on how to identify relevant sources,
+      critically analyze existing research, formulate new questions and problems, evaluate potential interest in
+      their new topics, and effectively communicate mathematical ideas in written form.
   goal_four:
-    - 
+    - >
+      Met student weekly throughout the Spring semester to provide guidance and feedback on the initial
+      development of their alternate plan paper. This involved reviewing drafts, discussing research methods,
+      and providing constructive feedback to help the student refine their understanding of the problem.
+
+      Brian elected to complete his APP in the summer, and I continued to provide guidance and feedback on his
+      work, including reviewing drafts and providing feedback on the final submission, evidence of feedback
+      is provided in the marked drafts.
   evidence:
     - name: Student Thesis Document
-      url: ""
+      url: "https://mnscu-my.sharepoint.com/:b:/g/personal/ye6366mb_minnstate_edu/IQBDlyNQ1-5tQbxmq3Uza2aHAS6IiNo9AAmVJnUjapmKBko?e=qLlTQO"
     - name: Sample of Student Thesis Draft with Feedback (Digital Collaboration)
       url: "https://mnscu-my.sharepoint.com/:i:/g/personal/ye6366mb_minnstate_edu/IQBpOwmmK0O5QbcHzmlUHDuDAVpJifnSi8q_--uWNqLP8Zc?e=eSj71N"
     - name: Sample of Student Thesis Draft with Feedback (Marked Paper Copy)
-      url: ""
+      url: "https://mnscu-my.sharepoint.com/:b:/g/personal/ye6366mb_minnstate_edu/IQCtGelIZj-RT6R8vjYH1M_4AZo_bCQ3grlV3TCAkvKxgwQ?e=kRksL5"
+    - name: Student Acknowledgement of Feedback and Guidance
+      url: "https://mnscu-my.sharepoint.com/:b:/g/personal/ye6366mb_minnstate_edu/IQAa0gTuPI-1Q738JVdrAT-OAerAgejQfsDCugqaf9MVFNg?e=GC55Ee"
 
 # - name: "Investigate Fullbright Scholars Grant"
 #   status: "Significant Progress, Deemed Out of Scope"
