@@ -19,7 +19,7 @@
         <!-- Description -->
         <div class="detail-item">
           <div style="margin-left: 0.3rem; max-width: 90%; font-size: 0.9rem; color: var(--muted);">
-            <strong>Description</strong>: {{ activity.description }}
+            <strong>Description</strong>: {{ activity.description | markdownify }}
           </div>
         </div>
 
@@ -30,9 +30,9 @@
           <div class="detail-item">
             <span class="sr-only">Goal Area Five Activity Report: </span>
             <div class="item-title item-icon-settings">
-              <span class="item-label">
-                {{ report }}
-              </span>
+              <div class="item-label">
+                {{ report | markdownify }}
+              </div>
             </div>
           </div>
           {% endfor %}

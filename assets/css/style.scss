@@ -1211,11 +1211,21 @@ li blockquote[data-type="description"] {
     }
   }
 
-  p {
-    display: inline;
-    margin: 0;
-  }
+  // p {
+  //   display: inline;
+  //   margin: 0;
+  // }
 }
+
+.item-label p {
+  display: block;
+  margin: 0 0 0.75rem 0;
+}
+
+.item-label p:last-child {
+  margin-bottom: 0;
+}
+ 
 
 @mixin item-icon-variant($icon-var, $color-var, $alpha-bg: 0.10, $alpha-border: 0.45) {
   border-left-color: rgba(var($color-var), $alpha-border);

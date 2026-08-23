@@ -1,9 +1,47 @@
+##########################################################################
+##########################################################################
+########################## 2026-2027 Activities ##########################
+##########################################################################
+##########################################################################
+
+- name: "Serve on CETL Advisory Board representing CSET"
+  academic_year: "2026-2027"
+  status: "Planned"
+  description: |
+    I will serve on the CETL Advisory Board representing the College of Science, Engineering, and Technology (CSET).
+  notes: |
+    Discussed with John Burke, current CSET representative. He stated no meetings had occured in his time serving,
+    but it hopeful they will begin meeting again.
+
+- name: "Serve on MAA-NCS Section's Executive Committee as Member at Large"
+  academic_year: "2026-2027"
+  status: "In Progress"
+  description: |
+    I will serve on the MAA-NCS Section's Executive Committee as a Member at Large. This role involves participating
+    in the governance and decision-making processes of the section, contributing to the planning and organization of
+    section activities, and representing the interests of members within the section.
+  notes: |
+    I was elected to this position in Spring 2026, and will begin serving in Fall 2026.
+  goal_three:
+  goal_five:
+    - |
+      Participated in planning Fall 2026 Meeting at Morris, scheduled for October 9-10, 2026.
+  evidence:
+    - name: Initial Planning Correspondence for Fall 2026 Meeting at Morris
+      url: "https://mnscu-my.sharepoint.com/:b:/g/personal/ye6366mb_minnstate_edu/IQAPzGwROU2aQLiEyiy-PG3NAae6sP07Hj-ueYUThUq33q0?e=acYvD4"
+
+##########################################################################
+##########################################################################
+########################## 2025-2026 Activities ########################## 
+##########################################################################
+##########################################################################
+
 - name: "Teach six classes: 4 sections of Math122: Calculus II, Math605: Graphs and Algorithms, and Math170: Intro to Mathematical Software Programming"
   academic_year: "2025-2026"
   status: "Completed"
   description: "I am responsible for teaching 6 classes during the 2025-2026 academic year. This includes 2 sections of Calculus II in both Fall and Spring semesters, a graduate course on Graphs and Algorithms in the Fall, and an introductory course on Mathematical Software Programming in the Spring. While I have taught Calculus II many times, Math170 is a new course for me and I will be developing all materials from scratch. Math605 will be significantly revised from prior versions as it has generally started at too high a level for our students, thus a significant amount of new introductory material will be developed for the first half of the semester."
   goal_one: 
-    - > 
+    - | 
       In Math 122, I feel that the Fall semester was much more successful than the Spring semester.
       Unfortunately, several assessments that have traditionally been successful in promoting student
       learning were much less effective with the increased usage of AI tools. In particular, allowing students
@@ -29,10 +67,11 @@
       the basics of graph theory, including definitions, properties, and basic algorithms. This appeared to significantly
       improve the understanding and outcomes for students in the course, and will be a focus of future iterations of the course.
   goal_three:
-    - > 
+    - | 
       I continue to invite at least one external faculty member to observe my classes and provide feedback to improve my
       teaching effectiveness and strategies. This year, Dr. Charles Krois observed one of my Math 122 classes and provided
       detailed feedback on my teaching methods.
+
       I have incorporated several of his suggestions for this upcoming year. In particular, I've incorporated a more structured
       approach to announcements and reminders as part of the new lecture notes that will also be provided to students in D2L
       as part of the Digital Document Accessibility Compliance efforts noted elsewhere in this report. I have also added
@@ -67,7 +106,7 @@
       In both Math122 and Math605, students were required to keep a journal logging their learning and course engagement,
       with specific practice exercises also assigned to be maintained in this document. This journal was intended to encourage 
       students to reflect on their learning, identify areas of strength and weakness, as well as practice course material.
-    - >
+    - |
       In Math 170, students designed and executed their own final project, along with an accompanying report and presentation.
       This project required students to apply the programming concepts and techniques they had learned throughout the course
       to solve a mathematical problem of their choice. Students were encouraged to explore topics that interested them.
@@ -99,6 +138,109 @@
     - name: Sample Student Project (SDP Max-Cut, Math605)
       url: "https://mnscu-my.sharepoint.com/:b:/g/personal/ye6366mb_minnstate_edu/IQAXXOK8qY3DQLcgsG_vo0S3AT1cH66bgzm6PV99phwqRoA?e=OdH3OG"
 
+- name: "Improve MavPASS incorporation into Calculus II"
+  status: "Limited Progress, Ongoing"
+  academic_year: "2025-2026"
+  description: >
+    Mentor MavPASS leaders each semester to support students in Calculus II courses. Assessments
+    will be MavPASS attendance and comparison of student success for those both attending and
+    not attending MavPASS sessions (although I do find there to be a strong selection bias in these
+    statistics which warrants closer examination).
+  goal_four:
+    - |
+      I have continued to mentor MavPASS leaders each semester to support students in Calculus II courses.
+      This involves providing guidance and feedback on their facilitation of MavPASS sessions, as well as
+      helping them develop strategies for engaging students and promoting active learning. I have also worked
+      with MavPASS leaders to assess the effectiveness of their sessions and identify areas for improvement.
+
+      Attendance was higher in the Fall Semester compared with the Spring, and student surveys reflect an increasing
+      reliance on AI tools for homework and academic support and much less reliance on MavPASS, instructor
+      student support hours, and other traditional academic support resources. I am currently exploring alternative
+      strategies to address this issue and will make changes that reflect this new reality in the 2026-2027 academic year.
+      I am also exploring additional strategies to encourage students to attend MavPASS sessions, however given 
+      constrained schedules, this needs to be balanced with equity issues for students that cannot attend such supports
+      due to work or family obligations, making some incentives for attendance potentially inequitable.
+      I am open to suggestions from the department review or Dean Alam on how to best address this issue,
+      as it is a complex problem that requires careful consideration of multiple factors.
+
+- name: >
+    Continue drafting of book in support of Math 605, Graphs and Algorithms, titled
+    Topics in Algebraic Combinatorics and Optimization.
+  status: "Significant Progress, Ongoing"
+  academic_year: "2025-2026"
+  description: >
+    I am continuing to draft a book in support of Math 605, Graphs and Algorithms in collaboration
+    with my co-author, Dr. Sebastian Cioabă. The book is titled "Topics in Algebraic Combinatorics and Optimization"
+    and aims to provide a comprehensive introduction to the field of algebraic combinatorics, with a focus on its
+    applications to optimization problems. The book will cover fundamental concepts, techniques, and algorithms
+    in algebraic combinatorics, as well as their connections to optimization theory and practice.
+    It will also include numerous examples, detailed proofs, and exercises to illustrate the practical applications
+    of the material covered.
+  goal_two:
+    - >
+      I have made significant progress in drafting the book, including writing several chapters and sections,
+      developing examples and exercises, and incorporating feedback and material from my co-author.
+      Unfortunately there is little support from the Dean's office at this time for this type of scholarly work,
+      so it has been difficult to prioritize this work over other responsibilities. As a result, I will likely be
+      unable to continue this work until the course is offered again in the 2027-2028 academic year.
+      I will continue to make progress on the book as time allow, but a focus on this resulted in the Dean reporting
+      that I was not making sufficient progress on my Criterion 2 goals, which is a concern for me as I feel that this
+      work is a significant scholarly contribution to the field of mathematics and will have a positive impact on
+      student learning and engagement in Math 605.
+
+- name: "Give invited address at Frame Theory Days Conference."
+  status: "Canceled."
+  academic_year: "2025-2026"
+  description: >
+    Give invited address at the regional conference in December of 2025. Evidence will be the
+    program including the abstract of the address.
+  goal_two:
+    - >
+      I was invited to give an address at the Frame Theory Days Conference in December of 2025. However, due to unforeseen
+      circumstances, and the fact that this activity was unsupported by the Dean's office, which noted a lack of progress
+      in Criterion 2 even though other talks and similar were being purseud, I was unable to attend the conference and
+      give the address as planned. I have communicated with the
+      conference organizers and they have expressed their understanding of the situation. I plan to explore alternative
+      opportunities to present my work at future conferences if deemed worthwhile by supervisors,and will continue to seek
+      out venues for sharing my research and engaging with the academic community.
+
+- name: > 
+    Investigate NSF Grant with colleagues from the University of Nebraska-Omaha.
+  status: "Project Canceled, Necessary Course Software Denied by University IT department."
+  academic_year: "2025-2026"
+  description: >
+    Project intended to support further research and development of a
+    course where math, art, and computational thinking intersect. This work was initially the basis
+    of my Math170 course, a new prep this semester, which could have led to a grant proposal for
+    further research and development. The faculty at UNO were interested in collaborating on this project,
+    as they had already had one grant funded in this area, and wanted to expand the scope outside their university
+    in their next application.
+  goal_two:
+    - |
+      I was unable to pursue this project due to the University IT department denying the necessary software
+      for the course, which was a critical component of the project. This decision was made despite
+      my repeated attempts to communicate the importance of the software for the course and the potential impact
+      on student learning and engagement. I have communicated with my colleagues at UNO and they have expressed their
+      understanding but disappointment with the situation.
+
+      While waiting on approval from IT, I met with the UNO faculty members several times, and continued to
+      discuss the project and potential grant proposal via email. Everything looked promising until the IT
+      department denied the software, which was a critical component of the project. This decision effectively
+      halted the project and prevented us from moving forward.
+
+      Unfortunately, there is no way forward if IT will not allow the necessary software to be used. I would
+      request the Dean review this situation, as I have heard similar impediments to research and scholarly
+      collaborations from other faculty in the college, and it is a concern for the overall research and
+      scholarly output of the institution--something he has stated as a clear priority. Perhaps he can
+      assist in resolving the situation or provide guidance on how to proceed in the future.
+      I am open to suggestions and would appreciate any support or advice on how to navigate this issue.
+  evidence:
+    - name: Email Correspondence with UNO Faculty
+      url: "https://mnscu-my.sharepoint.com/:b:/g/personal/ye6366mb_minnstate_edu/IQBljaW7wB-1SIG149qgp7mQAfOZbkVvLHsVEHNidrY4yvs?e=FcSQZx"
+    - name: Email Correspondence with University IT Department and Dept. Chair to Obtain Software Approval
+      url: "https://mnscu-my.sharepoint.com/:b:/g/personal/ye6366mb_minnstate_edu/IQDdczvmd4jUQqOJ_zg_duEuAf1S5HnzBBnHaCXBADFdKhA?e=fIJhK9"
+
+
 - name: "Serve on Departmental Committee for Student Advancement"
   status: "Completed"
   academic_year: "2025-2026"
@@ -117,7 +259,7 @@
       on which students should be awarded scholarships based on their academic achievements, leadership qualities,
       and potential contributions.
   goal_five:
-    - > 
+    - |
       Collaborated with other committee members via email to achieve consensus on student nominations and scholarship awards.
       This involved discussing the merits of candidates, considering their academic records, extracurricular involvement, and
       personal statements, and making informed decisions that align with the department's goals for student advancement.
@@ -137,7 +279,7 @@
     aimed to ensure that the syllabus reflects current best practices in mathematical education, aligns with the department's
     learning objectives, and provides clear guidance for students preparing for their comprehensive exams.
   goal_five:
-    - > 
+    - | 
       Worked with collaborators via email and shared documents to review the existing syllabus, identify areas for improvement,
       and suggest and approve revisions.
   evidence:
@@ -151,13 +293,13 @@
   academic_year: "2025-2026"
   description: "Supervised a student in the development of their alternate plan paper, providing guidance and feedback throughout the process."
   goal_two:
-    - > 
+    - | 
       Trained student in research methods for mathematics, including literature review, problem formulation,
       and mathematical writing. This involved providing guidance on how to identify relevant sources,
       critically analyze existing research, formulate new questions and problems, evaluate potential interest in
       their new topics, and effectively communicate mathematical ideas in written form.
   goal_four:
-    - >
+    - |
       Met student weekly throughout the Spring semester to provide guidance and feedback on the initial
       development of their alternate plan paper. This involved reviewing drafts, discussing research methods,
       and providing constructive feedback to help the student refine their understanding of the problem.
@@ -174,6 +316,104 @@
       url: "https://mnscu-my.sharepoint.com/:b:/g/personal/ye6366mb_minnstate_edu/IQCtGelIZj-RT6R8vjYH1M_4AZo_bCQ3grlV3TCAkvKxgwQ?e=kRksL5"
     - name: Student Acknowledgement of Feedback and Guidance
       url: "https://mnscu-my.sharepoint.com/:b:/g/personal/ye6366mb_minnstate_edu/IQAa0gTuPI-1Q738JVdrAT-OAerAgejQfsDCugqaf9MVFNg?e=GC55Ee"
+
+- name: "Write Letters of Recommendations for Students"
+  status: "Ongoing"
+  academic_year: "2025-2026"
+  description: >
+    Provide letters for industry and graduate programs
+    as requested by students. Evidence will be confirmation letters and emails from programs receiving
+    these letters.
+  goal_four:
+    - |
+      I have written several letters of recommendation for students applying to graduate programs, scholarships,
+      and other academic opportunities. These letters have been tailored to each student's unique strengths and
+      accomplishments, providing a comprehensive overview of their qualifications and potential for success.
+
+      * Quinn Foreman, MavPASS Leader at MNSU-Mankato.
+      * Aaron Kamm, MNSU Scholarship Finder Reference.
+      * Henry Schmidt, MNSU Scholarship Finder Reference.
+      * Nathan Molyneux, MNSU Scholarship Finder Reference.
+      * Melanie Veith, MNSU Scholarship Finder Reference.
+      * Nils Quist, MNSU Scholarship Finder Reference.
+      * Nara Sheen, Letters provided to over 12 PhD Programs.
+      * Darren Gemoh Boyo, 2026 Wake Forest School of Medicine Summer Internship Program.
+      * Madison Dudley, Rochester Independent School District 535, teacher recommendation.
+
+      Note: Even with the large number of requests accomodated, I do not accept all requests.
+      Please see a sample of a response denying a letter of recommendation request in the evidence section below, as
+      I get far more requests than demonstrated by the extensive output of letters of recommendation I have provided.
+      This does demonstrate impact on students, even many years removed from my classes and in challenging circumstances.
+  evidence:
+    - name: Confirmations or Requests for Letters of Recommendation
+      url: "https://mnscu-my.sharepoint.com/:b:/g/personal/ye6366mb_minnstate_edu/IQC3t_khgBn1Q4b-Nci0P3XgAcXZq8cPb3-PTbV-16rMYNo?e=gUReuL"
+    - name: Sample Responses Denying Letter of Recommendation Requests
+      url: "https://mnscu-my.sharepoint.com/:b:/g/personal/ye6366mb_minnstate_edu/IQDyxXZUKY24TplBhwBxSgNzAUEwZ2Tzev6s8TcdBLl4hiY?e=hTEHUk"
+
+- name: "Marching Faculty for Spring 2026 Graduation"
+  status: "University Service, Completed"
+  academic_year: "2025-2026"
+  description: >
+    I participated in the Spring 2026 graduation ceremony as a member of the faculty procession. This involved
+    marching in the ceremony, representing the College of Science, Engineering, and Technology (CSET), and
+    celebrating the achievements of graduating students. My participation in this event reflects my commitment
+    to supporting and recognizing student success and fostering a sense of community within the institution.
+  goal_five:
+    - >
+      Participated in the Spring 2026 graduation ceremony as a member of the faculty procession, representing
+      the College of Science, Engineering, and Technology (CSET) and Department of Mathematics and Statistics
+      celebrating the achievements of graduating students.
+  evidence:
+    - name: Email Thread Responding to Chair's Request to Serve This Role
+      url: "https://mnscu-my.sharepoint.com/:b:/g/personal/ye6366mb_minnstate_edu/IQCMBz-b7iWbTIGEAckUc2RmAZ_qzCnAYjCrU9_wyPCjzMI?e=ZSbUlA"
+
+- name: "Partipate in Career Champions Program"
+  status: "Ongoing"
+  academic_year: "2025-2026"
+  description: >
+    I participated in the Career Champions Program, which is designed to support students in their career development
+    and exploration. This program involves learning about career services and resources available to students to better
+    serve as advising future professionals. My participation in this program reflects
+    my commitment to supporting student success and preparing them for their future careers.
+  goal_three:
+    - |
+      Attended the 4 workshops offered this academic year:
+
+      * 9/23/25 — Survey Says: What Employers Wish You Knew
+      * 11/18/25 — Intersection of Mentorship, Leadership, and Supervision
+      * 1/27/26 — CHIPS & DIPS: Career High Impact Practices
+      * 4/7/26 — Skills to Pay the Bills: The Rise of Skills-First Hiring
+
+      In particular, continuing to learn about Skills First Hiring has been beneficial in both advising
+      and teaching. It allows me to highlight how the development of skills they can list which are the focus
+      of classroom activities and assignments, and how they can be highlighted in their resumes and cover letters.
+
+      This has also provided me the opportunity to connect with campus members I might not otherwise have the opportunity to meet, 
+      and I've found learning more about Academic Recovery Advising and other parts of the advising infrastructure helpful
+      as I continue to pursue ways to improve high DFW courses such as Calculus II.
+  goal_four:
+    - |
+      Provided information to students informally during student support hours or advising sessions. Additionally,
+      based on some of these workshops I aim to create a D2L module for students to learn about and access the 
+      career services resources available to them on campus. This will be a resource for students to access at any time,
+      and will be particularly useful for those who might be shy about having these conversations directly.
+  evidence:
+    - name: Email Correspondence with Connections from Career Champions as well as Programming Email/Information
+      url: "https://mnscu-my.sharepoint.com/:b:/g/personal/ye6366mb_minnstate_edu/IQCWF4nFXrRgSqgB_aYHNeLXAVw44IQVPClFIgwEpHFpMnY?e=t6708y"
+
+- name: "Provide End of Semester Surveys to New Faculty"
+  status: "Departmental Service, Completed"
+  academic_year: "2025-2026"
+  description: >
+    Distributed my own end-of-semester student surveys to new faculty in the department as a template
+    for collecting feedback from their students.
+  goal_five:
+    - |
+      At the request of several new faculty members, I provided my own survey formats to new faculty who missed
+      opportunities to collect student feedback on their teaching effectiveness and course design.
+  evidence:
+    - name: End-of-Semester Survey for New Faculty
+      url: "https://mnscu-my.sharepoint.com/:b:/g/personal/ye6366mb_minnstate_edu/IQDPCSNCnSx0SYgUe2V4rX0DATH8jDvbYrJ7wHm5Crd4k_k?e=7WZT8H"
 
 # - name: "Investigate Fullbright Scholars Grant"
 #   status: "Significant Progress, Deemed Out of Scope"
