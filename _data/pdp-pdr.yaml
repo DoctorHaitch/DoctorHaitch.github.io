@@ -36,10 +36,13 @@
 ##########################################################################
 ##########################################################################
 
-- name: "Teach six classes: 4 sections of Math122: Calculus II, Math605: Graphs and Algorithms, and Math170: Intro to Mathematical Software Programming"
+- name: "Teach six, 4-credit hour courses."
   academic_year: "2025-2026"
   status: "Completed"
-  description: "I am responsible for teaching 6 classes during the 2025-2026 academic year. This includes 2 sections of Calculus II in both Fall and Spring semesters, a graduate course on Graphs and Algorithms in the Fall, and an introductory course on Mathematical Software Programming in the Spring. While I have taught Calculus II many times, Math170 is a new course for me and I will be developing all materials from scratch. Math605 will be significantly revised from prior versions as it has generally started at too high a level for our students, thus a significant amount of new introductory material will be developed for the first half of the semester."
+  description: |
+    * Math122: Calculus II (2 Sections Each Term)
+    * Math605: Graphs and Algorithms (1 Section, Fall)
+    * Math170: Intro to Mathematical Software Programming (1 Section, Spring)
   goal_one: 
     - | 
       In Math 122, I feel that the Fall semester was much more successful than the Spring semester.
@@ -164,6 +167,24 @@
       as it is a complex problem that requires careful consideration of multiple factors.
 
 - name: >
+    Supervise student research.
+  status: Completed
+  academic_year: "2025-2026"
+  description: |
+    Supervised two students.
+
+    * Isaac Wicklund (Independent Study, Capstone, Undergraduate)
+    * Brian Larson (Alternate Plan Paper, Graduate)
+  goal_two:
+    - | 
+  goal_four:
+    - | 
+  evidence:
+    - name: Discussion with Isaac and Dept. Chair Regarding Capstone Project
+      url: "https://mnscu-my.sharepoint.com/:b:/g/personal/ye6366mb_minnstate_edu/IQBxXb0vhuPwRprGrvvFAyk2AXygWdRRBw8HSNPb4sIHK8Q?e=iE3Njd"
+    - name: Isaac Wicklund's Senior Capstone Paper
+      url: "https://mnscu-my.sharepoint.com/:b:/g/personal/ye6366mb_minnstate_edu/IQDaGDpCdhZrTbGkcRI2l0NmAbOR4ieznPd5OSj51dFjLAk?e=WOwAt4"
+- name: >
     Continue drafting of book in support of Math 605, Graphs and Algorithms, titled
     Topics in Algebraic Combinatorics and Optimization.
   status: "Significant Progress, Ongoing"
@@ -240,6 +261,21 @@
     - name: Email Correspondence with University IT Department and Dept. Chair to Obtain Software Approval
       url: "https://mnscu-my.sharepoint.com/:b:/g/personal/ye6366mb_minnstate_edu/IQDdczvmd4jUQqOJ_zg_duEuAf1S5HnzBBnHaCXBADFdKhA?e=fIJhK9"
 
+- name: "Attend Conference on Statistical Inference"
+  status: "Completed"
+  academic_year: "2025-2026"
+  description: >
+    I attended the Conference on Statistical Inference honoring Dr. Mezbahur Rahman.
+  goal_two:
+    - |
+      Attended the Conference on Statistical Inference, which included presentations and discussions on various
+      topics related to statistical inference. In particular, I found common research interests with one of our
+      faculty presenters, Syeda Karimushan.
+  evidence:
+    - name: Conference Registration Confirmation
+      url: "https://mnscu-my.sharepoint.com/:b:/g/personal/ye6366mb_minnstate_edu/IQCI3oqYymOWSLMODDQr4XMxAYQoKukItDDb0bwKoyW_ihs?e=NfWXnP"
+    - name: Initial Discussions of Research with Syeda Karimushan
+      url: "https://mnscu-my.sharepoint.com/:b:/g/personal/ye6366mb_minnstate_edu/IQDmJbQhNU8yR7NtmvcdTMBtAagUTojLdurSvhh4kKYRhqc?e=46ovcZ"
 
 - name: "Serve on Departmental Committee for Student Advancement"
   status: "Completed"
