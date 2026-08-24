@@ -134,6 +134,8 @@
       url: "https://mnscu-my.sharepoint.com/:b:/g/personal/ye6366mb_minnstate_edu/IQAsKZ5Vxi1jT70Fe64j-7NRAQPFzGG4K--Fv1QfiRAKffA?e=HrvA9c"
     - name: Sample Student Project (Rap Battle, Calculus II)
       url: "https://mnscu-my.sharepoint.com/:v:/g/personal/ye6366mb_minnstate_edu/IQDxV2hH97QWSrSnock-3CgrAfmg5VaEFiW8Pw-P-7XGYwA"
+    - name: Sample Student Project (Reflective Journal and Content Summaries)
+      url: "https://mnscu-my.sharepoint.com/:b:/g/personal/ye6366mb_minnstate_edu/IQBVJCTuwvEeQqYUG_Mx3YMBAf1kqzBYYPiQO8EbZ2gsSS0?e=d7ckcn"
     - name: Sample Student Report and Presentation (Fourier Analysis, Math170)
       url: "https://mnscu-my.sharepoint.com/:b:/g/personal/ye6366mb_minnstate_edu/IQCZ2siqcvI4RbC2NOaKenjrAUetRHijl9_mBHwMW0KB8VY?e=EEeAg1"
     - name: Student Email Reaching Out for Additional Mentorship (Math170)
@@ -173,17 +175,36 @@
   description: |
     Supervised two students.
 
-    * Isaac Wicklund (Independent Study, Capstone, Undergraduate)
-    * Brian Larson (Alternate Plan Paper, Graduate)
+    * Isaac Wicklund (Independent Study, Capstone, Undergraduate, Fall Semester)
+    * Brian Larson (Alternate Plan Paper, Graduate, Spring Semester and Summer)
   goal_two:
     - | 
+      Trained students in research methods for mathematics, including literature review, problem formulation,
+      and mathematical writing. Each student produced original research based on their respective problems.
+
+      The original research produced by each student is documented in their respective final papers, which are attached as evidence.
   goal_four:
     - | 
+      Met weekly with students in Fall and Spring semesters weekly to advise and mentor them in their research projects.
+      This involved providing guidance on research methods, problem formulation, and mathematical writing, as well as
+      helping them navigate the challenges of conducting original research and answer technical questions about their
+      problems.
+
+      This also involved proof-reading and providing detailed feedbacks on manuscript drafts. Sample of targeted, critical feedback
+      given to help the student grow as a researcher and a writer, and to improve the quality of their work, is provided in the
+      marked drafts of their papers. Additionally, the final draft is attached as evidence.
   evidence:
-    - name: Discussion with Isaac and Dept. Chair Regarding Capstone Project
-      url: "https://mnscu-my.sharepoint.com/:b:/g/personal/ye6366mb_minnstate_edu/IQBxXb0vhuPwRprGrvvFAyk2AXygWdRRBw8HSNPb4sIHK8Q?e=iE3Njd"
     - name: Isaac Wicklund's Senior Capstone Paper
       url: "https://mnscu-my.sharepoint.com/:b:/g/personal/ye6366mb_minnstate_edu/IQDaGDpCdhZrTbGkcRI2l0NmAbOR4ieznPd5OSj51dFjLAk?e=WOwAt4"
+    - name: Brian Larson's APP Final Draft
+      url: "https://mnscu-my.sharepoint.com/:b:/g/personal/ye6366mb_minnstate_edu/IQBDlyNQ1-5tQbxmq3Uza2aHAS6IiNo9AAmVJnUjapmKBko?e=EvzeK3"
+    - name: Sample of Feedback and Student Response on Brian Larson's APP Drafts
+      url: "https://mnscu-my.sharepoint.com/:b:/g/personal/ye6366mb_minnstate_edu/IQC1wy2wLtXwSLsPphul5k8XASSeo75Y8iyRPREvmbhvT0s?e=3qvciV"
+    - name: Discussion with Isaac and Dept. Chair Regarding Capstone Project
+      url: "https://mnscu-my.sharepoint.com/:b:/g/personal/ye6366mb_minnstate_edu/IQBxXb0vhuPwRprGrvvFAyk2AXygWdRRBw8HSNPb4sIHK8Q?e=iE3Njd"
+
+
+
 - name: >
     Continue drafting of book in support of Math 605, Graphs and Algorithms, titled
     Topics in Algebraic Combinatorics and Optimization.
@@ -451,18 +472,58 @@
     - name: End-of-Semester Survey for New Faculty
       url: "https://mnscu-my.sharepoint.com/:b:/g/personal/ye6366mb_minnstate_edu/IQDPCSNCnSx0SYgUe2V4rX0DATH8jDvbYrJ7wHm5Crd4k_k?e=7WZT8H"
 
-# - name: "Investigate Fullbright Scholars Grant"
-#   status: "Significant Progress, Deemed Out of Scope"
-#   academic_year: "2025-2026"
-#   description: "I am investigating the possibility of applying for a Fullbright Scholars grant to support advancing my work in open educational resources (OER) or mathematical community outreach. This grant would provide an opportunity to collaborate with international experts in the field, conduct research on best practices for OER development and digital accessibility, and further develop resources and tools to support educators and learners globally. The application process involves researching the requirements and eligibility criteria for the Fullbright Scholars program, identifying potential host institutions and collaborators abroad, and preparing a compelling proposal that outlines the goals and impact of the proposed project."
-#   goal_two: 
-#     - "Add description of scholarly activity."
-#   goal_three: 
-#     - "Add description of workshop/information session attendance and learning about program."
-#   evidence:
-#     - name: Fullbright Scholars Program Information
-#       url: "https://fulbrightscholars.org/"
+- name: "Investigate Fullbright Scholars Grant"
+  status: "Significant Progress, Deemed Out of Scope"
+  academic_year: "2025-2026"
+  description: >
+    Determine if Fullbright Scholars grant is a viable option for supporting my work in open educational resources (OER) or
+    mathematical community outreach. Ultimately no well-aligned opportunities were found at this time, but I learned a great
+    deal about the program and application process and would consider pursuing this in the future if a well-aligned opportunity arises.
+  description: "I am investigating the possibility of applying for a Fullbright Scholars grant to support advancing my work in open educational resources (OER) or mathematical community outreach. This grant would provide an opportunity to collaborate with international experts in the field, conduct research on best practices for OER development and digital accessibility, and further develop resources and tools to support educators and learners globally. The application process involves researching the requirements and eligibility criteria for the Fullbright Scholars program, identifying potential host institutions and collaborators abroad, and preparing a compelling proposal that outlines the goals and impact of the proposed project."
+  goal_two: 
+    - >
+      Investigated potential projects and collaborations with international experts in the field of open educational resources (OER)
+      and mathematical community outreach. This involved researching the requirements and eligibility criteria for the Fullbright
+      Scholars program, identifying potential host institutions and collaborators abroad, and considering the feasibility of each.
 
+      This also involved researching many prior grants and opportunities on the Fullbright Scholars website to find similar
+      projects that have been awarded funding, and to learn from their experiences and best practices.
+  goal_three: 
+    - >
+      Attended
+      
+      * One MNSU hosted information session on Campus
+      * One MNSU hosted information session on Zoom (recorded)
+      * Three Fullbright Scholars Program webinars on Zoom (synchronous and recorded)
+  evidence:
+    - name: Fullbright Scholars Program Information
+      url: "https://fulbrightscholars.org/"
+    - name: Event Registration Emails, post-event Surveys, and Correspondence with Organizers
+      url: "https://mnscu-my.sharepoint.com/:b:/g/personal/ye6366mb_minnstate_edu/IQAY4ZjNgzPtTqPv4zWvZQGCAS-cMexnwp-qbAt4JwUBZFA?e=DI6OTT"
+
+- name: "Academic Advising"
+  description: >
+    Academic advising for students in the Department of Mathematics and Statistics.
+  status: "Ongoing"
+  academic_year: "2025-2026"
+  goal_four:
+    - >
+      This includes providing guidance on course selection, degree requirements, and career planning.
+      I have met with students to discuss their academic progress, answer questions about their programs, 
+      and provide support and resources to help them succeed in their studies. This also includes assisting 
+      students with registration, transfer credits, and other administrative tasks related to their academic journey.
+
+      Last year, I aimed to provide better documentation of my advising meetings, incorporating meeting summaries
+      into the student's Navigate360 records. This replaced my prior system of using emails and paper logs to document
+      advising meetings, and provided more comprehensive and accessible records. I also send these summaries to
+      students after each meeting to ensure we are on the same page and to provide a reference for future advising sessions.
+      This has been well-received by students, and I have received positive feedback on the clarity and usefulness
+      of these summaries.
+
+      For AY 2025-2026, I was assigned to advise 3 graduate students and 2 undergraduate students.
+  evidence:
+    - name: Sample of Academic Advising Summaries added to Student's Navigate360 Recrods
+      url: ""
 
 # - name: "Calculus Curriculum Review Sub-committee"
 #   status: "Initial Progress, Deferred"
