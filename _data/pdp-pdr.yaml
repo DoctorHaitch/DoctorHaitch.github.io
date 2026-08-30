@@ -12,6 +12,11 @@
   notes: |
     Discussed with John Burke, current CSET representative. He stated no meetings had occured in his time serving,
     but it hopeful they will begin meeting again.
+  alignment_note: |
+    Participation on the CETL Advisory Board supports institutional efforts to improve teaching,
+    learning, faculty development, and student success. This work aligns with Destination 2030 goals
+    related to transformational learning and innovation, while supporting Equity 2030 through the
+    promotion of effective and inclusive teaching practices.
 
 - name: "Serve on MAA-NCS Section's Executive Committee as Member at Large"
   academic_year: "2026-2027"
@@ -26,6 +31,11 @@
   goal_five:
     - |
       Participated in planning Fall 2026 Meeting at Morris, scheduled for October 9-10, 2026.
+  alignment_note: |
+    Service in a regional professional organization strengthens professional networks, supports
+    dissemination of effective educational practices, and expands opportunities for collaboration.
+    These activities contribute to Destination 2030's goals involving innovation, engagement, and
+    professional development.
   evidence:
     - name: Initial Planning Correspondence for Fall 2026 Meeting at Morris
       url: "https://mnscu-my.sharepoint.com/:b:/g/personal/ye6366mb_minnstate_edu/IQAPzGwROU2aQLiEyiy-PG3NAae6sP07Hj-ueYUThUq33q0?e=acYvD4"
@@ -122,7 +132,18 @@
       
       One student in particular went on to continue working on data analysis projects in MatLAB and reached out
       for additional mentorship and guidance on their project.
-
+    - |
+      In Math122, I ask for Feedback in the form of a meta-cognitive assignment where students give feedback to their former selves
+      at the beginning of the class. This gives students an opportunity to reflect on their learning experience for the semester, and
+      often also provides me with valuable feedback on my teaching methods and strategies and how students engage and think they 
+      should engage with them.
+  alignment_note: |
+    This work directly advances Equity 2030 Student Academic Success through instructional practices
+    that support retention, persistence, and degree completion. The revisions to Math 605, development
+    of Math 170, reflective learning activities, and exploration of assessment approaches in response
+    to AI use contribute to Destination 2030 goals related to transformational learning, equitable
+    high-impact educational experiences, and eliminating equity gaps through continuous improvement
+    of teaching practices.
   evidence:
     - name: 'Student Feedback from Math122: Calculus II, Spring'
       url: "https://mnscu-my.sharepoint.com/:b:/g/personal/ye6366mb_minnstate_edu/IQDdxOoYcJIkRqvT4Yi2TCpkAVKWlbN8AQkVg_pJxnRabck?e=Jo2fL7"
@@ -134,14 +155,16 @@
       url: "https://mnscu-my.sharepoint.com/:b:/g/personal/ye6366mb_minnstate_edu/IQAsKZ5Vxi1jT70Fe64j-7NRAQPFzGG4K--Fv1QfiRAKffA?e=HrvA9c"
     - name: Sample Student Project (Rap Battle, Calculus II)
       url: "https://mnscu-my.sharepoint.com/:v:/g/personal/ye6366mb_minnstate_edu/IQDxV2hH97QWSrSnock-3CgrAfmg5VaEFiW8Pw-P-7XGYwA"
-    - name: Sample Student Project (Reflective Journal and Content Summaries)
+    - name: Sample Student Project (Reflective Journal with Content Summaries)
       url: "https://mnscu-my.sharepoint.com/:b:/g/personal/ye6366mb_minnstate_edu/IQBVJCTuwvEeQqYUG_Mx3YMBAf1kqzBYYPiQO8EbZ2gsSS0?e=d7ckcn"
     - name: Sample Student Report and Presentation (Fourier Analysis, Math170)
       url: "https://mnscu-my.sharepoint.com/:b:/g/personal/ye6366mb_minnstate_edu/IQCZ2siqcvI4RbC2NOaKenjrAUetRHijl9_mBHwMW0KB8VY?e=EEeAg1"
-    - name: Student Email Reaching Out for Additional Mentorship (Math170)
+    - name: Student Email Reaching Out for Additional Mentorship and Project Ideas (Math170)
       url: "https://mnscu-my.sharepoint.com/:b:/g/personal/ye6366mb_minnstate_edu/IQD_5fUjuGP-R5yQ9BO_Am4fAeAVBTkeWaHAveatSRODbu0?e=vZNhw0"
     - name: Sample Student Project (SDP Max-Cut, Math605)
       url: "https://mnscu-my.sharepoint.com/:b:/g/personal/ye6366mb_minnstate_edu/IQAXXOK8qY3DQLcgsG_vo0S3AT1cH66bgzm6PV99phwqRoA?e=OdH3OG"
+    - name: Meta-Cognitive Assignment from Fall 2025, Student's Advice to Themselves
+      url: 'https://mnscu-my.sharepoint.com/:b:/g/personal/ye6366mb_minnstate_edu/IQDIOZMShEEXQpt8igBN2VPhAejzDiEu4U3KuFFn9DPBa7w?e=VjtDsX'
 
 - name: "Improve MavPASS incorporation into Calculus II"
   status: "Limited Progress, Ongoing"
@@ -151,6 +174,10 @@
     will be MavPASS attendance and comparison of student success for those both attending and
     not attending MavPASS sessions (although I do find there to be a strong selection bias in these
     statistics which warrants closer examination).
+  goal_two:
+    - |
+      Served on student-faculty panel as part of the MavPASS leader training sessions for the Fall
+      semester.
   goal_four:
     - |
       I have continued to mentor MavPASS leaders each semester to support students in Calculus II courses.
@@ -167,13 +194,222 @@
       due to work or family obligations, making some incentives for attendance potentially inequitable.
       I am open to suggestions from the department review or Dean Alam on how to best address this issue,
       as it is a complex problem that requires careful consideration of multiple factors.
+    - |
+      I have been actively involved in identifying, recommending, and directly recruiting students every semester as MavPASS leaders.
+      Feel free to contact
+      Heather Camp for confirmation of my involvement in this process. I have also provided an example in the
+      email correspondence of a student I reached out thanking me for the consideration but that they had
+      other responsibilities. I have also recruited most of the MavPASS leaders that have been involved in my
+      Calculus II courses in the past few years.
+  alignment_note: |
+    MavPASS participation supports Equity 2030 Student Engagement and Support by providing structured
+    peer learning opportunities that can improve persistence and academic success, particularly for
+    students who may benefit from additional academic support networks. This work also aligns with
+    Destination 2030's emphasis on intentional advising, mentoring, coaching, and coordinated support
+    systems that contribute to student success and equity in success.
+  evidence:
+    - name: Email Correspondence around MavPASS
+      url: 'https://mnscu-my.sharepoint.com/:b:/g/personal/ye6366mb_minnstate_edu/IQAmKt8V7dwQT6cgQdkETw51ASJLfMRhxMIZ4FRzYWSMC3Q?e=DNxC0c'
+
+- name: Digital Document Accessibility Efforts
+  status: Significant Progress, Ongoing
+  description:
+    Progress towards April 20, 2027 ADA compliance deadline for all digital documents. 
+  goal_one: 
+    - |
+      I have made significant progress towards the April 20, 2027 ADA compliance deadline for all digital documents. This includes
+      reviewing and updating course materials, lecture notes, and other digital resources to ensure they meet accessibility standards.
+      Samples of updated course materials including interactive, ADA compliant lecture notes are provided in the evidence section.
+  goal_two:
+    - |
+      I have been working to develop my own course document creation pipeline for generating ADA compliant course notes. This is
+      OER Software work, which began by writing a custom plug-in to allow embedding DoenetML Interactive Course Activities into
+      rapidly authored Markdown documents. This plugin is open source, and the github repo for the project is provided in the evidence section.
+      Additionally, I have been working on blogging and documenting the process, philosophy, and considerations authors should
+      take into account when considering authoring long-term, maintainable, digital documents with accessibility in mind. Links
+      to some of these blog posts are also in the evidence.
+
+      Additionally, I am in the process of creating a full course-note authoring software package that will allow authors to rapidly create
+      ADA compliant course notes with interactive content, and will be open source. Currently this is a missing piece in much of the
+      OER software ecosystem, which is generally focused on creating full-length books or practice problem sets for automated grading,
+      and not on creating course notes that are accessible, interactive, and maintainable over time.
+
+      This also allows opportunities for internal and external publishing regarding creating accessible materials as many people
+      are working on this problem. Internally, I have contacted the library to pursue providing resources to faculty publishing
+      on Cornerstone. Externally, I have been invited to contribute to the math-tech.org blog, and I will be also considering
+      submitting to various MAA Blogs or Journals if such activities would be clearly supported by the Dean's office.
+    - |
+      As part of this work, I also attended as an invited speaker to discuss this work at the Doenet Community Workshop (2026)
+      at the  Institute for Mathematics and Its Applications (IMA) at the University of Minnesota.
+      I was invited to speak about my work in creating accessible course materials that incorporated DoenetML activities as part 
+      of the session "Doenet In Other Places". There was no publically available materials for this, but for evidence
+      I have included my workshop participation information and my summary of the final day workshop Show-and-Tell session where
+      I also document some of the other important collaborations that arose during the workshop. If needed for evidence, I can obtain
+      confirmation of this presentation from the organizers.
+  goal_three: |
+    To support efforts in digital document accessibility, I have been actively learning how to contribute to OER Github Projects,
+    such as DoenetML and prefigure. I provide a link which documents some of my contributions in providing extensive issue reports
+    and some pull requests to such projects. For these efforts, I have recently had to learn
+
+    * Markdown
+    * Typescript
+    * Node.js
+    * Cypress Automated Testing
+    * Github Project Management and Issue Tracking
+    * WCAG Accessibility Standards and Testing
+    * Jekyll and Jinja2 Templating Engines
+    * Abstract Syntax Trees and Semantic Analysis of Documents
+    * Concepts of Literate Programming and Document Authoring Pipelines
+
+  goal_five: |
+    I am making strong efforts to make my work in this area accessible to colleagues and other faculty members. Currently,
+    I have a GitHub Repository for tools creating Accessible Math Materials. This includes templates for creating PDF/UA compliant
+    documents using LaTeX which can incorporate technical mathematics and diagrams. Additionally, I have creating several authoring 
+    layers for course notes, including preprocessing templates, static materials, and custom Pandoc writers to generate
+    accessible HTML materials that can be posted directly to D2L or other course management systems.
+
+    Additionally, I am currently maintaining a inventory of the current OER tools available to content authors for creating
+    accessible mathematics and scientific content for students. That resource is also listed in the evidence. I have been invited
+    to contribute to the math-tech.org blog as part of this project, and will do so during the next academic year.
+  alignment_note: |
+    This activity strongly advances Equity 2030 goals by expanding equitable access to learning
+    materials and supporting student success for diverse learners. Creation of accessible course
+    materials, open educational resources, and accessibility-focused tools helps reduce barriers to
+    participation and achievement. The work aligns with Destination 2030 commitments to equitable
+    education, innovation in instructional delivery, and eliminating educational equity gaps.
+  evidence:
+    - name: Blog Post Detailing my Philosophy and Approach to Accessible Document Authoring
+      url: 'https://doctorhaitch.github.io/2026/07/26/notes-authoring.html'
+    - name: Summary of other Doenet Community Workshop Activities
+      url: 'https://doctorhaitch.github.io/2026/06/05/doenet-workshop.html'
+    - name: Inventory of OER Tools for Creating Accessible Mathematics and Scientific Content
+      url: 'https://doctorhaitch.github.io/2026/07/01/accessible-math-tools.html'
+    - name: Sample of ADA Compliant Lecture Notes for Math 122, Calculus II (Areas Between Curves)
+      url: 'https://doctorhaitch.github.io/assets/sample-teaching/10-lecture-area_between_curves.html'
+    - name: Sample of ADA Compliant Lecture Notes for Math 122, Calculus II (Integration by Parts)
+      url: 'https://doctorhaitch.github.io/assets/sample-teaching/17-lecture-integration_by_parts.html'
+    - name: GitHub Respository for Creating Accessible Math Materials
+      url: 'https://github.com/DoctorHaitch/accessible-math'
+    - name: GitHub Repository for Open Source Obsidian.md Plugin for Embedding DoenetML Interactive Course Activities
+      url: 'https://github.com/DoctorHaitch/obsidian-doenet'
+    - name: Record of GitHub Contributions to DoenetML Repository (1/2, Issue Reports)
+      url: 'https://github.com/Doenet/DoenetML/issues?q=author%3Adoctorhaitch'
+    - name: Record of GitHub Contributions to DoenetML Repository (2/2, Pull Requests)
+      url: 'https://github.com/Doenet/DoenetML/pulls?q=author%3Adoctorhaitch'
+    - name: Email Correspondence regarding Accessibility Work
+      url: 'https://mnscu-my.sharepoint.com/:b:/g/personal/ye6366mb_minnstate_edu/IQAf4JJjMgXBQrJc_lkk2kruAT45Iq_PEEOFG-dcGkXzWD0?e=TEk3It'
+
+- name: Began Research Collaboration with Dr. Marino Romero
+  status: "Significant Progress, Ongoing"
+  academic_year: "2025-2026"
+  description:
+    Began research collaboration with Dr. Marino Romero on a problem of mutual interest involving Wreath-Macdonald polynomials.
+  goal_two:
+    - |
+      Dr. Marino and I met regularly throughout the Spring semester to design and implement code for computing specific
+      inner products, building on some of Dr. Romero's previous work in this area, with the goal of developing computational
+      tools to efficiently test hypotheses. A functional implementation will enable rapid exploration of conjectures and
+      counterexamples, with potential connections to problems of interest in the physics community.
+
+      We have made meaningful progress in structuring the computational approach, while identifying a primary challenge in
+      constructing and manipulating certain polynomials over fractional field elements within Sage. Addressing these issues
+      requires both careful mathematical formulation and thoughtful software design. After actively exploring multiple
+      strategies to resolve these challenges, we have identified a strategy to move toward a robust and extensible implementation.
+
+      Initial results are good, with several of the most significant challenges addressed. We are aiming to continue this work
+      in the 2026-2027 academic year, with the goal of producing a functional implementation that can be used to explore conjectures
+      planned for the near future of the new year.
+  goal_three:
+    - |
+      Wreath-Macdonald polynomials are a new area of research to me, so Marino has regularly been teaching me about his field of research,
+      and I have been reading through several of his papers and other resources. A significant amount of time has been spent understanding the
+      theoretical background necessary to understand the notation and develop a computational model for this field.
+
+      I provide evidence in the form of some email correspondence with Dr. Marino Romero, and a set of summary notes we have written
+      documenting the project.
+  evidence:
+    - name: Email Correspondence with Dr. Marino Romero
+      url: 'https://mnscu-my.sharepoint.com/:b:/g/personal/ye6366mb_minnstate_edu/IQD7KyL1kr78Tq8FRpLnxG3AAcOkhAyUKq6OOAo2uXF1fCM?e=HkPsQL'
+    - name: Summary Notes on Wreath-Macdonald Polynomials and Computational Implementation
+      url: 'https://mnscu-my.sharepoint.com/:b:/g/personal/ye6366mb_minnstate_edu/IQCguXkORcMpRpWCD7U7Nr8JAWv2DteQDy1xGNT40OkPK9E?e=hemucN'
+
+- name: Complete professional development certificates through CETL.
+  status: "Complete"
+  academic_year: "2025-2026"
+  description: >
+    Complete at least one CETL certificate each semester. Assessment will consist of completion certificates.
+  goal_three:
+    - | 
+      Completed three certificates through CETL.
+
+      * The "Let Them Theory" Book Discussion
+      * Building your Watermark Portfolio
+      * Legento: Course Packets for the Digital Age
+    - |
+      Additionally, I also completed the NED Workshop "I can't teach with the arts, and other academic lies we tell ourselves: Going Deeper!"
+
+      I believe recordings of this workshop are available, and would demonstrate my participation. I have also provided email
+      correspondence in the evidence section. A good deal of my participation focused on ways to improve my final creative work
+      projects in my courses.
+    - |
+      Finally, I also participated 3 of 6 sessions on Graduate Student Mentorship, only able to participate in Fall semester.
+      This program was co-sponsered by CESR and CETL.
+      
+      * Foundations of Mentoring (Sept. 17)
+      * Establishing Effective Mentoring Relationships (Oct. 15)
+      * Graduate Faculty Peer Panel (Nov. 19)
+  alignment_note: |
+    Ongoing professional development contributes to Equity 2030 Student Academic Success and
+    Workforce Diversity and Strategic Talent Management through continuous improvement of teaching,
+    mentoring, accessibility, and student support practices. Destination 2030 identifies culturally
+    responsive learning environments and innovation in instructional practice as institutional
+    priorities supported by this work.
+  evidence:
+    - name: Collected CETL Certificates of Completion
+      url: "https://mnscu-my.sharepoint.com/:b:/g/personal/ye6366mb_minnstate_edu/IQAAjaqPgSskT77jRzMWIjvWAeXZ9JTpHDLakEOlTdv92R8?e=fXW0My"
+    - name: Correspondence for NED Workshop
+      url: 'https://mnscu-my.sharepoint.com/:b:/g/personal/ye6366mb_minnstate_edu/IQCSfMK2-ivrSa09Qj3784QXAXVFSDw80Bp1AsRN-2knG1s?e=eiryZ7'
+    - name: Graduate Student Mentorship Program
+      url: 'https://mnscu-my.sharepoint.com/:b:/g/personal/ye6366mb_minnstate_edu/IQBIl0fdACPdQq_3g6Ol-Q6IAXxLF5rEdJ5dqs9hRRqv71Q?e=xJpPUf'
+
+- name: MathHappens Community Math Room
+  status: "Completed"
+  academic_year: "2025-2026"
+  description: |
+    Created in partnership with the MathHappens Foundation and the Children's Museum of Southern Minnesota.
+    This community math room is designed to provide hands-on, joyful experiences with mathematics for children and families.
+    The room features a variety of interactive exhibits and activities that encourage exploration, problem-solving, and critical thinking.
+    The goal is to foster a love for mathematics and to demonstrate its fun, creative side.
+  goal_four:
+    - |
+      For the past three years, I have been the Site Coordinator for the MathHappens Community Math Room at CMSM.
+      I have worked closely with both the Foundation, the Museum, and Student Workers, who I hired and trained.
+      This year, I was able to turn my role over to one of the senior student workers, so that this room is now
+      a self-sustaining, student-run project.
+
+      I am still tangentially involved as a point of contact for some programming, as evidenced in still connecting
+      with community partners to facilitate additional events for MathHappens.
+  alignment_note: |
+    This project advances Equity 2030 Enhanced Access by creating informal pathways into mathematical
+    learning and strengthening partnerships with community organizations. It aligns with Destination
+    2030 goals involving community engagement, access to education, and development of supportive,
+    inclusive learning opportunities for learners from varied backgrounds.
+  evidence:
+    - name: Outreach Email from Rosa Parks Elementary
+      url: 'https://mnscu-my.sharepoint.com/:b:/g/personal/ye6366mb_minnstate_edu/IQDtWEzpfRMBRZ5F9iqzv1jxAW0frV82aqI_u-s3B6hbvbA?e=ZzsKgv'
+    - name: MathHappens 2023 Blog Post on Room Establishment
+      url: "https://www.mathhappens.org/mathhappens-southern-minnesota-childrens-museum/"
+    - name: Current Site Coordinators Page Showing Sam Barland, an MNSU Student as the new Site Coordinator
+      url: 'https://www.mathhappens.org/about/people/'
+    - name: Programming Description on CMSM Website
+      url: 'https://www.mathhappens.org/programs/math-rooms/mankato/'
 
 - name: >
     Supervise student research.
   status: Completed
   academic_year: "2025-2026"
   description: |
-    Supervised two students.
+    Supervised two students in their research projects.
 
     * Isaac Wicklund (Independent Study, Capstone, Undergraduate, Fall Semester)
     * Brian Larson (Alternate Plan Paper, Graduate, Spring Semester and Summer)
@@ -193,6 +429,11 @@
       This also involved proof-reading and providing detailed feedbacks on manuscript drafts. Sample of targeted, critical feedback
       given to help the student grow as a researcher and a writer, and to improve the quality of their work, is provided in the
       marked drafts of their papers. Additionally, the final draft is attached as evidence.
+  alignment_note: |
+    Undergraduate and graduate research mentorship provides high-impact educational experiences that
+    support student engagement, persistence, and professional development. This aligns strongly with
+    Destination 2030 transformational learning goals and Equity 2030 Student Academic Success through
+    meaningful faculty-student engagement.
   evidence:
     - name: Isaac Wicklund's Senior Capstone Paper
       url: "https://mnscu-my.sharepoint.com/:b:/g/personal/ye6366mb_minnstate_edu/IQDaGDpCdhZrTbGkcRI2l0NmAbOR4ieznPd5OSj51dFjLAk?e=WOwAt4"
@@ -202,8 +443,6 @@
       url: "https://mnscu-my.sharepoint.com/:b:/g/personal/ye6366mb_minnstate_edu/IQC1wy2wLtXwSLsPphul5k8XASSeo75Y8iyRPREvmbhvT0s?e=3qvciV"
     - name: Discussion with Isaac and Dept. Chair Regarding Capstone Project
       url: "https://mnscu-my.sharepoint.com/:b:/g/personal/ye6366mb_minnstate_edu/IQBxXb0vhuPwRprGrvvFAyk2AXygWdRRBw8HSNPb4sIHK8Q?e=iE3Njd"
-
-
 
 - name: >
     Continue drafting of book in support of Math 605, Graphs and Algorithms, titled
@@ -229,6 +468,37 @@
       that I was not making sufficient progress on my Criterion 2 goals, which is a concern for me as I feel that this
       work is a significant scholarly contribution to the field of mathematics and will have a positive impact on
       student learning and engagement in Math 605.
+  evidence: 
+    - name: Draft Chapters of "Topics in Algebraic Combinatorics and Optimization"
+      url: "https://mnscu-my.sharepoint.com/:b:/g/personal/ye6366mb_minnstate_edu/IQBoXbUIYIBsRIwpH5ilrNECAeIs4zusBuY1LCN781b7oto?e=LkNIge"
+
+- name: "Participate in Early and Mid-Semester Alert Warning System"
+  status: "Completed"
+  academic_year: "2025-2026"
+  description: >
+    Participate in the Early and Mid-Semester Alert Warning System to identify students at risk of failing or withdrawing from courses.
+    This will involve monitoring student performance and engagement, and providing timely feedback and support to help students succeed.
+  goal_one:
+    - |
+      I have actively revised my course in the last few years to add increased review and assessment materials to help students identify
+      and address gaps in their understanding of the course material, and to collect sufficient work early in the semester to inform
+      participation in the early semester alert system.
+  goal_four:
+    - |
+      I have actively participated in the Early and Mid-Semester Alert Warning System, monitoring student performance and engagement
+      in my courses. I have provided timely feedback and support to students identified as at risk, including one-on-one meetings,
+      emails, additional resources, and guidance on study strategies. I also pass this information along in my alerts.
+
+      My reports include detailed records on coursework, attendance, and engagement to help inform interventions and support
+      strategies for students at risk.
+  alignment_note: |
+    This activity is directly aligned with Equity 2030 Student Engagement and Support and Data-Guided
+    Decision-Making. Early identification of academic challenges allows timely intervention and
+    targeted support that can improve retention and persistence outcomes. The activity also supports
+    Destination 2030 objectives related to coordinated support systems and student success.
+  evidence:
+    - name: Early Alert System Participation Records (Note, I appear to be missing one confirmation email, but submitted all four reports)
+      url: 'https://mnscu-my.sharepoint.com/:b:/g/personal/ye6366mb_minnstate_edu/IQCHszj18K4aS7PUPkjCkS91ASpdzhMzI1TxFxpWGwUuIws?e=zFUEO2'
 
 - name: "Give invited address at Frame Theory Days Conference."
   status: "Canceled."
@@ -245,6 +515,9 @@
       conference organizers and they have expressed their understanding of the situation. I plan to explore alternative
       opportunities to present my work at future conferences if deemed worthwhile by supervisors,and will continue to seek
       out venues for sharing my research and engaging with the academic community.
+  evidence:
+    - name: Conference Registration and Correspondence with One Of they Organizers
+      url: "https://mnscu-my.sharepoint.com/:b:/g/personal/ye6366mb_minnstate_edu/IQCXDRrSayYwQZib05jvfECtAQxTtKX2ZS1YBqTSL7dL7-M?e=nJBaef"
 
 - name: > 
     Investigate NSF Grant with colleagues from the University of Nebraska-Omaha.
@@ -276,6 +549,11 @@
       scholarly output of the institution--something he has stated as a clear priority. Perhaps he can
       assist in resolving the situation or provide guidance on how to proceed in the future.
       I am open to suggestions and would appreciate any support or advice on how to navigate this issue.
+  alignment_note: |
+    The proposed work sought to integrate mathematics, creativity, and computational thinking through
+    innovative educational experiences. These objectives align with Destination 2030 commitments to
+    transformational learning, interdisciplinary collaboration, and innovation in instructional
+    approaches.
   evidence:
     - name: Email Correspondence with UNO Faculty
       url: "https://mnscu-my.sharepoint.com/:b:/g/personal/ye6366mb_minnstate_edu/IQBljaW7wB-1SIG149qgp7mQAfOZbkVvLHsVEHNidrY4yvs?e=FcSQZx"
@@ -322,6 +600,10 @@
       personal statements, and making informed decisions that align with the department's goals for student advancement.
 
       Additionally I identified and raised some concerns regarding the new scholarship review process.
+  alignment_note: |
+    Scholarship review, nominations, and student opportunity development directly support Equity 2030
+    goals by increasing access to academic and professional opportunities. The activity also aligns
+    with Destination 2030 commitments to student success, inclusion, and coordinated support systems.
   evidence:
     - name: Committee Sample Correspondence and Discussion
       url: "https://mnscu-my.sharepoint.com/:b:/g/personal/ye6366mb_minnstate_edu/IQBGawUSisUDTqJusYoNqyCrARiAmH1VL-B-cVQA0K51Thw?e=kDSxps"
@@ -344,35 +626,39 @@
       url: "https://mnscu-my.sharepoint.com/:b:/g/personal/ye6366mb_minnstate_edu/IQCHRzc6SfLoSrbU9fbtETPqAR2vNW43BA0nF4aP8p1diIk?e=z8AXVo"
     - name: Revised Comprehensive Exam Syllabus for Analysis
       url: "https://mnscu-my.sharepoint.com/:w:/g/personal/ye6366mb_minnstate_edu/IQDSx8FrkptIRqkSSsyr1NenAT_QIYHFGx2s4NoX2cF60XU?e=ZxOqnV"
+  alignment_note: |
+    Curriculum review and transparent expectations support equitable student pathways and academic
+    success. This work reflects Destination 2030 priorities involving curricular improvement,
+    collaboration, and student-centered learning environments.
 
-- name: "Supervise Student Alternate Plan Paper"
-  status: "Completed"
-  academic_year: "2025-2026"
-  description: "Supervised a student in the development of their alternate plan paper, providing guidance and feedback throughout the process."
-  goal_two:
-    - | 
-      Trained student in research methods for mathematics, including literature review, problem formulation,
-      and mathematical writing. This involved providing guidance on how to identify relevant sources,
-      critically analyze existing research, formulate new questions and problems, evaluate potential interest in
-      their new topics, and effectively communicate mathematical ideas in written form.
-  goal_four:
-    - |
-      Met student weekly throughout the Spring semester to provide guidance and feedback on the initial
-      development of their alternate plan paper. This involved reviewing drafts, discussing research methods,
-      and providing constructive feedback to help the student refine their understanding of the problem.
+# - name: "Supervise Student Alternate Plan Paper"
+#   status: "Completed"
+#   academic_year: "2025-2026"
+#   description: "Supervised a student in the development of their alternate plan paper, providing guidance and feedback throughout the process."
+#   goal_two:
+#     - | 
+#       Trained student in research methods for mathematics, including literature review, problem formulation,
+#       and mathematical writing. This involved providing guidance on how to identify relevant sources,
+#       critically analyze existing research, formulate new questions and problems, evaluate potential interest in
+#       their new topics, and effectively communicate mathematical ideas in written form.
+#   goal_four:
+#     - |
+#       Met student weekly throughout the Spring semester to provide guidance and feedback on the initial
+#       development of their alternate plan paper. This involved reviewing drafts, discussing research methods,
+#       and providing constructive feedback to help the student refine their understanding of the problem.
 
-      Brian elected to complete his APP in the summer, and I continued to provide guidance and feedback on his
-      work, including reviewing drafts and providing feedback on the final submission, evidence of feedback
-      is provided in the marked drafts.
-  evidence:
-    - name: Student Thesis Document
-      url: "https://mnscu-my.sharepoint.com/:b:/g/personal/ye6366mb_minnstate_edu/IQBDlyNQ1-5tQbxmq3Uza2aHAS6IiNo9AAmVJnUjapmKBko?e=qLlTQO"
-    - name: Sample of Student Thesis Draft with Feedback (Digital Collaboration)
-      url: "https://mnscu-my.sharepoint.com/:i:/g/personal/ye6366mb_minnstate_edu/IQBpOwmmK0O5QbcHzmlUHDuDAVpJifnSi8q_--uWNqLP8Zc?e=eSj71N"
-    - name: Sample of Student Thesis Draft with Feedback (Marked Paper Copy)
-      url: "https://mnscu-my.sharepoint.com/:b:/g/personal/ye6366mb_minnstate_edu/IQCtGelIZj-RT6R8vjYH1M_4AZo_bCQ3grlV3TCAkvKxgwQ?e=kRksL5"
-    - name: Student Acknowledgement of Feedback and Guidance
-      url: "https://mnscu-my.sharepoint.com/:b:/g/personal/ye6366mb_minnstate_edu/IQAa0gTuPI-1Q738JVdrAT-OAerAgejQfsDCugqaf9MVFNg?e=GC55Ee"
+#       Brian elected to complete his APP in the summer, and I continued to provide guidance and feedback on his
+#       work, including reviewing drafts and providing feedback on the final submission, evidence of feedback
+#       is provided in the marked drafts.
+#   evidence:
+#     - name: Student Thesis Document
+#       url: "https://mnscu-my.sharepoint.com/:b:/g/personal/ye6366mb_minnstate_edu/IQBDlyNQ1-5tQbxmq3Uza2aHAS6IiNo9AAmVJnUjapmKBko?e=qLlTQO"
+#     - name: Sample of Student Thesis Draft with Feedback (Digital Collaboration)
+#       url: "https://mnscu-my.sharepoint.com/:i:/g/personal/ye6366mb_minnstate_edu/IQBpOwmmK0O5QbcHzmlUHDuDAVpJifnSi8q_--uWNqLP8Zc?e=eSj71N"
+#     - name: Sample of Student Thesis Draft with Feedback (Marked Paper Copy)
+#       url: "https://mnscu-my.sharepoint.com/:b:/g/personal/ye6366mb_minnstate_edu/IQCtGelIZj-RT6R8vjYH1M_4AZo_bCQ3grlV3TCAkvKxgwQ?e=kRksL5"
+#     - name: Student Acknowledgement of Feedback and Guidance
+#       url: "https://mnscu-my.sharepoint.com/:b:/g/personal/ye6366mb_minnstate_edu/IQAa0gTuPI-1Q738JVdrAT-OAerAgejQfsDCugqaf9MVFNg?e=GC55Ee"
 
 - name: "Write Letters of Recommendations for Students"
   status: "Ongoing"
@@ -401,6 +687,10 @@
       Please see a sample of a response denying a letter of recommendation request in the evidence section below, as
       I get far more requests than demonstrated by the extensive output of letters of recommendation I have provided.
       This does demonstrate impact on students, even many years removed from my classes and in challenging circumstances.
+  alignment_note: |
+    Letters of recommendation help students access graduate education, employment, scholarships, and
+    professional opportunities. This activity contributes to Equity 2030 goals related to student
+    success and attainment while supporting Destination 2030 career mobility outcomes.
   evidence:
     - name: Confirmations or Requests for Letters of Recommendation
       url: "https://mnscu-my.sharepoint.com/:b:/g/personal/ye6366mb_minnstate_edu/IQC3t_khgBn1Q4b-Nci0P3XgAcXZq8cPb3-PTbV-16rMYNo?e=gUReuL"
@@ -420,6 +710,10 @@
       Participated in the Spring 2026 graduation ceremony as a member of the faculty procession, representing
       the College of Science, Engineering, and Technology (CSET) and Department of Mathematics and Statistics
       celebrating the achievements of graduating students.
+  alignment_note: |
+    Participation in commencement supports a sense of belonging, recognition, and institutional
+    community consistent with Destination 2030's commitment to a supportive and inclusive campus
+    environment.
   evidence:
     - name: Email Thread Responding to Chair's Request to Serve This Role
       url: "https://mnscu-my.sharepoint.com/:b:/g/personal/ye6366mb_minnstate_edu/IQCMBz-b7iWbTIGEAckUc2RmAZ_qzCnAYjCrU9_wyPCjzMI?e=ZSbUlA"
@@ -454,6 +748,10 @@
       based on some of these workshops I aim to create a D2L module for students to learn about and access the 
       career services resources available to them on campus. This will be a resource for students to access at any time,
       and will be particularly useful for those who might be shy about having these conversations directly.
+  alignment_note: |
+    Career development programming aligns closely with Equity 2030 Student Engagement and Support and
+    Destination 2030 outcomes related to employment, career mobility, and student success beyond
+    graduation.
   evidence:
     - name: Email Correspondence with Connections from Career Champions as well as Programming Email/Information
       url: "https://mnscu-my.sharepoint.com/:b:/g/personal/ye6366mb_minnstate_edu/IQCWF4nFXrRgSqgB_aYHNeLXAVw44IQVPClFIgwEpHFpMnY?e=t6708y"
@@ -468,6 +766,10 @@
     - |
       At the request of several new faculty members, I provided my own survey formats to new faculty who missed
       opportunities to collect student feedback on their teaching effectiveness and course design.
+  alignment_note: |
+    Sharing assessment practices and instructional resources promotes continuous improvement and a
+    collaborative culture of teaching excellence. This supports Destination 2030 goals connected to
+    innovation and evidence-informed educational practice.
   evidence:
     - name: End-of-Semester Survey for New Faculty
       url: "https://mnscu-my.sharepoint.com/:b:/g/personal/ye6366mb_minnstate_edu/IQDPCSNCnSx0SYgUe2V4rX0DATH8jDvbYrJ7wHm5Crd4k_k?e=7WZT8H"
@@ -521,76 +823,74 @@
       of these summaries.
 
       For AY 2025-2026, I was assigned to advise 3 graduate students and 2 undergraduate students.
+  alignment_note: |
+    Advising directly advances Equity 2030 goals related to retention, persistence, and graduation.
+    Comprehensive advising records, individualized guidance, and student support efforts align with
+    Destination 2030 priorities centered on mentoring, coaching, student success, and equitable
+    educational pathways.
   evidence:
-    - name: Sample of Academic Advising Summaries added to Student's Navigate360 Recrods
-      url: ""
+    - name: Sample of Student Advising Communications
+      url: 'https://mnscu-my.sharepoint.com/:b:/g/personal/ye6366mb_minnstate_edu/IQCDFYudi9reS6mGL_9aN7MFAf8IhFZXv5PUPa8Tf_qcRtg?e=nvfPq5'
 
-# - name: "Calculus Curriculum Review Sub-committee"
-#   status: "Initial Progress, Deferred"
-#   academic_year: "2025-2026"
-#   description: "The Calculus Curriculum Review Sub-committee is responsible for evaluating and updating the institution’s calculus curriculum. Its work includes reviewing course structures, identifying areas for improvement, and developing recommendations to ensure the curriculum remains current, coherent, and aligned with best practices in mathematics education. The sub-committee collaborates with faculty and other stakeholders to gather input and support informed, evidence-based curriculum development."
-#   goal_five: 
-#     - "Volunteered for and was then elected chair for an Ad Hoc Committee to review the Calculus curriculum and textbook selection. The department identified this as a potentially high-impact review because of the large number of students enrolled in Calculus courses and the fact that the curriculum had not undergone comprehensive review in more than a decade. The committee's work was paused pending the departmental program review, which was anticipated for AY2026--2027 early in the academic year. One recommendation from the external program reviewers was to 'establish a multiyear schedule for reviewing the curricula of all departmental programs'. The committee's preliminary work positions the department to resume this review process as part of a broader, ongoing cycle of curricular assessment and improvement."
-#     - "Developed planning materials and a departmental survey to identify and rank faculty priorities related to the Calculus curriculum review process. The survey instrument may also serve as a useful artifact for future curriculum review efforts."
-#   evidence:
-#     - name: Calculus Curriculum Review Sub-committee Meeting Minutes
-#       url: ""
-#     - name: Faculty Survey for Curriculum Review
-#       url: "https://mnscu-my.sharepoint.com/:b:/r/personal/ye6366mb_minnstate_edu/Documents/00-Admin/Docs-PDP%20and%20PDR/2025-2026/Evidence/CurriculumReviewSurvey.pdf?csf=1&web=1&e=AKhVmv"
+- name: "Calculus Curriculum Review Sub-committee"
+  status: "Initial Progress, Deferred"
+  academic_year: "2025-2026"
+  description: "The Calculus Curriculum Review Sub-committee is responsible for evaluating and updating the institution's calculus curriculum. Its work includes reviewing course structures, identifying areas for improvement, and developing recommendations to ensure the curriculum remains current, coherent, and aligned with best practices in mathematics education. The sub-committee collaborates with faculty and other stakeholders to gather input and support informed, evidence-based curriculum development. This work will likely continue in Fall 2026."
+  goal_five: 
+    - "Volunteered for and was then elected chair for an Ad Hoc Committee to review the Calculus curriculum and textbook selection. The department identified this as a potentially high-impact review because of the large number of students enrolled in Calculus courses and the fact that the curriculum had not undergone comprehensive review in more than a decade. The committee's work was paused pending the departmental program review, which was anticipated for AY2026--2027 early in the academic year. One recommendation from the external program reviewers was to 'establish a multiyear schedule for reviewing the curricula of all departmental programs'. The committee's preliminary work positions the department to resume this review process as part of a broader, ongoing cycle of curricular assessment and improvement."
+    - "Developed planning materials and a departmental survey to identify and rank faculty priorities related to the Calculus curriculum review process. The survey instrument may also serve as a useful artifact for future curriculum review efforts."
+  alignment_note: |
+    Systematic curriculum review supports equitable student learning outcomes, transferability,
+    academic success, and continuous improvement. This activity aligns with Equity 2030 Student
+    Academic Success and Destination 2030 goals related to innovation, stewardship, and eliminating
+    educational equity gaps.
+  evidence:
+    - name: Communications Records with Calculus Textbook Vendors
+      url: 'https://mnscu-my.sharepoint.com/:b:/g/personal/ye6366mb_minnstate_edu/IQBeppOHrhkNQZ7Lj6zB59H_AQfOvuiRaSl0NT9spmSYa1Q?e=bGP7D6'
+    - name: Faculty Survey Developed for Curriculum Review
+      url: 'https://mnscu-my.sharepoint.com/:b:/g/personal/ye6366mb_minnstate_edu/IQBZ7CEs-wLfRL-JCIpxITvLActszCh01uP2mkYDJYtIv8s?e=tZ0Lck'
 
-# - name: "Progress towards PDF/UA Digital Document Accessibility Compliance."
-#   academic_year: "2025-2026"
-#   status: "Significant Progress, Ongoing"
-#   description: "In response to new federal digital accessibility requirements, I have undertaken a comprehensive effort to ensure that all PDF course resources for my courses are compliant with PDF/UA standards."
-#   goal_one: 
-#     - "Updated all PDF course resources to be compliant with PDF/UA standards, ensuring that all digital course materials are accessible to students with disabilities. This involved researching the requirements of PDF/UA compliance, implementing necessary changes to existing documents, and verifying compliance through testing and validation tools. These efforts were aimed at meeting new federal digital accessibility requirements and ensuring that all students have equal access to course materials."
-#   goal_two: 
-#     - "Researched, developed, and published guides on GitHub for creating PDF/UA-compliant documents in LaTeX, a platform widely used in scientific publishing and in the preparation of teaching materials for science courses. This work was undertaken to support compliance with new federal digital accessibility requirements and to ensure course materials meet evolving legal standards."
-#   goal_five: 
-#     - "Provided templates, supplementary guides, and practical tools to faculty and the broader community through my GitHub page. Initiated discussions with the library to expand access to these resources through workshops and tool development, with potential collaboration through CESR. These efforts directly support institutional Equity 2030 goals by improving accessibility and inclusion in digital learning and scholarly materials produced by our institution. I additionally plan to create a quickstart guide for faculty and students on Cornerstone to further facilitate the adoption of accessible document practices in our courses and research outputs."
-#   evidence:
-#     - name: GitHub Repository of LaTeX Accessibility Resources
-#       url: "https://github.com/DoctorHaitch/accessible-math"
-#     - name: Quickstart Guide on Cornerstone
-#       url: ""
-#     - name: Sample PDF/UA-Compliant Documents for Calculus II
-#       url: ""
+- name: "Cohost FriDEI weekly Discussions during Fall semester."
+  status: "Completed"
+  academic_year: "2025-2026"
+  description: >
+    Co-hosted bi-weekly discussions on equitable teaching practices in mathematics courses with Dr. Marino Romero.
+  goal_three:
+    - >
+      Preparation and facilitation of these discussions contributed significantly to my professional development by deepening
+      my understanding of equity-focused pedagogy in mathematics. Reviewing planning materials, recurring themes included
+      identity in mathematics (e.g., “who is a math person”), navigating power dynamics between instructors and students,
+      and strategies for initiating difficult conversations. A particularly valuable aspect was engaging graduate students
+      in their dual roles as both learners and instructors, which provided candid insight into current classroom challenges.
+      A consistent thread across discussions was the tension between maintaining assessment rigor and implementing policies
+      that promote meaningful learning opportunities and student growth.
+  goal_four:
+    - >
+      These discussions benefited students through an equity-focused lens by fostering more inclusive teaching practices that
+      recognize diverse student experiences and barriers to success. Conversations emphasized creating supportive classroom
+      environments, incorporating flexibility and grace in assessment practices, and amplifying student voices, particularly
+      those from underrepresented groups. Feedback from participating graduate students and faculty suggests these meetings
+      encouraged reflection on teaching practices and contributed to more equitable and student-centered approaches in mathematics
+      instruction alongside greater awareness of both visible and invisible challenges currently facing our students.
+  goal_five:
+    - >
+      Co-hosted bi-weekly discussions centered on equitable teaching practices in mathematics courses with Dr. Marino Romero.
+      This seminar brought together graduate students and faculty to address a gap in discipline-specific conversations around
+      equity and inclusion in STEM, where adapting broader pedagogical strategies can be more challenging. Topics included
+      professional identity, allyship, power dynamics, and grading practices, grounded in real classroom experiences.
+      The series created a collaborative space for sharing strategies and reflecting on teaching. We would like to find a way to
+      continue this work in the future.
 
-# - name: "Provided mentorship to students."
-#   status: "Ongoing"
-#   academic_year: "2025-2026"
-#   description: "Includes academic advising, project supervision, and career guidance. This mentorship has involved regular meetings with students to discuss their academic progress, providing feedback on their work, and offering support and resources to help them succeed in their studies and future careers. This frequently includes providing letters of support for scholarships, internships, and graduate school applications. I have also supervised student research projects, guiding them through the research process and helping them develop their skills in critical thinking, problem-solving, and effective communication of their findings."
-#   goal_four: 
-#     - "<strong>Academic Advising:</strong>"
-#     - "<strong>Direct Project Supervision:</strong>"
-#     - "<strong>Letters of Recommendation:</strong>"
-#   evidence:
-#     - name: Student Testimonials
-#       url: ""
-#     - name: Research Project Outcomes
-#       url: ""
-
-
-# # \goal[5]{Chaired and volunteered for an Ad Hoc Committee to review the Calculus curriculum and textbook selection. The department identified this as a potentially high-impact review because of the large number of students enrolled in Calculus courses and the fact that the curriculum had not undergone comprehensive review in more than a decade. The committee’s work was paused pending the departmental program review, which was anticipated for AY2026--2027 early in the academic year.
-# # One recommendation from the external program reviewers was to ``establish a multiyear schedule for reviewing the curricula of all departmental programs."
-# # The committee's preliminary work positions the department to resume this review process as part of a broader, ongoing cycle of curricular assessment and improvement.}
-
-# ######################
-# #\begin{activity}{Cohost FriDEI weekly Discussions during Fall semester.}
-# #\goal[3]{Preparation and facilitation of these discussions contributed significantly to my professional development by deepening my understanding of equity-focused pedagogy in mathematics. Reviewing planning materials, recurring themes included identity in mathematics (e.g., “who is a math person”), navigating power dynamics between instructors and students, and strategies for initiating difficult conversations. A particularly valuable aspect was engaging graduate students in their dual roles as both learners and instructors, which provided candid insight into current classroom challenges. A consistent thread across discussions was the tension between maintaining assessment rigor and implementing policies that promote meaningful learning opportunities and student growth.}
-# #\goal[4]{These discussions benefited students through an equity-focused lens by fostering more inclusive teaching practices that recognize diverse student experiences and barriers to success. Conversations emphasized creating supportive classroom environments, incorporating flexibility and grace in assessment practices, and amplifying student voices, particularly those from underrepresented groups. Feedback from participating graduate students and faculty suggests these meetings encouraged reflection on teaching practices and contributed to more equitable and student-centered approaches in mathematics instruction alongside greater awareness of both visible and invisible challenges currently facing our students.}
-# #\goal[5]{Co-hosted bi-weekly discussions centered on equitable teaching practices in mathematics courses with Dr. Marino Romero. This seminar brought together graduate students and faculty to address a gap in discipline-specific conversations around equity and inclusion in STEM, where adapting broader pedagogical strategies can be more challenging. Topics included professional identity, allyship, power dynamics, and grading practices, grounded in real classroom experiences. The series created a collaborative space for sharing strategies and reflecting on teaching. We plan to continue and expand this round-table discussion series in the coming academic year.}
-# #\begin{evidence}
-# #\evidenceitem{\href{https://mnscu-my.sharepoint.com/:b:/g/personal/ye6366mb_minnstate_edu/IQC71y8qnm3uSq-_Qodp64JQAUL8mX7axBBGgOevOOTm0fY?e=kep2uJ}{Shared planning notes.}
-# #These provide a log of topics discussed, including identity in mathematics, grace in teaching, power dynamics, advocacy, and grading practices, as well as dates of meetings and brainstorming for future prompts.}
-# #\end{evidence}
-# #\end{activity}
-
-# ######################
-# #\begin{activity}{Began Research Collaboration with Dr. Marino Romero.}
-# #\goal[2]{Initiated a research collaboration with Dr. Marino Romero on a problem of mutual interest involving Wreath--Macdonald polynomials. We met regularly throughout the semester to design and implement code for computing specific inner products, building on some of Dr. Romero's previous work in this area, with the goal of developing computational tools to efficiently test hypotheses. A functional implementation will enable rapid exploration of conjectures and counterexamples, with potential connections to problems of interest in the physics community.
-# #We have made meaningful progress in structuring the computational approach, while identifying a primary challenge in constructing and manipulating certain polynomials over fractional field elements within Sage. Addressing these issues requires both careful mathematical formulation and thoughtful software design. We are actively exploring multiple strategies to resolve these challenges and move toward a robust and extensible implementation.}
-# #\begin{evidence}
-# #\evidenceitem{\href{https://github.com/DoctorHaitch/WreathMacdonald}{GitHub repository containing current codebase and development progress.}}
-# #\end{evidence}
-# #\end{activity}
+      The evidence includes shared meeting planning notes and a sample email to faculty and graduate students.
+       These provide a log of topics discussed, including identity in mathematics, grace in teaching, power dynamics,
+       advocacy, and grading practices, as well as dates of meetings and brainstorming for future prompts.
+  alignment_note: |
+    This activity has direct and explicit alignment with Equity 2030 goals concerning equitable
+    outcomes, culturally responsive teaching, and workforce diversity. It also strongly supports
+    Destination 2030's commitment to diversity, inclusion, belonging, supportive campus climate,
+    and elimination of educational equity gaps.
+  evidence:
+    - name: Shared Meeting Planning Notes
+      url: 'https://mnscu-my.sharepoint.com/:b:/g/personal/ye6366mb_minnstate_edu/IQC71y8qnm3uSq-_Qodp64JQAUL8mX7axBBGgOevOOTm0fY?e=kep2uJ'
+    - name: End of Semester Meeting Email
+      url: 'https://mnscu-my.sharepoint.com/:b:/g/personal/ye6366mb_minnstate_edu/IQAPnaJaTAqNTKFKc8ib9SEaATyECyzMpI8oYVqHBNntRiM?e=qfgP27'

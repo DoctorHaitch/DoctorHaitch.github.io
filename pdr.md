@@ -10,7 +10,7 @@ rank_at_join: "Assistant Professor"
 current_status: "Probationary"
 current_rank: "Assistant Professor"
 academic_year: "2025-2026"
-submission_date: "TBD"
+submission_date: "Wednesday, August 26, 2026"
 ---
 ## Kris Hollingsworth, PDR AY {{ page.academic_year }}
 
@@ -49,6 +49,8 @@ submission_date: "TBD"
 {% include pdp-pdr/goal-three.html %}
 {% include pdp-pdr/goal-four.html %}
 {% include pdp-pdr/goal-five.html %}
+{% include pdp-pdr/evidence.html %}
+
 
 
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>

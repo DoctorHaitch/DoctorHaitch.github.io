@@ -1,0 +1,57 @@
+<details class="collapsible-section" open>
+  <summary class="collapsible-title">
+    <h3>Evidence Report.</h3>
+  </summary>
+
+  <div class="detail-cards">
+    {% for activity in site.data.pdp-pdr %}
+    {% if activity.academic_year == page.academic_year %}
+    <div class="detail-card">
+      <div class="detail-header">
+        <span class="detail-name">{{ activity.name }}</span>
+      </div>
+      <div class="detail-subheader">
+        <span class="detail-status">{{ activity.status }}</span>
+      </div>
+
+      <div class="detail-body">
+
+        <!-- Description -->
+        <div class="detail-item">
+          <div style="margin-left: 0.3rem; max-width: 90%; font-size: 0.9rem; color: var(--muted);">
+            <strong>Description</strong>: {{ activity.description | markdownify }}
+          </div>
+        </div>
+
+        <!-- Goal Area Progress Report -->
+        <div class="detail-item">
+          <span class="authors"><strong>Evidence Items:</strong></span>
+          <ul>
+          {% for item in activity.evidence %}
+            <li><a href="{{ item.url }}" target="_blank" rel="noopener noreferrer">{{ item.name }}</a></li>
+          {% endfor %}
+          </ul>
+        </div>
+
+        <!-- Strategic Alignment Notes -->
+        {% if activity.alignment_note %}
+        <div class="detail-item">
+          <div
+            style="
+              margin-left: 0.3rem;
+              max-width: 90%;
+              font-size: 0.9rem;
+              color: var(--muted);
+            "
+          >
+            <strong>Strategic Alignment Notes</strong>:
+            {{ activity.alignment_note | markdownify }}
+          </div>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+    {% endif %}
+    {% endfor %}
+  </div>
+</details>

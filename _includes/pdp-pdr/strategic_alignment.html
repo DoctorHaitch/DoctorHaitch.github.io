@@ -1,0 +1,59 @@
+<details class="collapsible-section" open>
+  <summary class="collapsible-title">
+    <h3>Strategic Alignment With Destination 2030 and Equity 2030</h3>
+  </summary>
+
+  <div class="detail-cards">
+    {% for activity in site.data.pdp-pdr %}
+    {% if activity.academic_year == page.academic_year and activity.alignment_note %}
+
+    <div class="detail-card">
+      <div class="detail-header">
+        <span class="detail-name">{{ activity.name }}</span>
+      </div>
+
+      <div class="detail-subheader">
+        <span class="detail-status">{{ activity.status }}</span>
+      </div>
+
+      <div class="detail-body">
+
+        <!-- Description -->
+        <div class="detail-item">
+          <div
+            style="
+              margin-left: 0.3rem;
+              max-width: 90%;
+              font-size: 0.9rem;
+              color: var(--muted);
+            "
+          >
+            <strong>Description</strong>:
+            {{ activity.description | markdownify }}
+          </div>
+        </div>
+
+        <!-- Strategic Alignment Notes -->
+        {% if activity.alignment_note %}
+        <div class="detail-item">
+          <div
+            style="
+              margin-left: 0.3rem;
+              max-width: 90%;
+              font-size: 0.9rem;
+              color: var(--muted);
+            "
+          >
+            <strong>Strategic Alignment Notes</strong>:
+            {{ activity.alignment_note | markdownify }}
+          </div>
+        </div>
+        {% endif %}
+
+      </div>
+    </div>
+
+    {% endif %}
+    {% endfor %}
+  </div>
+</details>
